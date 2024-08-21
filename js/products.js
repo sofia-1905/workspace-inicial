@@ -20,6 +20,7 @@ function showCategoriesList(array) {
                         <div class="mb-1">
                             <h4>${category.name}</h4>
                             <p>${category.description}</p>
+                            <p>$${category.cost}</p>
                         </div>
                         <small class="text-muted">${category.soldCount} artículos</small>
                     </div>
