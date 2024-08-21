@@ -1,0 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Estilos básicos para el cuerpo y el contenedor principal */
+body {
+    display: flex;
+    flex-direction: column; /* Organiza los hijos en una columna */
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
+    margin: 0;
+    background-color: black;
+    font-family: 'Inter', sans-serif; /* Usa la fuente  y  de back. Esto aca en realidad no funciona pero para cordarme de chequear y tener por escritos los cambios de style*/
+    
+}
+
+
+
+/* Estilo para el contenedor principal del formulario(esta todo centrado, so???) */
+main {
+    flex: 1; /* Permite que el main ocupe todo el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Estilos del contenedor de login */
+.login-container {
+    background: rgb(139, 139, 139);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(241, 240, 230, 0.164);
+    width: 300px;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+
+.container h2 {
+    margin-bottom: 100px;
+   
+}
+
+.frameinicial{
+    background-color: #ffffff;
+    align-content: top;
+margin-top: 5px;
+
+}
+
+h2 {
+    color: #fd7c04;
+    background-blend-mode: color;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f39a13;
+    border-radius: 4px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fd7c04;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #eca014;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    
+}
