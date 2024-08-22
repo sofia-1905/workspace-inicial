@@ -1,6 +1,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* Nueva sección para el encabezado */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye el espacio entre el título y la imagen */
+    padding: 20px;
+    background-color: #fffefe; /* Fondo oscuro para que destaque el contenido */
+    color: #fff; /* Color del texto */
+}
+
+.header-container h2 {
+    margin: 30;}
+
+    .header-container .logo-image {
+        max-height: 60px; /* Ajusta la altura de la imagen del logo */
+        width: auto; /* Mantiene la proporción de la imagen */
+    }
+
+
+
+
 /* Estilos básicos para el cuerpo y el contenedor principal */
 body {
     display: flex;
@@ -24,22 +45,18 @@ main {
 
 
 
-/* Estilos del contenedor de login */
 .login-container {
-    background: rgb(139, 139, 139);
+    background: #464545;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(241, 240, 230, 0.164);
-    width: 300px;
-    text-align: center;
+    box-shadow: 0 0 5px rgba(241, 240, 230, 0.164);
+    width: 500px; /* Aumenta el ancho para hacerlo más horizontal */
+    max-width: 100%; /* Asegura que el contenedor no se desborde en pantallas pequeñas */
+    text-align: left; /* Alinea las etiquetas y campos a la izquierda */
     color: #f0f0f0;
 }
 
 
-.container h2 {
-    margin-bottom: 20px;
-   
-}
 
 .frameinicial{
     background-color: #ffffff;
@@ -49,7 +66,7 @@ padding: 10px;
 }
 
 h2 {
-    color: #fd7c04;
+    color: #f8a244;
     background-blend-mode: color;
 }
 
@@ -67,23 +84,46 @@ h2 {
 }
 
 .login-container button {
-    width: 100%;
-    padding: 10px;
+    width: auto;
+    padding: 8px 15px;
     background-color: #fd7c04;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: auto; /* Empuja el botón hacia la derecha */
+    display: block; /* Asegura que el botón se muestre como un bloque para el margen */
+    font-weight: lighter;
 }
+
+
 
 .login-container button:hover {
     background-color: #eca014;
 }
 
+
+/* Estilos del contenedor de login */
+.login-container {
+    background:464545;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(241, 240, 230, 0.164);
+    width: 300px;
+    text-align: left; /* Alinear etiquetas a la izquierda */
+    color: #f0f0f0;
+}
+
+
 /* Estilos para el footer */
 footer {
-    background-color: #f8f9fa;
-    padding: 10px 0;
+    background-color:white;
+    padding: 10px 0; /* Ajusta el padding si es necesario */
     text-align: center;
-    
+}
+
+/* Estilos específicos para la imagen en el footer */
+footer img {
+    max-height: 150px; /* Ajusta la altura máxima de la imagen */
+    width: auto; /* Mantiene la proporción de la imagen */
 }
