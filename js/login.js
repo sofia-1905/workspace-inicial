@@ -11,6 +11,6 @@
             // Guarda el estado de autenticación en sessionStorage
             sessionStorage.setItem('loggedIn', 'true');
             // Redirige al usuario a la página de productos
-            window.location.href = 'products.html';
+            window.location.href = 'index.html';
         }
     });
