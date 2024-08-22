@@ -1,18 +1,26 @@
 function iniciarSesion() {
-    // Obtener valores del formulario
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
     if (username && password) {
-        // Guardar estado de autenticación en localStorage
         localStorage.setItem('autenticado', 'true');
-        
-        // Redirigir al usuario a la página principal
         window.location.href = 'index.html';
     } else {
-        document.getElementById('output').textContent = 'Los datos ingresados no son válidos';
+        window.location.href ="login.html";
     }
 }
+
+function saveSession() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+
+    document.getElementById('output').textContent = 'Sesión guardada.';
+}
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
