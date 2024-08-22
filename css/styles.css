@@ -188,3 +188,75 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.nav-item{
+font-size: xx-large;
+font-family: 'Inter', sans-serif;
+margin-right: 80px;
+}
+
+.nav-link {
+  color: white;
+}
+
+div.container {
+max-width: 100%;
+align-content: center;
+margin-left: 6%;
+}
+
+div.row.d-flex{
+  gap: 6%;
+  margin-top: 20px;
+}
+
+div #tituloautos {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-right: 70%;
+  margin-left: 0%;
+  border-radius: 0px 10px 10px 0px;
+  text-align: center;
+  background-color: orange;
+  color: black;
+  font-size: 45px;
+  font-family: 'Inter', sans-serif;
+}
+
+#vendidos {
+  font-size: large;
+font-weight: 500;
+}
+
+#precio {
+font-weight: 600; 
+}
+
+#nombre {
+  font-weight: 600;
+}
+
+body {
+  background-color: #424242;
+  border-left: 35px solid #181818;;
+  border-right: 35px solid #181818;
+  border-bottom: 35px solid #181818;
+  margin: 0;
+  padding: 0;
+}
+
+div.col-12 {
+  margin-top: 2.5%;
+}
+
+#listgroup {
+  border: 3px solid black;
+  border-radius: 40px;
+  background-color: rgb(221, 221, 221);
+  font-family: 'Inter', sans-serif;
+}
+
+img.img-thumbnail {
+  border-radius: 25px;
+  background-color: rgb(221, 221, 221)
+}
