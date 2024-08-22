@@ -37,7 +37,7 @@ main {
 
 
 .container h2 {
-    margin-bottom: 100px;
+    margin-bottom: 20px;
    
 }
 
@@ -45,7 +45,7 @@ main {
     background-color: #ffffff;
     align-content: top;
 margin-top: 5px;
-
+padding: 10px;
 }
 
 h2 {
