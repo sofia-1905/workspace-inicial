@@ -12,8 +12,8 @@ function showCategoriesList(array) {
         let category = array[i];
         
         htmlContentToAppend += `
-        <div class="col-4 d-flex">
-            <div class="list-group-item list-group-item-action d-flex mb-4">
+        <div class="col-3 d-flex">
+            <div class="list-group-item list-group-item-action d-flex mb-4" id="listgroup">
                 <div class="row">
                     <div class="col-12">
                         <img src="${category.image}" alt="product image" class="img-thumbnail">
@@ -21,10 +21,10 @@ function showCategoriesList(array) {
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <div class="mb-1">
-                                <h4>${category.name}</h4>
+                                <h4 id="nombre">${category.name}</h4>
                                 <p>${category.description}</p>
-                                <p>USD ${category.cost}</p>
-                                <p>Cantidad vendidas: ${category.soldCount}</p>
+                                <h4 id="precio">USD ${category.cost}</h4>
+                                <p id="vendidos">Cantidad vendidas: ${category.soldCount}</p>
                             </div>
                             
                         </div>
