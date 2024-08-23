@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const password = document.getElementById('password').value;
 
     if (username && password) {
-        localStorage.setItem('loggedIn', 'true');
+        sessionStorage.setItem('loggedIn', 'true');
 
         window.location.href = 'index.html';
     } else {
