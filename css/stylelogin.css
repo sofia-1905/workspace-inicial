@@ -105,11 +105,11 @@ h2 {
 
 /* Estilos del contenedor de login */
 .login-container {
-    background:464545;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(241, 240, 230, 0.164);
-    width: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-49%, -49%);
+        margin-top: 60px;
     text-align: left; /* Alinear etiquetas a la izquierda */
     color: #f0f0f0;
 }
@@ -124,6 +124,10 @@ footer {
 
 /* Estilos específicos para la imagen en el footer */
 footer img {
-    max-height: 150px; /* Ajusta la altura máxima de la imagen */
+    max-height: 120px; /* Ajusta la altura máxima de la imagen */
     width: auto; /* Mantiene la proporción de la imagen */
+}
+
+.paginaPrincipal {
+
 }
