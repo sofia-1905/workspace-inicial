@@ -200,9 +200,8 @@ margin-right: 80px;
 }
 
 div.container {
-max-width: 100%;
+max-width: 90%;
 align-content: center;
-margin-left: 6%;
 }
 
 div.row.d-flex{
