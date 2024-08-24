@@ -7,8 +7,6 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     if (username && password) {
         sessionStorage.setItem('loggedIn', 'true');
         window.location.href = 'index.html';
-    } else {
-        window.location.href = 'login.html';
     }
 });
 
