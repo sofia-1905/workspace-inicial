@@ -23,3 +23,9 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     document.getElementById('output').textContent = 'Sesión guardada.';
 }
 
+// Para que marque en blanco "Iniciar sesión" cuando se esta en login
+document.addEventListener("DOMContentLoaded", function() {
+    // Remueve el color de "Inicio"
+    document.querySelector('a[href="index.html"]').classList.remove("active");
+    document.querySelector('a[href="login.html"]').classList.add("active");
+});
