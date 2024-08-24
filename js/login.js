@@ -23,9 +23,48 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     document.getElementById('output').textContent = 'Sesión guardada.';
 }
 
-// Para que marque en blanco "Iniciar sesión" cuando se esta en login
+ // Verificar si hay una sesión activa
+ function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Remueve el color de "Inicio"
-    document.querySelector('a[href="index.html"]').classList.remove("active");
-    document.querySelector('a[href="login.html"]').classList.add("active");
+    const loginForm = document.querySelector("loginForm");
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+
+
+    // Mostrar/ocultar la contraseña
+    togglePassword.addEventListener("change", function() {
+        passwordInput.type = togglePassword.checked ? "text" : "password";
+    });
+
+    // Manejar el envío del formulario
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevenir el envío del formulario
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        console.log("Formulario enviado.");
+
+        // Validar que los campos no estén vacíos
+        if (username === "" || password === "") {
+            alert("Por favor, complete todos los campos.");
+            return;
+        }
+        
+         //COOKIES
+        // Guardar la sesión en una cookie
+        document.cookie = `sessionUser=${username}; path=/;`;
+
+
+        // Redirigir al usuario a la página de inicio (o cualquier otra)
+        window.location.replace("index.html");
+    });
 });
+
