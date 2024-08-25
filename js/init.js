@@ -46,7 +46,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (isLoggedIn != 'true') {
       window.location.href = 'login.html'; 
-    } else {
-      document.getElementById('login-item').remove();
     }
 });
