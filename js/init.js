@@ -43,7 +43,10 @@ let getJSONData = function(url){
 
 document.addEventListener("DOMContentLoaded", function() {
   const isLoggedIn = sessionStorage.getItem('loggedIn');
-  if (isLoggedIn === 'true'){
-    document.getElementById('login-item').remove();
-  }
+
+    if (isLoggedIn != 'true') {
+      window.location.href = 'login.html'; 
+    } else {
+      document.getElementById('login-item').remove();
+    }
 });
