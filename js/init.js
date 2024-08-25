@@ -40,3 +40,10 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const isLoggedIn = sessionStorage.getItem('loggedIn');
+  if (isLoggedIn === 'true'){
+    document.getElementById('login-item').remove();
+  }
+});
