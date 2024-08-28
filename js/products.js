@@ -6,46 +6,30 @@ let categoriesArray = [];
 function showCategoriesList(array) {
     let htmlContentToAppend = "";
 
-    htmlContentToAppend += '<div class="row d-flex">'; // Comienza una fila
-
     for (let i = 0; i < array.length; i++) {
         let category = array[i];
         
         htmlContentToAppend += `
-        <div class="col-3 d-flex">
-            <div class="list-group-item list-group-item-action d-flex mb-4" id="listgroup">
-                <div class="row">
-                    <div class="col-12">
-                        <img src="${category.image}" alt="product image" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <div class="mb-1">
-                                <h4 id="nombre">${category.name}</h4>
-                                <p>${category.description}</p>
-                                <h4 id="precio">USD ${category.cost}</h4>
-                                <p id="vendidos">Cantidad vendidas: ${category.soldCount}</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+       <div class="col-md-6 col-lg-4 d-flex">
+            <div id="elemento" class="card mb-4 shadow-sm custom-card cursor-active" id="autos">
+              <img id="fotoautos" class="bd-placeholder-img card-img-top" src="${category.image}"
+                alt="Imgagen representativa de la categoría 'Autos'">
+              <h4 id="nombre">${category.name}</h4>
+              <div class="card-body">
+              <p>${category.description}</p>
+                <h4 id="precio">USD ${category.cost}</h4>
+                 <p id="vendidos">Cantidad vendidas: ${category.soldCount}</p>
+              </div>
             </div>
-        </div>`;
-
-    
-        if ((i + 1) % 3 === 0) {
-            htmlContentToAppend += '</div><div class="row d-flex">';
-        }
+            </div> `
     }
 
-htmlContentToAppend += '</div>';
 
 
     // Asignar el HTML generado al contenedor después de construirlo completamente
     document.getElementById("productsList").innerHTML = htmlContentToAppend;
 }
-
+ 
 
 /*
 EJECUCIÓN:
