@@ -32,6 +32,7 @@ body {
 .form-control {
     border-radius: 20px; /* Bordes redondeados para los campos de entrada */
     padding: 6px; /* Espaciado interno en los campos de entrada */
+    font-size: 1rem; /* Tamaño de fuente del formulario */
 }
 
 /* Estilo del botón */
@@ -90,7 +91,10 @@ body {
     body {
         background-color: #F58509; /* Fondo naranja para pantallas móviles */
       }
-
+    
+      .navbar {
+        display: none; /* Oculta el menú en pantallas pequeñas */
+      }
 
     .footer-container {
         display: none;
