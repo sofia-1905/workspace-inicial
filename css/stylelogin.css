@@ -10,6 +10,12 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+
+/* Por defecto, ocultar la imagen */
+.header-container .logo-image {
+    display: none;
+  }
+
 .header-container {
     background-color: white;
 }
@@ -60,8 +66,33 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.5);
 }
 
+
+/* Por defecto, mostrar el footer */
+.footer-container {
+    background-color: #ffffff; /* Fondo blanco */
+    text-align: center; /* Centra la imagen dentro del footer */
+    padding: 0; /* Elimina el padding si es necesario */
+    margin: 0; /* Elimina el margin si es necesario */
+  }
+  
+  .footer-image {
+    width: 100%; /* La imagen se extiende al ancho completo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio en blanco debajo de la imagen */
+  }
+
 /* Para smartphones pequeños (320x568) */
 @media (max-width: 568px) {
+   
+    .footer-container {
+        display: none;
+      }
+   
+    .header-container .logo-image {
+        display: block;
+      }
+   
+   
     /* Estilos para la imagen del logo */
     .logo-image {
         width: 100% !important; /* Asegura que ocupe todo el ancho del contenedor */
