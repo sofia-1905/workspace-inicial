@@ -22,6 +22,21 @@ body {
 /* FIN HEADER  */
 
 /* FORMULARIO */
+
+.logo-image {
+    width: 45%; /* Ajusta el ancho del logo */
+    height: auto; /* Mantiene la proporción del logo */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+}
+
+/* Contenedor del formulario */
+.login-container {
+    flex: 1; /* Ocupa el espacio disponible entre el header y el footer */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: calc(100vh - 150px); /* Ajusta la altura considerando el header y footer */
+}
 .card {
     max-width: 90%;
     width: 400px;
@@ -33,7 +48,7 @@ body {
 
 .form-control {
     border-radius: 20px; /* Bordes redondeados para los campos de entrada */
-    padding: 7%; /* Espaciado interno en los campos de entrada */
+    padding: 4%; /* Espaciado interno en los campos de entrada */
     font-size: 1rem; /* Tamaño de fuente del formulario */
     border: 1px solid #ffffff; /* Borde blanco */
     background-color: #ffffff; /* Fondo blanco para campos de entrada */
@@ -76,21 +91,21 @@ body {
 /* FOOTER */
 /* Por defecto, mostrar el footer */
 .footer-container {
-    background-color: #ffffff; /* Fondo blanco */
-    text-align: center; /* Centra la imagen dentro del footer */
-    padding: 10px 0; /* espacio alrededor de la img */
-    margin: 0; /* Elimina el margin si es necesario */
-  box-sizing: border-box; /* Incluye padding y border en el cálculo del tamaño total */
-  }
-  
-  .footer-image {
-        width: auto; /* Ajusta el ancho de la imagen automáticamente */
-        max-width: 100%; /* La imagen no se extiende más allá del ancho del footer */
-        height: auto; /* Mantiene la proporción de la imagen */
-        max-height: 100%; /* La imagen no se extiende más allá de la altura del footer */
-        display: block; /* Elimina el espacio en blanco debajo de la imagen */
-        margin: 0 auto; /* Centra la imagen horizontalmente */
+    padding: 1rem; /* Espacio interno del footer */
+    background-color: #ffffff; /* Color de fondo del footer */
+    text-align: center; /* Centra el contenido del footer */
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del tamaño total */
 }
+
+.footer-image {
+    width: auto; /* Ajusta el ancho de la imagen automáticamente */
+    max-width: 100%; /* La imagen no se extiende más allá del ancho del footer */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 100%; /* La imagen no se extiende más allá de la altura del footer */
+    display: block; /* Elimina el espacio en blanco debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
 
 
 .logo-image {
