@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap');
+
+
+
 .jumbotron,
 .card-body,
 .container,
@@ -9,9 +13,55 @@
   font-weight: bold;
 }
 
+
+/* MENU! */
+
 nav a {
   text-decoration: none;
 }
+
+/* Ajusta la altura del contenedor de la barra de navegación */
+.navbar {
+  height: 80px; 
+}
+
+/* Asegúrate de que el contenido se alinee verticalmente */
+.navbar-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Ajusta el padding para los ítems del menú si es necesario */
+.navbar-nav .nav-item {
+  margin: 0 10px; /* Ajusta el margen para espacio entre ítems */
+}
+
+/* Asegúrate de que cada ítem de menú también use Flexbox para centrar su contenido */
+.nav-item {
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente dentro de cada ítem */
+}
+
+/* Tamaño de fuente para los elementos del menú */
+.navbar-nav .nav-link {
+  font-size: 0.975rem; /* Tamaño de fuente más pequeño para el menú */
+  line-height: 1.5; /* Ajusta la altura de la línea para mejorar la alineación vertical */
+  display: flex;
+  align-items: center; /* Centra el texto verticalmente dentro del enlace */
+}
+
+/* Tamaño de fuente para el texto del usuario */
+.navbar-text {
+  font-size: 0.975rem; /* Alinea con el tamaño de fuente de los enlaces del menú */
+}
+
+.navbar-custom {
+  background-color: #F3860F !important; 
+}
+
+/* FIN MENU! */
+
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -199,6 +249,8 @@ margin-right: 80px;
   color: white;
 }
 
+
+
 div.container {
 max-width: 90%;
 align-content: center;
@@ -230,7 +282,7 @@ font-weight: 600;
 }
 
 body {
-  background-color: orange;
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
 }
