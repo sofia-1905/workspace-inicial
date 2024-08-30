@@ -199,6 +199,8 @@ margin-right: 80px;
   color: white;
 }
 
+
+
 div.container {
 max-width: 90%;
 align-content: center;
@@ -230,7 +232,7 @@ font-weight: 600;
 }
 
 body {
-  background-color: orange;
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
 }

@@ -6,7 +6,7 @@ body {
     min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
     margin: 0;
     margin: 0 auto; /* Centra el contenedor en la pantalla */
-    background-color: orange;
+    background-color: #ffffff;
     font-family: 'Inter', sans-serif;
 }
 
@@ -62,7 +62,7 @@ body {
 
 #username:focus,
 #password:focus {
-    border-color: orange;
+    border-color: #F58509;
     box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.5);
 }
 
@@ -71,19 +71,27 @@ body {
 .footer-container {
     background-color: #ffffff; /* Fondo blanco */
     text-align: center; /* Centra la imagen dentro del footer */
-    padding: 0; /* Elimina el padding si es necesario */
+    padding: 10px 0; /* espacio alrededor de la img */
     margin: 0; /* Elimina el margin si es necesario */
+  box-sizing: border-box; /* Incluye padding y border en el cálculo del tamaño total */
   }
   
   .footer-image {
-    width: 100%; /* La imagen se extiende al ancho completo */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Elimina el espacio en blanco debajo de la imagen */
-  }
+        width: auto; /* Ajusta el ancho de la imagen automáticamente */
+        max-width: 100%; /* La imagen no se extiende más allá del ancho del footer */
+        height: auto; /* Mantiene la proporción de la imagen */
+        max-height: 100%; /* La imagen no se extiende más allá de la altura del footer */
+        display: block; /* Elimina el espacio en blanco debajo de la imagen */
+        margin: 0 auto; /* Centra la imagen horizontalmente */
+}
 
 /* Para smartphones pequeños (320x568) */
 @media (max-width: 568px) {
-   
+    body {
+        background-color: #F58509; /* Fondo naranja para pantallas móviles */
+      }
+
+
     .footer-container {
         display: none;
       }
