@@ -10,7 +10,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-
+/* HEADER  */
 /* Por defecto, ocultar la imagen */
 .header-container .logo-image {
     display: none;
@@ -19,39 +19,41 @@ body {
 .header-container {
     background-color: white;
 }
+/* FIN HEADER  */
 
-/* Estilos del formulario */
+/* FORMULARIO */
 .card {
-    border-radius: 50px; /* Bordes redondeados para la tarjeta */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para la tarjeta */
-    background-color: white;
-    background-color: rgb(228, 210, 174);
-    color: white;
+    max-width: 90%;
+    width: 400px;
+    background-color: #F58509; /* Fondo naranja */
+    color: white; /* Texto blanco */
+    border-radius: 40px; /* Bordes redondeados */
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
 }
 
 .form-control {
     border-radius: 20px; /* Bordes redondeados para los campos de entrada */
-    padding: 6px; /* Espaciado interno en los campos de entrada */
+    padding: 7%; /* Espaciado interno en los campos de entrada */
     font-size: 1rem; /* Tamaño de fuente del formulario */
+    border: 1px solid #ffffff; /* Borde blanco */
+    background-color: #ffffff; /* Fondo blanco para campos de entrada */
 }
 
 /* Estilo del botón */
 .btn-primary {
-    background-color: #fd7c04; 
-    color:white; /* color de letra */
-    border-color: #fd7c04; /* Color del borde*/
-    border-radius: 18px; /* Bordes redondeados */
+    background-color: #EF9633; /* Fondo del botón */
+    color: white; /* Texto blanco */
+    border: #D9780E; /* Sin borde adicional */
+    border-radius: 20px; /* Bordes redondeados */
+    font-weight: 100; /* Fuente delgada */
+    padding: 10px 20px; /* Espacio interno */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     font-size: 16px;
-    display: block;
-    font-weight: lighter; /* Peso de fuente más ligero*/
-    margin-top: 15px; /* Agrega un margen superior para separar el botón del campo de entrada anterior */
-
+    margin-top: 15px; /* Margen superior */
 }
 
-/* Efecto al presionar el botón */
 .btn-primary:hover {
-    background-color: #eca014;
+    background-color: #d68d2e; /* Color al pasar el cursor */
 }
 
 #username,
@@ -67,7 +69,11 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.5);
 }
 
+/* FIN FORMULARIO! */
 
+
+
+/* FOOTER */
 /* Por defecto, mostrar el footer */
 .footer-container {
     background-color: #ffffff; /* Fondo blanco */
@@ -85,6 +91,18 @@ body {
         display: block; /* Elimina el espacio en blanco debajo de la imagen */
         margin: 0 auto; /* Centra la imagen horizontalmente */
 }
+
+
+.logo-image {
+    width: 45%; /* Asegura que ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que la imagen se ajuste bien dentro del contenedor sin cortar */
+}
+
+/*FIN FOOTER */
+
+
+
 
 /* Para smartphones pequeños (320x568) */
 @media (max-width: 568px) {
@@ -104,7 +122,6 @@ body {
         display: block;
       }
    
-   
     /* Estilos para la imagen del logo */
     .logo-image {
         width: 100% !important; /* Asegura que ocupe todo el ancho del contenedor */
@@ -112,85 +129,42 @@ body {
         object-fit: cover; /* Asegura que la imagen cubra el contenedor sin cortarse */
     }
     
-    /* Estilos para los campos de entrada */
-    .form-control {
-        font-size: 15px; /* Aumenta el tamaño de la letra */
-        height: 30px; /* Ajusta la altura del campo de entrada */
-        padding: 10px; /* Ajusta el espaciado interno */
-    }
-    /* Estilo para el contenedor del formulario */
+/* Estilo para el contenedor del formulario */
+.card {
+    max-width: 90% !important; /* Deja un poco de espacio en los márgenes */
+    width: 400px;
+    padding: 10px; /* Ajusta el padding para móviles */
+    border-radius: 50px !important;
+    background-color: rgba(142, 79, 11, 0.4); /* 40% opacidad */
+    color: white;
+    border: 4px solid #8E4F0B; /* Color del borde */
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
     
-    .card {
-        max-width: 90% !important; /* Deja un poco de espacio en los márgenes */
-        padding: 10px; /* Ajusta el padding para móviles */
-        border-radius: 50px !important;
-        background-color: rgba(142, 79, 11, 0.4); /* 40% opacidad */
-        color: white;
-        border: 4px solid #8E4F0B; /* Color del borde */
-        margin: 0 auto; /* Centra el contenedor en la pantalla */
-    }
-
-    /* Estilo para los campos de entrada específicos */
-    #username,
-    #password {
-        border-radius: 20px; /* Bordes más redondeados */
-        padding: 6px !important;
-        border: 2px solid #8E4F0B;
-    }
-
-    /* Estilos del botón */
-    .btn-primary {
-        padding: 5px 30px;
-        font-size: 16px; /* Ajusta el tamaño del texto del botón */
-        border:2px solid white;
-        padding: 2px 30px; /* Espacio interno */
-    }
 }
+
+
+/* Estilos para los campos de entrada */
+.form-control {
+    font-size: 15px; /* Aumenta el tamaño de la letra */
+    height: 30px; /* Ajusta la altura del campo de entrada */
+    padding: 10px; /* Ajusta el espaciado interno */
+}
+
+ /* Estilo para los campos de entrada específicos */
+ #username,
+ #password {
+     border-radius: 20px; /* Bordes más redondeados */
+     padding: 6px !important;
+     border: 2px solid #8E4F0B;
+ }
+
+}
+
 
 /* Para pantallas de resolución 1366x768 */
 @media (max-width: 1366px) {
-    /* Estilos para la imagen del logo */
-   .logo-image {
-       width: 45%; /* Asegura que ocupe todo el ancho del contenedor */
-       height: auto; /* Mantiene la proporción de la imagen */
-       object-fit: contain; /* Asegura que la imagen se ajuste bien dentro del contenedor sin cortar */
-   }
-   /* Estilo para el contenedor del formulario */
-  
-
-   .card {
-       width: 400px;
-       padding: 10px; /* Ajusta el padding para móviles */
-       border-radius: 50px !important;
-       background-color: rgba(142, 79, 11, 0.4); /* 40% opacidad */
-       color: white;
-       border: 4px solid #8E4F0B; /* Color del borde */
-       
-   }
-
-   /* Estilos para los campos de entrada */
-   .form-control {
-       font-size: 15px; /* Aumenta el tamaño de la letra */
-       height: 30px; /* Ajusta la altura del campo de entrada */
-       padding: 10px; /* Ajusta el espaciado interno */
-   }
-   
-    /* Estilo para los campos de entrada específicos */
-    #username,
-    #password {
-        border-radius: 20px; /* Bordes más redondeados */
-        padding: 6px !important;
-        border: 2px solid #8E4F0B;
-    }
-
-    /* Estilos del botón */
-    .btn-primary {
-        padding: 5px 30px;
-        font-size: 16px; /* Ajusta el tamaño del texto del botón */
-        border:2px solid white;
-        padding: 2px 30px; /* Espacio interno */
-    }
 }
+
 
 
 /* Para tabletas en modo vertical (768x1024) */
