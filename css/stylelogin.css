@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    min-height: calc(100vh - 150px); /* Ajusta la altura considerando el header y footer */
+    min-height: calc(100vh - 385px); /* Ajusta la altura considerando el header y footer */
 }
 .card {
     max-width: 90%;
@@ -98,7 +98,7 @@ body {
 }
 
 .footer-image {
-    width: auto; /* Ajusta el ancho de la imagen automáticamente */
+    width: 600px; /* Ajusta el ancho de la imagen automáticamente */
     max-width: 100%; /* La imagen no se extiende más allá del ancho del footer */
     height: auto; /* Mantiene la proporción de la imagen */
     max-height: 100%; /* La imagen no se extiende más allá de la altura del footer */
@@ -176,6 +176,7 @@ body {
 
 /* Para pantallas de resolución 1366x768 */
 @media (max-width: 1366px) {
+
 }
 
 
