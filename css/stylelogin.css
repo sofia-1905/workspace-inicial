@@ -35,36 +35,51 @@ body {
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    min-height: calc(100vh - 385px); /* Ajusta la altura considerando el header y footer */
+    min-height: calc(105vh - 385px); /* Ajusta la altura considerando el header y footer */
+    padding-top: 20px;
+
 }
+
 .card {
-    max-width: 90%;
-    width: 400px;
+    max-width: 100%;
+    width: 500px;
+    height: auto;
     background-color: #F58509; /* Fondo naranja */
     color: white; /* Texto blanco */
     border-radius: 40px; /* Bordes redondeados */
     margin: 0 auto; /* Centra el contenedor en la pantalla */
+    padding: 20px; /* Espaciado interno para el contenido */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    
 }
 
+/* Estilos para los campos de entrada */
 .form-control {
     border-radius: 20px; /* Bordes redondeados para los campos de entrada */
     padding: 4%; /* Espaciado interno en los campos de entrada */
     font-size: 1rem; /* Tamaño de fuente del formulario */
     border: 1px solid #ffffff; /* Borde blanco */
     background-color: #ffffff; /* Fondo blanco para campos de entrada */
+    font-size: 20px; /* Aumenta el tamaño de la letra */
+    height: 30px; /* Ajusta la altura del campo de entrada */
+    padding: 10px; /* Ajusta el espaciado interno */
 }
 
 /* Estilo del botón */
 .btn-primary {
     background-color: #EF9633; /* Fondo del botón */
     color: white; /* Texto blanco */
-    border: #D9780E; /* Sin borde adicional */
+    border: 2px solid #ffffff;
     border-radius: 20px; /* Bordes redondeados */
     font-weight: 100; /* Fuente delgada */
     padding: 10px 20px; /* Espacio interno */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     font-size: 16px;
     margin-top: 15px; /* Margen superior */
+    padding: 5px 40px; /* Reduce el espaciado interno para hacerlo más fino y aumenta el ancho */
+
 }
 
 .btn-primary:hover {
@@ -76,11 +91,13 @@ body {
     background-color: white; /* Color de fondo siempre visible */
     border: 1px solid #e8be71;
     border-radius: 15px; /* Bordes redondeados */
+    width: 100% !important; /* Asegura que el campo de entrada use el ancho completo del contenedor */
+    
 }
 
 #username:focus,
 #password:focus {
-    border-color: #F58509;
+    border-color: #f8911c;
     box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.5);
 }
 
@@ -130,11 +147,11 @@ body {
       }
 
     .footer-container {
-        display: none;
+        display: none; /* Oculta el footer en pantallas pequeñas */
       }
    
     .header-container .logo-image {
-        display: block;
+        display: block; 
       }
    
     /* Estilos para la imagen del logo */
@@ -143,17 +160,23 @@ body {
         height: 100%; /* Asegura que ocupe toda la altura del contenedor */
         object-fit: cover; /* Asegura que la imagen cubra el contenedor sin cortarse */
     }
+
+    /* Estilo para el contenedor del formulario */
+    .login-container {
+        margin-top: 40px; /* Distancia superior*/
+    }
     
     /* Estilo para el contenedor del formulario */
     .card {
         max-width: 90% !important; /* Deja un poco de espacio en los márgenes */
         width: 400px;
-        padding: 10px; /* Ajusta el padding para móviles */
+        padding: 50px; /* Ajusta el padding para móviles */
         border-radius: 50px !important;
         background-color: rgba(142, 79, 11, 0.4); /* 40% opacidad */
         color: white;
         border: 4px solid #8E4F0B; /* Color del borde */
         margin: 0 auto; /* Centra el contenedor en la pantalla */
+
     }
 
     /* Estilos para los campos de entrada */
@@ -171,6 +194,25 @@ body {
      border: 2px solid #8E4F0B;
     }
 
+    .d-flex {
+        justify-content: center !important; /* Centra el botón horizontalmente */
+    }
+
+    /* Estilo del botón */
+    .btn-primary {
+    background-color: #EF9633; /* Fondo del botón */
+    color: white; /* Texto blanco */
+    border: 2px solid #ffffff;
+    border-radius: 20px; /* Bordes redondeados */
+    font-weight: 100; /* Fuente delgada */
+    padding: 10px 20px; /* Espacio interno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px;
+    margin-top: 15px; /* Margen superior */
+    padding: 5px 40px; /* Reduce el espaciado interno para hacerlo más fino y aumenta el ancho */
+    display: inline-block; /* Asegura que el botón se ajuste al contenido */
+    }
+
 }
 
 
@@ -183,5 +225,5 @@ body {
 
 /* Para tabletas en modo vertical (768x1024) */
 @media (max-width: 768px) {
-  
+
 }
