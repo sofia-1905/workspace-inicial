@@ -91,10 +91,18 @@ nav a {
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+/* Para tabletas en modo vertical (768x1024) */
+@media (max-width: 768px) {
   .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    height: 25vh; /* Ajusta la altura */
+  }
+}
+
+/* Para smartphones pequeños (320x568) */
+@media (max-width: 568px) {
+  .jumbotron {
+    height: 15vh !important; /* Ajusta la altura para pantallas más pequeñas */
+    background-position: center top; /* Ajusta la posición de la imagen para pantallas muy pequeñas */
   }
 }
 
