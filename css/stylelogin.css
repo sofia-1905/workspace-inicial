@@ -10,7 +10,8 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* HEADER  */
+
+ /* H E A D E R  */
 /* Por defecto, ocultar la imagen */
 .header-container .logo-image {
     display: none;
@@ -19,15 +20,23 @@ body {
 .header-container {
     background-color: white;
 }
-/* FIN HEADER  */
-
-/* FORMULARIO */
 
 .logo-image {
     width: 45%; /* Ajusta el ancho del logo */
     height: auto; /* Mantiene la proporción del logo */
     object-fit: contain; /* Ajusta la imagen dentro del contenedor */
 }
+
+/* F I N  H E A D E R  */
+
+
+
+/* F O R M  */
+
+  
+  .card .form-control {
+    width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible en su contenedor */
+  }
 
 /* Contenedor del formulario */
 .login-container {
@@ -71,7 +80,7 @@ body {
 .btn-primary {
     background-color: #EF9633; /* Fondo del botón */
     color: white; /* Texto blanco */
-    border: 2px solid #ffffff;
+    border-color: #D9780E; /* Sin borde adicional */
     border-radius: 20px; /* Bordes redondeados */
     font-weight: 100; /* Fuente delgada */
     padding: 10px 20px; /* Espacio interno */
@@ -84,7 +93,16 @@ body {
 
 .btn-primary:hover {
     background-color: #d68d2e; /* Color al pasar el cursor */
+    border-color: #e57204; /* Color del borde en estado hover */
 }
+
+/* Estilo para el botón primario cuando está en estado de focus (cuando es clickeado o enfocado con el teclado) */
+.btn-primary:focus, .btn-primary:active, .btn-primary.focus {
+    box-shadow: none; /* Elimina la sombra del enfoque */
+    outline: none; /* Elimina el contorno predeterminado del botón */
+    background-color: #F58509; /* Asegura que el color de fondo no cambie */
+    border-color: #F58509; /* Asegura que el borde no cambie */
+  }
 
 #username,
 #password {
@@ -101,39 +119,7 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.5);
 }
 
-/* FIN FORMULARIO! */
-
-
-
-/* FOOTER */
-/* Por defecto, mostrar el footer */
-.footer-container {
-    padding: 1rem; /* Espacio interno del footer */
-    background-color: #ffffff; /* Color de fondo del footer */
-    text-align: center; /* Centra el contenido del footer */
-    box-sizing: border-box; /* Incluye padding y border en el cálculo del tamaño total */
-}
-
-.footer-image {
-    width: 600px; /* Ajusta el ancho de la imagen automáticamente */
-    max-width: 100%; /* La imagen no se extiende más allá del ancho del footer */
-    height: auto; /* Mantiene la proporción de la imagen */
-    max-height: 100%; /* La imagen no se extiende más allá de la altura del footer */
-    display: block; /* Elimina el espacio en blanco debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-}
-
-
-
-.logo-image {
-    width: 45%; /* Asegura que ocupe todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Asegura que la imagen se ajuste bien dentro del contenedor sin cortar */
-}
-
-/*FIN FOOTER */
-
-
+/* F I N  F O R M  */
 
 
 /* Para smartphones pequeños (320x568) */
@@ -212,18 +198,5 @@ body {
     padding: 5px 40px; /* Reduce el espaciado interno para hacerlo más fino y aumenta el ancho */
     display: inline-block; /* Asegura que el botón se ajuste al contenido */
     }
-
-}
-
-
-/* Para pantallas de resolución 1366x768 */
-@media (max-width: 1366px) {
-
-}
-
-
-
-/* Para tabletas en modo vertical (768x1024) */
-@media (max-width: 768px) {
 
 }
