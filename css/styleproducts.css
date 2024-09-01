@@ -14,5 +14,18 @@ body {
       .navbar-custom{
         background-color: #F58509;
     }
+
+    div #tituloautos {
+        margin-top: 10%;
+        margin-bottom: 5%;
+        background-color: rgba(236, 232, 226, 0.575);
+        color: #F58509;
+        font-size: 35px;
+        text-indent: 10%;
+      }
+      
+
+
+
     }
     
