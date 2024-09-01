@@ -1,9 +1,18 @@
 body {  
       background-color:#F58509;}
 
+
+.navbar-custom{
+    background-color: white;
+}
+
 /* Para smartphones pequeños (320x568) */
 @media (max-width: 568px) {
     body {
         background-color: white; /* Fondo naranja para pantallas móviles */
-      }}
+      }
+      .navbar-custom{
+        background-color: #F58509;
+    }
+    }
     
