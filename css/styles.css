@@ -14,15 +14,39 @@
 }
 
 
-/* MENU! */
+/* M E N U ! */
+
+/* Tamaño de fuente para los elementos del menú */
+.navbar-nav .nav-link {
+  font-size: 0.975rem; /* Tamaño de fuente más pequeño para el menú */
+  line-height: 1.5; /* Ajusta la altura de la línea para mejorar la alineación vertical */
+  display: flex;
+  align-items: center; /* Centra el texto verticalmente dentro del enlace */
+}
 
 nav a {
   text-decoration: none;
+
 }
 
-/* Ajusta la altura del contenedor de la barra de navegación */
+/* Tamaño de fuente para el texto del usuario */
+.navbar-text {
+  font-size: 0.975rem; /* Alinea con el tamaño de fuente de los enlaces del menú */
+}
 .navbar {
-  height: 80px; 
+  height: auto; /* Deja que el navbar ajuste su altura automáticamente según el contenido */
+}
+
+/* Ajustes para los ítems de menú */
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+/* Opcional: Para manejar márgenes en ítems del menú */
+.navbar-nav .nav-item + .nav-item {
+  margin-left: 1rem; /* Ajusta el margen entre los ítems si es necesario */
 }
 
 /* Asegúrate de que el contenido se alinee verticalmente */
@@ -34,34 +58,22 @@ nav a {
 
 /* Ajusta el padding para los ítems del menú si es necesario */
 .navbar-nav .nav-item {
-  margin: 0 10px; /* Ajusta el margen para espacio entre ítems */
+    margin: 0 10px; /* Ajusta el margen para espacio entre ítems */
+  }
+
+ /* F I N  M E N U ! */
+  
+
+ /* F O O T E R  */
+ footer {
+  background-color: white;
+  padding: 1rem 0;
+}
+footer img {
+  max-width: 386px;
 }
 
-/* Asegúrate de que cada ítem de menú también use Flexbox para centrar su contenido */
-.nav-item {
-  display: flex;
-  align-items: center; /* Centra los elementos verticalmente dentro de cada ítem */
-}
-
-/* Tamaño de fuente para los elementos del menú */
-.navbar-nav .nav-link {
-  font-size: 0.975rem; /* Tamaño de fuente más pequeño para el menú */
-  line-height: 1.5; /* Ajusta la altura de la línea para mejorar la alineación vertical */
-  display: flex;
-  align-items: center; /* Centra el texto verticalmente dentro del enlace */
-}
-
-/* Tamaño de fuente para el texto del usuario */
-.navbar-text {
-  font-size: 0.975rem; /* Alinea con el tamaño de fuente de los enlaces del menú */
-}
-
-.navbar-custom {
-  background-color: #F3860F !important; 
-}
-
-/* FIN MENU! */
-
+/* F I N  F O O T E R  */
 
 .bd-placeholder-img {
   font-size: 1.125rem;

@@ -10,64 +10,75 @@
   <link href="css/stylelogin.css" rel="stylesheet">
 </head>
 <body>
-  <div class="paginaPrincipal">
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom p-1">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav w-100 justify-content-between">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="categories.html">Categorías</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sell.html">Vender</a>
-            </li>
-            <li class="nav-item ms-auto">
-              <span class="navbar-text text-white" id="user-name"><span id="username-placeholder">Invitado</span></span>
-            </li>
-          </ul>
-        </div>
+
+
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom p-1"style="background-color: #F58509";>
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item ms-auto">
+            <span class="navbar-text text-white" id="user-name"><span id="username-placeholder">Invitado</span></span>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <header class="header-container d-flex justify-content-center align-items-center">
-      <img src="img/login.png" alt="Logo" class="logo-image">
-    </header>
+ 
+ <!-- Header Content -->
+      <header class="header-container d-flex justify-content-center align-items-center">
+          <img src="img/login.png" alt="Logo" class="logo-image">
+        </header>
 
-    <main class="login-container">
-      <div class="card p-4">
-        <form id="loginForm" method="post">
-          <div class="row g-3 align-items-center">
-            <div class="col-auto">
+ <!-- Main Content -->
+<main class="login-container">
+  <div class="card p-4">
+    <form id="loginForm" method="post">
+       <div class="row g-3 align-items-center">
+          <div class="col-auto">
               <label for="username" class="col-form-label">Usuario:</label>
-            </div>
-            <div class="col-auto">
-              <input type="text" id="username" class="form-control" aria-describedby="usernameHelpInline">
-            </div>
-            <div class="col-auto">
+          </div>
+          <div class="col-auto">
+              <input type="text" id="username" class="form-control" aria-describedby="usernameHelpInline" required>
+          </div>
+           <div class="col-auto">
               <label for="password" class="col-form-label">Contraseña:</label>
-            </div>
-            <div class="col-auto">
-              <input type="password" id="password" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
+          </div>
+          <div class="col-auto">
+              <input type="password" id="password" class="form-control" aria-describedby="passwordHelpInline" required>
+          </div>
           </div>
           <div class="d-flex justify-content-center mt-3">
             <button type="submit" class="btn btn-primary">Ingresar</button>
           </div>
-        </form>
-      </div>
-    </main>
-
-    <footer class="footer-container">
-      <img src="img/login.png" alt="Footer Image" class="footer-image">
-    </footer>
+    </form>
   </div>
+</main>
+    
+   
+<!-- Footer -->
+
+<footer class="footer-container text-center">
+    <img src="img/login.png" alt="Footer Logo" class="footer-image">
+</footer>
+
+ </div>
   <script src="js/login.js"></script>
 </body>
 </html>
+
+
+
