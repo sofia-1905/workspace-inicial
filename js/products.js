@@ -42,9 +42,30 @@ EJECUCIÓN:
 
 */
 
+function showTitle(category) {
+  let htmlContentToAppend = "";
+
+  htmlContentToAppend += `
+  <h1>${category.catName}</h1>`
+
+  document.getElementById("titulo").innerHTML = htmlContentToAppend;
+}
 
 document.addEventListener("DOMContentLoaded", function(e) {
-    getJSONData(CATEGORY_AUTOS).then(function(resultObj) {
+  let catId = localStorage.getItem("catID");
+
+    getJSONData(PRODUCTS_URL + catId + ".json").then(function(resultObj) {
+        if (resultObj.status === "ok") {
+            categoryData = resultObj.data;
+            showTitle(categoryData);
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function(e) {
+  let catId = localStorage.getItem("catID");
+    getJSONData(PRODUCTS_URL + catId + ".json").then(function(resultObj) {
         if (resultObj.status === "ok") {
             categoriesArray = resultObj.data.products;
             showCategoriesList(categoriesArray); // Corrección de la variable
