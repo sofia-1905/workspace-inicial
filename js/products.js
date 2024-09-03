@@ -5,6 +5,8 @@ let categoriesArray = [];
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 function showCategoriesList(array) {
     let htmlContentToAppend = "";
+    let catId = localStorage.getItem("catID"); // Obtener catId desde localStorage
+    let currency = catId === "101" ? "USD" : "UYU";
 
     for (let i = 0; i < array.length; i++) {
         let category = array[i];
@@ -17,7 +19,7 @@ function showCategoriesList(array) {
               <h4 id="nombre">${category.name}</h4>
               <div class="card-body">
               <p>${category.description}</p>
-                <h4 id="precio">USD ${category.cost}</h4>
+                <h4 id="precio">${currency} ${category.cost}</h4>
                  <p id="vendidos">Cantidad vendidas: ${category.soldCount}</p>
               </div>
             </div>
