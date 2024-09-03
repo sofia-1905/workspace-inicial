@@ -21,9 +21,3 @@ function saveSession() {
     localStorage.setItem('username', username);
     document.getElementById('output').textContent = 'Sesión guardada.';
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Ajustar las clases activas de los enlaces
-    document.querySelector('a[href="index.html"]').classList.remove("active");
-    document.querySelector('a[href="login.html"]').classList.add("active");
-});

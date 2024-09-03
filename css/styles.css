@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap');
+
+
+
 .jumbotron,
 .card-body,
 .container,
@@ -9,9 +13,67 @@
   font-weight: bold;
 }
 
+
+/* M E N U ! */
+
+/* Tamaño de fuente para los elementos del menú */
+.navbar-nav .nav-link {
+  font-size: 0.975rem; /* Tamaño de fuente más pequeño para el menú */
+  line-height: 1.5; /* Ajusta la altura de la línea para mejorar la alineación vertical */
+  display: flex;
+  align-items: center; /* Centra el texto verticalmente dentro del enlace */
+}
+
 nav a {
   text-decoration: none;
+
 }
+
+/* Tamaño de fuente para el texto del usuario */
+.navbar-text {
+  font-size: 0.975rem; /* Alinea con el tamaño de fuente de los enlaces del menú */
+}
+.navbar {
+  height: auto; /* Deja que el navbar ajuste su altura automáticamente según el contenido */
+}
+
+/* Ajustes para los ítems de menú */
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+/* Opcional: Para manejar márgenes en ítems del menú */
+.navbar-nav .nav-item + .nav-item {
+  margin-left: 1rem; /* Ajusta el margen entre los ítems si es necesario */
+}
+
+/* Asegúrate de que el contenido se alinee verticalmente */
+.navbar-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Ajusta el padding para los ítems del menú si es necesario */
+.navbar-nav .nav-item {
+    margin: 0 10px; /* Ajusta el margen para espacio entre ítems */
+  }
+
+ /* F I N  M E N U ! */
+  
+
+ /* F O O T E R  */
+ footer {
+  background-color: white;
+  padding: 1rem 0;
+}
+footer img {
+  max-width: 386px;
+}
+
+/* F I N  F O O T E R  */
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -41,10 +103,18 @@ nav a {
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+/* Para tabletas en modo vertical (768x1024) */
+@media (max-width: 768px) {
   .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    height: 25vh; /* Ajusta la altura */
+  }
+}
+
+/* Para smartphones pequeños (320x568) */
+@media (max-width: 568px) {
+  .jumbotron {
+    height: 15vh !important; /* Ajusta la altura para pantallas más pequeñas */
+    background-position: center top; /* Ajusta la posición de la imagen para pantallas muy pequeñas */
   }
 }
 
@@ -199,6 +269,8 @@ margin-right: 80px;
   color: white;
 }
 
+
+
 div.container {
 max-width: 90%;
 align-content: center;
@@ -230,7 +302,7 @@ font-weight: 600;
 }
 
 body {
-  background-color: orange;
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
 }
