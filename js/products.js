@@ -1,6 +1,7 @@
 //array donde se cargarán los datos recibidos:
 let categoriesArray = [];
-
+let minCount = undefined;
+let maxCount = undefined;
 
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 function showCategoriesList(array) {
@@ -25,12 +26,23 @@ function showCategoriesList(array) {
             </div>
             </div> `
     }
+      // Asignar el HTML generado al contenedor después de construirlo completamente
+  document.getElementById("productsList").innerHTML = htmlContentToAppend;
+  }
+
+
+    function showProductsList (array) {
+      let htmlContentToAppend = "";
 
 
 
-    // Asignar el HTML generado al contenedor después de construirlo completamente
-    document.getElementById("productsList").innerHTML = htmlContentToAppend;
-}
+
+
+    
+
+
+    
+  }
  
 
 /*
