@@ -31,9 +31,6 @@ function showCategoriesList(array) {
   }
 
 
-    function showProductsList (array) {
-      let htmlContentToAppend = "";
-
 
 
 
@@ -42,7 +39,6 @@ function showCategoriesList(array) {
 
 
     
-  }
  
 
 /*
