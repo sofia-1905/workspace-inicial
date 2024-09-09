@@ -4,26 +4,32 @@ let maxCount = undefined;
 
 function showCategoriesList(array) {
     let htmlContentToAppend = "";
-    let catId = localStorage.getItem("catID"); 
+    let catId = localStorage.getItem("catID");
     let currency = catId === "101" ? "USD" : "UYU";
 
     for (let i = 0; i < array.length; i++) {
         let category = array[i];
-        
+
+        // filtro de precios
+        if ((minCount !== undefined && category.cost < minCount) ||
+            (maxCount !== undefined && category.cost > maxCount)) {
+            continue;
+        }
+
         htmlContentToAppend += `
-       <div class="col-md-6 col-lg-4 d-flex">
+        <div class="col-md-6 col-lg-4 d-flex">
             <div class="card mb-4 shadow-sm custom-card cursor-active">
-              <img class="bd-placeholder-img card-img-top" src="${category.image}" alt="Imagen representativa de la categoría 'Autos'">
-              <h4>${category.name}</h4>
-              <div class="card-body">
-                <p>${category.description}</p>
-                <h4>${currency} ${category.cost}</h4>
-                <p>Cantidad vendidas: ${category.soldCount}</p>
-              </div>
+                <img class="bd-placeholder-img card-img-top" src="${category.image}" alt="Imagen representativa de la categoría 'Autos'">
+                <h4>${category.name}</h4>
+                <div class="card-body">
+                    <p>${category.description}</p>
+                    <h4>${currency} ${category.cost}</h4>
+                    <p>Cantidad vendidas: ${category.soldCount}</p>
+                </div>
             </div>
         </div>`;
     }
-    
+
     document.getElementById("productsList").innerHTML = htmlContentToAppend;
 }
 
@@ -32,15 +38,14 @@ function showTitle(category) {
     document.getElementById("titulo").innerHTML = htmlContentToAppend;
 }
 
-
-//control del slider de precios
+// slider de precios
 const rangevalue = document.querySelector(".slider-container .price-slider");
 const rangeInputvalue = document.querySelectorAll(".range-input input");
 const priceInputvalue = document.querySelectorAll(".price-input input");
 
 let priceGap = 500;
 
-    rangeInputvalue.forEach(input => {
+rangeInputvalue.forEach(input => {
     input.addEventListener("input", e => {
         let minVal = parseInt(rangeInputvalue[0].value);
         let maxVal = parseInt(rangeInputvalue[1].value);
@@ -48,7 +53,7 @@ let priceGap = 500;
         let diff = maxVal - minVal;
 
         if (diff < priceGap) {
-            if (e.target.classList.contains("min-range")) {
+            if (e.target.classList.contains("minCount")) {
                 rangeInputvalue[0].value = maxVal - priceGap;
             } else {
                 rangeInputvalue[1].value = minVal + priceGap;
@@ -76,23 +81,29 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.getElementById("rangeFilterCount").addEventListener("click", function(){
+document.getElementById("rangeFilterCount").addEventListener("click", function() {
     minCount = document.getElementById("rangeFilterCountMin").value;
     maxCount = document.getElementById("rangeFilterCountMax").value;
 
-    if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
+    if (minCount !== "" && !isNaN(minCount) && parseInt(minCount) >= 0) {
         minCount = parseInt(minCount);
-    }
-    else{ce
+    } else {
         minCount = undefined;
     }
 
-    if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
+    if (maxCount !== "" && !isNaN(maxCount) && parseInt(maxCount) >= 0) {
         maxCount = parseInt(maxCount);
-    }
-    else{
+    } else {
         maxCount = undefined;
     }
 
+    showCategoriesList(categoriesArray);
+});
+
+document.getElementById("clearRangeFilter").addEventListener("click", function() {
+    document.getElementById("rangeFilterCountMin").value = "";
+    document.getElementById("rangeFilterCountMax").value = "";
+    minCount = undefined;
+    maxCount = undefined;
     showCategoriesList(categoriesArray);
 });
