@@ -15,51 +15,46 @@
 
 <body>
 
-
- <nav class="navbar navbar-expand-lg navbar-light navbar-custom p-1";>
-  <div class="container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav w-100 justify-content-between">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="categories.html">Categorías</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="sell.html">Vender</a>
-        </li>
-        <li class="nav-item ms-auto">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom p-1";>
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                   aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+                </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav w-100 justify-content-between">
+                   <li class="nav-item">
+                   <a class="nav-link" href="index.html">Inicio</a>
+                   </li>
+                <li class="nav-item">
+                <a class="nav-link" href="categories.html">Categorías</a>
+               </li>
+             <li class="nav-item">
+               <a class="nav-link" href="sell.html">Vender</a>
+             </li>
+           <li class="nav-item ms-auto">
           <span class="navbar-text" id="user-name"><span id="username-placeholder">Invitado</span></span>
-      </ul>
-    </div>
+         </ul>
+      </div>
   </div>
 </nav>
 
   <div id="titulo">
     
  </div>
-
-  <div class="main">
-    
+ <div class="main">
         <div class="custom-wrapper">
             <div class="price-input-container">
                 <div class="price-input">
                     <div class="price-field">
                         <span>mínimo</span>
                         <input type="number" 
-                               class="min-input" 
-                               value="2500">
+                               class="min-input">
                     </div>
                     <div class="price-field">
                         <span>máximo</span>
                         <input type="number" 
-                               class="max-input" 
-                               value="8500">
+                               class="max-input">
                     </div>
                 </div>
                 <div class="slider-container">
@@ -73,29 +68,20 @@
                 <input type="range" 
                        class="min-range" 
                        min="0" 
-                       max="10000" 
-                       value="2500" 
+                       max="100000"
                        step="1">
                 <input type="range" 
                        class="max-range" 
                        min="0" 
-                       max="10000" 
-                       value="8500" 
+                       max="100000" 
                        step="1">
                 </div>
             </div>
        </div>
 
- <div class="row">
   <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
     <div class="row container p-0 m-0">
       <div class="col">
-      </div>
-      <div class="col">
-        <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-      </div>
-      <div class="col">
-        <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
       </div>
       <div class="col-3 p-0">
         <div class="btn-group" role="group">
@@ -127,6 +113,7 @@
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
   <script>
+
     // Recuperar el nombre de usuario del localStorage al cargar la página
     document.addEventListener("DOMContentLoaded", function() {
         const username = localStorage.getItem('username');
