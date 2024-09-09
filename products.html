@@ -40,8 +40,7 @@
 </nav>
 
   <div id="titulo">
-    
- </div>
+                   </div>
  <div class="main">
         <div class="custom-wrapper">
             <div class="price-input-container">
@@ -49,11 +48,13 @@
                     <div class="price-field">
                         <span>mínimo</span>
                         <input type="number" 
+                        id= "rangeFilterCountMin"
                                class="min-input">
                     </div>
                     <div class="price-field">
                         <span>máximo</span>
                         <input type="number" 
+                                id="rangeFilterCountMax"
                                class="max-input">
                     </div>
                 </div>
@@ -63,17 +64,17 @@
                 </div>
             </div>
 
-            <!-- Slider -->
+            <!-- price slider -->
             <div class="range-input">
-                <input type="range" 
-                       class="min-range" 
+                <input type="range"                     
+                class="minCount" 
                        min="0" 
                        max="100000"
                        step="1">
                 <input type="range" 
-                       class="max-range" 
+                       class="maxCount" 
                        min="0" 
-                       max="100000" 
+                       max="40000000" 
                        step="1">
                 </div>
             </div>
