@@ -62,7 +62,7 @@ let priceGap = 500;
     });
 });
 
-// Llamada a funciones al cargar el DOM
+
 document.addEventListener("DOMContentLoaded", function() {
     let catId = localStorage.getItem("catID");
 
@@ -77,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.getElementById("rangeFilterCount").addEventListener("click", function(){
-    //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
-    //de productos por categoría.
     minCount = document.getElementById("rangeFilterCountMin").value;
     maxCount = document.getElementById("rangeFilterCountMax").value;
 
