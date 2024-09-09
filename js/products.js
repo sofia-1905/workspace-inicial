@@ -1,65 +1,65 @@
-//array donde se cargarán los datos recibidos:
 let categoriesArray = [];
-let minCount = undefined;
-let maxCount = undefined;
 
-//función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
+// Función para mostrar la lista de categorías en pantalla
 function showCategoriesList(array) {
     let htmlContentToAppend = "";
-    let catId = localStorage.getItem("catID"); // Obtener catId desde localStorage
+    let catId = localStorage.getItem("catID");
     let currency = catId === "101" ? "USD" : "UYU";
 
     for (let i = 0; i < array.length; i++) {
         let category = array[i];
-        
         htmlContentToAppend += `
        <div class="col-md-6 col-lg-4 d-flex">
-            <div id="elemento" class="card mb-4 shadow-sm custom-card cursor-active" id="autos">
-              <img id="fotoautos" class="bd-placeholder-img card-img-top" src="${category.image}"
-                alt="Imgagen representativa de la categoría 'Autos'">
-              <h4 id="nombre">${category.name}</h4>
+            <div class="card mb-4 shadow-sm custom-card cursor-active">
+              <img class="bd-placeholder-img card-img-top" src="${category.image}" alt="Imagen representativa">
+              <h4>${category.name}</h4>
               <div class="card-body">
               <p>${category.description}</p>
-                <h4 id="precio">${currency} ${category.cost}</h4>
-                 <p id="vendidos">Cantidad vendidas: ${category.soldCount}</p>
+                <h4>${currency} ${category.cost}</h4>
+                <p>Cantidad vendidas: ${category.soldCount}</p>
               </div>
             </div>
-            </div> `
+        </div>`;
     }
-      // Asignar el HTML generado al contenedor después de construirlo completamente
-  document.getElementById("productsList").innerHTML = htmlContentToAppend;
-  }
+    document.getElementById("productsList").innerHTML = htmlContentToAppend;
+}
 
+// Función para filtrar y ordenar productos
+const filterAndSortProducts = (products, minPrice, maxPrice) => {
+    if (typeof minPrice !== 'number' || typeof maxPrice !== 'number') {
+        console.error('Invalid input: minPrice and maxPrice must be numbers');
+        return [];
+    }
 
+    const filteredProducts = products.filter(product =>
+        typeof product.cost === 'number' &&
+        product.cost >= minPrice && product.cost <= maxPrice
+    );
 
+    return filteredProducts.sort((a, b) => a.cost - b.cost);
+};
 
-//  Script.js
+// Configuración del rango de precios
 const rangevalue = document.querySelector(".slider-container .price-slider");
 const rangeInputvalue = document.querySelectorAll(".range-input input");
-
-// Set the price gap
 let priceGap = 500;
 
-// Adding event listners to price input elements
-const priceInputvalue = 
-    document.querySelectorAll(".price-input input");
+const priceInputvalue = document.querySelectorAll(".price-input input");
+
 for (let i = 0; i < priceInputvalue.length; i++) {
     priceInputvalue[i].addEventListener("input", e => {
-
-        // Parse min and max values of the range input
         let minp = parseInt(priceInputvalue[0].value);
         let maxp = parseInt(priceInputvalue[1].value);
-        let diff = maxp - minp
+        let diff = maxp - minp;
 
         if (minp < 0) {
-            alert("minimum price cannot be less than 0");
+            alert("Minimum price cannot be less than 0");
             priceInputvalue[0].value = 0;
             minp = 0;
         }
 
-        // Validate the input values
         if (maxp > 10000) {
-            alert("maximum price cannot be greater than 10000");
+            alert("Maximum price cannot be greater than 10000");
             priceInputvalue[1].value = 10000;
             maxp = 10000;
         }
@@ -74,103 +74,68 @@ for (let i = 0; i < priceInputvalue.length; i++) {
             }
         }
 
-        // Check if the price gap is met 
-        // and max price is within the range
         if (diff >= priceGap && maxp <= rangeInputvalue[1].max) {
             if (e.target.className === "min-input") {
                 rangeInputvalue[0].value = minp;
                 let value1 = rangeInputvalue[0].max;
                 rangevalue.style.left = `${(minp / value1) * 100}%`;
-            }
-            else {
+            } else {
                 rangeInputvalue[1].value = maxp;
                 let value2 = rangeInputvalue[1].max;
-                rangevalue.style.right = 
-                    `${100 - (maxp / value2) * 100}%`;
+                rangevalue.style.right = `${100 - (maxp / value2) * 100}%`;
             }
         }
     });
-
-    // Add event listeners to range input elements
-    for (let i = 0; i < rangeInputvalue.length; i++) {
-        rangeInputvalue[i].addEventListener("input", e => {
-            let minVal = 
-                parseInt(rangeInputvalue[0].value);
-            let maxVal = 
-                parseInt(rangeInputvalue[1].value);
-
-            let diff = maxVal - minVal
-            
-            // Check if the price gap is exceeded
-            if (diff < priceGap) {
-            
-                // Check if the input is the min range input
-                if (e.target.className === "min-range") {
-                    rangeInputvalue[0].value = maxVal - priceGap;
-                }
-                else {
-                    rangeInputvalue[1].value = minVal + priceGap;
-                }
-            }
-            else {
-            
-                // Update price inputs and range progress
-                priceInputvalue[0].value = minVal;
-                priceInputvalue[1].value = maxVal;
-                rangevalue.style.left =
-                    `${(minVal / rangeInputvalue[0].max) * 100}%`;
-                rangevalue.style.right =
-                    `${100 - (maxVal / rangeInputvalue[1].max) * 100}%`;
-            }
-        });
-    }
 }
 
+for (let i = 0; i < rangeInputvalue.length; i++) {
+    rangeInputvalue[i].addEventListener("input", e => {
+        let minVal = parseInt(rangeInputvalue[0].value);
+        let maxVal = parseInt(rangeInputvalue[1].value);
+        let diff = maxVal - minVal;
 
-    
+        if (diff < priceGap) {
+            if (e.target.className === "min-range") {
+                rangeInputvalue[0].value = maxVal - priceGap;
+            } else {
+                rangeInputvalue[1].value = minVal + priceGap;
+            }
+        } else {
+            priceInputvalue[0].value = minVal;
+            priceInputvalue[1].value = maxVal;
+            rangevalue.style.left = `${(minVal / rangeInputvalue[0].max) * 100}%`;
+            rangevalue.style.right = `${100 - (maxVal / rangeInputvalue[1].max) * 100}%`;
+        }
+    });
+}
 
-
-    
- 
-
-/*
-EJECUCIÓN:
-
-
--Al cargar la página se llama a getJSONData() pasándole por parámetro la dirección para obtener el listado.
--Se verifica el estado del objeto que devuelve, y, si es correcto, se cargan los datos en categoriesArray.
--Por último, se llama a showCategoriesList() pasándole por parámetro categoriesArray.
-
-
-*/
-
+// Función para mostrar el título
 function showTitle(category) {
-  let htmlContentToAppend = "";
-
-  htmlContentToAppend += `
-  <h1>${category.catName}</h1>`
-
-  document.getElementById("titulo").innerHTML = htmlContentToAppend;
+    let htmlContentToAppend = `<h1>${category.catName}</h1>`;
+    document.getElementById("titulo").innerHTML = htmlContentToAppend;
 }
 
-document.addEventListener("DOMContentLoaded", function(e) {
-  let catId = localStorage.getItem("catID");
+// Función para actualizar la lista de productos al aplicar el filtro
+const updateProductList = () => {
+    let minPrice = parseInt(document.querySelector(".min-input").value);
+    let maxPrice = parseInt(document.querySelector(".max-input").value);
 
-    getJSONData(PRODUCTS_URL + catId + ".json").then(function(resultObj) {
-        if (resultObj.status === "ok") {
-            categoryData = resultObj.data;
-            showTitle(categoryData);
-        }
-    });
-});
+    const filteredAndSortedProducts = filterAndSortProducts(categoriesArray, minPrice, maxPrice);
+    showCategoriesList(filteredAndSortedProducts);
+};
 
+// Evento DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+    let catId = localStorage.getItem("catID");
 
-document.addEventListener("DOMContentLoaded", function(e) {
-  let catId = localStorage.getItem("catID");
-    getJSONData(PRODUCTS_URL + catId + ".json").then(function(resultObj) {
+    getJSONData(PRODUCTS_URL + catId + ".json").then(resultObj => {
         if (resultObj.status === "ok") {
             categoriesArray = resultObj.data.products;
-            showCategoriesList(categoriesArray); // Corrección de la variable
+            showTitle(resultObj.data);
+            showCategoriesList(categoriesArray);
         }
     });
+
+    // Evento para el botón de filtrar
+    document.getElementById("clearFilterButton").addEventListener("click", showCategoriesList(array));
 });
