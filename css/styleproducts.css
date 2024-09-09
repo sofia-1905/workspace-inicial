@@ -1,9 +1,9 @@
 body {  
       background-color:#F58509;}
 
-
 .navbar-custom{
     background-color: white;
+    
 }
 
 * {
@@ -171,9 +171,5 @@ input[type="range"]::-webkit-slider-thumb {
         font-size: 35px;
         text-indent: 10%;
       }
-      
-
-
-
-    }
+     }
     
