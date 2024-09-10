@@ -42,7 +42,9 @@ body {
 }
 
 .btn-group{
-gap: 10%;
+gap: 8%;
+font-size: 50%;
+width: 50%;
 }
 
 /* Styles for the price input container */

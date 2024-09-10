@@ -15,7 +15,7 @@
 
 <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light navbar-custom p-1";>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom p-1">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,8 +39,7 @@
   </div>
 </nav>
 
-  <div id="titulo">
-                   </div>
+  <div id="titulo"></div>
  <div class="main">
         <div class="custom-wrapper">
             <div class="price-input-container">
@@ -48,7 +47,7 @@
                     <div class="price-field">
                         <span>mínimo</span>
                         <input type="number" 
-                        id= "rangeFilterCountMin"
+                        id="rangeFilterCountMin"
                                class="min-input">
                     </div>
                     <div class="price-field">
@@ -59,8 +58,7 @@
                     </div>
                 </div>
                 <div class="slider-container">
-                    <div class="price-slider">
-                    </div>
+                    <div class="price-slider"></div>
                 </div>
             </div>
 
@@ -88,8 +86,10 @@
             <div class="btn-group" role="group">
               <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
               <button class="btn btn-light btn-block" id="clearRangeFilter">Limpiar</button>
-              <button class="btn btn-light btn-block" id= btn-amount-down  for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
-        </div>
+              <button class="btn btn-light btn-block" id="sortAsc">Ordenar por Precio Ascendente</button>
+              <button class="btn btn-light btn-block" id="sortDesc">Ordenar por Precio Descendente</button>
+              <button class="btn btn-light btn-block" id="sortRelevanceDesc"> Ordenar por Relevancia </button>
+            </div>
           </div>
           </div>
         </div>
@@ -97,8 +97,7 @@
     </div>
   <main class="pb-5">
     <div class="container">
-    <div class="row" id="productsList">
-    </div>
+    <div class="row" id="productsList"></div>
   </div>
   </main>
 
@@ -114,7 +113,6 @@
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
   <script>
-
     // Recuperar el nombre de usuario del localStorage al cargar la página
     document.addEventListener("DOMContentLoaded", function() {
         const username = localStorage.getItem('username');
@@ -124,6 +122,6 @@
             document.getElementById('username-placeholder').innerText = 'Invitado';
         }
     });
-      </script>
-  </body>
+  </script>
+</body>
 </html>
