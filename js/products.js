@@ -135,9 +135,12 @@ document.addEventListener('DOMContentLoaded', function() {
           // obtiene el texto completo de la tarjeta del producto 
           // Verifica si el producto contiene el término de búsqueda
           if (product.includes(searchTerm)) {
-              products[i].parentElement.style.display = ''; // Muestra el producto
+
+              products[i].parentElement.classList.add ("d-block"); 
+              products[i].parentElement.classList.remove ("d-none"); // Muestra el producto
           } else {
-              products[i].parentElement.style.display = 'none'; // Oculta el producto
+            products[i].parentElement.classList.remove ("d-block"); 
+            products[i].parentElement.classList.add ("d-none"); // Oculta el producto
           }
       }
   }
