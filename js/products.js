@@ -18,7 +18,7 @@ function showCategoriesList(array) {
 
         htmlContentToAppend += `
         <div class="col-md-6 col-lg-4 d-flex" onclick="setProductID(${category.id})">
-            <div class="card mb-4 shadow-sm custom-card cursor-active">
+            <div class="card mb-4 shadow-sm custom-card cursor-active  product-item">
                 <img class="bd-placeholder-img card-img-top" src="${category.image}" alt="Imagen representativa de la categoría 'Autos'">
                 <h4>${category.name}</h4>
                 <div class="card-body">
@@ -113,3 +113,36 @@ document.getElementById("clearRangeFilter").addEventListener("click", function()
     maxCount = undefined;
     showCategoriesList(categoriesArray);
 });
+
+
+// BAR BUSCADOR
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona el campo de búsqueda y la lista de productos
+  const searchInput = document.getElementById('searchInput');
+  const productsList = document.getElementById('productsList');
+
+  // Función para filtrar productos
+  function filterProducts() {
+      const searchTerm = searchInput.value.toLowerCase();
+
+      // Obtén todos los elementos de producto
+      const products = productsList.getElementsByClassName('product-item');
+
+      // Itera sobre cada producto
+      for (let i = 0; i < products.length; i++) {
+          const product = products[i].textContent.toLowerCase();
+          // Verifica si el producto contiene el término de búsqueda
+          if (product.includes(searchTerm)) {
+              products[i].parentElement.style.display = ''; // Muestra el producto
+          } else {
+              products[i].parentElement.style.display = 'none'; // Oculta el producto
+          }
+      }
+  }
+
+  // Añade el evento de entrada al campo de búsqueda
+  searchInput.addEventListener('input', filterProducts);
+});
+
+// FIN BAR BUSCADOR
