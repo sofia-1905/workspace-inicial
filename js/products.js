@@ -75,20 +75,4 @@ document.addEventListener("DOMContentLoaded", function(e) {
     });
 });
 
-// FUNCION DEL BUSCADOR
-//Filtrar los productos en función del texto ingresado 
-document.getElementById('searchInput').addEventListener('input', function() {
-  const query = this.value.toLowerCase();
-  const products = document.querySelectorAll('.card');
 
-  products.forEach(product => {
-      const title = product.querySelector('#nombre').textContent.toLowerCase();
-      const description = product.querySelector('.card-body p').textContent.toLowerCase();
-
-      if (title.includes(query) || description.includes(query)) {
-          product.parentElement.style.display = ''; // Mostrar el artículo
-      } else {
-          product.parentElement.style.display = 'none'; // Ocultar el artículo
-      }
-  });
-});
