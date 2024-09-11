@@ -131,7 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Itera sobre cada producto
       for (let i = 0; i < products.length; i++) {
-          const product = products[i].textContent.toLowerCase();
+          const product = products[i].textContent.toLowerCase(); 
+          // obtiene el texto completo de la tarjeta del producto 
           // Verifica si el producto contiene el término de búsqueda
           if (product.includes(searchTerm)) {
               products[i].parentElement.style.display = ''; // Muestra el producto
