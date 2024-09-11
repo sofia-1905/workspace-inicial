@@ -17,7 +17,7 @@ function showCategoriesList(array) {
         }
 
         htmlContentToAppend += `
-        <div class="col-md-6 col-lg-4 d-flex">
+        <div class="col-md-6 col-lg-4 d-flex" onclick="setProductID(${category.id})">
             <div class="card mb-4 shadow-sm custom-card cursor-active">
                 <img class="bd-placeholder-img card-img-top" src="${category.image}" alt="Imagen representativa de la categoría 'Autos'">
                 <h4>${category.name}</h4>
@@ -36,6 +36,12 @@ function showCategoriesList(array) {
 function showTitle(category) {
     let htmlContentToAppend = `<h1>${category.catName}</h1>`;
     document.getElementById("titulo").innerHTML = htmlContentToAppend;
+}
+
+// Función para guardar el ID del producto seleccionado y redirigir a product-info.html
+function setProductID(productId) {
+    localStorage.setItem("productID", productId);
+    window.location.href = "product-info.html";
 }
 
 // slider de precios
