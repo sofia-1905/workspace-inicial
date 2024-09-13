@@ -25,12 +25,32 @@ body {
   transition: transform 0.2s;
   width: 600px;
   position: relative;
-  left: 200px; /* Mueve el contenedor 800px hacia la izquierda */
-  margin: 10px; /* Agrega un margen de 20px alrededor del contenedor */
+  left: 860px; 
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alinea el contenido a lo largo del eje vertical */
 }
 
-.main:hover {
-  transform: scale(1.05);
+
+#rangeFilterCount {
+  align-items: center;
+  margin-top: 20px; 
+}
+
+
+#rangeFilterCount {
+  border: 2px solid #F58509;
+  background-color: white; 
+  color: #F58509; 
+  padding: 10px 20px;
+  border-radius: 5px; 
+  font-size: 16px; 
+}
+
+#rangeFilterCount:hover {
+  background-color: #F58509; 
+  color: white; 
 }
 
 .custom-wrapper {
@@ -39,6 +59,17 @@ body {
   padding: 0px 25px 40px;
   position: relative;
   left: 63px;
+}
+
+#productsList {
+  border-radius: 20px; 
+  overflow: hidden; 
+  border: 3px solid #ddd;
+}
+
+.btn-filter {
+  border: 7px #F3860F;
+  border-radius: 30px;
 }
 
 .col-3 {
@@ -53,22 +84,23 @@ body {
 
 .btn-group {
   display: flex;
-  gap: 6px;
-  font-size: 18px; 
-  justify-content: flex-start; 
+  gap: 8px; /* Espacio entre los botones */
+  font-size: 17px; /* Tamaño del texto dentro de los botones */
+  justify-content: flex-start; /* Alinea los botones hacia la izquierda */
   flex-wrap: nowrap; /* Evita que los botones se envuelvan en varias filas */
+  margin: 0 0 20px 0;
 }
 
 .btn-group .btn {
   flex-grow: 1; /* Hace que los botones ocupen el espacio disponible */
   padding: 12px 8px; /* Ajusta el padding para que los botones sean más alargados */
   font-size: 14px; /* Tamaño del texto dentro de los botones */
-  border-radius: 5px; /* Borde redondeado de los botones */
+  border-radius: 5px; 
   text-align: center; /* Centra el texto dentro del botón */
   white-space: nowrap; /* Evita que el texto dentro del botón se rompa en varias líneas */
 }
 
-/* Opcional: Ajustar el contenedor del grupo de botones */
+
 .container {
   padding-right: 7px; /* Aumenta el espacio hacia la izquierda del contenedor si es necesario */
 }
@@ -95,8 +127,9 @@ body {
   font-family: "DM Sans", sans-serif;
   border-radius: 9px;
   text-align: center;
-  border: 0px;
+  border: 6px;
   background: #e4e4e4;
+  
 }
 
 .price-input {
@@ -147,7 +180,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-/* Styles for the range thumb in WebKit browsers */
+
 input[type="range"]::-webkit-slider-thumb {
   height: 18px;
   width: 18px;
@@ -161,8 +194,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 80%; /* Ajusta el ancho al 80% del contenedor padre */
   max-width: 400px; /* Aumenta el ancho máximo a 400px */
   box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
-  margin: 0; /* Elimina el margen para alinearlo a la izquierda */
-  padding: 10px; /* Ajusta el padding para mayor espacio interno, si es necesario */
+  padding: 10px; 
 }
 
 @media screen and (max-width: 768px) {
@@ -210,5 +242,5 @@ input[type="range"]::-webkit-slider-thumb {
         font-size: 35px;
         text-indent: 10%;
       }
-     }
+  }
     
