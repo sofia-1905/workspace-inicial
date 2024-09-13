@@ -66,7 +66,7 @@ function sortProducts(criteria, array) {
                 showProductsList(productsArray);
             });
 
-// Asegúrate de que 'productsArray' esté lleno antes de intentar ordenar
+//verifica que productsArray esté lleno antes de ordenar
 document.addEventListener("DOMContentLoaded", function() {
     let catId = localStorage.getItem("catID");
 
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (resultObj.status === "ok") {
             let categoryData = resultObj.data;
             showTitle(categoryData);
-            productsArray = categoryData.products; // Asegúrate de usar 'productsArray'
+            productsArray = categoryData.products;
             showCategoriesList(productsArray);
         }
     });
