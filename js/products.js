@@ -1,4 +1,8 @@
+const ORDER_PRICE_DOWN = "orderByPriceDown";
+const ORDER_PRICE_UP = "orderByPriceUp";
+const ORDER_REL = "orderByRelevance";
 let categoriesArray = [];
+let productsArray = [];
 let minCount = undefined;
 let maxCount = undefined;
 
@@ -32,6 +36,49 @@ function showCategoriesList(array) {
 
     document.getElementById("productsList").innerHTML = htmlContentToAppend;
 }
+function sortProducts(criteria, array) {
+    let result = [];
+    if (criteria === ORDER_PRICE_DOWN) {
+        result = array.sort((a, b) => a.cost - b.cost);
+    } else if (criteria === ORDER_PRICE_UP) {
+        result = array.sort((a, b) => b.cost - a.cost);
+    } else if (criteria === ORDER_REL) {
+        result = array.sort((a, b) => b.soldCount - a.soldCount);
+    }
+    return result;
+}
+        function showProductsList(array){
+            showCategoriesList(array);
+        }
+    
+            document.getElementById("sortAsc").addEventListener("click", function(){
+                productsArray = sortProducts(ORDER_PRICE_DOWN, productsArray);
+                showProductsList(productsArray);
+            });
+            
+            document.getElementById("sortDesc").addEventListener("click", function(){
+                productsArray = sortProducts(ORDER_PRICE_UP, productsArray);
+                showProductsList(productsArray);
+            });
+            
+            document.getElementById("sortRelevance").addEventListener("click", function(){
+                productsArray = sortProducts(ORDER_REL, productsArray);
+                showProductsList(productsArray);
+            });
+
+//verifica que productsArray esté lleno antes de ordenar
+document.addEventListener("DOMContentLoaded", function() {
+    let catId = localStorage.getItem("catID");
+
+    getJSONData(PRODUCTS_URL + catId + ".json").then(function(resultObj) {
+        if (resultObj.status === "ok") {
+            let categoryData = resultObj.data;
+            showTitle(categoryData);
+            productsArray = categoryData.products;
+            showCategoriesList(productsArray);
+        }
+    });
+});
 
 function showTitle(category) {
     let htmlContentToAppend = `<h1>${category.catName}</h1>`;
