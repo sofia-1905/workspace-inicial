@@ -25,12 +25,32 @@ body {
   transition: transform 0.2s;
   width: 600px;
   position: relative;
-  left: 980px; 
-  margin: 10px; 
+  left: 860px; 
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alinea el contenido a lo largo del eje vertical */
 }
 
-.main:hover {
-  transform: scale(1.05);
+
+#rangeFilterCount {
+  align-items: center;
+  margin-top: 20px; 
+}
+
+
+#rangeFilterCount {
+  border: 2px solid #F58509;
+  background-color: white; 
+  color: #F58509; 
+  padding: 10px 20px;
+  border-radius: 5px; 
+  font-size: 16px; 
+}
+
+#rangeFilterCount:hover {
+  background-color: #F58509; 
+  color: white; 
 }
 
 .custom-wrapper {
