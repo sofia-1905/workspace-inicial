@@ -1,0 +1,145 @@
+body {
+    background-color: #F58509;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* HEADER*/
+/* Fondo blanco para la barra de navegación */
+.navbar-custom {
+    background-color: #ffffff !important; /* Fondo blanco */
+}
+
+/* Cambiar el color del texto de los enlaces a gris */
+.navbar-custom .nav-link {
+    color: #6c757d !important; 
+}
+/* FIN HEADER */
+
+/* CATEGORIAS */
+/* Estilos generales para el breadcrumb */
+.breadcrumb {
+    padding: 10px;
+    background-color: #F8A244;
+    font-size: 20px;
+    margin: 0; /* Eliminamos el margen externo */
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 100%; /* Asegura que el breadcrumb ocupe el ancho completo del contenedor */
+}
+
+/* Separadores */
+ul.breadcrumb li+li:before {
+    padding: 5px;
+    color: #F3860F ;
+    content: "/\00a0";
+}
+
+/* Estilos para los enlaces */
+.breadcrumb a {
+    color: #ffffff;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+/* Cuando el mouse pasa por encima */
+.breadcrumb a:hover {
+    color: #F58509; /* Cambia el color al pasar el mouse */
+    text-decoration: underline; /* Subraya el texto */
+}
+/* FIN CATEGORIAS */
+
+/* INFO PRODUCTO */
+/* Estilos generales */
+.product-details {
+    background-color: #f5f5f5; /* Color de fondo general */
+    width: 90%; /* Ajusta el ancho para ocupar el 90% del contenedor */
+    max-width: 1200px; /* Establece un ancho máximo si no quieres que sea demasiado grande */
+    margin: 0 auto; /* Centra horizontalmente */
+    margin-bottom:4%;
+    padding: 40px 20px; /* Ajusta el padding para mayor espacio interno */
+    border-radius: 30px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /*Sombra alrededor del contenedor */
+}
+
+.product-details.row {
+    gap: 20px; /* Espacio de 15px entre las columnas */
+}
+
+
+/* Carrusel */
+/* Estilos generales para el contenedor del carrusel */
+.carousel-container {
+    width: 55%; /* Hace que la columna del carrusel ocupe el 100% de su contenedor */
+    max-width: 800px; /* Ancho máximo para limitar el tamaño del carrusel */
+}
+
+/* Ajusta el ancho y alto de las imágenes del carrusel */
+.carousel-item img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta cómo la imagen se adapta al contenedor */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    border-radius: 20px;
+    border: 2px solid #F58509;
+}
+
+/* Cambia el color de los indicadores del carrusel */
+.carousel-indicators [data-bs-target] {
+  background-color: #ff8400; /* Color de los indicadores */
+}
+
+.carousel-indicators .active {
+  background-color: #F8A244; /* Color del indicador activo */
+}
+/* Fin carrusel */
+
+/* Contenedor info */
+/* Estilos generales contenedor */
+.product-info-container {
+    border: 2px solid #F3860F;
+    border-radius: 30px;
+    width: 35%;
+    padding: 20px;
+    position: relative; /* Posición relativa para que los elementos absolutos se alineen con él */
+}
+
+/* Estilos para el nombre del producto (h2) */
+.product-info-container .product-name {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Descripción producto */
+.product-info-container .product-description {
+    font-size: 20px;
+    font-weight: 300; /* Ajusta el grosor */
+}
+
+/* Precio producto */
+.product-info-container .product-price {
+    position: absolute; /* Posición absoluta dentro del contenedor */
+    font-size: 25px;
+    bottom: 55px; /* Distancia desde la parte inferior del contenedor */
+    right: 20px; /* Distancia desde el borde derecho del contenedor */
+    text-align: end;
+    margin-bottom: 15px;
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
+/* Cantidad ventidas */
+.product-info-container .product-sold {
+    position: absolute;
+    bottom: 10px; /* Fija el texto a una distancia constante del borde inferior */
+}
+/* Fin contenedor info */
+
+
+
+/* FIN CONTENEDOR DE INFO PRODUCTO */
+
+
+
+/* FOOTER */
+/* FIN FOOTER */
