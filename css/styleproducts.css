@@ -50,13 +50,13 @@ body {
   max-width: none; 
 }
 
+
 .btn-group {
   display: flex;
-  gap: 4px; /* Espacio entre los botones */
-  font-size: 14px; /* Tamaño del texto dentro de los botones */
-  justify-content: flex-start; /* Alinea los botones hacia la izquierda */
+  gap: 6px;
+  font-size: 18px; 
+  justify-content: flex-start; 
   flex-wrap: nowrap; /* Evita que los botones se envuelvan en varias filas */
-  margin: 0; /* Ajusta el margen si es necesario para centrar el grupo */
 }
 
 .btn-group .btn {
