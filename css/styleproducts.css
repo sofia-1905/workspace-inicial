@@ -25,8 +25,8 @@ body {
   transition: transform 0.2s;
   width: 600px;
   position: relative;
-  left: 860px; 
-  margin: 20px; 
+  left: 980px; 
+  margin: 10px; 
 }
 
 .main:hover {
@@ -39,6 +39,17 @@ body {
   padding: 0px 25px 40px;
   position: relative;
   left: 63px;
+}
+
+#productsList {
+  border-radius: 20px; 
+  overflow: hidden; 
+  border: 3px solid #ddd;
+}
+
+.btn-filter {
+  border: 7px #F3860F;
+  border-radius: 30px;
 }
 
 .col-3 {
@@ -211,5 +222,5 @@ input[type="range"]::-webkit-slider-thumb {
         font-size: 35px;
         text-indent: 10%;
       }
-     }
+  }
     

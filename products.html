@@ -83,27 +83,18 @@
        </div>
        <div class="container mb-4">
         <div class="row">
-          <div class="col">
-            <input type="search" id="searchInput" class="form-control" placeholder="Buscar artículos...">
-          </div>
-        </div>
-      </div>
-       <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
-        <div class="row container p-0 m-0">
-          <div class="col">
-          </div>
-          <div class="col-3 p-0">
-            <div class="btn-group" role="group">
+          <div class="col-12 d-flex align-items-center mb-2">
+            <input type="search" id="searchInput" class="form-control me-2" placeholder="Buscar artículos...">
+            <div class="btn-group ms-auto" role="group">
               <button class="btn btn-light btn-block" id="sortAsc">Ordenar por precio ascendente</button>
               <button class="btn btn-light btn-block" id="sortDesc">Ordenar por precio descendente</button>
-              <button class="btn btn-light btn-block" id="sortRelevance"> Ordenar por relevancia </button>
+              <button class="btn btn-light btn-block" id="sortRelevance">Ordenar por relevancia</button>
               <button class="btn btn-light btn-block" id="clearRangeFilter">Limpiar</button>
             </div>
           </div>
-          </div>
         </div>
       </div>
-    </div>
+      
   <main class="pb-5">
     <div class="container">
     <div class="row" id="productsList"></div>
