@@ -53,12 +53,12 @@ ul.breadcrumb li+li:before {
 /* INFO PRODUCTO */
 /* Estilos generales */
 .product-details {
-    background-color: #f5f5f5; /* Color de fondo general */
-    width: 90%; /* Ajusta el ancho para ocupar el 90% del contenedor */
-    max-width: 1200px; /* Establece un ancho máximo si no quieres que sea demasiado grande */
-    margin: 0 auto; /* Centra horizontalmente */
+    background-color: #f5f5f5; 
+    width: 90%; 
+    max-width: 1200px;
+    margin: 0 auto; 
     margin-bottom:4%;
-    padding: 40px 5px; /* Ajusta el padding para mayor espacio interno */
+    padding: 40px 5px; 
     border-radius: 30px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /*Sombra alrededor del contenedor */
 }
@@ -71,7 +71,7 @@ ul.breadcrumb li+li:before {
 /* Carrusel */
 /* Estilos generales para el contenedor del carrusel */
 .carousel-container {
-    width: 55%; /* Hace que la columna del carrusel ocupe el 100% de su contenedor */
+    width: 55%; 
     max-width: 800px; /* Ancho máximo para limitar el tamaño del carrusel */
 }
 
@@ -105,7 +105,7 @@ ul.breadcrumb li+li:before {
     position: relative; /* Posición relativa para que los elementos absolutos se alineen con él */
 }
 
-/* Estilos para el nombre del producto (h2) */
+/* Estilos para el nombre del producto */
 .product-info-container .product-name {
     font-size: 30px;
     margin-bottom: 10px;
