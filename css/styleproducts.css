@@ -18,26 +18,18 @@ body {
 }
 
 .main {
-  background-color: #fff; /* Fondo blanco para el contenedor principal */
+  background-color: #fff; 
   border-radius: 25px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  padding: 25px; 
   transition: transform 0.2s;
-  width: 600px;
+  width: 500px; 
   position: relative;
-  left: 860px; 
-  margin: 20px;
+  left: 920px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Alinea el contenido a lo largo del eje vertical */
+  justify-content: space-between; /
 }
-
-
-#rangeFilterCount {
-  align-items: center;
-  margin-top: 20px; 
-}
-
 
 #rangeFilterCount {
   border: 2px solid #F58509;
@@ -46,8 +38,11 @@ body {
   padding: 10px 20px;
   border-radius: 5px; 
   font-size: 16px; 
-}
+  align-items: center;
+  margin-top: 30px; 
+  margin-left: 200px;
 
+}
 #rangeFilterCount:hover {
   background-color: #F58509; 
   color: white; 
@@ -84,27 +79,21 @@ body {
 
 .btn-group {
   display: flex;
-  gap: 8px; /* Espacio entre los botones */
-  font-size: 17px; /* Tamaño del texto dentro de los botones */
-  justify-content: flex-start; /* Alinea los botones hacia la izquierda */
-  flex-wrap: nowrap; /* Evita que los botones se envuelvan en varias filas */
+  gap: 8px; 
+  font-size: 17px; 
+  justify-content: flex-start; 
+  flex-wrap: nowrap; 
   margin: 0 0 20px 0;
 }
 
 .btn-group .btn {
-  flex-grow: 1; /* Hace que los botones ocupen el espacio disponible */
-  padding: 12px 8px; /* Ajusta el padding para que los botones sean más alargados */
-  font-size: 14px; /* Tamaño del texto dentro de los botones */
+  flex-grow: 1; /* hace que los botones ocupen el espacio disponible */
+  padding: 12px 8px; /* ajuste en padding para que los botones sean más alargados */
+  font-size: 14px;
   border-radius: 5px; 
-  text-align: center; /* Centra el texto dentro del botón */
-  white-space: nowrap; /* Evita que el texto dentro del botón se rompa en varias líneas */
+  text-align: center; 
+  white-space: nowrap; /* evita que el texto dentro del botón se rompa en varias líneas */
 }
-
-
-.container {
-  padding-right: 7px; /* Aumenta el espacio hacia la izquierda del contenedor si es necesario */
-}
-
 .price-input-container {
   width: 100%;
 }
@@ -179,8 +168,6 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
   -webkit-appearance: none;
 }
-
-
 input[type="range"]::-webkit-slider-thumb {
   height: 18px;
   width: 18px;
@@ -191,9 +178,9 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 #searchInput {
-  width: 80%; /* Ajusta el ancho al 80% del contenedor padre */
-  max-width: 400px; /* Aumenta el ancho máximo a 400px */
-  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
+  width: 80%; 
+  max-width: 400px; 
+  box-sizing: border-box; 
   padding: 10px; 
 }
 
@@ -225,10 +212,10 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 
-/* Para smartphones pequeños (320x568) */
+
 @media (max-width: 568px) {
     body {
-        background-color: white; /* Fondo naranja para pantallas móviles */
+        background-color: white; 
       }
       .navbar-custom{
         background-color: #F58509;
