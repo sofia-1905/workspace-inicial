@@ -22,13 +22,13 @@ function showCategoriesList(array) {
 
         htmlContentToAppend += `
         <div class="col-md-6 col-lg-4 d-flex" onclick="setProductID(${category.id})">
-            <div class="card mb-4 shadow-sm custom-card cursor-active  product-item">
-                <img class="bd-placeholder-img card-img-top" src="${category.image}" alt="Imagen representativa de la categoría 'Autos'">
-                <h4>${category.name}</h4>
+            <div class="card mb-4 custom-card cursor-active  product-item">
+                <img class="bd-placeholder-img card-img-top" src="${category.image}" alt="Imagen representativa">
+                <h4 class="name">${category.name}</h4>
                 <div class="card-body">
-                    <p>${category.description}</p>
-                    <h4>${currency} ${category.cost}</h4>
-                    <p>Cantidad vendidas: ${category.soldCount}</p>
+                    <p class="description">${category.description}</p>
+                    <h4 class="price">${currency} ${category.cost}</h4>
+                    <p class="sold-count">Cantidad vendidas: ${category.soldCount}</p>
                 </div>
             </div>
         </div>`;

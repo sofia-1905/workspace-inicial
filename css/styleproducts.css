@@ -15,6 +15,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+
 }
 
 .main {
@@ -24,8 +25,7 @@ body {
   padding: 25px; 
   transition: transform 0.2s;
   width: 500px; 
-  position: relative;
-  left: 920px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /
@@ -59,7 +59,6 @@ body {
 #productsList {
   border-radius: 20px; 
   overflow: hidden; 
-  border: 3px solid #ddd;
 }
 
 .btn-filter {
@@ -231,3 +230,43 @@ input[type="range"]::-webkit-slider-thumb {
       }
   }
     
+/*Estilos productos */
+/* contenedor principal */
+.card {
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Sombra alrededor del contenedor */
+  overflow: hidden; /* Para evitar que el contenido interno sobresalga */
+}
+
+/* Estilos imagenes */
+.card-img-top {
+  border-radius: 30px;
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  object-fit: cover; /* Ajusta la imagen manteniendo su proporción */
+  padding: 15px; /* Espacio interno alrededor de la imagen */
+}
+/* Nombre producto */
+.name{
+  padding-left: 15px; /* Espacio interno a la izquierda */
+}
+
+/* Descripcion */
+.description {
+  font-weight: 300;
+}
+
+/* Precio del producto */
+.price {
+  text-align: right !important;  /* Alinea el precio a la derecha */
+
+}
+
+/* Cantidad ventidas */
+.sold-count {
+  position: relative;
+  top: 15px; /* Ajusta el espacio sin aumentar el tamaño del contenedor */
+}
+/* Fin producto */
+
+
+
