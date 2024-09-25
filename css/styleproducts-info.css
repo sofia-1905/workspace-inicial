@@ -136,6 +136,13 @@ ul.breadcrumb li+li:before {
 }
 /* Fin contenedor info */
 
+/* Productos relacionados */
+.cursor-pointer {
+    cursor: pointer; /* Cambia el cursor a un puntero */
+}
+
+/* Fin productos relacionados*/
+
 /* FOOTER */
 .text-muted {
     background-color: #F58509;
