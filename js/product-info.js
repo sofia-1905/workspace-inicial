@@ -59,10 +59,38 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 // Insertar el contenido en la página en el elemento con id 'product-info'
                 document.getElementById('product-info').innerHTML = productHTML;
+
+                // Mostrar productos relacionados
+                showRelatedProducts(product.relatedProducts); 
+
             })
             .catch(error => {
                 // Manejo de errores en la carga de datos
                 console.error("Error al cargar el producto:", error);
             });
     }
+
+
+    // Función para mostrar productos relacionados
+    function showRelatedProducts(relatedProducts) {
+        const relatedProductsHTML = relatedProducts.map(product => `
+            <div class="col-md-4 cursor-pointer" onclick="selectRelatedProduct(${product.id})">
+                <div class="card">
+                    <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        // Insertar los productos relacionados en el contenedor correspondiente
+        document.getElementById('related-products-list').innerHTML = relatedProductsHTML;
+    }
 });
+
+// Función para seleccionar un producto relacionado
+function selectRelatedProduct(productId) {
+    localStorage.setItem("productID", productId);
+    location.reload();  // Recargar la página para mostrar el nuevo producto
+}
