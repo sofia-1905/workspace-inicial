@@ -94,3 +94,17 @@ function selectRelatedProduct(productId) {
     localStorage.setItem("productID", productId);
     location.reload();  // Recargar la página para mostrar el nuevo producto
 }
+
+  document.querySelectorAll('#rating li').forEach(item => {
+    item.addEventListener('click', function() {
+      const ratingValue = this.getAttribute('data-value');
+      document.getElementById('rating-value').value = ratingValue;
+
+      // Remover la clase 'selected' de todas las caritas
+      document.querySelectorAll('#rating li').forEach(e => e.classList.remove('selected'));
+      
+      // Añadir la clase 'selected' a la carita clickeada
+      this.classList.add('selected');
+    });
+  });
+
