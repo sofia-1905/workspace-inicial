@@ -9,8 +9,6 @@ let maxCount = undefined;
 
 function showCategoriesList(array) {
     let htmlContentToAppend = "";
-    let catId = localStorage.getItem("catID");
-    let currency = catId === "101" ? "USD" : "UYU";
 
     for (let i = 0; i < array.length; i++) {
         let category = array[i];
@@ -27,7 +25,7 @@ function showCategoriesList(array) {
                 <h4 class="name">${category.name}</h4>
                 <div class="card-body">
                     <p class="description">${category.description}</p>
-                    <h4 class="price">${currency} ${category.cost}</h4>
+                    <h4 class="price">${category.currency} ${category.cost}</h4>
                     <p class="sold-count">Cantidad vendidas: ${category.soldCount}</p>
                 </div>
             </div>
