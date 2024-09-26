@@ -117,20 +117,20 @@ function selectRelatedProduct(productId) {
         htmlContentToAppend += `
         
       <div id="commentdiv" class="row">
-            <div class="col-md-6 col-lg-4 d-flex">
+            <div class="col-md-4 col-lg-4 d-flex">
                 <span class="score-icon">${getIconForScore(product.score)}</span>
             </div>
-            <div class="col-md-6 col-lg-8">
+            <div class="col-md-8 col-lg-8">
                 <div class="row"> 
                     <div class="col-lg-6">
-                        <p>${product.user}</p>
+                        <p id="usuariocomment">${product.user}</p>
                     </div>
                     <div class="col-lg-6">
-                        <p>${product.dateTime}</p>
+                        <p id="fechacomment">${product.dateTime}</p>
                     </div>
                 </div>
                 <div class="col-lg-12 mt-2"> 
-                    <p>${product.description}</p>
+                    <p id="descripcioncomment">${product.description}</p>
                 </div>
             </div>
         </div>
