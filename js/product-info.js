@@ -109,7 +109,7 @@ function selectRelatedProduct(productId) {
   });
 
   function showComments(array) {
-    let htmlContentToAppend = "";
+    let htmlContentToAppend = `<h5 id="calificacionestitle">Calificaciones:</h5>`;
 
     for (let i = 0; i < array.length; i++) {
         let product = array[i];
@@ -117,10 +117,10 @@ function selectRelatedProduct(productId) {
         htmlContentToAppend += `
         
       <div id="commentdiv" class="row">
-            <div class="col-md-6 col-lg-3 d-flex">
+            <div class="col-md-6 col-lg-4 d-flex">
                 <span class="score-icon">${getIconForScore(product.score)}</span>
             </div>
-            <div class="col-md-6 col-lg-9">
+            <div class="col-md-6 col-lg-8">
                 <div class="row"> 
                     <div class="col-lg-6">
                         <p>${product.user}</p>
@@ -154,18 +154,28 @@ const score = localStorage.getItem('score');
 
 function getIconForScore(score) {
     let icons = '';
-        for (let i = 0; i < score; i++) {
-            if (i < 1) {
-                icons += '<i class="far fa-angry fa-lg"></i>'; // 1 estrella
-            } else if (i < 2) {
-                icons += '<i class="far fa-frown fa-lg"></i>'; // 2 estrellas
-            } else if (i < 3) {
-                icons += '<i class="far fa-meh fa-lg"></i>'; // 3 estrellas
-            } else if (i < 4) {
-                icons += '<i class="far fa-smile fa-lg"></i>'; // 4 estrellas
-            } else {
-                icons += '<i class="far fa-grin-stars fa-lg"></i>'; // 5 estrellas
-            }
+    for (let i = 0; i < score; i++) {
+        if (i < 1) {
+            icons += `<li data-value="1">
+                        <i class="far fa-angry fa-lg"></i>
+                      </li>`;
+        } else if (i < 2) {
+            icons += `<li data-value="2">
+                        <i class="far fa-frown fa-lg"></i>
+                      </li>`;
+        } else if (i < 3) {
+            icons += `<li data-value="3">
+                        <i class="far fa-meh fa-lg"></i>
+                      </li>`;
+        } else if (i < 4) {
+            icons += `<li data-value="4">
+                        <i class="far fa-smile fa-lg"></i>
+                      </li>`;
+        } else if (i < 5) {
+            icons += `<li data-value="5">
+                        <i class="far fa-grin-stars fa-lg"></i>
+                      </li>`;
         }
-        return icons;
+    }
+    return `<ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">${icons}</ul>`;
 }
