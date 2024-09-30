@@ -182,6 +182,10 @@ document.querySelectorAll('#rating li').forEach(item => {
   });
 
   function cargarItems() {
+  JSON.parse(localStorage.getItem('user-comment')) || []; // Obtener los ítems almacenados o un array vacío
+  }
+
+  function mostrarComentario() {
     const contenedor = document.getElementById('comments');
     const items = JSON.parse(localStorage.getItem('user-comment')) || []; // Obtener los ítems almacenados o un array vacío
     const usuario = localStorage.getItem('username');
@@ -224,7 +228,7 @@ function agregarCalificacion(event) {
         localStorage.setItem('user-comment', JSON.stringify(items)); // Guardar el array actualizado en localStorage
 
         inputItem.value = ''; // Limpiar el campo de entrada
-        cargarItems(); // Actualizar la lista con el nuevo ítem
+        mostrarComentario(); // Actualizar la lista con el nuevo ítem
     }
 }
 
@@ -235,5 +239,7 @@ document.addEventListener('DOMContentLoaded', cargarItems);
 
 // Agregar el evento de clic para el botón de enviar
 document.getElementById('comment-form').addEventListener('submit', agregarCalificacion);
+
+document.addEventListener('DOMContentLoaded', mostrarComentario);
 
 
