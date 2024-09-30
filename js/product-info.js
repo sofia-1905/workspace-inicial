@@ -133,6 +133,8 @@ document.addEventListener("DOMContentLoaded", function() {
     getJSONData(PRODUCT_INFO_COMMENTS_URL + productcommentId + ".json").then(function(resultObj) {
         if (resultObj.status === "ok") {
             let commentsArray = resultObj.data;
+            let comentariosGuardados = JSON.parse(localStorage.getItem('user-comment')) || [];
+            commentsArray = commentsArray.concat(comentariosGuardados.filter(aux => aux.productId === productcommentId));
             showComments(commentsArray);
         }
     });
@@ -181,33 +183,17 @@ document.querySelectorAll('#rating li').forEach(item => {
     });
   });
 
-  function cargarItems() {
-    const contenedor = document.getElementById('comments');
-    const items = JSON.parse(localStorage.getItem('user-comment')) || []; // Obtener los ítems almacenados o un array vacío
-    const usuario = localStorage.getItem('username');
-    const carita = document.getElementById('rating-value').value;
+  function mostrarComentariosActualizado() {
 
-    // Agregar cada ítem al contenedor
-    items.forEach(item => {
-        contenedor.innerHTML += `
-        <div class="comment-div row">
-            <div class="col-sm-6 col-md-5 col-lg-3 d-flex">
-                <span class="rating-icon"> ${getIconForScore(carita)} </span>
-            </div>
-            <div class="col-sm-6 col-md-7 col-lg-9">
-                <div class="row"> 
-                    <div class="col-lg-6">
-                        <p id="usuariocomment">${usuario}</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p id="fechacomment">${new Date().toLocaleString()}</p> <!-- Genera la fecha actual -->
-                    </div>
-                </div>
-                <div class="col-lg-12 mt-2"> 
-                    <p id="descripcioncomment">${item}</p>
-                </div>
-            </div>
-        </div>`;
+    let productcommentId = localStorage.getItem("productID");
+
+    getJSONData(PRODUCT_INFO_COMMENTS_URL + productcommentId + ".json").then(function(resultObj) {
+        if (resultObj.status === "ok") {
+            let commentsArray = resultObj.data;
+            let comentariosGuardados = JSON.parse(localStorage.getItem('user-comment')) || []; //Obtener la lista de comentarios guardados en Local Storage
+            commentsArray = commentsArray.concat(comentariosGuardados.filter(aux => aux.productId === productcommentId)); //Filtrar los comentarios que coindicen con el id del producto guardado
+            showComments(commentsArray);
+        }
     });
 }
 
@@ -217,21 +203,26 @@ function agregarCalificacion(event) {
 
     const inputItem = document.getElementById('user-comment');
     const nuevoItem = inputItem.value.trim();
+    const inputRating = document.getElementById('rating-value');
+    const nuevoRating = inputRating.value;
 
-    if (nuevoItem) {
-        const items = JSON.parse(localStorage.getItem('user-comment')) || [];
-        items.push(nuevoItem); // Agregar el nuevo ítem al array
+    let nuevoComentario = {
+        productId: localStorage.getItem("productID"),
+        score: nuevoRating,
+        description: nuevoItem,
+        user: localStorage.getItem('username'),
+        dateTime: new Date().toLocaleString()
+    };
+
+    if (nuevoComentario) {
+        let items = JSON.parse(localStorage.getItem('user-comment')) || [];
+        items.push(nuevoComentario); // Agregar el nuevo ítem al array
         localStorage.setItem('user-comment', JSON.stringify(items)); // Guardar el array actualizado en localStorage
 
         inputItem.value = ''; // Limpiar el campo de entrada
-        cargarItems(); // Actualizar la lista con el nuevo ítem
+        mostrarComentariosActualizado(); // Actualizar la lista con el nuevo ítem
     }
 }
-
-
-
-// Cargar los ítems al iniciar
-document.addEventListener('DOMContentLoaded', cargarItems);
 
 // Agregar el evento de clic para el botón de enviar
 document.getElementById('comment-form').addEventListener('submit', agregarCalificacion);
