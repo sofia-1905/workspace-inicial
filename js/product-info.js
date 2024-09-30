@@ -108,3 +108,74 @@ function selectRelatedProduct(productId) {
     });
   });
 
+  function showComments(array) {
+    let htmlContentToAppend = `<h5 id="calificacionestitle">Calificaciones:</h5>`;
+
+    for (let i = 0; i < array.length; i++) {
+        let product = array[i];
+
+        htmlContentToAppend += `
+        
+      <div id="commentdiv" class="row">
+            <div class="col-md-4 col-lg-4 d-flex">
+                <span class="score-icon">${getIconForScore(product.score)}</span>
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <div class="row"> 
+                    <div class="col-lg-6">
+                        <p id="usuariocomment">${product.user}</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p id="fechacomment">${product.dateTime}</p>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-2"> 
+                    <p id="descripcioncomment">${product.description}</p>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+
+    document.getElementById("comments").innerHTML = htmlContentToAppend;
+}
+document.addEventListener("DOMContentLoaded", function() {
+    let productcommentId = localStorage.getItem("productID");
+
+    getJSONData(PRODUCT_INFO_COMMENTS_URL + productcommentId + ".json").then(function(resultObj) {
+        if (resultObj.status === "ok") {
+            let commentsArray = resultObj.data;
+            showComments(commentsArray);
+        }
+    });
+});
+
+const score = localStorage.getItem('score');
+
+function getIconForScore(score) {
+    let icons = '';
+    for (let i = 0; i < score; i++) {
+        if (i < 1) {
+            icons += `<li data-value="1">
+                        <i class="far fa-angry fa-lg"></i>
+                      </li>`;
+        } else if (i < 2) {
+            icons += `<li data-value="2">
+                        <i class="far fa-frown fa-lg"></i>
+                      </li>`;
+        } else if (i < 3) {
+            icons += `<li data-value="3">
+                        <i class="far fa-meh fa-lg"></i>
+                      </li>`;
+        } else if (i < 4) {
+            icons += `<li data-value="4">
+                        <i class="far fa-smile fa-lg"></i>
+                      </li>`;
+        } else if (i < 5) {
+            icons += `<li data-value="5">
+                        <i class="far fa-grin-stars fa-lg"></i>
+                      </li>`;
+        }
+    }
+    return `<ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">${icons}</ul>`;
+}
