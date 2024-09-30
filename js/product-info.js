@@ -188,8 +188,8 @@ document.querySelectorAll('#rating li').forEach(item => {
   function mostrarComentario() {
     const contenedor = document.getElementById('comments');
     const items = JSON.parse(localStorage.getItem('user-comment')) || []; // Obtener los ítems almacenados o un array vacío
-    const usuario = localStorage.getItem('username');
-    const carita = document.getElementById('rating-value').value;
+    var usuario = localStorage.getItem('username');
+    var carita = document.getElementById('rating-value').value;
 
     // Agregar cada ítem al contenedor
     items.forEach(item => {
@@ -239,7 +239,5 @@ document.addEventListener('DOMContentLoaded', cargarItems);
 
 // Agregar el evento de clic para el botón de enviar
 document.getElementById('comment-form').addEventListener('submit', agregarCalificacion);
-
-document.addEventListener('DOMContentLoaded', mostrarComentario);
 
 
