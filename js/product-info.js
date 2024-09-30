@@ -109,7 +109,7 @@ function selectRelatedProduct(productId) {
   });
 
   function showComments(array) {
-    let htmlContentToAppend = `<h5 id="calificacionestitle">Calificaciones:</h5>`;
+    let htmlContentToAppend = `<h5 id="calificacionestitle">Calificaciones</h5>`;
 
     for (let i = 0; i < array.length; i++) {
         let product = array[i];
@@ -117,10 +117,10 @@ function selectRelatedProduct(productId) {
         htmlContentToAppend += `
         
       <div id="commentdiv" class="row">
-            <div class="col-md-4 col-lg-4 d-flex">
+            <div id="iconos" class="col-sm-6 col-md-5 col-lg-3 d-flex">
                 <span class="score-icon">${getIconForScore(product.score)}</span>
             </div>
-            <div class="col-md-8 col-lg-8">
+            <div id="userdatedesc" class="col-sm-6 col-md-7 col-lg-9">
                 <div class="row"> 
                     <div class="col-lg-6">
                         <p id="usuariocomment">${product.user}</p>
