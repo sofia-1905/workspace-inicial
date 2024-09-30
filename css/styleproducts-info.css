@@ -137,6 +137,39 @@ ul.breadcrumb li+li:before {
 /* Fin contenedor info */
 
 /* Productos relacionados */
+/* Contenedor de toda la info */
+#related-products-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+}
+
+.title-related-products {
+    color: #F58509;
+    font-size: 150%;
+}
+
+.card {
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-top {
+    border-radius: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.card-title {
+    text-align: end;
+    font-size: 20px;
+}
+
+
+
 .cursor-pointer {
     cursor: pointer; /* Cambia el cursor a un puntero */
 }
