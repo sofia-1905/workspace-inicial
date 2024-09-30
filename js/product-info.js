@@ -95,18 +95,6 @@ function selectRelatedProduct(productId) {
     location.reload();  // Recargar la página para mostrar el nuevo producto
 }
 
-  document.querySelectorAll('#rating li').forEach(item => {
-    item.addEventListener('click', function() {
-      const ratingValue = this.getAttribute('data-value');
-      document.getElementById('rating-value').value = ratingValue;
-
-      // Remover la clase 'selected' de todas las caritas
-      document.querySelectorAll('#rating li').forEach(e => e.classList.remove('selected'));
-      
-      // Añadir la clase 'selected' a la carita clickeada
-      this.classList.add('selected');
-    });
-  });
 
   function showComments(array) {
     let htmlContentToAppend = `<h5 id="calificacionestitle">Calificaciones</h5>`;
@@ -178,4 +166,74 @@ function getIconForScore(score) {
         }
     }
     return `<ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">${icons}</ul>`;
+} 
+
+document.querySelectorAll('#rating li').forEach(item => {
+    item.addEventListener('click', function() {
+      const ratingValue = this.getAttribute('data-value');
+      document.getElementById('rating-value').value = ratingValue;
+
+      // Remover la clase 'selected' de todas las caritas
+      document.querySelectorAll('#rating li').forEach(e => e.classList.remove('selected'));
+      
+      // Añadir la clase 'selected' a la carita clickeada
+      this.classList.add('selected');
+    });
+  });
+
+  function cargarItems() {
+    const contenedor = document.getElementById('comments');
+    const items = JSON.parse(localStorage.getItem('user-comment')) || []; // Obtener los ítems almacenados o un array vacío
+    const usuario = localStorage.getItem('username');
+    const carita = document.getElementById('rating-value').value;
+
+    // Agregar cada ítem al contenedor
+    items.forEach(item => {
+        contenedor.innerHTML += `
+        <div class="comment-div row">
+            <div class="col-sm-6 col-md-5 col-lg-3 d-flex">
+                <span class="rating-icon"> ${getIconForScore(carita)} </span>
+            </div>
+            <div class="col-sm-6 col-md-7 col-lg-9">
+                <div class="row"> 
+                    <div class="col-lg-6">
+                        <p id="usuariocomment">${usuario}</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p id="fechacomment">${new Date().toLocaleString()}</p> <!-- Genera la fecha actual -->
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-2"> 
+                    <p id="descripcioncomment">${item}</p>
+                </div>
+            </div>
+        </div>`;
+    });
 }
+
+// Función para agregar un nuevo ítem
+function agregarCalificacion(event) {
+    event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+
+    const inputItem = document.getElementById('user-comment');
+    const nuevoItem = inputItem.value.trim();
+
+    if (nuevoItem) {
+        const items = JSON.parse(localStorage.getItem('user-comment')) || [];
+        items.push(nuevoItem); // Agregar el nuevo ítem al array
+        localStorage.setItem('user-comment', JSON.stringify(items)); // Guardar el array actualizado en localStorage
+
+        inputItem.value = ''; // Limpiar el campo de entrada
+        cargarItems(); // Actualizar la lista con el nuevo ítem
+    }
+}
+
+
+
+// Cargar los ítems al iniciar
+document.addEventListener('DOMContentLoaded', cargarItems);
+
+// Agregar el evento de clic para el botón de enviar
+document.getElementById('comment-form').addEventListener('submit', agregarCalificacion);
+
+
