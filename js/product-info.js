@@ -211,7 +211,7 @@ function agregarCalificacion(event) {
         score: nuevoRating,
         description: nuevoItem,
         user: localStorage.getItem('username'),
-        dateTime: new Date().toLocaleString()
+        dateTime: new Date().toISOString().slice(0, 19).replace('T', ' ') //Devuelve la fecha
     };
 
     if (nuevoComentario) {
