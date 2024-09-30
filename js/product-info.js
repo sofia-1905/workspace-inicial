@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (resultObj.status === "ok") {
             let commentsArray = resultObj.data;
             let comentariosGuardados = JSON.parse(localStorage.getItem('user-comment')) || [];
-            commentsArray = commentsArray.concat(comentariosGuardados);
+            commentsArray = commentsArray.concat(comentariosGuardados.filter(aux => aux.productId === productcommentId));
             showComments(commentsArray);
         }
     });
@@ -190,8 +190,8 @@ document.querySelectorAll('#rating li').forEach(item => {
     getJSONData(PRODUCT_INFO_COMMENTS_URL + productcommentId + ".json").then(function(resultObj) {
         if (resultObj.status === "ok") {
             let commentsArray = resultObj.data;
-            let comentariosGuardados = JSON.parse(localStorage.getItem('user-comment')) || [];
-            commentsArray = commentsArray.concat(comentariosGuardados);
+            let comentariosGuardados = JSON.parse(localStorage.getItem('user-comment')) || []; //Obtener la lista de comentarios guardados en Local Storage
+            commentsArray = commentsArray.concat(comentariosGuardados.filter(aux => aux.productId === productcommentId)); //Filtrar los comentarios que coindicen con el id del producto guardado
             showComments(commentsArray);
         }
     });
@@ -205,9 +205,6 @@ function agregarCalificacion(event) {
     const nuevoItem = inputItem.value.trim();
     const inputRating = document.getElementById('rating-value');
     const nuevoRating = inputRating.value;
-
-    //let comentario = document.getElementById('user-comment');
-    //let rating =  document.getElementById('rating-value');
 
     let nuevoComentario = {
         productId: localStorage.getItem("productID"),
