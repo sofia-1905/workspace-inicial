@@ -327,7 +327,7 @@ ul.breadcrumb li+li:before {
 
   }
 
-
+/* div para agregar comentarios*/
 #comentarios{
  width: 300px;   /* ancho del div*/
   height: 400px;  /* alto del div*/
@@ -351,14 +351,14 @@ div#comments{
     background-color: #ffffff;
     border: 4px solid #F58509;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important;
-    border-radius: 10%;
-    width: fit-content;
+    border-radius: 50px;
+    width: 100%;
     overflow: hidden;
     padding: 2%;
     margin-top: 20px;
-    margin: 20px 0 20px 20px;
     display: block;
-    padding: 5%;
+    padding: 3%;
+    flex-grow: 1;
 }
 
 /* div con ambos */
@@ -367,48 +367,73 @@ margin-top: 4%;
 width: 100%;
 gap: 4%;
 align-items: center;
+align-content: center;
 text-align: justify;
 justify-content: center !important;
 }
 
 /*titulo calificaciones*/
 #calificacionestitle {
-font-size: x-large;
+font-size: xx-large;
+font-family: Arial, Helvetica, sans-serif;
+text-align: justify;
+margin-top: 2%;
+margin-left: 5%;
 margin-bottom: 5%;
 }
 
 /*estilo de las caritas*/
 .rating li {
     display: inline-block;
-    margin: 0 2px; /*Espaciado entre los iconos*/
+    margin: 0 1px; /*Espaciado entre los iconos*/
+    font-size: x-large;
 }
 
 .rating li[data-value="1"] {
-    background-color: rgba(255, 0, 0, 0.6); /* 1 carita */
+    color: rgba(255, 0, 0, 0.6); /* 1 carita */
 }
 
 .rating li[data-value="2"] {
-    background-color: rgba(255, 165, 0, 0.6); /* 2 caritas */
+    color: rgba(243, 239, 12, 0.6); /* 2 caritas */
 }
 
 .rating li[data-value="3"] {
-    background-color: rgba(255, 255, 0, 0.6); /* 3 caritas */
+    color: rgba(203, 125, 223, 0.6); /* 3 caritas */
 }
 
 .rating li[data-value="4"] {
-    background-color: rgba(0, 255, 0, 0.6); /* 4 caritas */
+    color: rgba(123, 212, 21, 0.644); /* 4 caritas */
 }
 
 .rating li[data-value="5"] {
-    background-color: rgba(0, 128, 0, 0.6); /* 5 caritas */
+    color: rgba(2, 233, 60, 0.6); /* 5 caritas */
 }
 
 /* div de cada calificacion por separado */
 #commentdiv{
-margin-top: 8%;
+margin-bottom: 5%;
+display: flex;
+width: 100%;
+text-align: justify;
+}
+
+/*div iconos de los comentarios*/
+#iconos {
+display: flex;
 }
 
 #descripcioncomment {
+font-size: x-large;
+font-weight: 490;
+margin-top: 0 !important;
+}
+
+#usuariocomment {
 font-size: larger;
 font-weight: 450;
+}
+
+#fechacomment{
+text-align: right;
+font-size: large;
 }
