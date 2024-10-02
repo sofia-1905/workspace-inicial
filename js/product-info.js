@@ -207,11 +207,11 @@ function agregarCalificacion(event) {
     const nuevoRating = inputRating.value;
 
     let nuevoComentario = {
-        productId: localStorage.getItem("productID"),
-        score: nuevoRating,
-        description: nuevoItem,
-        user: localStorage.getItem('username'),
-        dateTime: new Date().toISOString().slice(0, 19).replace('T', ' ') //Devuelve la fecha
+        productId: localStorage.getItem("productID"),  //Obtener identificador del producto que se comenta
+        score: nuevoRating,                            //Valor de la puntuacion para las caritas
+        description: nuevoItem,                     //Descripcion valor de texto con el trim para los espacios
+        user: localStorage.getItem('username'),       //Devuelve el usuario del Local Storage
+        dateTime: new Date().toISOString().slice(0, 19).replace('T', ' ')    //Devuelve la fecha
     };
 
     if (nuevoComentario) {
