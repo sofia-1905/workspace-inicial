@@ -222,8 +222,28 @@ ul.breadcrumb li+li:before {
         margin-bottom: 0;
     }
     #calificacionestitle {
-        color: #acacac;
-            }
+        color: #838383;
+        justify-content: right;
+        display: flex;
+        margin-right: 7%;
+    }
+
+    #fechacomment {
+        text-align: left;
+        display: flex;
+    }
+    .rating li{
+    margin: 0;
+    padding: 2px !important;
+    }
+    #descripcioncomment{
+    font-weight: 450 !important;
+    }
+    #comments-list{
+        display: flex !important;
+        justify-content: center !important;
+        align-content: center !important;
+    }
 }
 
 /* Para smartphones pequeños (320x568) */
@@ -294,13 +314,46 @@ ul.breadcrumb li+li:before {
     .text-muted {
         background-color: white;
     }
-    div#comments{
-        padding: 15%;
+    #comments{
+        text-align: center;
+        justify-content: center;
     }
+    #commentdiv{
+        padding: 2% !important;
+    }
+
     #calificacionestitle {
-    padding: 7%;
+    padding: 5%;
     color: #F58509;
-        }
+    margin-left: 3% !important;
+    }
+    #comments-list{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    }
+
+    #descripcioncomment{
+        font-weight: 800;
+    }
+
+    #fechacomment {
+        text-align: left;
+        display: flex;
+        font-size: small !important;
+    }
+    .rating li{
+    display: flex !important;
+    font-size: medium !important;
+    text-align: right !important;
+    margin: 0;
+    padding: 0.5px !important;
+    }
+    #iconos {
+    text-align: right;
+    justify-content: right;
+    }
 }
 
 .rating {
