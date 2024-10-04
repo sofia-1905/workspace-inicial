@@ -48,3 +48,14 @@ document.addEventListener("DOMContentLoaded", function() {
       window.location.href = 'login.html'; 
     }
 });
+
+
+    // Recuperar el nombre de usuario del localStorage al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+        const username = localStorage.getItem('username');
+        if (username) {
+            document.getElementById('username-placeholder').innerText = username;
+        } else {
+            document.getElementById('username-placeholder').innerText = 'Invitado';
+        }
+    });

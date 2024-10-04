@@ -385,7 +385,7 @@ ul.breadcrumb li+li:before {
  width: 300px;   /* ancho del div*/
   height: 400px;  /* alto del div*/
   padding: 20px;  /* Espacio interno */
-  background-color: #f0f0f0; /* Color de fondo */
+  background-color: white; /* Color de fondo */
   border: 1px solid #ccc; /* Borde */
   box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
   border-radius: 10%;
@@ -394,6 +394,10 @@ ul.breadcrumb li+li:before {
   
 }
 
+#user-comment{
+    background-color: #D9D9D9;
+    border-radius: 20px;
+}
 #rangeFilterCount{
 background-color:#F58509; /* Color de fondo (verde) */
   color: white;              /* Color del texto */
