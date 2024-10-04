@@ -68,15 +68,15 @@ ul.breadcrumb li+li:before {
 }
 
 
-/* Carrusel */
+/* Carrusel PRODUCTOS */
 /* Estilos generales para el contenedor del carrusel */
-.carousel-container {
+#product-info .carousel-container {
     width: 55%; 
     max-width: 800px; /* Ancho máximo para limitar el tamaño del carrusel */
 }
 
 /* Ajusta el ancho y alto de las imágenes del carrusel */
-.carousel-item img {
+#product-info .carousel-item img {
     width: 100%;
     height: auto; /* Mantiene la proporción de la imagen */
     object-fit: cover; /* Ajusta cómo la imagen se adapta al contenedor */
@@ -86,14 +86,14 @@ ul.breadcrumb li+li:before {
 }
 
 /* Cambia el color de los indicadores del carrusel */
-.carousel-indicators [data-bs-target] {
+#product-info .carousel-indicators [data-bs-target] {
   background-color: #ff8400; /* Color de los indicadores */
 }
 
-.carousel-indicators .active {
+#product-info .carousel-indicators .active {
   background-color: #F8A244; /* Color del indicador activo */
 }
-/* Fin carrusel */
+/* Fin carrusel PRODUCTOS*/
 
 /* Contenedor info */
 /* Estilos generales contenedor */
@@ -137,6 +137,40 @@ ul.breadcrumb li+li:before {
 /* Fin contenedor info */
 
 /* Productos relacionados */
+
+/* CAROUSEL */
+/* Personalización de los botones del carrusel */
+#relatedProductCarousel .carousel-control-prev-icon,
+#relatedProductCarousel .carousel-control-next-icon {
+    background-color: #F58509;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+/* Flechas */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 4%; /* Ajusta el ancho del área de las flechas */
+}
+
+.carousel-inner {
+    padding-top: 0;
+}
+
+/* Estilos para los contenedores de los productos relacionados */
+.related-product {
+    margin: 10px; /* Espacio entre los productos */
+    max-width: 30%; /* Limita el ancho del contenedor */
+}
+
+/* Solo para el primer producto relacionado */
+.related-product:first-child {
+    margin-left: 40px; /* Espacio solo para el primer producto */
+}
+
+
+/* FIN CAROUSEL */
 /* Contenedor de toda la info */
 #related-products-container {
     background-color: white;
@@ -148,7 +182,7 @@ ul.breadcrumb li+li:before {
 
 .title-related-products {
     color: #F58509;
-    font-size: 150%;
+    margin-right: 40px !important;
 }
 
 .card {
@@ -167,8 +201,6 @@ ul.breadcrumb li+li:before {
     text-align: end;
     font-size: 20px;
 }
-
-
 
 .cursor-pointer {
     cursor: pointer; /* Cambia el cursor a un puntero */

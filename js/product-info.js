@@ -70,12 +70,18 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 
-
     // Función para mostrar productos relacionados
     function showRelatedProducts(relatedProducts) {
-        const relatedProductsHTML = relatedProducts.map(product => `
-            <div class="col-md-4 cursor-pointer" onclick="selectRelatedProduct(${product.id})">
-                <div class="card">
+    const slideItems = 3; // Número de productos por "slide"
+    const carouselItemsHTML = [];
+
+    // Agrupar productos en grupos de "Slideitems"
+    for (let i = 0; i < relatedProducts.length; i += slideItems) {
+        const productsToShow = relatedProducts.slice(i, i + slideItems);
+        
+        const productsHTML = productsToShow.map(product => `
+            <div class="col related-product">
+                <div class="card related-product-card">
                     <img src="${product.image}" class="card-img-top" alt="${product.name}">
                     <div class="card-body">
                         <h5 class="card-title">${product.name}</h5>
@@ -84,9 +90,34 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         `).join('');
 
-        // Insertar los productos relacionados en el contenedor correspondiente
-        document.getElementById('related-products-list').innerHTML = relatedProductsHTML;
+        // Añadir el grupo de productos como un nuevo item del carousel
+        carouselItemsHTML.push(`
+            <div class="carousel-item ${i === 0 ? 'active' : ''}">
+                <div class="row">
+                    ${productsHTML}
+                </div>
+            </div>
+        `);
     }
+
+    // Insertar los productos relacionados en el contenedor correspondiente
+    document.getElementById('related-products-list').innerHTML = `
+        <div id="relatedProductCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                ${carouselItemsHTML.join('')}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#relatedProductCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#relatedProductCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    `;
+}
+
 });
 
 // Función para seleccionar un producto relacionado
