@@ -59,3 +59,4 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('username-placeholder').innerText = 'Invitado';
         }
     });
+    
