@@ -14,7 +14,7 @@ body {
 
 /* Estilo para los enlaces de navegación */
 .navbar-custom .nav-link {
-    color: #6F6A6A !important; /* Color del texto de los enlaces */
+    color: #6F6A6A !important;
 }
 /* FIN HEADER */
 
@@ -87,7 +87,7 @@ ul.breadcrumb li+li:before {
 
 /* Cambia el color de los indicadores del carrusel */
 #product-info .carousel-indicators [data-bs-target] {
-  background-color: #ff8400; /* Color de los indicadores */
+  background-color: #ff8400;
 }
 
 #product-info .carousel-indicators .active {
@@ -177,7 +177,6 @@ ul.breadcrumb li+li:before {
     padding: 20px;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin-bottom: 50px;
 }
 
 .title-related-products {
@@ -264,18 +263,27 @@ ul.breadcrumb li+li:before {
         text-align: left;
         display: flex;
     }
+
     .rating li{
     margin: 0;
     padding: 2px !important;
     }
+
     #descripcioncomment{
     font-weight: 450 !important;
     }
+
     #comments-list{
         display: flex !important;
         justify-content: center !important;
         align-content: center !important;
     }
+
+    .related-product {
+       
+        max-width: 40%;
+    }
+
 }
 
 /* Para smartphones pequeños (320x568) */
@@ -305,7 +313,6 @@ ul.breadcrumb li+li:before {
 
     .carousel-item img {
         border-radius: 10px;
-        border: 1px solid #F58509;
     }
 
     .product-details {
@@ -375,17 +382,35 @@ ul.breadcrumb li+li:before {
         display: flex;
         font-size: small !important;
     }
-    .rating li{
+
+    .rating li {
     display: flex !important;
     font-size: medium !important;
     text-align: right !important;
     margin: 0;
     padding: 0.5px !important;
     }
+
     #iconos {
     text-align: right;
     justify-content: right;
     }
+
+    /* Productos relacionados */
+    .title-related-products {
+        font-size: 15px;
+    }
+    
+    /* Solo para el primer producto relacionado */
+    .related-product:first-child {
+        margin-left: 5px; /* Espacio solo para el primer producto */
+    }
+    
+    /* Productos relacionados */
+    .related-product {
+        flex: 0 0 90%; /* Cada producto ocupa el 90% del contenedor */
+        max-width: 100%; /* Asegura que no exceda el ancho */
+    }   
 }
 
 .rating {
