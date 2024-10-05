@@ -277,8 +277,9 @@ ul.breadcrumb li+li:before {
         display: flex !important;
         justify-content: center !important;
         align-content: center !important;
+        margin-left: 3%;
     }
-
+    
     .related-product {
        
         max-width: 40%;
@@ -371,7 +372,7 @@ ul.breadcrumb li+li:before {
     justify-content: center;
     text-align: center;
     align-content: center;
-    margin-left: 10%;
+    margin-left: 7%;
     }
 
     #descripcioncomment{
