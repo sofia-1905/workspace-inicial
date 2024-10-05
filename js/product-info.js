@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(`${PRODUCT_INFO_URL}${productId}${EXT_TYPE}`)
             .then(response => response.json())  // Convertir la respuesta a formato JSON
             .then(product => {
+                // Comprobar el objeto del producto en la consola
+                console.log(product); 
+
                 // Crear el contenido HTML para mostrar el producto
                 const productHTML = `
                 <div class="container-fluid">
@@ -72,57 +75,57 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Función para mostrar productos relacionados
     function showRelatedProducts(relatedProducts) {
-    const slideItems = 3; // Número de productos por "slide"
-    const carouselItemsHTML = [];
+        const slideItems = 3; // Número de productos por "slide"
+        const carouselItemsHTML = [];
 
-    // Agrupar productos en grupos de "Slideitems"
-    for (let i = 0; i < relatedProducts.length; i += slideItems) {
-        const productsToShow = relatedProducts.slice(i, i + slideItems);
-        
-        const productsHTML = productsToShow.map(product => `
-            <div class="col related-product">
-                <div class="card related-product-card">
-                    <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                    <div class="card-body">
-                        <h5 class="card-title">${product.name}</h5>
+        // Agrupar productos en grupos de "Slideitems"
+        for (let i = 0; i < relatedProducts.length; i += slideItems) {
+            const productsToShow = relatedProducts.slice(i, i + slideItems);
+            
+            const productsHTML = productsToShow.map(product => `
+                <div class="col related-product">
+                    <div class="card related-product-card" onclick="selectRelatedProduct(${product.id})">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `).join('');
+            `).join('');
 
-        // Añadir el grupo de productos como un nuevo item del carousel
-        carouselItemsHTML.push(`
-            <div class="carousel-item ${i === 0 ? 'active' : ''}">
-                <div class="row">
-                    ${productsHTML}
+            // Añadir el grupo de productos como un nuevo item del carousel
+            carouselItemsHTML.push(`
+                <div class="carousel-item ${i === 0 ? 'active' : ''}">
+                    <div class="row">
+                        ${productsHTML}
+                    </div>
                 </div>
-            </div>
-        `);
-    }
+            `);
+        }
 
-    // Insertar los productos relacionados en el contenedor correspondiente
-    document.getElementById('related-products-list').innerHTML = `
-        <div id="relatedProductCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                ${carouselItemsHTML.join('')}
+        // Insertar los productos relacionados en el contenedor correspondiente
+        document.getElementById('related-products-list').innerHTML = `
+            <div id="relatedProductCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    ${carouselItemsHTML.join('')}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#relatedProductCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#relatedProductCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#relatedProductCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#relatedProductCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    `;
-}
+        `;
+    }
 
 });
 
 // Función para seleccionar un producto relacionado
 function selectRelatedProduct(productId) {
-    localStorage.setItem("productID", productId);
+    localStorage.setItem("productID", productId);  // Guardar el ID del producto en localStorage
     location.reload();  // Recargar la página para mostrar el nuevo producto
 }
 
