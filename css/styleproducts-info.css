@@ -205,10 +205,10 @@ ul.breadcrumb li+li:before {
     cursor: pointer; /* Cambia el cursor a un puntero */
 }
 
+/* Al seleccionar un producto relacionado */
 .related-product-card {
     cursor: pointer; /* Cambia el cursor a una mano al pasar el mouse */
 }
-
 
 /* Fin productos relacionados*/
 
