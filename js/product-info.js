@@ -129,7 +129,7 @@ function selectRelatedProduct(productId) {
     location.reload();  // Recargar la página para mostrar el nuevo producto
 }
 
-
+//Funcion para mostrar las calificaciones
   function showComments(array) {
     let htmlContentToAppend = `<h5 id="calificacionestitle">Calificaciones</h5>`;
 
@@ -176,6 +176,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const score = localStorage.getItem('score');
 
+//Funcion para obtener iconos de acuerdo al puntaje
 function getIconForScore(score) {
     let icons = '';
     for (let i = 0; i < score; i++) {
@@ -204,6 +205,7 @@ function getIconForScore(score) {
     return `<ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">${icons}</ul>`;
 } 
 
+//Seleccionar iconos de calificacion
 document.querySelectorAll('#rating li').forEach(item => {
     item.addEventListener('click', function() {
       const ratingValue = this.getAttribute('data-value');
@@ -217,6 +219,7 @@ document.querySelectorAll('#rating li').forEach(item => {
     });
   });
 
+//Muestra los calificaciones del JSON y las nuevas guardadas en LocalStorage
   function mostrarComentariosActualizado() {
 
     let productcommentId = localStorage.getItem("productID");
