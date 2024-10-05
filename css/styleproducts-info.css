@@ -371,6 +371,7 @@ ul.breadcrumb li+li:before {
     justify-content: center;
     text-align: center;
     align-content: center;
+    margin-left: 10%;
     }
 
     #descripcioncomment{
