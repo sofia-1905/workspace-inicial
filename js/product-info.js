@@ -271,8 +271,10 @@ theme = localStorage.getItem('theme');
 // Aplicar el tema guardado en el almacenamiento local al cargar la pagina
 if (theme === 'dark-mode') {
     body.classList.add('dark-mode');
+    switchbutton.checked = true;
 } else {
     body.classList.remove('dark-mode');
+    switchbutton.checked = false;
 }
 
 switchbutton.addEventListener('click', () => {
@@ -282,7 +284,9 @@ switchbutton.addEventListener('click', () => {
     // Guardar el nuevo estado del tema en el almacenamiento local
     if (body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark-mode');
+        switchbutton.checked = true;
     } else {
         localStorage.setItem('theme', 'light-mode');
+        switchbutton.checked = false;
     }
 });
