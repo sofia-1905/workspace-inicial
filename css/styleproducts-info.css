@@ -593,7 +593,7 @@ font-size: large;
 
 /*Estilo del switch para modo claro*/
 #switchbutton {
-    border: solid;
+    border: solid white;
     width: 200px;
     height: 100px;
     border-radius: 999px;
@@ -636,6 +636,7 @@ input[type=checkbox]:checked + .display #switchbutton{
     background-image: url(https://media.istockphoto.com/id/158331462/es/v%C3%ADdeo/colorido-estrellas-en-bucle-cielo-de-noche-con-estrellas-bkinking.jpg?s=640x640&k=20&c=FLrUhmwfs1lXQqRh3uB9kRQqD0caL0om-jac2WYyx2E=);
     transition: background-image 0.5s ease;
     box-shadow: 10px 10px 30px black inset;
+    border: solid rgb(59, 59, 59);
 }
 
 /*Estilo del circulo para el modo oscuro*/
@@ -654,4 +655,20 @@ input[type=checkbox]:checked + .display #switchbutton .circle #sol{
 /*Posicion de la lunea para modo oscuro*/
 input[type=checkbox]:checked + .display #switchbutton .circle #luna{
     margin-top: 0%;
+}
+
+/*Estilo de pagina para Modo oscuro*/
+body.dark-mode {
+    background-color: black;
+    width: 100%;
+}
+
+/* Afectar todos los elementos de la página */
+body.dark-mode header,
+body.dark-mode main,
+body.dark-mode footer,
+body.dark-mode div,
+body.dark-mode p {
+    background-color: black;
+    color: white;
 }
