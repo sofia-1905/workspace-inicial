@@ -271,7 +271,7 @@ theme = localStorage.getItem('theme');
 // Aplicar el tema guardado en el almacenamiento local al cargar la pagina
 if (theme === 'dark-mode') {
     body.classList.add('dark-mode');
-    switchbutton.checked = true;
+    switchbutton.checked = true;   //Se sincroniza el estado inicial del botón con el tema almacenado en localStorage.
 } else {
     body.classList.remove('dark-mode');
     switchbutton.checked = false;
