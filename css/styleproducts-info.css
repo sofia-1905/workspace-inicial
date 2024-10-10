@@ -658,17 +658,32 @@ input[type=checkbox]:checked + .display #switchbutton .circle #luna{
 }
 
 /*Estilo de pagina para Modo oscuro*/
-body.dark-mode {
-    background-color: black;
+
+/*Body y footer*/
+body.dark-mode,
+body.dark-mode footer {
+    background-color: rgb(34, 34, 34);
     width: 100%;
 }
-
-/* Afectar todos los elementos de la página */
-body.dark-mode header,
-body.dark-mode main,
-body.dark-mode footer,
-body.dark-mode div,
-body.dark-mode p {
-    background-color: black;
+/*Barra pagina actual de productos*/
+body.dark-mode div.container-fluid,
+body.dark-mode ul.breadcrumb {
+    background-color: rgb(145, 145, 145);
     color: white;
+}
+
+/*Contenedor informacion del producto*/
+body.dark-mode #product-info > div.product-details.row.justify-content-center {
+    background-color: #525252;
+    color: white;
+}
+
+#product-info > div.product-details.row.justify-content-center > div.col-md-6.product-info-container > p.product-description{
+    color: #b1b1b1;
+}
+
+/*Bordes del contenedor Producto info principal texto e imagen*/
+body.dark-mode #product-info > div.product-details.row.justify-content-center > div.col-md-6.product-info-container,
+body.dark-mode #carouselExampleIndicators > div.carousel-inner > div.carousel-item.active > img{
+        border-color: #ccc;
 }
