@@ -21,7 +21,7 @@ function saveSession() {
 }
 
 document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita el envío del formulario de manera tradicional
+    e.preventDefault(); 
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -33,7 +33,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         // actualización del botón dropdown con el email ingresado
         const dropdownButton = document.querySelector('.dropdown-toggle');
         if (dropdownButton) {
-            dropdownButton.innerText = username; // Establecemos el texto del botón dropdown
+            dropdownButton.innerText = username; 
         }
 
         window.location.href = 'index.html'; 

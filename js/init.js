@@ -61,3 +61,16 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   });
   
+  document.addEventListener("DOMContentLoaded", function() {
+   
+          const logoutButton = document.getElementById('logout');
+          if (logoutButton) {
+              logoutButton.addEventListener('click', function() {
+                  
+                sessionStorage.removeItem('loggedIn');
+                localStorage.removeItem('username');
+
+                  window.location.href = 'login.html';
+              });
+          }
+});
