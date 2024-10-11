@@ -49,14 +49,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
-    // Recuperar el nombre de usuario del localStorage al cargar la página
     document.addEventListener("DOMContentLoaded", function() {
-        const username = localStorage.getItem('username');
-        if (username) {
-            document.getElementById('username-placeholder').innerText = username;
-        } else {
-            document.getElementById('username-placeholder').innerText = 'Invitado';
-        }
-    });
-    
+      const username = localStorage.getItem('username');
+      const dropdownButton = document.querySelector('.dropdown-toggle');
+      if (username) {
+          dropdownButton.innerText = username; 
+          document.getElementById('username-placeholder').innerText = username;
+      } else {
+          dropdownButton.innerText = 'Invitado';
+          document.getElementById('username-placeholder').innerText = ' ';
+      }
+  });
+  
