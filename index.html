@@ -29,8 +29,18 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item ms-auto">
-            <span class="navbar-text text-white" id="user-name"><span id="username-placeholder">Invitado</span></span>
+          
+          <div class="btn-group">
+            <button type="button" class="btn btn-light btn-block dropdown-toggle" id="dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="user-email"> </span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" id="logout">Cerrar sesión</a></li>
+            </ul>
+
         </ul>
       </div>
     </div>
@@ -88,7 +98,5 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/init.js"></script>
-  
 </body>
-
 </html>
