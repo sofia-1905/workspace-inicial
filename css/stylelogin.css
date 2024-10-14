@@ -10,12 +10,11 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-
- /* H E A D E R  */
+/* H E A D E R  */
 /* Por defecto, ocultar la imagen */
 .header-container .logo-image {
     display: none;
-  }
+}
 
 .header-container {
     background-color: white;
@@ -29,14 +28,11 @@ body {
 
 /* F I N  H E A D E R  */
 
-
-
 /* F O R M  */
 
-  
-  .card .form-control {
+.card .form-control {
     width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible en su contenedor */
-  }
+}
 
 /* Contenedor del formulario */
 .login-container {
@@ -46,7 +42,6 @@ body {
     align-items: center; /* Centra verticalmente */
     min-height: calc(105vh - 385px); /* Ajusta la altura considerando el header y footer */
     padding-top: 20px;
-
 }
 
 .card {
@@ -61,18 +56,13 @@ body {
     display: flex;
     flex-direction: column; /* Organiza los elementos en columna */
     align-items: center; /* Centra los elementos horizontalmente */
-    
 }
 
 /* Estilos para los campos de entrada */
 .form-control {
     border-radius: 20px; /* Bordes redondeados para los campos de entrada */
-    padding: 4%; /* Espaciado interno en los campos de entrada */
-    font-size: 1rem; /* Tamaño de fuente del formulario */
-    border: 1px solid #ffffff; /* Borde blanco */
-    background-color: #ffffff; /* Fondo blanco para campos de entrada */
     font-size: 20px; /* Aumenta el tamaño de la letra */
-    height: 30px; /* Ajusta la altura del campo de entrada */
+    height: 40px; /* Asegura que todos los inputs tengan la misma altura */
     padding: 10px; /* Ajusta el espaciado interno */
 }
 
@@ -87,8 +77,6 @@ body {
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     font-size: 16px;
     margin-top: 15px; /* Margen superior */
-    padding: 5px 40px; /* Reduce el espaciado interno para hacerlo más fino y aumenta el ancho */
-
 }
 
 .btn-primary:hover {
@@ -102,15 +90,14 @@ body {
     outline: none; /* Elimina el contorno predeterminado del botón */
     background-color: #F58509; /* Asegura que el color de fondo no cambie */
     border-color: #F58509; /* Asegura que el borde no cambie */
-  }
+}
 
 #username,
 #password {
     background-color: white; /* Color de fondo siempre visible */
     border: 1px solid #e8be71;
-    border-radius: 15px; /* Bordes redondeados */
+    border-radius: 20px; /* Bordes redondeados */
     width: 100% !important; /* Asegura que el campo de entrada use el ancho completo del contenedor */
-    
 }
 
 #username:focus,
@@ -119,27 +106,44 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.5);
 }
 
-/* F I N  F O R M  */
+/* Alinear el texto de los labels */
+.row.g-3.align-items-center {
+    align-items: center; /* Asegura que todos los elementos estén alineados verticalmente */
+}
 
+.col-auto {
+    display: flex;
+    flex-direction: column; /* Coloca el label y el input uno debajo del otro */
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    margin-right: 15px; /* Espacio entre columnas */
+}
+
+.col-auto label {
+    margin-bottom: 5px; /* Espacio entre el label y el input */
+    text-align: left; /* Alineación del texto del label */
+    width: 100%; /* Para que el label ocupe todo el ancho disponible */
+}
+
+/* F I N  F O R M  */
 
 /* Para smartphones pequeños (320x568) */
 @media (max-width: 568px) {
     body {
         background-color: #F58509; /* Fondo naranja para pantallas móviles */
-      }
+    }
     
-      .navbar {
+    .navbar {
         display: none; /* Oculta el menú en pantallas pequeñas */
-      }
+    }
 
     .footer-container {
         display: none; /* Oculta el footer en pantallas pequeñas */
-      }
-   
+    }
+ 
     .header-container .logo-image {
         display: block; 
-      }
-   
+    }
+ 
     /* Estilos para la imagen del logo */
     .logo-image {
         width: 100% !important; /* Asegura que ocupe todo el ancho del contenedor */
@@ -162,41 +166,84 @@ body {
         color: white;
         border: 4px solid #8E4F0B; /* Color del borde */
         margin: 0 auto; /* Centra el contenedor en la pantalla */
-
     }
 
-    /* Estilos para los campos de entrada */
-    .form-control {
-        font-size: 15px; /* Aumenta el tamaño de la letra */
-        height: 30px; /* Ajusta la altura del campo de entrada */
-        padding: 10px; /* Ajusta el espaciado interno */
-    }
+   /* Alinear el texto de los labels */
+.row.g-3.align-items-center {
+    align-items: center; /* Asegura que todos los elementos estén alineados verticalmente */
+}
+
+/* Alinear el texto de los labels */
+.row.g-3.align-items-center {
+    align-items: center; /* Asegura que todos los elementos estén alineados verticalmente */
+}
+
+/* Alinear el texto de los labels */
+.col-auto {
+    display: flex;
+    flex-direction: column; /* Coloca el label y el input uno debajo del otro */
+    align-items: center; /* Centra el texto y el input horizontalmente */
+    flex: 1; /* Permite que ambas columnas ocupen el mismo espacio */
+}
+
+/* Estilos para los campos de entrada */
+.form-control {
+    width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible en su contenedor */
+    border-radius: 20px; /* Bordes redondeados para los campos de entrada */
+    height: 40px; /* Asegura que todos los inputs tengan la misma altura */
+    padding: 10px; /* Ajusta el espaciado interno */
+    text-align: center; /* Centra el texto dentro del input */
+}
+
+
+/* Estilos para los campos de entrada */
+.form-control {
+    width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible en su contenedor */
+    border-radius: 20px; /* Bordes redondeados para los campos de entrada */
+    height: 40px; /* Asegura que todos los inputs tengan la misma altura */
+    padding: 10px; /* Ajusta el espaciado interno */
+}
+
 
     /* Estilo para los campos de entrada específicos */
     #username,
     #password {
-     border-radius: 20px; /* Bordes más redondeados */
-     padding: 6px !important;
-     border: 2px solid #8E4F0B;
+        border-radius: 20px; /* Bordes más redondeados */
+        padding: 6px !important;
+        border: 2px solid #8E4F0B;
     }
 
     .d-flex {
         justify-content: center !important; /* Centra el botón horizontalmente */
     }
 
-    /* Estilo del botón */
+   
     .btn-primary {
-    background-color: #EF9633; /* Fondo del botón */
-    color: white; /* Texto blanco */
-    border: 2px solid #ffffff;
-    border-radius: 20px; /* Bordes redondeados */
-    font-weight: 100; /* Fuente delgada */
-    padding: 10px 20px; /* Espacio interno */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    font-size: 16px;
-    margin-top: 15px; /* Margen superior */
-    padding: 5px 40px; /* Reduce el espaciado interno para hacerlo más fino y aumenta el ancho */
-    display: inline-block; /* Asegura que el botón se ajuste al contenido */
+        background-color: #EF9633; /* Fondo del botón */
+        color: white; /* Texto blanco */
+        border: 2px solid #ffffff;
+        border-radius: 20px; /* Bordes redondeados */
+        font-weight: 100; /* Fuente delgada */
+        padding: 10px 20px; /* Espacio interno */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        font-size: 16px;
+        margin-top: 15px; /* Margen superior */
+        padding: 5px 40px; /* Reduce el espaciado interno para hacerlo más fino y aumenta el ancho */
+        display: inline-block; /* Asegura que el botón se ajuste al contenido */
     }
-
 }
+
+#btn-login {
+    background-color: #EF9633;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;   
+}
+
+#btn-login:hover {
+    border: 7px #ffffff;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #e8be71;
+    color: #EF9633;
+}  
