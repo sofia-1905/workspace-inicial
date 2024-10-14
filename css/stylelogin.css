@@ -130,7 +130,7 @@ body {
     .card {
         max-width: 90% !important; /* Deja un poco de espacio en los márgenes */
         width: 300px; /* Achicado */
-        padding: 30px; /* Ajusta el padding para móviles */
+        padding: 50px; /* Ajusta el padding para móviles */
         border-radius: 50px !important;
         background-color: rgba(142, 79, 11, 0.4); /* 40% opacidad */
         color: white;
@@ -166,4 +166,5 @@ body {
     border-radius: 10px;
     border: 2px solid #e8be71;
     color: #EF9633;
+    }
 }
