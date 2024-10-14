@@ -103,15 +103,14 @@ body {
 
 @media (max-width: 568px) {
     body {
-        background-color: #F58509; /* Fondo naranja para pantallas móviles */
+        background-color: #F58509; 
     }
     
     .navbar {
-        display: none; /* Oculta el menú en pantallas pequeñas */
-    }
+        display: none; 
 
     .footer-container {
-        display: none; /* Oculta el footer en pantallas pequeñas */
+        display: none; 
     }
 
     .header-container .logo-image {
