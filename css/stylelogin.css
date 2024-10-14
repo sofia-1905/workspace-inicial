@@ -23,7 +23,6 @@ body {
     object-fit: contain;
 }
 
-
 .card {
     max-width: 400px; /* Achicar el ancho */
     width: 100%;
@@ -32,10 +31,10 @@ body {
     color: white; /* Texto blanco */
     border-radius: 40px; /* Bordes redondeados */
     margin: 0 auto; /* Centra el contenedor en la pantalla */
-    padding: 20px; /* Ajusta el padding */
+    padding: 30px; /* Aumentar padding */
     display: flex;
     flex-direction: column; /* Organiza los elementos en columna */
-    align-items: flex-start; /* Alinea todos los elementos al inicio */
+    align-items: center; /* Centra los elementos horizontalmente */
 }
 
 .card .form-control {
@@ -57,6 +56,7 @@ body {
     height: 40px; /* Asegura que todos los inputs tengan la misma altura */
     padding: 10px; /* Ajusta el espaciado interno */
     margin-bottom: 15px; /* Espacio entre los inputs y el botón */
+    width: calc(100% - 20px); /* Asegura que el input ocupe el ancho del contenedor, dejando espacio para el padding */
 }
 
 .col-auto {
@@ -70,9 +70,10 @@ body {
     margin-bottom: 5px; /* Espacio entre el label y el input */
     text-align: left; /* Alineación del texto del label */
     width: 100%; /* Para que el label ocupe todo el ancho disponible */
-    margin-left: 10px; /* Margen izquierdo */
+    margin-left: 0; /* Sin margen izquierdo */
     margin-top: 3px; /* Aumentar margen superior para bajar el label */
 }
+
 /* Estilo del botón */
 .btn-primary {
     background-color: #EF9633; /* Fondo del botón */
@@ -84,7 +85,7 @@ body {
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     font-size: 16px;
     margin-top: 15px; /* Margen superior */
-    width: 100%; /* Asegura que el botón ocupe todo el ancho */
+    width: calc(100% - 20px); /* Asegura que el botón ocupe el ancho del contenedor, dejando espacio para el padding */
 }
 
 .btn-primary:hover {
@@ -100,7 +101,6 @@ body {
     margin-left: 10; /* Cambia esto a un valor mayor para mover el botón hacia la izquierda */
 }
 
-
 @media (max-width: 568px) {
     body {
         background-color: #F58509; 
@@ -108,6 +108,7 @@ body {
     
     .navbar {
         display: none; 
+    }
 
     .footer-container {
         display: none; 
@@ -166,5 +167,4 @@ body {
     border-radius: 10px;
     border: 2px solid #e8be71;
     color: #EF9633;
-    }
 }
