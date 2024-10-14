@@ -738,6 +738,9 @@ border: none;
 box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
 margin-bottom: 5%;
 }
+body.dark-mode ::placeholder {
+color: #c5c4c4;
+}
 
 /* boton para enviar calificacion*/
 body.dark-mode #rangeFilterCount{
