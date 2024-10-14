@@ -686,7 +686,8 @@ body.dark-mode #product-info > div.product-details.row.justify-content-center {
 /*Bordes del contenedor Producto info principal texto e imagen*/
 body.dark-mode #product-info > div.product-details.row.justify-content-center > div.col-md-6.product-info-container,
 body.dark-mode #carouselExampleIndicators > div.carousel-inner > div.carousel-item.active > img{
-        border-color: #ccc;
+border-color: #ccc;
+border: solid 3px;
 }
 
 /*Color de fondo de los divs*/
@@ -743,5 +744,5 @@ body.dark-mode #rangeFilterCount{
 background-color: #8b8989;
 border: none;
 border-radius: 15%;
-box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
 }
