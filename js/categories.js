@@ -141,3 +141,13 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+
+// Modo Oscuro
+const theme = localStorage.getItem('theme');
+
+// Aplicar el tema guardado al cargar la página
+if (theme === 'dark-mode') {
+    document.body.classList.add('dark-mode');
+} else {
+    document.body.classList.remove('dark-mode');
+}
