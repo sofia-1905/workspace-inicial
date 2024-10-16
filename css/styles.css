@@ -59,6 +59,7 @@ nav a {
 /* Ajusta el padding para los ítems del menú si es necesario */
 .navbar-nav .nav-item {
     margin: 0 10px; /* Ajusta el margen para espacio entre ítems */
+    color: white;
   }
 
  /* F I N  M E N U ! */
@@ -341,3 +342,4 @@ css .btn-group .dropdown-toggle {
   background-color: rgb(235, 153, 2);
   color: white;
 }
+
