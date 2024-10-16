@@ -341,3 +341,21 @@ css .btn-group .dropdown-toggle {
   background-color: rgb(235, 153, 2);
   color: white;
 }
+
+/*Modo oscuro*/
+/* Barra de navegacion */
+body.dark-mode .navbar-custom{
+  background-color: #8b8989 !important;
+  }
+  body.dark-mode a.nav-link{
+  color: white !important;
+  }
+  /* boton barra de navegacion usuario */
+  body.dark-mode .btn-group .dropdown-toggle{
+  background-color:#d6d6d6;
+  border: none;
+  }
+body.dark-mode .bg-light,
+body.dark-mode footer {
+ background-color: rgb(34, 34, 34) !important; 
+}

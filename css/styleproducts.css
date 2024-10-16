@@ -284,11 +284,11 @@ body.dark-mode #titulo h1{
 
 /*Barra de navegacion*/
 body.dark-mode .navbar-custom{
-  background-color: #8b8989; 
-}
+  background-color: #8b8989 !important; 
+ }
 body.dark-mode a.nav-link{
  color: white !important;
-}
+ }
 
 /*Divs de productos*/
  body.dark-mode .card{
@@ -297,14 +297,22 @@ background-color: #525252;
 
 /* div slider de precios*/
 body.dark-mode .main{
-background-color: #8f8f8f;
+background-color: #525252;
 color: white;
 }
 /*boton de filtrar*/
 body.dark-mode #rangeFilterCount{
   background-color: #525252;
   color: white;
-  border-color: #e4e4e4;
+  border-color:#F3860F;
+  }
+  body.dark-mode #rangeFilterCount:hover {
+    background-color: #F58509; 
+    color: white; 
+  }
+ /*input de precio*/ 
+ body.dark-mode .price-input{
+  color: white;
   }
 
 
