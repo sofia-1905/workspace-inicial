@@ -726,10 +726,7 @@ body.dark-mode .card-title{
 color: white;
 }
 
-/* fondo para los iconos */
-body.dark-mode ul#rating.rating {
-background-color: #f5f5f5;
-}
+
 
 /* form para calificar */
 body.dark-mode #user-comment{
