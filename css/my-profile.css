@@ -1,0 +1,132 @@
+body {
+    background-color: #F57C00; /* Fondo de la página */
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  
+  }
+
+
+.container {
+    background-color:#F57C00; /* Color del contenedor */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados */
+    max-width: 900px; /* Ancho máximo */
+    margin: 50px auto; /* Centrado */
+}
+
+.form-label,
+h5 {
+    color: white; /* Color de las etiquetas */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.custom-input {
+    background-color: #FFB74D; /* Color de fondo de los inputs */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+}
+
+.custom-input:focus {
+    background-color: #FFA726; /* Color de fondo al enfocar */
+    color: white; /* Color del texto al enfocar */
+    box-shadow: none; /* Sin sombra */
+}
+
+.btn-light {
+    background-color: white; /* Color de fondo del botón */
+    color: #F57C00; /* Color del texto del botón */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px 30px; /* Espaciado interno del botón */
+}
+
+.btn-light:hover {
+    background-color: #E65100; /* Color al pasar el ratón */
+    color: white; /* Color del texto al pasar el ratón */
+}
+
+.invalid-feedback {
+    color: #ffccbc; /* Color de mensaje de error */
+}
+
+.rounded-circle {
+    border-radius: 50%; /* Bordes redondeados para la imagen */
+    border: 4px solid white; /* Borde blanco */
+}
+
+.switch {
+    position: relative; /* Posicionamiento relativo */
+    display: inline-block; /* Display en línea */
+    width: 50px; /* Ancho del switch */
+    height: 25px; /* Altura del switch */
+}
+
+.switch input {
+    opacity: 0; /* Ocultando el input */
+    width: 0; /* Sin ancho */
+    height: 0; /* Sin altura */
+}
+
+.slider {
+    position: absolute; /* Posicionamiento absoluto */
+    cursor: pointer; /* Cursor puntero */
+    top: 0; /* Parte superior */
+    left: 0; /* Lado izquierdo */
+    right: 0; /* Lado derecho */
+    bottom: 0; /* Parte inferior */
+    background-color: #ccc; /* Color de fondo del slider */
+    transition: .4s; /* Transición */
+    border-radius: 25px; /* Bordes redondeados */
+}
+
+.slider:before {
+    position: absolute; /* Posicionamiento absoluto */
+    content: ""; /* Contenido vacío */
+    height: 15px; /* Altura del círculo */
+    width: 15px; /* Ancho del círculo */
+    left: 5px; /* Espaciado desde la izquierda */
+    bottom: 5px; /* Espaciado desde la parte inferior */
+    background-color: white; /* Color de fondo del círculo */
+    border-radius: 50%; /* Círculo */
+    transition: .4s; /* Transición */
+}
+
+
+input:checked+.slider {
+    background-color: black; /* Color del slider cuando está activo */
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px); /* Movimiento del círculo al activar */
+}
+
+.footer {
+    background-color: #F57C00; /* Color de fondo del pie de página */
+    padding: 10px; /* Espaciado interno */
+    text-align: center; /* Centrado de texto */
+}
+
+.footer a {
+    color: #F57C00; /* Color de los enlaces en el pie de página */
+    size: 100px;
+}
+
+#fileInput {
+    width: auto; /* Cambia a 'auto' para que el ancho se ajuste al contenido */
+    padding: 5px; /* Ajusta el espaciado interno */
+    font-size: 14px; /* Tamaño de la fuente */
+    border: 1px solid #ccc; /* Bordes del input */
+    border-radius: 4px; /* Bordes redondeados */
+    display: inline-block; /* Cambia a 'inline-block' para que el botón no se corte */
+}
+
+
+#profileImage{
+    width: 250px;
+    height: 250px;
+}
+

@@ -2,78 +2,76 @@
 
 body {
     display: flex;
-    flex-direction: column; /* Organiza los hijos en una columna */
-    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
-    margin: 0 auto; /* Centra el contenedor en la pantalla */
     background-color: #ffffff;
     font-family: 'Inter', sans-serif;
 }
 
-
- /* H E A D E R  */
-/* Por defecto, ocultar la imagen */
 .header-container .logo-image {
     display: none;
-  }
+}
 
 .header-container {
     background-color: white;
 }
 
 .logo-image {
-    width: 45%; /* Ajusta el ancho del logo */
-    height: auto; /* Mantiene la proporción del logo */
-    object-fit: contain; /* Ajusta la imagen dentro del contenedor */
-}
-
-/* F I N  H E A D E R  */
-
-
-
-/* F O R M  */
-
-  
-  .card .form-control {
-    width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible en su contenedor */
-  }
-
-/* Contenedor del formulario */
-.login-container {
-    flex: 1; /* Ocupa el espacio disponible entre el header y el footer */
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    min-height: calc(105vh - 385px); /* Ajusta la altura considerando el header y footer */
-    padding-top: 20px;
-
+    width: 45%;
+    height: auto;
+    object-fit: contain;
 }
 
 .card {
-    max-width: 100%;
-    width: 500px;
+    max-width: 400px; /* Achicar el ancho */
+    width: 100%;
     height: auto;
     background-color: #F58509; /* Fondo naranja */
     color: white; /* Texto blanco */
     border-radius: 40px; /* Bordes redondeados */
     margin: 0 auto; /* Centra el contenedor en la pantalla */
-    padding: 20px; /* Espaciado interno para el contenido */
+    padding: 30px; /* Aumentar padding */
     display: flex;
     flex-direction: column; /* Organiza los elementos en columna */
     align-items: center; /* Centra los elementos horizontalmente */
-    
 }
 
-/* Estilos para los campos de entrada */
+.card .form-control {
+    width: 100%;
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(105vh - 385px);
+    padding-top: 20px;
+}
+
 .form-control {
-    border-radius: 20px; /* Bordes redondeados para los campos de entrada */
-    padding: 4%; /* Espaciado interno en los campos de entrada */
-    font-size: 1rem; /* Tamaño de fuente del formulario */
-    border: 1px solid #ffffff; /* Borde blanco */
-    background-color: #ffffff; /* Fondo blanco para campos de entrada */
+    border-radius: 20px; /* Bordes redondeados */
     font-size: 20px; /* Aumenta el tamaño de la letra */
-    height: 30px; /* Ajusta la altura del campo de entrada */
+    height: 40px; /* Asegura que todos los inputs tengan la misma altura */
     padding: 10px; /* Ajusta el espaciado interno */
+    margin-bottom: 15px; /* Espacio entre los inputs y el botón */
+    width: calc(100% - 20px); /* Asegura que el input ocupe el ancho del contenedor, dejando espacio para el padding */
+}
+
+.col-auto {
+    display: flex;
+    flex-direction: column; /* Coloca el label y el input uno debajo del otro */
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    margin-right: 15px; /* Espacio entre columnas */
+}
+
+.col-auto label {
+    margin-bottom: 5px; /* Espacio entre el label y el input */
+    text-align: left; /* Alineación del texto del label */
+    width: 100%; /* Para que el label ocupe todo el ancho disponible */
+    margin-left: 0; /* Sin margen izquierdo */
+    margin-top: 3px; /* Aumentar margen superior para bajar el label */
 }
 
 /* Estilo del botón */
@@ -87,8 +85,7 @@ body {
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     font-size: 16px;
     margin-top: 15px; /* Margen superior */
-    padding: 5px 40px; /* Reduce el espaciado interno para hacerlo más fino y aumenta el ancho */
-
+    width: calc(100% - 20px); /* Asegura que el botón ocupe el ancho del contenedor, dejando espacio para el padding */
 }
 
 .btn-primary:hover {
@@ -96,21 +93,59 @@ body {
     border-color: #e57204; /* Color del borde en estado hover */
 }
 
-/* Estilo para el botón primario cuando está en estado de focus (cuando es clickeado o enfocado con el teclado) */
-.btn-primary:focus, .btn-primary:active, .btn-primary.focus {
-    box-shadow: none; /* Elimina la sombra del enfoque */
-    outline: none; /* Elimina el contorno predeterminado del botón */
-    background-color: #F58509; /* Asegura que el color de fondo no cambie */
-    border-color: #F58509; /* Asegura que el borde no cambie */
-  }
+#btn-login {
+    background-color: #EF9633;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;   
+    margin-left: 10; /* Cambia esto a un valor mayor para mover el botón hacia la izquierda */
+}
+
+@media (max-width: 568px) {
+    body {
+        background-color: #F58509; 
+    }
+    
+    .navbar {
+        display: none; 
+    }
+
+    .footer-container {
+        display: none; 
+    }
+
+    .header-container .logo-image {
+        display: block; 
+    }
+
+    .logo-image {
+        width: 100% !important; /* Asegura que ocupe todo el ancho del contenedor */
+        height: 100%; /* Asegura que ocupe toda la altura del contenedor */
+        object-fit: cover; /* Asegura que la imagen cubra el contenedor sin cortarse */
+    }
+
+    .login-container {
+        margin-top: 40px; /* Distancia superior */
+    }
+    
+    .card {
+        max-width: 90% !important; /* Deja un poco de espacio en los márgenes */
+        width: 300px; /* Achicado */
+        padding: 30px; /* Ajusta el padding para móviles */
+        border-radius: 50px !important;
+        background-color: rgba(142, 79, 11, 0.4); /* 40% opacidad */
+        color: white;
+        border: 4px solid #8E4F0B; /* Color del borde */
+        margin: 0 auto; /* Centra el contenedor en la pantalla */
+    }
+}
 
 #username,
 #password {
     background-color: white; /* Color de fondo siempre visible */
     border: 1px solid #e8be71;
-    border-radius: 15px; /* Bordes redondeados */
+    border-radius: 20px; /* Bordes redondeados */
     width: 100% !important; /* Asegura que el campo de entrada use el ancho completo del contenedor */
-    
 }
 
 #username:focus,
@@ -119,84 +154,17 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.5);
 }
 
-/* F I N  F O R M  */
-
-
-/* Para smartphones pequeños (320x568) */
-@media (max-width: 568px) {
-    body {
-        background-color: #F58509; /* Fondo naranja para pantallas móviles */
-      }
-    
-      .navbar {
-        display: none; /* Oculta el menú en pantallas pequeñas */
-      }
-
-    .footer-container {
-        display: none; /* Oculta el footer en pantallas pequeñas */
-      }
-   
-    .header-container .logo-image {
-        display: block; 
-      }
-   
-    /* Estilos para la imagen del logo */
-    .logo-image {
-        width: 100% !important; /* Asegura que ocupe todo el ancho del contenedor */
-        height: 100%; /* Asegura que ocupe toda la altura del contenedor */
-        object-fit: cover; /* Asegura que la imagen cubra el contenedor sin cortarse */
-    }
-
-    /* Estilo para el contenedor del formulario */
-    .login-container {
-        margin-top: 40px; /* Distancia superior*/
-    }
-    
-    /* Estilo para el contenedor del formulario */
-    .card {
-        max-width: 90% !important; /* Deja un poco de espacio en los márgenes */
-        width: 400px;
-        padding: 50px; /* Ajusta el padding para móviles */
-        border-radius: 50px !important;
-        background-color: rgba(142, 79, 11, 0.4); /* 40% opacidad */
-        color: white;
-        border: 4px solid #8E4F0B; /* Color del borde */
-        margin: 0 auto; /* Centra el contenedor en la pantalla */
-
-    }
-
-    /* Estilos para los campos de entrada */
-    .form-control {
-        font-size: 15px; /* Aumenta el tamaño de la letra */
-        height: 30px; /* Ajusta la altura del campo de entrada */
-        padding: 10px; /* Ajusta el espaciado interno */
-    }
-
-    /* Estilo para los campos de entrada específicos */
-    #username,
-    #password {
-     border-radius: 20px; /* Bordes más redondeados */
-     padding: 6px !important;
-     border: 2px solid #8E4F0B;
-    }
-
-    .d-flex {
-        justify-content: center !important; /* Centra el botón horizontalmente */
-    }
-
-    /* Estilo del botón */
-    .btn-primary {
-    background-color: #EF9633; /* Fondo del botón */
-    color: white; /* Texto blanco */
+#btn-login {
+    background-color: #EF9633;
+    color: #ffffff;
     border: 2px solid #ffffff;
-    border-radius: 20px; /* Bordes redondeados */
-    font-weight: 100; /* Fuente delgada */
-    padding: 10px 20px; /* Espacio interno */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    font-size: 16px;
-    margin-top: 15px; /* Margen superior */
-    padding: 5px 40px; /* Reduce el espaciado interno para hacerlo más fino y aumenta el ancho */
-    display: inline-block; /* Asegura que el botón se ajuste al contenido */
-    }
+    border-radius: 10px;   
+}
 
+#btn-login:hover {
+    border: 7px #ffffff;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #e8be71;
+    color: #EF9633;
 }
