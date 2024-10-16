@@ -268,7 +268,7 @@ document.getElementById('comment-form').addEventListener('submit', agregarCalifi
 //JAVASCRIPT A CAMBIAR A MY PROFILE
 /*Cambiar a modo oscuro al hacer click*/
 const switchbutton = document.getElementById('switchbutton');
-const body = document.getElementById('bodyproduct-info');
+const body = document.body;
 theme = localStorage.getItem('theme');
 
 // Aplicar el tema guardado en el almacenamiento local al cargar la pagina

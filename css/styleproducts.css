@@ -269,4 +269,42 @@ input[type="range"]::-webkit-slider-thumb {
 /* Fin producto */
 
 
+/* Estilo para Modo Oscuro */
+
+/*body*/
+body.dark-mode {
+  background-color: rgb(34, 34, 34);
+  color: white;
+}
+
+/*titulo de categoria*/
+body.dark-mode #titulo h1{
+  background-color:#555;
+  }
+
+/*Barra de navegacion*/
+body.dark-mode .navbar-custom{
+  background-color: #8b8989; 
+}
+body.dark-mode a.nav-link{
+ color: white !important;
+}
+
+/*Divs de productos*/
+ body.dark-mode .card{
+background-color: #525252;
+ }
+
+/* div slider de precios*/
+body.dark-mode .main{
+background-color: #8f8f8f;
+color: white;
+}
+/*boton de filtrar*/
+body.dark-mode #rangeFilterCount{
+  background-color: #525252;
+  color: white;
+  border-color: #e4e4e4;
+  }
+
 
