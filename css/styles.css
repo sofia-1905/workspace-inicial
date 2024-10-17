@@ -317,7 +317,7 @@ div.col-12 {
   background-color: rgb(255, 255, 255)
 }
 
-css .btn-group .dropdown-toggle {
+.btn-group .dropdown-toggle {
   color: rgb(235, 153, 2);
 }
 
@@ -340,4 +340,15 @@ css .btn-group .dropdown-toggle {
   min-width: 100px;
   transition: all 0.3s ease;
   padding: 10px; 
+}
+
+.footer-link {
+  color: #FF6F00; 
+  size:bold; 
+  text-decoration: none; 
+  font-weight: bold;
+}
+
+.footer-link:hover {
+  color: rgb(235, 153, 2);
 }
