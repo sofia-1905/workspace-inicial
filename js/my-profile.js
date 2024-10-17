@@ -83,10 +83,38 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const username = localStorage.getItem('username');
+    const dropdownButton = document.querySelector('.dropdown-toggle');
+    if (username) {
+        dropdownButton.innerText = username; 
+        document.getElementById('username-placeholder').innerText = username;
+    } else {
+        dropdownButton.innerText = 'Invitado';
+        document.getElementById('username-placeholder').innerText = ' ';
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+        
+    const logoutButton = document.getElementById('logout');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function() {
+            sessionStorage.removeItem('loggedIn');
+            localStorage.removeItem('username');
+                     window.location.href = 'login.html';
+        });
+    }
+});
 
 
-
-
-
-
-
+document.addEventListener("DOMContentLoaded", function() {
+    const logoutButton = document.getElementById('logout');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function() {
+            sessionStorage.removeItem('loggedIn');
+            localStorage.removeItem('username');
+            window.location.href = 'login.html'; 
+        });
+    }
+});
