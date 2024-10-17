@@ -18,8 +18,6 @@
     })
 })()
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const profileImage = document.getElementById("profileImage");
     const fileInput = document.getElementById("fileInput");
@@ -63,8 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//script para que la imagen se cargue desde el texto
-
 // Asocia el clic en el texto "Editar foto de perfil" al input de tipo file
 document.getElementById('editProfileText').addEventListener('click', function() {
     document.getElementById('fileInput').click();
@@ -82,7 +78,6 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     }
 });
 
-
 document.addEventListener("DOMContentLoaded", function() {
     const username = localStorage.getItem('username');
     const dropdownButton = document.querySelector('.dropdown-toggle');
@@ -94,19 +89,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('username-placeholder').innerText = ' ';
     }
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-        
-    const logoutButton = document.getElementById('logout');
-    if (logoutButton) {
-        logoutButton.addEventListener('click', function() {
-            sessionStorage.removeItem('loggedIn');
-            localStorage.removeItem('username');
-                     window.location.href = 'login.html';
-        });
-    }
-});
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const logoutButton = document.getElementById('logout');
