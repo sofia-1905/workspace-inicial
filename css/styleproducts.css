@@ -1,21 +1,17 @@
 body {  
-      background-color:#F58509;}
+  background-color:#F58509;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
 .navbar-custom{
-    background-color: white;
-    
+  background-color: white;   
 }
 
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-
 }
 
 .main {
@@ -28,74 +24,110 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /
+  justify-content: space-between;
 }
 
+/* Campo de búsqueda */
+#searchInput {
+  box-sizing: border-box; 
+  background-color: #F58509; 
+  border: 2px solid white;
+  color: white;  /* Color al escribir*/
+  border-radius: 15px;
+}
+
+/* Al precionar el botón */
+#searchInput:focus {
+  outline: 4px solid rgb(223, 195, 142); /* Cambia el borde azul a naranja */
+  outline-offset: 0; /* Aseruramos que el borde quede al rededor del campo */
+}
+
+/* Cambia el color de "Buscar artículos..." */
+#searchInput::placeholder {
+  color: white; 
+}
+
+/* Boton de filtral por precio */
+#priceFilterButton {
+  background-color: #F58509; 
+  border: 2px solid white;
+  color: white;
+  border-radius: 15px;
+  width: 200px;
+}
+
+/* Estilo para la barra del slider */
+.range-input input {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #F58509;
+  pointer-events: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+/* Rango */
+input[type="range"]::-webkit-slider-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 70%;
+  background: #555;
+  pointer-events: auto;
+  -webkit-appearance: none;
+}
+
+.range-input {
+  position: relative;
+}
+
+/* Remove Arrows/Spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Fin rango */
+
+/* Boton filtrar */
 #rangeFilterCount {
   border: 2px solid #F58509;
   background-color: white; 
   color: #F58509; 
-  padding: 10px 20px;
-  border-radius: 5px; 
+  border-radius: 15px; 
   font-size: 16px; 
   align-items: center;
   margin-top: 30px; 
   margin-left: 200px;
-
 }
+
 #rangeFilterCount:hover {
   background-color: #F58509; 
   color: white; 
 }
 
-.custom-wrapper {
-  margin: 0;
-  width: 70%;
-  padding: 0px 25px 40px;
-  position: relative;
-  left: 63px;
+/* Boton de ordenar */
+#sortDropdown {
+  background-color: #F58509; 
+  border: 2px solid white;
+  color: white;
+  border-radius: 15px;
+  width: 200px;
 }
 
-#productsList {
-  border-radius: 20px; 
-  overflow: hidden; 
+/* Boton de limpiar todo */
+#clearRangeFilter {
+  background-color: #F58509; 
+  border: 2px solid white;
+  color: white;
+  border-radius: 15px;
 }
 
-.btn-filter {
-  border: 7px #F3860F;
-  border-radius: 30px;
+/* Espacion entre cada boton */
+.d-flex {
+  gap: 10%; 
 }
 
-.col-3 {
-  display: flex;
-  justify-content: center; 
-  padding: 0;
-  padding: 0;
-  width: 100%; 
-  max-width: none; 
-}
-
-
-.btn-group {
-  display: flex;
-  gap: 8px; 
-  font-size: 17px; 
-  justify-content: flex-start; 
-  flex-wrap: nowrap; 
-  margin: 0 0 20px 0;
-}
-
-.btn-group .btn {
-  flex-grow: 1; /* hace que los botones ocupen el espacio disponible */
-  padding: 12px 8px; /* ajuste en padding para que los botones sean más alargados */
-  font-size: 14px;
-  border-radius: 5px; 
-  text-align: center; 
-  white-space: nowrap; /* evita que el texto dentro del botón se rompa en varias líneas */
-}
-.price-input-container {
-  width: 100%;
-}
 
 .price-input .price-field {
   display: flex;
@@ -126,109 +158,70 @@ body {
   color: #555;
 }
 
-/* Remove Arrows/Spinners */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-.slider-container {
-  width: 100%;
-}
-
-.slider-container {
-  height: 6px;
-  position: relative;
-  background: #e4e4e4;
-  border-radius: 5px;
-}
-
-.slider-container .price-slider {
-  height: 100%;
-  left: 25%;
-  right: 15%;
-  position: absolute;
-  border-radius: 5px;
-  background: #F58509;
-}
-
-.range-input {
-  position: relative;
-}
-
-.range-input input {
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  background: none;
-  top: -5px;
-  pointer-events: none;
-  cursor: pointer;
-  -webkit-appearance: none;
-}
-input[type="range"]::-webkit-slider-thumb {
-  height: 18px;
-  width: 18px;
-  border-radius: 70%;
-  background: #555;
-  pointer-events: auto;
-  -webkit-appearance: none;
-}
-
-#searchInput {
-  width: 80%; 
-  max-width: 400px; 
-  box-sizing: border-box; 
-  padding: 10px; 
-}
-
-@media screen and (max-width: 768px) {
-  .main {
-      width: 80%;
-      margin-right: 5px;
+/* Tableta en Modo Vertical (768x1024) */
+@media (max-width: 1024px) {
+  .d-flex {
+    gap: 2%; 
+  }
+  
+  /* Campo de búsqueda */
+  #searchInput {
+    width: 180px;
   }
 
-  .custom-wrapper {
-      width: 100%;
-      left: 0;
-      padding: 0 10px;
+  /* Boton de filtral por precio */
+  #priceFilterButton {
+    width: 180px;
   }
 
-  .projtitle {
-      width: 100%;
-      position: relative;
-      right: 26px;
+  /* Boton de ordenar */
+  #sortDropdown {
+    width: 150px;
   }
 
-  .price-input {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .price-field {
-      margin-bottom: 10px;
-  }
 }
 
-
+/* Para smartphones pequeños (320x568) */
 @media (max-width: 568px) {
-    body {
-        background-color: white; 
-      }
-      .navbar-custom{
-        background-color: #F58509;
-    }
-
-    div #tituloautos {
-        margin-top: 10%;
-        margin-bottom: 5%;
-        background-color: rgba(236, 232, 226, 0.575);
-        color: #F58509;
-        font-size: 35px;
-        text-indent: 10%;
-      }
+  body {
+    background-color: white; 
   }
+
+  .navbar-custom{
+    background-color: #F58509;
+  }
+
+  /* Alinea los elementos verticalmente */ 
+  .col-12.d-flex { 
+    flex-direction: column; /* Coloca el campo de búsqueda y los botones en columna */
+    align-items: stretch; /* Asegura que ocupen todo el ancho */
+  } 
+
+  /* Campo de búsqueda */
+  #searchInput {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  /* Boton de filtral por precio */
+  #priceFilterButton {
+    width: 250px;
+    margin-bottom: 5px;
+  }
+
+   /* Boton de ordenar */
+   #sortDropdown {
+    width: 250px;
+    margin-bottom: 5px;
+  }
+
+  /* Boton de limpiar todo */
+  #clearRangeFilter {
+    width: 260px;
+  }
+  
+}
     
 /*Estilos productos */
 /* contenedor principal */
@@ -245,6 +238,7 @@ input[type="range"]::-webkit-slider-thumb {
   object-fit: cover; /* Ajusta la imagen manteniendo su proporción */
   padding: 15px; /* Espacio interno alrededor de la imagen */
 }
+
 /* Nombre producto */
 .name{
   padding-left: 15px; /* Espacio interno a la izquierda */

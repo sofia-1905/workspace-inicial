@@ -55,10 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (username) {
           dropdownButton.innerText = username; 
           document.getElementById('username-placeholder').innerText = username;
-      } else {
-          dropdownButton.innerText = 'Invitado';
-          document.getElementById('username-placeholder').innerText = ' ';
-      }
+      } 
   });
   
         document.addEventListener("DOMContentLoaded", function() {
