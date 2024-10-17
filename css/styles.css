@@ -14,9 +14,6 @@
 }
 
 
-/* M E N U ! */
-
-/* Tamaño de fuente para los elementos del menú */
 .navbar-nav .nav-link {
   font-size: 0.975rem; /* Tamaño de fuente más pequeño para el menú */
   line-height: 1.5; /* Ajusta la altura de la línea para mejorar la alineación vertical */
@@ -62,10 +59,7 @@ nav a {
     color: white;
   }
 
- /* F I N  M E N U ! */
-  
 
- /* F O O T E R  */
  footer {
   background-color: white;
   padding: 1rem 0;
@@ -74,7 +68,6 @@ footer img {
   max-width: 386px;
 }
 
-/* F I N  F O O T E R  */
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -342,3 +335,9 @@ css .btn-group .dropdown-toggle {
   color: white;
 }
 
+.dropdown-toggle {
+  width: 200px; 
+  min-width: 100px;
+  transition: all 0.3s ease;
+  padding: 10px; 
+}
