@@ -49,60 +49,65 @@
 
   <div id="titulo"></div>
 
- <div class="main">
-        <div class="custom-wrapper">
-            <div class="price-input-container">
-                <div class="price-input">
-                    <div class="price-field">
-                        <span>mínimo</span>
-                        <input type="number" 
-                        id="rangeFilterCountMin"
-                               class="min-input">
+  <div class="container mb-4">
+    <div class="row">
+      <div class="col-12 d-flex align-items-center mb-2">
+        <!-- Campo de búsqueda -->
+        <input type="search" id="searchInput" class="form-control me-2" placeholder="Buscar artículos...">
+  
+        <!-- Botón para filtrar por precio -->
+        <div class="me-2">
+          <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="priceFilterButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Filtrar por precio
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="priceFilterButton">
+              <li>
+                <div class="price-input-container p-3">
+                  <div class="price-input mb-2">
+                    <div class="price-field mb-2">
+                      <span>mínimo</span>
+                      <input type="number" id="rangeFilterCountMin" class="min-input form-control" placeholder="0">
                     </div>
-                    <div class="price-field">
-                        <span>máximo</span>
-                        <input type="number" 
-                                id="rangeFilterCountMax"
-                               class="max-input">
+                    <div class="price-field mb-2">
+                      <span>máximo</span>
+                      <input type="number" id="rangeFilterCountMax" class="max-input form-control" placeholder="4000000">
                     </div>
+                  </div>
+                  <!-- Barra deslizante para seleccionar el rango -->
+                  <div class="range-input mb-2">
+                    <input type="range" class="minCount" min="0" max="100000" step="100">
+                    <input type="range" class="maxCount" min="0" max="4000000" step="1000">
+                  </div>
+                  <div class="btn-filter">
+                    <button class="btn btn-light btn-block" id="rangeFilterCount">
+                      Filtrar
+                    </button>
+                  </div>
                 </div>
-                <div class="slider-container">
-                    <div class="price-slider"></div>
-                </div>
-            </div>
-
-            <!-- price slider -->
-            <div class="range-input">
-                <input type="range"                     
-                class="minCount" 
-                       min="0" 
-                       max="100000"
-                       step="100">
-                <input type="range" 
-                       class="maxCount" 
-                       min="0" 
-                       max="4000000" 
-                       step="1000">
-                </div>
-                <div class= "btn-filter">
-                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-              </div>
-            </div>
-       </div>
-       <div class="container mb-4">
-        <div class="row">
-          <div class="col-12 d-flex align-items-center mb-2">
-            <input type="search" id="searchInput" class="form-control me-2" placeholder="Buscar artículos...">
-            <div class="btn-group ms-auto" role="group">
-              <button class="btn btn-light btn-block" id="sortAsc">Ordenar por precio ascendente</button>
-              <button class="btn btn-light btn-block" id="sortDesc">Ordenar por precio descendente</button>
-              <button class="btn btn-light btn-block" id="sortRelevance">Ordenar por relevancia</button>
-              <button class="btn btn-light btn-block" id="clearRangeFilter">Limpiar</button>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
+  
+        <!-- Botón desplegable para ordenar -->
+        <div class="dropdown me-2">
+          <button class="btn btn-light dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Ordenar por...
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+            <li><button class="dropdown-item" id="sortAsc">Precio ascendente</button></li>
+            <li><button class="dropdown-item" id="sortDesc">Precio descendente</button></li>
+            <li><button class="dropdown-item" id="sortRelevance">Relevancia</button></li>
+          </ul>
+        </div>
+  
+        <!-- Botón limpiar todo -->
+        <button class="btn btn-light ms-3" id="clearRangeFilter">Limpiar</button>
       </div>
-      
+    </div>
+  </div>
+  
   <main class="pb-5">
     <div class="container">
     <div class="row" id="productsList"></div>
@@ -117,8 +122,10 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
-    </body>
+
+  </body>
   </html>
