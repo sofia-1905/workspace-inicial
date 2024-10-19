@@ -337,6 +337,7 @@ css .btn-group .dropdown-toggle {
 
 
 /*Modo oscuro*/
+
 /* Barra de navegacion */
 body.dark-mode .navbar-custom{
   background-color: #8b8989 !important;
@@ -371,4 +372,8 @@ color: white;
   min-width: 100px;
   transition: all 0.3s ease;
   padding: 10px; 
+}
+body.dark-mode a.btn{
+background-color: #525252;
+color: white;
 }

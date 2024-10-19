@@ -130,3 +130,29 @@ input:checked+.slider:before {
     height: 250px;
 }
 
+
+/*Estilo de la barra de navegacion*/
+.navbar-custom{
+background-color: white;
+}
+/* Estilo para los enlaces de navegación */
+.navbar-custom .nav-link {
+    color: #6F6A6A !important;
+}
+
+/*Modo Oscuro*/
+/*Color del contenedor*/
+body.dark-mode .container{
+background-color: #525252;
+}
+/* Color de fondo del body*/
+body.dark-mode{
+background-color:  rgb(34, 34, 34);
+}
+/* Color de fondo de los inputs */
+body.dark-mode .custom-input {
+    background-color: #8b8989;
+}
+body.dark-mode .save-btn{
+background-color:#d6d6d6;
+}
