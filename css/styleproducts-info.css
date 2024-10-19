@@ -553,3 +553,97 @@ font-weight: 450;
 text-align: right;
 font-size: large;
 }
+
+
+/*Estilo de pagina para Modo oscuro*/
+
+/*Body y footer*/
+body.dark-mode,
+body.dark-mode footer {
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+}
+/*Barra pagina actual de productos*/
+body.dark-mode div.container-fluid,
+body.dark-mode ul.breadcrumb {
+    background-color: rgb(145, 145, 145);
+    color: white;
+}
+
+/*Contenedor principal informacion del producto*/
+body.dark-mode #product-info > div.product-details.row.justify-content-center {
+    background-color: #525252;
+    color: white;
+}
+/* descripcion del producto principal */
+#product-info > div.product-details.row.justify-content-center > div.col-md-6.product-info-container > p.product-description{
+    color: #b1b1b1;
+}
+
+/*Bordes del contenedor Producto info principal texto e imagen*/
+body.dark-mode #product-info > div.product-details.row.justify-content-center > div.col-md-6.product-info-container,
+body.dark-mode #carouselExampleIndicators > div.carousel-inner > div.carousel-item.active > img{
+border-color: #ccc;
+border: solid 3px;
+}
+
+/*Color de fondo de los divs*/
+body.dark-mode #comentarios,
+body.dark-mode #comments,
+body.dark-mode #related-products-container{
+ background-color: #525252;
+ color: white;
+ border: none;
+}
+body.dark-mode .breadcrumb a{
+color: white;
+}
+
+/* Barra de navegacion */
+body.dark-mode .navbar-custom,
+body.dark-mode .navbar-toggler.collapsed{
+background-color: #8b8989 !important;
+}
+body.dark-mode a.nav-link{
+color: white !important;
+}
+/* boton barra de navegacion usuario */
+body.dark-mode .btn-group .dropdown-toggle{
+background-color:#d6d6d6;
+border: none;
+}
+
+/* Titulos de los divs */
+body.dark-mode #related-products-container > h3,
+body.dark-mode #calificacionYComentarios h5{
+color: #f5f5f5;
+}
+
+/* div producto relacionado */
+body.dark-mode div.card{
+background-color: #7c7c7c;
+}
+body.dark-mode .card-title{
+color: white;
+}
+
+
+
+/* form para calificar */
+body.dark-mode #user-comment{
+background-color: #7c7c7c;
+border: none;
+box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+margin-bottom: 5%;
+}
+body.dark-mode ::placeholder {
+color: #c5c4c4;
+}
+
+/* boton para enviar calificacion*/
+body.dark-mode #rangeFilterCount{
+background-color: #8b8989;
+border: none;
+border-radius: 15%;
+box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
+}
