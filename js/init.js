@@ -52,16 +52,15 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("DOMContentLoaded", function() {
       const username = localStorage.getItem('username');
       const dropdownButton = document.querySelector('.dropdown-toggle');
-      if (username) {
+            if (username) {
           dropdownButton.innerText = username; 
           document.getElementById('username-placeholder').innerText = username;
       } 
   });
   
         document.addEventListener("DOMContentLoaded", function() {
-        
           const logoutButton = document.getElementById('logout');
-          if (logoutButton) {
+               if (logoutButton) {
               logoutButton.addEventListener('click', function() {
                   sessionStorage.removeItem('loggedIn');
                   localStorage.removeItem('username');
