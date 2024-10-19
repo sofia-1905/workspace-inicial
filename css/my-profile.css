@@ -141,11 +141,9 @@ background-color: white;
 }
 
 /*Modo Oscuro*/
-/*Color del contenedor*/
-body.dark-mode .container{
-background-color: #525252;
-}
-/* Color de fondo del body*/
+
+/*Color del contenedor y del body*/
+body.dark-mode .container,
 body.dark-mode{
 background-color:  rgb(34, 34, 34);
 }
