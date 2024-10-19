@@ -101,15 +101,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
 document.addEventListener("DOMContentLoaded", function() {
     // Obtener el username almacenado en localStorage
     const username = localStorage.getItem('username');
+
     // Rellenar el campo de e-mail en el formulario si existe un username
     if (username) {
         const emailField = document.getElementById('email');
         if (emailField) {
             emailField.value = username;  // Rellena el campo de e-mail
         }
+
         // También actualizamos el dropdown con el username
         const dropdownButton = document.querySelector('.dropdown-toggle');
         if (dropdownButton) {
@@ -117,6 +120,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     // Referencia al formulario y al botón de guardar
     const profileForm = document.querySelector('form');
@@ -124,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Manejar el evento de envío del formulario
     profileForm.addEventListener('submit', function(event) {
         event.preventDefault();  // Evita el envío tradicional del formulario
+
         // Capturar los datos del formulario
         const formData = {
             nombre: document.getElementById('nombre').value,
@@ -133,11 +140,14 @@ document.addEventListener("DOMContentLoaded", function() {
             email: document.getElementById('email').value,
             telefono: document.getElementById('telefono').value
         };
+
         // Convertir el objeto formData a JSON y almacenarlo en localStorage
         localStorage.setItem('userProfile', JSON.stringify(formData));
+
         // Opcional: Mostrar un mensaje o redirigir a otra página
         alert('Datos guardados correctamente.');
     });
+
     // Opcional: Cargar los datos almacenados en localStorage cuando se cargue la página
     const storedData = JSON.parse(localStorage.getItem('userProfile'));
     if (storedData) {
