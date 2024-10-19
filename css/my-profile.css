@@ -154,3 +154,6 @@ body.dark-mode .custom-input {
 body.dark-mode .save-btn{
 background-color:#d6d6d6;
 }
+body.dark-mode footer{
+background-color: #8b8989 !important;
+}

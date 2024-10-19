@@ -595,9 +595,13 @@ body.dark-mode #related-products-container{
  color: white;
  border: none;
 }
+body.dark-mode .breadcrumb a{
+color: white;
+}
 
 /* Barra de navegacion */
-body.dark-mode .navbar-custom{
+body.dark-mode .navbar-custom,
+body.dark-mode .navbar-toggler.collapsed{
 background-color: #8b8989 !important;
 }
 body.dark-mode a.nav-link{
