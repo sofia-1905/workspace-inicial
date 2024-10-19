@@ -335,30 +335,6 @@ css .btn-group .dropdown-toggle {
   color: white;
 }
 
-/*Modo oscuro*/
-/* Barra de navegacion */
-body.dark-mode .navbar-custom{
-  background-color: #8b8989 !important;
-  }
-  body.dark-mode a.nav-link{
-  color: white !important;
-  }
-  /* boton barra de navegacion usuario */
-  body.dark-mode .btn-group .dropdown-toggle{
-  background-color:#d6d6d6;
-  border: none;
-  }
-
-body.dark-mode .bg-light,
-body.dark-mode footer,
-body.dark-mode .pb-5 {
- background-color: rgb(34, 34, 34) !important;
- color: white;
-}
-body.dark-mode .list-group-item{
-background-color: #525252;
-color: white;
-}
 
 /*Modo oscuro*/
 /* Barra de navegacion */
@@ -374,12 +350,18 @@ body.dark-mode .navbar-custom{
   border: none;
   }
 
-body.dark-mode .bg-light,
+/*footer y div con las categorias en el inicio*/
 body.dark-mode footer,
 body.dark-mode .pb-5 {
  background-color: rgb(34, 34, 34) !important;
  color: white;
 }
+/*div de cada categoria en inicio*/
+body.dark-mode .bg-light{
+color: black;
+background-color: rgb(34, 34, 34) !important;
+}
+/*div de categories.html*/
 body.dark-mode .list-group-item{
 background-color: #525252;
 color: white;

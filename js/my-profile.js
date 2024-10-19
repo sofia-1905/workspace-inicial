@@ -100,3 +100,32 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+//JAVASCRIPT A CAMBIAR A MY PROFILE
+/*Cambiar a modo oscuro al hacer click*/
+const switchbutton = document.getElementById('switchbutton');
+const body = document.body;
+theme = localStorage.getItem('theme');
+
+// Aplicar el tema guardado en el almacenamiento local al cargar la pagina
+if (theme === 'dark-mode') {
+    body.classList.add('dark-mode');
+    switchbutton.checked = true;   //Se sincroniza el estado inicial del botón con el tema almacenado en localStorage.
+} else {
+    body.classList.remove('dark-mode');
+    switchbutton.checked = false;
+}
+
+switchbutton.addEventListener('click', () => {
+    // Alternar entre agregar o quitar la clase 'dark-mode' al hacer click usando toggle
+    body.classList.toggle('dark-mode');
+    
+    // Guardar el nuevo estado del tema en el almacenamiento local
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark-mode');
+        switchbutton.checked = true;
+    } else {
+        localStorage.setItem('theme', 'light-mode');
+        switchbutton.checked = false;
+    }
+});
