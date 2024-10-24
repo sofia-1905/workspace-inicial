@@ -19,3 +19,22 @@ p {
     text-align: center;
     border-radius: 80%;
 }
+  .trash-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px; 
+      height: 120px;
+      border-radius: 10px;
+      transition: transform 0.2s;
+  }
+
+  .trash-button:hover {
+      transform: scale(1.1);
+  }
+
+  .trash-icon {
+      width: 64px;
+      height: 64px; 
+      margin-right: 10px; 
+  }
