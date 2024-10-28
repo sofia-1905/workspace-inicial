@@ -1,0 +1,38 @@
+body {
+    background-color: #F58509;
+}
+
+.navbar-custom {
+    background-color: #ffffff !important; 
+}
+  
+.navbar-custom .nav-link {
+    color: #808080 !important; 
+    font-size: 1rem !important; 
+}
+
+.text-muted {
+    background-color: #F58509;
+}
+
+/* Contenedor del ícono del carrito */
+.cart-icon-container {
+    position: fixed; 
+    top: 10%; 
+    right: 15%;
+}
+
+/* Estilos del ícono de carrito */
+#icon-cart {
+    font-size: 45px; 
+    color: white;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+}
+
+.info-container {
+    z-index: 1; /* Menor que el del carrito */
+    margin-top: 50px;
+    border-radius: 20px;
+    border: 2px solid white;
+    padding: 20px; 
+}

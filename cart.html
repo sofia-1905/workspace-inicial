@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,13 +9,15 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="css/stylecart.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom p-1"style="background-color: #F58509";>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom p-1" style="background-color: #F58509" ;>
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,49 +35,60 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <div class="btn-group">
-            <button type="button" class="btn btn-light btn-block dropdown-toggle" id="dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                <span id="user-email"> </span>
+            <button type="button" class="btn btn-light btn-block dropdown-toggle" id="dropdown-btn"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <span id="user-email"> </span>
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" id="logout">Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" id="logout">Cerrar sesión</a></li>
             </ul>
 
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-   
-    
-   
-    </head>  
-    <body>  
-        <div class="container">  
-            <span id="icon-cart" class="glyphicon glyphicon-shopping-cart"></span>    
-        </div>  
-    
-            <div class="quantity-control">
-                <input type="number" id="quantity" value="1" min="1" style="width: 50px; text-align: center;">
-            </div> 
 
-<button type="button" class="btn btn-outline-dark trash-button">
-  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="trash-icon" viewBox="0 0 16 16">
-      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-      <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-  </svg>
-</button>
-</main>
+  <!-- Contenedor para el ícono del carrito -->
+  <div class="cart-icon-container">
+    <span id="icon-cart" class="glyphicon glyphicon-shopping-cart"></span>
+  </div>
+
+  <main class="container my-4">
+    <!-- Contenedor para la información -->
+    <div class="info-container">
+      <!-- Control de cantidad para el número de productos -->
+      <div class="quantity-control">
+        <input type="number" id="quantity" value="1" min="1" style="width: 50px; text-align: center;">
+      </div>
+
+      <!-- Botón que actúa como un icono para eliminar -->
+      <button type="button" class="btn btn-outline-dark trash-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="trash-icon"
+          viewBox="0 0 16 16">
+          <path
+            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+          <path
+            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+        </svg>
+      </button>
+    </div>
+  </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jóvenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jóvenes a Programar</a>
+      </p>
     </div>
   </footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -83,7 +97,9 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
 </body>
+
 </html>
