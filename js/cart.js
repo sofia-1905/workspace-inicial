@@ -6,3 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('username-placeholder').innerText = 'Invitado';
     }
 });
+
+// Modo Oscuro
+const theme = localStorage.getItem('theme');
+
+// Aplicar el tema guardado al cargar la página
+if (theme === 'dark-mode') {
+    document.body.classList.add('dark-mode');
+} else {
+    document.body.classList.remove('dark-mode');
+}
