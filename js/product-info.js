@@ -274,3 +274,45 @@ if (theme === 'dark-mode') {
 } else {
     document.body.classList.remove('dark-mode');
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Variables
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || []; // Cargar carrito desde localStorage o inicializar vacío
+    const botonCarrito = document.querySelector('.boton-carrito');
+    const botonComprar = document.querySelector('.boton-comprar');
+    
+    // Obtener información del producto (esto podría venir de una API o de un JSON en tu aplicación)
+    const producto = {
+      id: 1,
+      nombre: 'Nombre del Producto',
+      precio: 1000,  // Precio de ejemplo
+      cantidad: 1    // Inicialmente 1
+    };
+    
+    // Función para actualizar el carrito en localStorage
+    function actualizarCarrito() {
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+    
+    // Función para agregar producto al carrito
+    botonCarrito.addEventListener('click', () => {
+      const productoEnCarrito = carrito.find(item => item.id === producto.id);
+      
+      if (productoEnCarrito) {
+        productoEnCarrito.cantidad += 1;  // Incrementar cantidad si el producto ya está en el carrito
+      } else {
+        carrito.push({ ...producto }); // Agregar una copia del producto al carrito
+      }
+  
+      actualizarCarrito();  // Guardar el carrito actualizado en localStorage
+      alert('Producto agregado al carrito');
+    });
+  
+    // Función para "Comprar"
+    botonComprar.addEventListener('click', () => {
+      localStorage.removeItem('carrito'); // Vaciar carrito después de la compra
+      window.location.href = 'cart.html'; // Redirigir a la página del carrito
+    });
+  });
+  
