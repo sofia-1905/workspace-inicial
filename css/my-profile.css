@@ -102,8 +102,10 @@ input:checked+.slider:before {
     transform: translateX(20px); /* Movimiento del círculo al activar */
 }
 
+.text-muted {
+    background-color: #F58509;
+}
 .footer {
-    background-color: #F57C00; /* Color de fondo del pie de página */
     padding: 10px; /* Espaciado interno */
     text-align: center; /* Centrado de texto */
 }

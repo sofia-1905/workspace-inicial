@@ -664,9 +664,57 @@ body.dark-mode ::placeholder {
 }
 
 /* boton para enviar calificacion*/
-body.dark-mode #rangeFilterCount {
-    background-color: #8b8989;
-    border: none;
-    border-radius: 15%;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+body.dark-mode #rangeFilterCount{
+background-color: #8b8989;
+border: none;
+border-radius: 15%;
+box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+
+
+
+
+  .botones-container {
+    position: absolute; /* Cambiado a absolute para que se desplace con la página */
+    top: 90%; /* Ajusta la posición vertical del contenedor */
+    right: 15px; /* Alinea el contenedor a la derecha */
+    display: flex;
+    flex-direction: column; /* Apilar los botones uno encima del otro */
+    gap: 8px; /* Espacio entre los botones */
+    background-color: white; /* Fondo blanco para el contenedor */
+    padding: 10px; /* Espaciado interno del contenedor */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    width: 150px; /* Ancho del contenedor */
+  }
+  
+  .boton {
+    width: 100%; /* Los botones ocupan todo el ancho del contenedor */
+    padding: 8px; /* Espaciado interno de los botones */
+    font-size: 14px; /* Tamaño de fuente más pequeño para los botones */
+  }
+  
+
+  
+  .boton {
+    width: 100%; /* Botones ocupan todo el ancho del contenedor */
+    padding: 8px; /* Reduce el tamaño del padding dentro de los botones */
+    font-size: 14px; /* Tamaño de fuente más pequeño para los botones */
+  }
+
+  .boton-carrito{
+    border-color: #F58509;
+    color: white;
+    background-color: #F58509;
+    border-radius: 10px;
+  }
+
+  .boton-comprar{
+    border-radius: 10px;
+    border-color: #F3860F;
+    color: #F3860F;
+    background-color: rgba(243, 134, 15, 0.17)
+    
+  }  
