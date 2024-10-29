@@ -1,15 +1,13 @@
 body {
-    background-color: #F57C00; /* Fondo de la página */
+    background-color: #F58509;
     font-family: 'Raleway', sans-serif;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   
-  }
-
+}
 
 .container {
-    background-color:#F57C00; /* Color del contenedor */
     padding: 30px; /* Espaciado interno */
     border-radius: 20px; /* Bordes redondeados */
     max-width: 900px; /* Ancho máximo */
@@ -104,8 +102,10 @@ input:checked+.slider:before {
     transform: translateX(20px); /* Movimiento del círculo al activar */
 }
 
+.text-muted {
+    background-color: #F58509;
+}
 .footer {
-    background-color: #F57C00; /* Color de fondo del pie de página */
     padding: 10px; /* Espaciado interno */
     text-align: center; /* Centrado de texto */
 }

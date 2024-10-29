@@ -14,7 +14,7 @@
 </head>
 
 <body id="bodyproduct-info">
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom p-1"style="background-color: #F58509;">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom p-1" style="background-color: #F58509;">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,14 +32,17 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <div class="btn-group">
-            <button type="button" class="btn btn-light btn-block dropdown-toggle" id="dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                <span id="user-email"> </span>
+            <button type="button" class="btn btn-light btn-block dropdown-toggle" id="dropdown-btn"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <span id="user-email"> </span>
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" id="logout">Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" id="logout">Cerrar sesión</a></li>
             </ul>
         </ul>
       </div>
@@ -62,52 +65,44 @@
         <div id="related-products-list" class="row"></div>
       </div>
     </div>
-    
+
     <div class="row d-flex" id="calificacionYComentarios">
-
       <div class="col-sm-12 col-md-12 col-lg-8" id="comments-list">
-        <div id="comments">
-          </div>
-          
-    </div>
-    
-    <div  class="col-sm-12 col-md-12 col-lg-4" id="comentarios">
-      <h5>Califica el producto.</h5>
-      <ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">
-      <li data-value="1">
-        <i class="far fa-angry fa-lg"></i>
-      </li>
-      <li data-value="2" >
-        <i class="far fa-frown fa-lg"></i>
-      </li>
-      <li data-value="3" >
-        <i class="far fa-meh fa-lg"></i>
-      </li>
-      <li data-value="4" >
-        <i class="far fa-smile fa-lg"></i>
-      </li>
-      <li data-value="5" >
-        <i class="far fa-grin-stars fa-lg"></i>
-      </li>
-    </ul>
-    <div class="comment-section">
-      <form id="comment-form">
-        
-          <label for="user-comment" class="form-label">Comentario:</label>
-          <textarea class="form-control" id="user-comment" rows="4" placeholder="Escribe tu comentario..." required></textarea>
-        </div>
-        <button class="btn btn-light btn-block" id="rangeFilterCount">Enviar</button>
-      </form>
-    </div>
+        <div id="comments"></div>
+      </div>
 
-   
-    
-</div>
-    
-  </div>
+      <div class="col-sm-12 col-md-12 col-lg-4" id="comentarios">
+        <h5>Califica el producto.</h5>
+        <ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">
+          <li data-value="1">
+            <i class="far fa-angry fa-lg"></i>
+          </li>
+          <li data-value="2">
+            <i class="far fa-frown fa-lg"></i>
+          </li>
+          <li data-value="3">
+            <i class="far fa-meh fa-lg"></i>
+          </li>
+          <li data-value="4">
+            <i class="far fa-smile fa-lg"></i>
+          </li>
+          <li data-value="5">
+            <i class="far fa-grin-stars fa-lg"></i>
+          </li>
+        </ul>
+        <div class="comment-section">
+          <form id="comment-form">
+            <textarea class="form-control" id="user-comment" rows="4" placeholder="Escribe tu comentario..."
+              required></textarea>
+        </div>
+        <div class="button-container">
+          <button class="btn btn-light btn-block" id="rangeFilterCount">Enviar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+    </div>
     <input type="hidden" id="rating-value" value="0">
-    
-    
   </main>
 
   <footer class="text-muted">
@@ -115,9 +110,11 @@
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
