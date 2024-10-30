@@ -56,17 +56,21 @@
   <!-- Contenedor para el ícono del carrito -->
   <div class="cart-icon-container">
     <span id="icon-cart" class="glyphicon glyphicon-shopping-cart"></span>
+    <span id="badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      
+    </span>
+  
   </div>
 
   <main class="container my-4">
     <!-- Contenedor para la información -->
     <div class="info-container">
-      <div>
-        <h1 id="subtotal"></h1>
+      <div id="subtotal-container">
+        
       </div>
       <!-- Control de cantidad para el número de productos -->
       <div class="quantity-control">
-        <input type="number" id="quantity" value="1" min="1" style="width: 50px; text-align: center;">
+        <input type="number" id="quantity" class="quantity" value="1" min="1" style="width: 50px; text-align: center;">
       </div>
 
       <!-- Botón que actúa como un icono para eliminar -->
