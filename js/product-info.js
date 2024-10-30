@@ -277,42 +277,44 @@ if (theme === 'dark-mode') {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Variables
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || []; // Cargar carrito desde localStorage o inicializar vacío
-    const botonCarrito = document.querySelector('.boton-carrito');
-    const botonComprar = document.querySelector('.boton-comprar');
-    
-    // Obtener información del producto (esto podría venir de una API o de un JSON en tu aplicación)
-    const producto = {
-      id: 1,
-      nombre: 'Nombre del Producto',
-      precio: 1000,  // Precio de ejemplo
-      cantidad: 1    // Inicialmente 1
-    };
-    
-    // Función para actualizar el carrito en localStorage
-    function actualizarCarrito() {
-      localStorage.setItem('carrito', JSON.stringify(carrito));
-    }
-    
-    // Función para agregar producto al carrito
-    botonCarrito.addEventListener('click', () => {
-      const productoEnCarrito = carrito.find(item => item.id === producto.id);
-      
-      if (productoEnCarrito) {
-        productoEnCarrito.cantidad += 1;  // Incrementar cantidad si el producto ya está en el carrito
-      } else {
-        carrito.push({ ...producto }); // Agregar una copia del producto al carrito
-      }
+    const buyButton = document.getElementById('buy-button');
   
-      actualizarCarrito();  // Guardar el carrito actualizado en localStorage
-      alert('Producto agregado al carrito');
+    buyButton.addEventListener('click', () => {
+      // Navegar a cart.html
+      window.location.href = 'cart.html';
     });
+  });
+
   
-    // Función para "Comprar"
-    botonComprar.addEventListener('click', () => {
-      localStorage.removeItem('carrito'); // Vaciar carrito después de la compra
-      window.location.href = 'cart.html'; // Redirigir a la página del carrito
+  document.addEventListener('DOMContentLoaded', () => {
+    const buyButton = document.getElementById('buy-button');
+  
+    buyButton.addEventListener('click', () => {
+      // Obtener información del producto
+      const productName = document.getElementById('product-name').innerText;
+      const productCost = parseFloat(document.getElementById('cost-value').innerText);
+      const productCurrency = document.getElementById('currency').innerText;
+      const productQuantity = parseInt(document.getElementById('product-quantity').value);
+      const productImage = document.getElementById('product-image').src;
+  
+      // Calcular el subtotal
+      const subtotal = productCost * productQuantity;
+  
+      // Crear objeto del producto
+      const product = {
+        name: productName,
+        cost: productCost,
+        currency: productCurrency,
+        quantity: productQuantity,
+        image: productImage,
+        subtotal: subtotal
+      };
+  
+      // Guardar el producto en localStorage
+      localStorage.setItem('product', JSON.stringify(product));
+  
+      // Navegar a cart.html
+      window.location.href = 'cart.html';
     });
   });
   

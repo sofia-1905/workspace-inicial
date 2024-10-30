@@ -44,6 +44,7 @@
               </li>
               <li><a class="dropdown-item" id="logout">Cerrar sesión</a></li>
             </ul>
+          </div>
         </ul>
       </div>
     </div>
@@ -56,8 +57,9 @@
 
       <div class="botones-container">
         <button class="boton boton-carrito">
-          <i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
-        <button class="boton boton-comprar">Comprar</button>
+          <i class="fas fa-shopping-cart"></i> Agregar al carrito
+        </button>
+        <button class="boton boton-comprar" id="buy-button">Comprar</button>
       </div>
       <!-- Información de los productos relacionados -->
       <div id="related-products-container">
@@ -94,11 +96,12 @@
           <form id="comment-form">
             <textarea class="form-control" id="user-comment" rows="4" placeholder="Escribe tu comentario..."
               required></textarea>
+          </div>
+          <div class="button-container">
+            <button class="btn btn-light btn-block" id="rangeFilterCount">Enviar</button>
+          </div>
+          </form>
         </div>
-        <div class="button-container">
-          <button class="btn btn-light btn-block" id="rangeFilterCount">Enviar</button>
-        </div>
-        </form>
       </div>
     </div>
     </div>
@@ -126,7 +129,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
-
+  <script src="js/buy-button.js"></script> <!-- Asegúrate de incluir el script aquí -->
 </body>
 
 </html>
