@@ -676,18 +676,16 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
 
 
   .botones-container {
-    position: absolute; /* Cambiado a absolute para que se desplace con la página */
     top: 90%; /* Ajusta la posición vertical del contenedor */
     right: 15px; /* Alinea el contenedor a la derecha */
     display: flex;
     flex-direction: column; /* Apilar los botones uno encima del otro */
     gap: 8px; /* Espacio entre los botones */
-    background-color: white; /* Fondo blanco para el contenedor */
     padding: 10px; /* Espaciado interno del contenedor */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el contenedor */
     border-radius: 5px; /* Bordes redondeados */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    width: 150px; /* Ancho del contenedor */
+    width: 300px; /* Ancho del contenedor */
   }
   
   .boton {
