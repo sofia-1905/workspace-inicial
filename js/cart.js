@@ -20,21 +20,22 @@ if (theme === 'dark-mode') {
 
 // Función para hacer el subtotal
 function actualizarSubtotal() {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || []; // Obtener carrito del LocalStorage
+    const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
     const subtotalContainer = document.getElementById('subtotal-container');
 
     subtotalContainer.innerHTML = ''; // Limpiar el contenedor
 
     carrito.forEach(producto => {
-        let precio = producto.precio;
-        let cantidad = producto.cantidad; // Debería ser establecida con el control de cantidad
+        let precio = producto.cost;
+        let cantidad = producto.quantity; // Debería ser establecida con el control de cantidad
+        let moneda = producto.currency
 
         // Calcular el subtotal para el producto
         let subtotalProducto = precio * cantidad;
 
         // Crear un div para mostrar el subtotal de este producto
         const subtotalDiv = document.createElement('div');
-        subtotalDiv.textContent = `Subtotal: $${subtotalProducto.toFixed(2)}`; // Asegúrate de que `nombre` sea una propiedad válida del producto
+        subtotalDiv.textContent = `Subtotal: ${moneda} ${subtotalProducto.toFixed(2)}`; // Asegúrate de que `nombre` sea una propiedad válida del producto
 
         // Agregar el div al contenedor
         subtotalContainer.appendChild(subtotalDiv);
@@ -47,12 +48,12 @@ document.addEventListener('DOMContentLoaded', actualizarSubtotal);
 
 // Funcion para mostrar el numero de productos en el badge del carrito
 function actualizarNumeroCarrito() {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || []; // Obtener carrito del LocalStorage
+    const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
 
     let totalCantidad = 0;
 
     carrito.forEach(producto => {
-        let cantidad = producto.cantidad; // Cantidad de cada producto
+        let cantidad = producto.quantity; // Cantidad de cada producto
         totalCantidad += cantidad;
     });
 

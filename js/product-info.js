@@ -96,8 +96,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Función para agregar el producto al carrito
-    function addToCart(product) {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+function addToCart(product) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    // Busca si el producto ya está en el carrito
+    const existingProductIndex = cart.findIndex(item => item.name === product.name);
+    
+    if (existingProductIndex > -1) {
+        // Si el producto ya existe, incrementa la cantidad
+        cart[existingProductIndex].quantity += 1;
+    } else {
+        // Si no existe, agrega el nuevo producto al carrito
         const productData = {
             name: product.name,
             cost: product.cost,
@@ -106,9 +115,11 @@ document.addEventListener("DOMContentLoaded", function() {
             image: product.images[0] // Primera imagen
         };
         cart.push(productData);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert("Producto agregado al carrito");
     }
+    
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Producto agregado al carrito");
+}
 
     // Función para comprar ahora
     function buyNow(product) {
