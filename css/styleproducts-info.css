@@ -16,6 +16,7 @@ body {
 .navbar-custom .nav-link {
     color: #6F6A6A !important;
 }
+
 /* FIN HEADER */
 
 /* CATEGORIAS */
@@ -24,41 +25,46 @@ body {
     padding: 10px;
     background-color: #F8A244;
     font-size: 20px;
-    margin: 0; /* Eliminamos el margen externo */
+    margin: 0;
+    /* Eliminamos el margen externo */
     margin-top: 3%;
     margin-bottom: 3%;
-    width: 100%; /* Asegura que el breadcrumb ocupe el ancho completo del contenedor */
+    width: 100%;
+    /* Asegura que el breadcrumb ocupe el ancho completo del contenedor */
 }
 
 /* Separadores */
 ul.breadcrumb li+li:before {
     padding: 5px;
-    color: #F3860F ;
+    color: #F3860F;
     content: "/\00a0";
 }
 
 /* Estilos para los enlaces */
 .breadcrumb a {
     color: #ffffff;
-    text-decoration: none; /* Elimina el subrayado */
+    text-decoration: none;
+    /* Elimina el subrayado */
 }
 
 /* Cuando el mouse pasa por encima */
 .breadcrumb a:hover {
-    color: #F58509; /* Cambia el color al pasar el mouse */
-    text-decoration: underline; /* Subraya el texto */
+    color: #F58509;
+    /* Cambia el color al pasar el mouse */
+    text-decoration: underline;
+    /* Subraya el texto */
 }
+
 /* FIN CATEGORIAS */
 
 /* INFO PRODUCTO */
 /* Estilos generales */
 .product-details {
-    background-color: #f5f5f5; 
-    width: 90%; 
+    background-color: #f5f5f5;
     max-width: 1200px;
-    margin: 0 auto; 
-    margin-bottom:4%;
-    padding: 40px 5px; 
+    margin: 0 auto;
+    margin-bottom: 4%;
+    padding: 40px 5px;
     border-radius: 30px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /*Sombra alrededor del contenedor */
 }
@@ -71,7 +77,7 @@ ul.breadcrumb li+li:before {
 /* Carrusel PRODUCTOS */
 /* Estilos generales para el contenedor del carrusel */
 #product-info .carousel-container {
-    width: 55%; 
+    width: 55%;
     max-width: 800px; /* Ancho máximo para limitar el tamaño del carrusel */
 }
 
@@ -87,12 +93,13 @@ ul.breadcrumb li+li:before {
 
 /* Cambia el color de los indicadores del carrusel */
 #product-info .carousel-indicators [data-bs-target] {
-  background-color: #ff8400;
+    background-color: #ff8400;
 }
 
 #product-info .carousel-indicators .active {
-  background-color: #F8A244; /* Color del indicador activo */
+    background-color: #F8A244; /* Color del indicador activo */
 }
+
 /* Fin carrusel PRODUCTOS*/
 
 /* Contenedor info */
@@ -121,18 +128,17 @@ ul.breadcrumb li+li:before {
 .product-info-container .product-price {
     position: absolute; /* Posición absoluta dentro del contenedor */
     font-size: 25px;
-    bottom: 55px; /* Distancia desde la parte inferior del contenedor */
-    right: 20px; /* Distancia desde el borde derecho del contenedor */
+    bottom: 55px; 
+    right: 20px;
     text-align: end;
     margin-bottom: 15px;
-    margin: 0; /* Elimina márgenes adicionales */
+    margin: 0;
 }
 
 /* Cantidad ventidas */
 .product-info-container .product-sold {
     position: absolute;
     bottom: 5px; /* Fija el texto a una distancia constante del borde inferior */
-
 }
 /* Fin contenedor info */
 
@@ -151,7 +157,7 @@ ul.breadcrumb li+li:before {
 /* Flechas */
 .carousel-control-prev,
 .carousel-control-next {
-    width: 4%; /* Ajusta el ancho del área de las flechas */
+    width: 4%;
 }
 
 .carousel-inner {
@@ -169,14 +175,13 @@ ul.breadcrumb li+li:before {
     margin-left: 40px; /* Espacio solo para el primer producto */
 }
 
-
 /* FIN CAROUSEL */
 /* Contenedor de toda la info */
 #related-products-container {
     background-color: white;
     padding: 20px;
     border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .title-related-products {
@@ -204,13 +209,13 @@ ul.breadcrumb li+li:before {
 .cursor-pointer {
     cursor: pointer; /* Cambia el cursor a un puntero */
 }
-
 /* Fin productos relacionados*/
 
 /* FOOTER */
 .text-muted {
     background-color: #F58509;
 }
+
 /* FIN FOTTER */
 
 /* Tableta en Modo Vertical (768x1024)*/
@@ -229,7 +234,7 @@ ul.breadcrumb li+li:before {
     .carousel-container {
         width: 100% !important;
     }
-    
+
     .product-info-container {
         width: 100% !important;
         height: 300px;
@@ -238,20 +243,21 @@ ul.breadcrumb li+li:before {
     .product-info-container .product-name {
         font-size: 40px;
     }
-    
+
     .product-info-container .product-description {
         font-size: 30px;
         margin-bottom: 10px;
     }
-    
+
     .product-info-container .product-price {
         font-size: 35px;
     }
-    
+
     .product-info-container .product-sold {
         font-size: 20px;
         margin-bottom: 0;
     }
+
     #calificacionestitle {
         color: #838383;
         justify-content: right;
@@ -264,24 +270,24 @@ ul.breadcrumb li+li:before {
         display: flex;
     }
 
-    .rating li{
-    margin: 0;
-    padding: 2px !important;
+    .rating li {
+        margin: 0;
+        padding: 2px !important;
     }
 
-    #descripcioncomment{
-    font-weight: 450 !important;
+    #descripcioncomment {
+        font-weight: 450 !important;
     }
 
-    #comments-list{
+    #comments-list {
         display: flex !important;
         justify-content: center !important;
         align-content: center !important;
         margin-left: 3%;
     }
-    
+
     .related-product {
-       
+
         max-width: 40%;
     }
 
@@ -307,7 +313,7 @@ ul.breadcrumb li+li:before {
     .breadcrumb a {
         color: #F58509;
     }
-    
+
     .carousel-container {
         width: 100%;
     }
@@ -317,13 +323,13 @@ ul.breadcrumb li+li:before {
     }
 
     .product-details {
-        width: 100%; /* Ocupará el ancho completo en móviles */
-        height: 350px; /* Ajusta el alto exacto */
+        width: 100%;
+        height: 350px;
         padding: 10px;
         margin-top: 30px;
         border: 2px solid #F58509;
     }
-    
+
     .product-info-container {
         width: 100%;
         height: 150px;
@@ -335,17 +341,17 @@ ul.breadcrumb li+li:before {
     .product-info-container .product-name {
         font-size: 20px;
     }
-    
+
     .product-info-container .product-description {
         font-size: 13px;
         margin-bottom: 10px;
     }
-    
+
     .product-info-container .product-price {
         font-size: 12px;
         bottom: 20px;
     }
-    
+
     .product-info-container .product-sold {
         font-size: 10px;
         margin-bottom: 0;
@@ -354,28 +360,31 @@ ul.breadcrumb li+li:before {
     .text-muted {
         background-color: white;
     }
-    #comments{
+
+    #comments {
         text-align: center;
         justify-content: center;
     }
-    #commentdiv{
+
+    #commentdiv {
         padding: 2% !important;
     }
 
     #calificacionestitle {
-    padding: 5%;
-    color: #F58509;
-    margin-left: 3% !important;
-    }
-    #comments-list{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-content: center;
-    margin-left: 7%;
+        padding: 5%;
+        color: #F58509;
+        margin-left: 3% !important;
     }
 
-    #descripcioncomment{
+    #comments-list {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        margin-left: 7%;
+    }
+
+    #descripcioncomment {
         font-weight: 800;
     }
 
@@ -386,84 +395,92 @@ ul.breadcrumb li+li:before {
     }
 
     .rating li {
-    display: flex !important;
-    font-size: medium !important;
-    text-align: right !important;
-    margin: 0;
-    padding: 0.5px !important;
+        display: flex !important;
+        font-size: medium !important;
+        text-align: right !important;
+        margin: 0;
+        padding: 0.5px !important;
     }
 
     #iconos {
-    text-align: right;
-    justify-content: right;
+        text-align: right;
+        justify-content: right;
     }
 
     /* Productos relacionados */
     .title-related-products {
         font-size: 15px;
     }
-    
+
     /* Solo para el primer producto relacionado */
     .related-product:first-child {
         margin-left: 5px; /* Espacio solo para el primer producto */
     }
-    
+
     /* Productos relacionados */
     .related-product {
         flex: 0 0 90%; /* Cada producto ocupa el 90% del contenedor */
         max-width: 100%; /* Asegura que no exceda el ancho */
-    }   
+    }
 }
 
 .rating {
     list-style: none;
     display: flex;
     padding: 0;
-    margin-top: 20px; /* Ajusta este valor según sea necesario */
-  }
-  
-  .rating li {
+    margin-top: 20px;
+}
+
+.rating li {
     margin: 0 5px;
     padding: 10px;
     border-radius: 50%; /* Para dar forma circular */
     cursor: pointer;
     transition: transform 0.2s;
-  }
-  
-  .rating li.selected {
-    transform: scale(1.2); /* Aumentar tamaño de la carita seleccionada */
-  }
- 
-  h5{
-    color: #F58509;
+}
 
-  }
+.rating li.selected {
+    transform: scale(1.2); /* Aumentar tamaño de la carita seleccionada */
+}
+
+h5 {
+    color: #F58509;
+}
 
 /* div para agregar comentarios*/
-#comentarios{
- width: 300px;   /* ancho del div*/
-  height: 400px;  /* alto del div*/
-  padding: 20px;  /* Espacio interno */
-  background-color: white; /* Color de fondo */
-  border: 1px solid #ccc; /* Borde */
-  box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
-  border-radius: 10%;
-  margin-top: 20px;
-  margin: 20px 0 20px 20px;
-  
+#comentarios {
+    width: 300px; /* ancho del div*/
+    padding: 20px; /* Espacio interno */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); 
+    border-radius: 10%;
+    margin-top: 20px;
+    margin: 20px 0 20px 20px;
 }
 
-#user-comment{
+/* Campo de entrada para comentario */
+#user-comment {
     background-color: #D9D9D9;
-    border-radius: 20px;
+    border-radius: 15px;
 }
-#rangeFilterCount{
-background-color:#F58509; /* Color de fondo (verde) */
-  color: white;              /* Color del texto */
+
+/* Contenedor del botón */
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Mueve el botón a la derecha */
+}
+
+/* Bototon enviar */
+#rangeFilterCount {
+    background-color: #F58509;
+    color: white;
+    margin-top: 2%;
+    border-radius: 10px;
 }
 
 /* div calificaciones general*/
-div#comments{
+div#comments {
     background-color: #ffffff;
     border: 4px solid #F58509;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important;
@@ -478,24 +495,24 @@ div#comments{
 }
 
 /* div con ambos */
-#calificacionYComentarios{
-margin-top: 4%;
-width: 100%;
-gap: 4%;
-align-items: center;
-align-content: center;
-text-align: justify;
-justify-content: center !important;
+#calificacionYComentarios {
+    margin-top: 4%;
+    width: 100%;
+    gap: 4%;
+    align-items: center;
+    align-content: center;
+    text-align: justify;
+    justify-content: center !important;
 }
 
 /*titulo calificaciones*/
 #calificacionestitle {
-font-size: xx-large;
-font-family: Arial, Helvetica, sans-serif;
-text-align: justify;
-margin-top: 2%;
-margin-left: 5%;
-margin-bottom: 5%;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-bottom: 5%;
 }
 
 /*estilo de las caritas*/
@@ -526,32 +543,32 @@ margin-bottom: 5%;
 }
 
 /* div de cada calificacion por separado */
-#commentdiv{
-margin-bottom: 5%;
-display: flex;
-width: 100%;
-text-align: justify;
+#commentdiv {
+    margin-bottom: 5%;
+    display: flex;
+    width: 100%;
+    text-align: justify;
 }
 
 /*div iconos de los comentarios*/
 #iconos {
-display: flex;
+    display: flex;
 }
 
 #descripcioncomment {
-font-size: x-large;
-font-weight: 490;
-margin-top: 0 !important;
+    font-size: x-large;
+    font-weight: 490;
+    margin-top: 0 !important;
 }
 
 #usuariocomment {
-font-size: larger;
-font-weight: 450;
+    font-size: larger;
+    font-weight: 450;
 }
 
-#fechacomment{
-text-align: right;
-font-size: large;
+#fechacomment {
+    text-align: right;
+    font-size: large;
 }
 
 
@@ -563,6 +580,7 @@ body.dark-mode footer {
     background-color: rgb(34, 34, 34);
     width: 100%;
 }
+
 /*Barra pagina actual de productos*/
 body.dark-mode div.container-fluid,
 body.dark-mode ul.breadcrumb {
@@ -571,73 +589,78 @@ body.dark-mode ul.breadcrumb {
 }
 
 /*Contenedor principal informacion del producto*/
-body.dark-mode #product-info > div.product-details.row.justify-content-center {
+body.dark-mode #product-info>div.product-details.row.justify-content-center {
     background-color: #525252;
     color: white;
 }
+
 /* descripcion del producto principal */
-#product-info > div.product-details.row.justify-content-center > div.col-md-6.product-info-container > p.product-description{
+#product-info>div.product-details.row.justify-content-center>div.col-md-6.product-info-container>p.product-description {
     color: #b1b1b1;
 }
 
 /*Bordes del contenedor Producto info principal texto e imagen*/
-body.dark-mode #product-info > div.product-details.row.justify-content-center > div.col-md-6.product-info-container,
-body.dark-mode #carouselExampleIndicators > div.carousel-inner > div.carousel-item.active > img{
-border-color: #ccc;
-border: solid 3px;
+body.dark-mode #product-info>div.product-details.row.justify-content-center>div.col-md-6.product-info-container,
+body.dark-mode #carouselExampleIndicators>div.carousel-inner>div.carousel-item.active>img {
+    border-color: #ccc;
+    border: solid 3px;
 }
 
 /*Color de fondo de los divs*/
 body.dark-mode #comentarios,
 body.dark-mode #comments,
-body.dark-mode #related-products-container{
- background-color: #525252;
- color: white;
- border: none;
+body.dark-mode #related-products-container {
+    background-color: #525252;
+    color: white;
+    border: none;
 }
-body.dark-mode .breadcrumb a{
-color: white;
+
+body.dark-mode .breadcrumb a {
+    color: white;
 }
 
 /* Barra de navegacion */
 body.dark-mode .navbar-custom,
-body.dark-mode .navbar-toggler.collapsed{
-background-color: #8b8989 !important;
+body.dark-mode .navbar-toggler.collapsed {
+    background-color: #8b8989 !important;
 }
-body.dark-mode a.nav-link{
-color: white !important;
+
+body.dark-mode a.nav-link {
+    color: white !important;
 }
+
 /* boton barra de navegacion usuario */
-body.dark-mode .btn-group .dropdown-toggle{
-background-color:#d6d6d6;
-border: none;
+body.dark-mode .btn-group .dropdown-toggle {
+    background-color: #d6d6d6;
+    border: none;
 }
 
 /* Titulos de los divs */
-body.dark-mode #related-products-container > h3,
-body.dark-mode #calificacionYComentarios h5{
-color: #f5f5f5;
+body.dark-mode #related-products-container>h3,
+body.dark-mode #calificacionYComentarios h5 {
+    color: #f5f5f5;
 }
 
 /* div producto relacionado */
-body.dark-mode div.card{
-background-color: #7c7c7c;
-}
-body.dark-mode .card-title{
-color: white;
+body.dark-mode div.card {
+    background-color: #7c7c7c;
 }
 
-
+body.dark-mode .card-title {
+    color: white;
+}
 
 /* form para calificar */
-body.dark-mode #user-comment{
-background-color: #7c7c7c;
-border: none;
-box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
-margin-bottom: 5%;
+body.dark-mode #user-comment {
+    background-color: #7c7c7c;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    /* Sombra */
+    margin-bottom: 5%;
 }
+
 body.dark-mode ::placeholder {
-color: #c5c4c4;
+    color: #c5c4c4;
 }
 
 /* boton para enviar calificacion*/
@@ -653,18 +676,16 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
 
 
   .botones-container {
-    position: absolute; /* Cambiado a absolute para que se desplace con la página */
     top: 90%; /* Ajusta la posición vertical del contenedor */
     right: 15px; /* Alinea el contenedor a la derecha */
     display: flex;
     flex-direction: column; /* Apilar los botones uno encima del otro */
     gap: 8px; /* Espacio entre los botones */
-    background-color: white; /* Fondo blanco para el contenedor */
     padding: 10px; /* Espaciado interno del contenedor */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el contenedor */
     border-radius: 5px; /* Bordes redondeados */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    width: 150px; /* Ancho del contenedor */
+    width: 300px; /* Ancho del contenedor */
   }
   
   .boton {

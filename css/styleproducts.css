@@ -240,7 +240,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Nombre producto */
-.name{
+.name {
   padding-left: 15px; /* Espacio interno a la izquierda */
 }
 
@@ -272,41 +272,42 @@ body.dark-mode {
 }
 
 /*titulo de categoria*/
-body.dark-mode #titulo h1{
+body.dark-mode #titulo h1 {
   background-color:#555;
-  }
+}
 
 /*Barra de navegacion*/
-body.dark-mode .navbar-custom{
+body.dark-mode .navbar-custom {
   background-color: #8b8989 !important; 
- }
-body.dark-mode a.nav-link{
+}
+
+body.dark-mode a.nav-link {
  color: white !important;
- }
+}
 
 /*Divs de productos*/
- body.dark-mode .card{
-background-color: #525252;
- }
+body.dark-mode .card {
+ background-color: #525252;
+}
 
 /* div slider de precios*/
-body.dark-mode .main{
-background-color: #525252;
-color: white;
+body.dark-mode .main {
+ background-color: #525252;
+ color: white;
 }
 /*boton de filtrar*/
-body.dark-mode #rangeFilterCount{
+body.dark-mode #rangeFilterCount {
   background-color: #525252;
   color: white;
   border-color:#F3860F;
-  }
-  body.dark-mode #rangeFilterCount:hover {
-    background-color: #F58509; 
-    color: white; 
-  }
- /*input de precio*/ 
- body.dark-mode .price-input{
+}
+
+body.dark-mode #rangeFilterCount:hover {
+  background-color: #F58509; 
+  color: white; 
+}
+
+/*input de precio*/ 
+body.dark-mode .price-input {
   color: white;
-  }
-
-
+}
