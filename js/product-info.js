@@ -24,64 +24,103 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
 
                 <div class="product-details row justify-content-center">
-                <div class= row>
-                <!-- Columna para el carrusel de imágenes -->
-                    <div class="col-md-9 carousel-container">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                ${product.images.map((_image, index) => `
-                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-current="${index === 0 ? 'true' : ''}" aria-label="Slide ${index + 1}"></button>
-                                `).join('')}
+                    <div class="row">
+                        <!-- Columna para el carrusel de imágenes -->
+                        <div class="col-md-9 carousel-container">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    ${product.images.map((_image, index) => `
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-current="${index === 0 ? 'true' : ''}" aria-label="Slide ${index + 1}"></button>
+                                    `).join('')}
+                                </div>
+                                <div class="carousel-inner">
+                                    ${product.images.map((image, index) => `
+                                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                            <img src="${image}" class="d-block w-100 img-fluid" alt="${product.name}">
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
-                            <div class="carousel-inner">
-                                ${product.images.map((image, index) => `
-                                    <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                                        <img src="${image}" class="d-block w-100 img-fluid" alt="${product.name}">
-                                    </div>
-                                `).join('')}
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                        </div>
+                
+                        <!-- Columna para la información del producto -->
+                        <div class="col-md-6 product-info-container">
+                            <h2 class="product-name">${product.name}</h2>
+                            <p class="product-description">${product.description}</p>
+                            <h4 class="product-price">Precio: ${product.currency} ${product.cost}</h4>
+                            <p class="product-sold">Cantidad vendidas: ${product.soldCount}</p>
                         </div>
                     </div>
-            
-                    <!-- Columna para la información del producto -->
-                    <div class="col-md-6 product-info-container">
-                        <h2 class="product-name">${product.name}</h2>
-                        <p class="product-description">${product.description}</p>
-                        <h4 class="product-price">Precio: ${product.currency} ${product.cost}</h4>
-                        <p class="product-sold">Cantidad vendidas: ${product.soldCount}</p>
-                    </div></div>
-                <div class= row>
-                <div class="col-md-6 offset-md-7">
-                <div class="botones-container">
-        <button class="boton boton-carrito">
-          <i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
-        <button class="boton boton-comprar">Comprar</button>
-      </div>
-                </div>
-                </div>
-
+                    <div class="row">
+                        <div class="col-md-6 offset-md-7">
+                            <div class="botones-container">
+                                <button class="boton boton-carrito">
+                                    <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                                </button>
+                                <button class="boton boton-comprar">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 `;
-                
+
                 // Insertar el contenido en la página en el elemento con id 'product-info'
                 document.getElementById('product-info').innerHTML = productHTML;
 
                 // Mostrar productos relacionados
-                showRelatedProducts(product.relatedProducts); 
+                showRelatedProducts(product.relatedProducts);
+
+                // Agregar funcionalidad al botón "Agregar al carrito"
+                document.querySelector(".boton-carrito").addEventListener("click", () => {
+                    addToCart(product);
+                });
+
+                // Agregar funcionalidad al botón "Comprar"
+                document.querySelector(".boton-comprar").addEventListener("click", () => {
+                    buyNow(product);
+                });
 
             })
             .catch(error => {
                 // Manejo de errores en la carga de datos
                 console.error("Error al cargar el producto:", error);
             });
+    }
+
+    // Función para agregar el producto al carrito
+    function addToCart(product) {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const productData = {
+            name: product.name,
+            cost: product.cost,
+            currency: product.currency,
+            quantity: 1,
+            image: product.images[0] // Primera imagen
+        };
+        cart.push(productData);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Producto agregado al carrito");
+    }
+
+    // Función para comprar ahora
+    function buyNow(product) {
+        const purchaseData = {
+            name: product.name,
+            cost: product.cost,
+            currency: product.currency,
+            quantity: 1,
+            image: product.images[0] // Primera imagen
+        };
+        localStorage.setItem("purchase", JSON.stringify([purchaseData])); // Guarda el producto actual
+        window.location.href = "cart.html"; // Navega a la página de carrito
     }
 
     // Función para mostrar productos relacionados
@@ -133,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+
 
 // Función para seleccionar un producto relacionado
 function selectRelatedProduct(productId) {
