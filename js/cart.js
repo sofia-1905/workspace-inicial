@@ -19,7 +19,7 @@ if (theme === 'dark-mode') {
 
 
 // Función para hacer el subtotal
-function actualizarSubtotal() {
+function mostrarSubtotal() {
     const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
     const subtotalContainer = document.getElementById('subtotal-container');
 
@@ -43,11 +43,11 @@ function actualizarSubtotal() {
 }
 
 // Inicializar subtotal al cargar la página
-document.addEventListener('DOMContentLoaded', actualizarSubtotal);
+document.addEventListener('DOMContentLoaded', mostrarSubtotal);
 
 
 // Funcion para mostrar el numero de productos en el badge del carrito
-function actualizarNumeroCarrito() {
+function mostrarNumeroCarrito() {
     const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
 
     let totalCantidad = 0;
@@ -63,7 +63,7 @@ function actualizarNumeroCarrito() {
 }
 
 // Inicializar el badge al cargar la página
-document.addEventListener('DOMContentLoaded', actualizarNumeroCarrito);
+document.addEventListener('DOMContentLoaded', mostrarNumeroCarrito);
 
 
 function establecerCantidad() {
@@ -80,8 +80,8 @@ document.querySelectorAll('.quantity').forEach(input => {
         const nuevaCantidad = event.target.value; // Obtener la nueva cantidad
 
         establecerCantidad(productoId, nuevaCantidad); // Actualizar la cantidad
-        actualizarSubtotal(); // Actualizar el subtotal
-        actualizarNumeroCarrito(); // Actualizar el número en el badge del carrito
+        mostrarSubtotal(); // Actualizar el subtotal
+        mostrarNumeroCarrito(); // Actualizar el número en el badge del carrito
     });
 });
 
