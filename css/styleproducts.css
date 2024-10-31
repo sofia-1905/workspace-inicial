@@ -311,3 +311,11 @@ body.dark-mode #rangeFilterCount:hover {
 body.dark-mode .price-input {
   color: white;
 }
+
+/*Botones de filtro*/
+body.dark-mode #searchInput,
+body.dark-mode #priceFilterButton,
+body.dark-mode #sortDropdown,
+body.dark-mode #clearRangeFilter{
+ background-color: #8b8989 !important;
+}
