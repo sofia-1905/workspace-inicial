@@ -714,5 +714,28 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
     color: #F3860F;
     background-color: rgba(243, 134, 15, 0.17)
     
-  }  
-
+  }
+    
+  #icon-cart{
+    font-size: large;
+    color: #F58509;
+    position: relative;
+    }
+    
+    .btn-group {
+        position: relative; /* Para el badge */
+      }
+      .dropdown-item {
+        position: relative; /* Necesario para que el badge se posicione correctamente */
+      }
+      
+      #badge {
+        position: absolute;
+        font-size: 0.50rem; /* Tamaño de fuente responsivo */
+      }
+      .cart-icon-container {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        margin-left: 5px; /* Espacio entre el texto y el icono */
+      }

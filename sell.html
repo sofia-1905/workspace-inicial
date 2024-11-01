@@ -9,6 +9,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -36,7 +37,14 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="cart.html">Mi carrito
+                  <div class="cart-icon-container">
+                    <span id="icon-cart" class="fas fa-shopping-cart"></span>
+                  <span id="badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                </div>
+                  </a>
+                 
+                </li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" id="logout">Cerrar sesión</a></li>
             </ul>

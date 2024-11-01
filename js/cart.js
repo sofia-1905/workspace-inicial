@@ -144,7 +144,23 @@ function mostrarNumeroCarrito() {
     // Actualizar el contenido del ícono del carrito
     const numerocarrito = document.getElementById('badge');
     numerocarrito.textContent = totalCantidad;
+
+    localStorage.setItem("badge",totalCantidad);
 }
+
+function mostrarBadge() {
+    // Obtener el valor del badge almacenado en localStorage
+    let badge = localStorage.getItem('badge');
+    
+    // Seleccionar el elemento del badge en el DOM
+    let numerocarrito = document.getElementById('badgebody'); // Cambiado a 'badgebody'
+  
+    // Asignar el valor obtenido al contenido del badge
+    numerocarrito.textContent = badge || '0'; // Muestra '0' si no hay valor
+  }
+  
+  // Llamar a la función para mostrar el badge al cargar la página
+  document.addEventListener('DOMContentLoaded', mostrarBadge);
 
 // Inicializar el badge al cargar la página
 document.addEventListener('DOMContentLoaded', mostrarNumeroCarrito);
@@ -173,6 +189,7 @@ function actualizarCantidad() {
             subtotalElement.textContent = `Subtotal: ${producto.currency} ${subtotal}`;
             
             mostrarNumeroCarrito(); // Actualizar el número en el badge del carrito
+            mostrarBadge();
         });
     });
 }

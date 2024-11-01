@@ -188,3 +188,16 @@ switchbutton.addEventListener('click', () => {
         switchbutton.checked = false;
     }
 });
+
+function mostrarBadge() {
+    // Obtener el valor del badge almacenado en localStorage
+    let badge = localStorage.getItem('badge');
+    
+    // Seleccionar el elemento del badge en el DOM
+    let numerocarrito = document.getElementById('badge');
+  
+    // Asignar el valor obtenido al contenido del badge
+    numerocarrito.textContent = badge || '0'; // Muestra '0' si no hay valor
+  }
+  // Llama a la función al cargar el DOM
+  document.addEventListener('DOMContentLoaded', mostrarBadge);
