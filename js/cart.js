@@ -156,8 +156,8 @@ function actualizarCantidad() {
     
     Array.from(quantityInputs).forEach(input => {
         input.addEventListener('change', (event) => {
-            let productId = event.target.id; // Obtener el ID del producto
-            let nuevaCantidad = event.target.value; // Obtener el nuevo valor del input
+            let productId = Number(event.target.id); // Obtener el ID del producto
+            let nuevaCantidad = parseInt(event.target.value); // Obtener el nuevo valor del input
 
             // Buscar el producto en el carrito y actualizar su cantidad
             let producto = carrito.find(item => item.id === productId);
