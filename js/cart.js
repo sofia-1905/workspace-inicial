@@ -31,10 +31,10 @@ function displayCartItems() {
                 <div class="cart-item-details">
                     <div class="product-row">
                         <h4 class="product-name">${product.name}</h4>
-                        <p class="product-quantity">Cantidad: <input type="number" id="quantity" value="${product.quantity}" min="1" style="width: 50px; text-align: center;"></p>
+                        <p class="product-quantity">Cantidad: <input type="number" id="${product.id}" class="quantity" value="${product.quantity}" min="1" style="width: 50px; text-align: center;"></p>
                     </div>
                     <p class="product-price">${product.currency} ${product.cost}</p>
-                    <p class="product-subtotal">Subtotal: ${product.currency} ${(product.cost)}</p>
+                    <p class="product-subtotal">Subtotal: ${product.currency} ${(product.cost * product.quantity).toFixed(2)}</p>
                 </div>
                 <!-- Botón de papelera para eliminar el producto -->
                 <button type="button" class="btn btn-outline-dark trash-button" onclick="removeFromCart(${index})">
@@ -119,8 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
     displayPurchaseItem();
 });
 
-
-
 // Modo Oscuro
 const theme = localStorage.getItem('theme');
 
@@ -130,37 +128,6 @@ if (theme === 'dark-mode') {
 } else {
     document.body.classList.remove('dark-mode');
 }
-
-
-// Función para hacer el subtotal
-function mostrarSubtotal() {
-    const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
-    const subtotalContainer = document.getElementById('subtotal-container');
-
-    subtotalContainer.innerHTML = ''; // Limpiar el contenedor
-
-    carrito.forEach(producto => {
-        let precio = producto.cost;
-        let cantidad = producto.quantity; // Debería ser establecida con el control de cantidad
-
-        // Calcular el subtotal para el producto
-        let subtotalProducto = precio * cantidad;
-
-        // Crear un elemento para mostrar el subtotal del producto
-        const subtotalElement = document.createElement('div');
-        subtotalElement.textContent = `${producto.name}: $${subtotalProducto.toFixed(2)}`; // Formato del subtotal
-        subtotalContainer.appendChild(subtotalElement); // Agregar al contenedor
-
-        // Agregar el subtotal como una propiedad del producto (si es necesario)
-        producto.subtotal = subtotalProducto;
-    });
-
-    // Guardar el carrito actualizado en el LocalStorage
-    localStorage.setItem('cart', JSON.stringify(carrito));
-}
-
-// Inicializar subtotal al cargar la página
-document.addEventListener('DOMContentLoaded', mostrarSubtotal);
 
 
 // Funcion para mostrar el numero de productos en el badge del carrito
@@ -183,31 +150,40 @@ function mostrarNumeroCarrito() {
 document.addEventListener('DOMContentLoaded', mostrarNumeroCarrito);
 
 
-function establecerCantidad(productName, nuevaCantidad) {
+function actualizarCantidad() {
     let carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del LocalStorage
+    let quantityInputs = document.getElementsByClassName('quantity');
+    
+    Array.from(quantityInputs).forEach(input => {
+        input.addEventListener('change', (event) => {
+            let productId = event.target.id; // Obtener el ID del producto
+            let nuevaCantidad = event.target.value; // Obtener el nuevo valor del input
 
-    // Buscar el producto en el carrito y actualizar su cantidad
-    let producto = carrito.find(item => item.name === productName);
-    if (producto) {
-        producto.quantity = parseInt(nuevaCantidad); // Actualizar la cantidad del producto encontrado
-    }
+            // Buscar el producto en el carrito y actualizar su cantidad
+            let producto = carrito.find(item => item.id === productId);
+            if (producto) {
+                producto.quantity = parseInt(nuevaCantidad); // Actualizar la cantidad del producto encontrado
+            }
 
-    localStorage.setItem("cart", JSON.stringify(carrito)); // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("cart", JSON.stringify(carrito)); // Guardar el carrito actualizado en localStorage
+            
+            // Actualizar el subtotal en el DOM
+            const subtotal = (producto.cost * nuevaCantidad).toFixed(2);
+            const subtotalElement = event.target.closest('.cart-item').querySelector('.product-subtotal');
+            subtotalElement.textContent = `Subtotal: ${producto.currency} ${subtotal}`;
+            
+            mostrarNumeroCarrito(); // Actualizar el número en el badge del carrito
+        });
+    });
 }
 
-document.getElementById('quantity').addEventListener('change', establecerCantidad);
-
-// Evento para actualizar el subtotal y el badge al cambiar la cantidad en cada input
-document.querySelectorAll('.quantity').forEach(input => {
-    input.addEventListener('input', (event) => {
-        let productName = event.target.dataset.name; // Obtener el nombre del producto
-        let nuevaCantidad = event.target.value; // Obtener la nueva cantidad
-
-        establecerCantidad(productName, nuevaCantidad); // Actualizar la cantidad
-        mostrarSubtotal(); // Actualizar el subtotal
-        mostrarNumeroCarrito(); // Actualizar el número en el badge del carrito
-    });
+// Llama a esta función después de mostrar los productos en el carrito
+document.addEventListener("DOMContentLoaded", () => {
+    actualizarCantidad(); // Asegúrate de llamar a esta función para que se apliquen los listeners
 });
 
 /*Cuando se desencadena un evento, como un clic o un cambio en un input, 
 EVENT.TARGET te permite acceder al elemento que fue interactuado.*/
+
+/*Iteración sobre Inputs: Array.from(quantityInputs).forEach(...)
+ para añadir el event listener a cada input de cantidad.*/
