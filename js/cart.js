@@ -19,7 +19,7 @@ function displayCartItems() {
         cartItemsContainer.innerHTML = "<p>No hay productos en el carrito.</p>";
         return;
     }
-    
+
     // Limpia el contenido previo en el contenedor
     cartItemsContainer.innerHTML = "";
 
@@ -27,19 +27,18 @@ function displayCartItems() {
     cart.forEach((product, index) => {
         const productHTML = `
             <div class="cart-item">
-                <img src="${product.image}" alt="${product.name}" class="cart-item-image">
+                <img src="${product.image}" alt="${product.name}" class="cart-item-image img-fluid">
                 <div class="cart-item-details">
-                    <h4>${product.name}</h4>
-                    <p>${product.currency} ${product.cost}</p>
-                    <p>Cantidad: ${product.quantity}</p>
-                    <p>Subtotal: ${product.currency} ${(product.cost * product.quantity).toFixed(2)}</p>
-                </div>
-                <div class="quantity-control">
-                    <input type="number" id="quantity" value="${product.quantity}" min="1" style="width: 50px; text-align: center;">
+                    <div class="product-row">
+                        <h4 class="product-name">${product.name}</h4>
+                        <p class="product-quantity">Cantidad: <input type="number" id="quantity" value="${product.quantity}" min="1" style="width: 50px; text-align: center;"></p>
+                    </div>
+                    <p class="product-price">${product.currency} ${product.cost}</p>
+                    <p class="product-subtotal">Subtotal: ${product.currency} ${(product.cost)}</p>
                 </div>
                 <!-- Botón de papelera para eliminar el producto -->
                 <button type="button" class="btn btn-outline-dark trash-button" onclick="removeFromCart(${index})">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="trash-icon"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" fill="currentColor" class="trash-icon"
                         viewBox="0 0 16 16">
                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
                         <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
@@ -84,10 +83,10 @@ function displayPurchaseItem() {
         <div class="purchase-item">
             <img src="${product.image}" alt="${product.name}" class="purchase-item-image">
             <div class="purchase-item-details">
-                <h4>${product.name}</h4>
-                <p>${product.currency} ${product.cost}</p>
-                <p>Cantidad: ${product.quantity}</p>
-                <p>Subtotal: ${product.currency} ${(product.cost * product.quantity).toFixed(2)}</p>
+                <h4 class="product-name">${product.name}</h4>
+                <p class="product-price">${product.currency} ${product.cost}</p>
+                <p class="product-quantity">Cantidad: ${product.quantity}</p>
+                <p class="product-subtotal">Subtotal: ${product.currency} ${(product.cost * product.quantity).toFixed(2)}</p>
             </div>
             <!-- Botón de papelera para eliminar el producto -->
             <button type="button" class="btn btn-outline-dark trash-button" onclick="removePurchaseItem()">
