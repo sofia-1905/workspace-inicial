@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <button class="boton boton-carrito">
                                     <i class="fas fa-shopping-cart"></i> Agregar al carrito
                                 </button>
-                                <button class="boton boton-comprar">Comprar</button>
+                                <button class="boton boton-comprar">Comprar Ahora</button>
                             </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
             quantity: 1,
             image: product.images[0] // Primera imagen
         };
-        
+
         localStorage.setItem("purchase", JSON.stringify([purchaseData])); // Guarda el producto actual
         window.location.href = "cart.html"; // Navega a la página de carrito
     }
