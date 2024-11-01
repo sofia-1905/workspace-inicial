@@ -672,20 +672,19 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 
-
-
+.product-info-container{
+    margin-left: 20px;
+}
 
   .botones-container {
-    top: 90%; /* Ajusta la posición vertical del contenedor */
-    right: 15px; /* Alinea el contenedor a la derecha */
     display: flex;
     flex-direction: column; /* Apilar los botones uno encima del otro */
     gap: 8px; /* Espacio entre los botones */
     padding: 10px; /* Espaciado interno del contenedor */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el contenedor */
     border-radius: 5px; /* Bordes redondeados */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    width: 300px; /* Ancho del contenedor */
+    width: 320px; /* Ancho del contenedor */
+    margin-left: 50px;
   }
   
   .boton {
@@ -716,3 +715,4 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
     background-color: rgba(243, 134, 15, 0.17)
     
   }  
+
