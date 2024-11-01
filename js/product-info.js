@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
 
                 <div class="product-details row justify-content-center">
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <!-- Columna para el carrusel de imágenes -->
                         <div class="col-md-9 carousel-container">
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
