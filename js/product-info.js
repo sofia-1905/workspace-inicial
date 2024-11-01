@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <button class="boton boton-carrito">
                                     <i class="fas fa-shopping-cart"></i> Agregar al carrito
                                 </button>
-                                <button class="boton boton-comprar">Comprar</button>
+                                <button class="boton boton-comprar">Comprar Ahora</button>
                             </div>
                         </div>
                     </div>
@@ -108,12 +108,22 @@ function addToCart(product) {
     } else {
         // Si no existe, agrega el nuevo producto al carrito
         const productData = {
+            id: product.id,
             name: product.name,
             cost: product.cost,
             currency: product.currency,
             quantity: 1,
             image: product.images[0] // Primera imagen
         };
+
+        // Verifica si el producto ya está en el carrito
+        const existingProductIndex = cart.findIndex(item => item.id === productData.id); // Busca el índice del producto
+
+        if (existingProductIndex !== -1) {
+        // Si ya existe, incrementa la cantidad
+        cart[existingProductIndex].quantity += productData.quantity; // Aumenta la cantidad
+        } else {
+        // Si no existe, lo agrega al carrito
         cart.push(productData);
     }
     
@@ -121,18 +131,27 @@ function addToCart(product) {
     alert("Producto agregado al carrito");
 }
 
+    // Actualiza el carrito en localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Producto agregado al carrito");
+}
+
+
     // Función para comprar ahora
     function buyNow(product) {
         const purchaseData = {
+            id: product.id,
             name: product.name,
             cost: product.cost,
             currency: product.currency,
             quantity: 1,
             image: product.images[0] // Primera imagen
         };
+
         localStorage.setItem("purchase", JSON.stringify([purchaseData])); // Guarda el producto actual
         window.location.href = "cart.html"; // Navega a la página de carrito
     }
+
 
     // Función para mostrar productos relacionados
     function showRelatedProducts(relatedProducts) {
