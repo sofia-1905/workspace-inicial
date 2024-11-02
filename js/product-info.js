@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
 
                 <div class="product-details row justify-content-center">
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <!-- Columna para el carrusel de imágenes -->
                         <div class="col-md-9 carousel-container">
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <button class="boton boton-carrito">
                                     <i class="fas fa-shopping-cart"></i> Agregar al carrito
                                 </button>
-                                <button class="boton boton-comprar">Comprar Ahora</button>
+                                <button class="boton boton-comprar">Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -120,6 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Actualiza el carrito en localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
+    establecerNumeroCarrito()
+    mostrarBadge();
     alert("Producto agregado al carrito");
 }
 
@@ -343,3 +345,28 @@ if (theme === 'dark-mode') {
     document.body.classList.remove('dark-mode');
 }
 
+function mostrarBadge() {
+    // Obtener el valor del badge almacenado en localStorage
+    let badge = localStorage.getItem('badge');
+    
+    // Seleccionar el elemento del badge en el DOM
+    let numerocarrito = document.getElementById('badge');
+  
+    // Asignar el valor obtenido al contenido del badge
+    numerocarrito.textContent = badge || '0'; // Muestra '0' si no hay valor
+  }
+  // Llama a la función al cargar el DOM
+  document.addEventListener('DOMContentLoaded', mostrarBadge);
+
+  function establecerNumeroCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
+
+    let totalCantidad = 0;
+
+    carrito.forEach(producto => {
+        let cantidad = producto.quantity; // Cantidad de cada producto
+        totalCantidad += cantidad;
+    });
+
+    localStorage.setItem("badge",totalCantidad);
+}
