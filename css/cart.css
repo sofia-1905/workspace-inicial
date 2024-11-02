@@ -38,3 +38,7 @@ p {
       height: 64px; 
       margin-right: 10px; 
   }
+
+  body.dark-mode {
+background-color: rgb(34, 34, 34) !important;
+  }

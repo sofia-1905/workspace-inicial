@@ -10,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="css/stylecart.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -41,7 +42,14 @@
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="cart.html">Mi carrito
+                <div class="cart-icon-container">
+                <span id="icon-cart" class="fas fa-shopping-cart"></span>
+                <span id="badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+              </div>
+                </a>
+               
+              </li>
               <li>
                 <hr class="dropdown-divider">
               </li>
@@ -55,7 +63,11 @@
 
   <!-- Contenedor para el ícono del carrito -->
   <div class="cart-icon-container">
-    <span id="icon-cart" class="glyphicon glyphicon-shopping-cart"></span>
+    <span id="icon-cartbody" class="fas fa-shopping-cart"></span>
+    <span id="badgebody" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      
+    </span>
+  
   </div>
 
   <main class="container my-4">
@@ -90,7 +102,6 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
-
 </body>
 
 </html>
