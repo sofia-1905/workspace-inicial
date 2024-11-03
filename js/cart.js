@@ -55,6 +55,8 @@ function removeFromCart(index) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.splice(index, 1); // Elimina el producto del array
     localStorage.setItem("cart", JSON.stringify(cart)); // Actualiza el carrito en localStorage
+    mostrarNumeroCarrito(); // Actualiza la cantidad de productos añadidos del badge
+    mostrarBadge(); // Badge carrito del body
     displayCartItems(); // Actualiza la vista del carrito
 
     // Oculta el carrito y muestra el producto comprado si es necesario
