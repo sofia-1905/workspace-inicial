@@ -32,7 +32,7 @@ body {
 
 /* Contenedor principal */
 .info-container {
-    margin-top: 50px;
+    margin-top: 60px;
     border-radius: 20px;
     border: 2px solid white;
     padding: 20px; 
@@ -155,12 +155,111 @@ position: relative;
 
 .btn-group {
     position: relative; /* Para el badge */
-  }
-  .dropdown-item {
+}
+.dropdown-item {
     position: relative; /* Necesario para que el badge se posicione correctamente */
-  }
+}
   
-  #badge {
+#badge {
     position: absolute;
     font-size: 0.75rem; /* Tamaño de fuente responsivo */
-  }
+}
+
+/* Tableta en Modo Vertical (768x1024)*/
+@media (max-width: 1024px) { 
+    .info-container {
+        padding: 10px;
+    }
+
+    .cart-item-image, .purchase-item-image {
+        margin-left: 9px;
+    }
+
+    .product-name {
+      font-size: 18px;
+    }
+
+    .product-quantity {
+        font-size: 18px;
+        padding-right: 20px;
+    }
+
+    .product-price {
+        font-size: 18px;
+    }
+
+    .product-subtotal {
+        font-size: 18px;
+    }
+
+    .trash-button {
+        margin-right: 5px;
+    }
+    /* Para que no quede en el menú */
+    #icon-cartbody {
+        margin-top: 120px;
+    }
+    .badge {
+        margin-top: 120px;
+    }
+}
+
+
+/* Para smartphones pequeños (320x568) */
+@media (max-width: 568px) {
+    .cart-item {
+        display: flex;
+        flex-direction: column; /* Asegura que todo se muestre en una columna */
+        align-items: flex-start; /* Alinea a la izquierda */
+        margin: 10px 0; /* Espacio entre los elementos de la lista */
+    }
+
+    .cart-item-image {
+       margin-left: 20px;
+    }
+
+    .cart-item-details {
+        display: flex; /* Utiliza flex para mostrar la información en línea */
+        flex-direction: column; /* Coloca la información en columnas */
+        width: 100%; /* Asegura que el detalle ocupe el ancho completo */
+    }
+
+    .product-row {
+        display: flex;
+        justify-content: space-between; /* Espacia el nombre y la cantidad */
+        width: 100%;
+    }
+
+    .product-name {
+        font-size: 15px;
+    }
+
+    .product-quantity {
+        font-size: 10px;
+    }
+
+    .product-subtotal {
+        display: flex;
+        align-items: center; /* Centra verticalmente el contenido */
+        justify-content: space-between; /* Espacia el subtotal y el botón */
+        width: 100%;
+    }
+
+    .trash-button {
+        margin-left: 170px; 
+        background-color: #F58509;
+    }
+
+    .trash-icon {
+        fill: white;
+    }
+
+    .badge {
+        margin-top: 20px;
+    }
+
+    #icon-cartbody {
+        margin-top: 20px;
+    }
+
+}
