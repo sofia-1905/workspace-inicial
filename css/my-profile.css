@@ -144,7 +144,8 @@ background-color: white;
 
 /*Color del contenedor y del body*/
 body.dark-mode .container,
-body.dark-mode{
+body.dark-mode,
+body.dark-mode footer{
 background-color:  rgb(34, 34, 34);
 }
 /* Color de fondo de los inputs */
@@ -153,9 +154,6 @@ body.dark-mode .custom-input {
 }
 body.dark-mode .save-btn{
 background-color:#d6d6d6;
-}
-body.dark-mode footer{
-background-color: #8b8989 !important;
 }
 
 #icon-cart{
