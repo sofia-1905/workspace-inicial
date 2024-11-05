@@ -85,7 +85,10 @@ function displayPurchaseItem() {
         <div class="purchase-item">
             <img src="${product.image}" alt="${product.name}" class="purchase-item-image">
             <div class="purchase-item-details">
-                <h4 class="product-name">${product.name}</h4>
+                <div class="product-row">
+                    <h4 class="product-name">${product.name}</h4>
+                    <p class="product-quantity">Cantidad: <input type="number" id="${product.id}" class="quantity" value="${product.quantity}" min="1" style="width: 50px; text-align: center;"></p>
+                </div>
                 <p class="product-price">${product.currency} ${product.cost}</p>
                 <p class="product-quantity">Cantidad: <input type="number" id="${product.id}" class="quantity" value="${product.quantity}" min="1" style="width: 50px; text-align: center;"></p>
                 <p class="product-subtotal">Subtotal: ${product.currency} ${(product.cost * product.quantity).toFixed(2)}</p>

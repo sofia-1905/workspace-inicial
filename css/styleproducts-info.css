@@ -715,6 +715,31 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
     background-color: rgba(243, 134, 15, 0.17)
     
   }
+  /* Responsive para tablets en vertical (768px - 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .botones-container {
+        flex-direction: row; /* Coloca los botones en fila */
+        gap: 16px; /* Aumenta el espacio entre botones */
+    }
+    .boton {
+        font-size: 16px; /* Tamaño de fuente mayor en tablets */
+        padding: 12px; /* Aumenta el padding */
+    }
+}
+
+/* Responsive para smartphones pequeños (320px - 568px) */
+@media (max-width: 568px) {
+    .botones-container {
+        width: 100%;
+        max-width: none; /* Quita el límite de ancho máximo */
+        padding: 5px; /* Reduce el padding */
+    }
+    .boton {
+        font-size: 13px; /* Reduce el tamaño de fuente en móviles pequeños */
+        padding: 6px; /* Reduce el padding */
+    }
+}
+
     
   #icon-cart{
     font-size: large;
@@ -739,3 +764,4 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
         position: relative;
         margin-left: 5px; /* Espacio entre el texto y el icono */
       }
+      
