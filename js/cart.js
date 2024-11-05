@@ -87,7 +87,7 @@ function displayPurchaseItem() {
             <div class="purchase-item-details">
                 <h4 class="product-name">${product.name}</h4>
                 <p class="product-price">${product.currency} ${product.cost}</p>
-                <p class="product-quantity">Cantidad: ${product.quantity}</p>
+                <p class="product-quantity">Cantidad: <input type="number" id="${product.id}" class="quantity" value="${product.quantity}" min="1" style="width: 50px; text-align: center;"></p>
                 <p class="product-subtotal">Subtotal: ${product.currency} ${(product.cost * product.quantity).toFixed(2)}</p>
             </div>
             <!-- Botón de papelera para eliminar el producto -->
@@ -198,7 +198,7 @@ function actualizarCantidad() {
 
 // Llama a esta función después de mostrar los productos en el carrito
 document.addEventListener("DOMContentLoaded", () => {
-    actualizarCantidad(); // Asegúrate de llamar a esta función para que se apliquen los listeners
+    actualizarCantidad();
 });
 
 /*Cuando se desencadena un evento, como un clic o un cambio en un input, 
@@ -206,3 +206,33 @@ EVENT.TARGET te permite acceder al elemento que fue interactuado.*/
 
 /*Iteración sobre Inputs: Array.from(quantityInputs).forEach(...)
  para añadir el event listener a cada input de cantidad.*/
+
+ function actualizarCantidadBuyNow() {
+    let purchase = JSON.parse(localStorage.getItem('purchase')) || []; // Obtener el carrito del LocalStorage
+    let quantityInputs = document.getElementsByClassName('quantity');
+    
+    Array.from(quantityInputs).forEach(input => {
+        input.addEventListener('change', (event) => {
+            let productId = Number(event.target.id); // Obtener el ID del producto
+            let nuevaCantidad = parseInt(event.target.value); // Obtener el nuevo valor del input
+
+            // Buscar el producto en el carrito y actualizar su cantidad
+            let producto = purchase.find(item => item.id === productId);
+            if (producto) {
+                producto.quantity = parseInt(nuevaCantidad); // Actualizar la cantidad del producto encontrado
+            }
+
+            localStorage.setItem("purchase", JSON.stringify(purchase)); // Guardar el carrito actualizado en localStorage
+            
+            // Actualizar el subtotal en el DOM
+            const subtotal = (producto.cost * nuevaCantidad).toFixed(2);
+            const subtotalElement = event.target.closest('.purchase-item').querySelector('.product-subtotal');
+            subtotalElement.textContent = `Subtotal: ${producto.currency} ${subtotal}`;
+        });
+    });
+}
+
+// Llamar a la funcion de subtotal para Comprar ahora
+document.addEventListener("DOMContentLoaded", () => {
+    actualizarCantidadBuyNow();
+});
