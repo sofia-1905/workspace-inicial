@@ -132,7 +132,7 @@ if (theme === 'dark-mode') {
 }
 
 
-// Funcion para mostrar el numero de productos en el badge del carrito
+// Funcion para mostrar el numero de productos en el badge del carrito barra de navegacion
 function mostrarNumeroCarrito() {
     const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
 
@@ -150,6 +150,7 @@ function mostrarNumeroCarrito() {
     localStorage.setItem("badge",totalCantidad);
 }
 
+// Funcion para mostrar badge del carrito del body
 function mostrarBadge() {
     // Obtener el valor del badge almacenado en localStorage
     let badge = localStorage.getItem('badge');
