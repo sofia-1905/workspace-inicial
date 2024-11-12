@@ -263,3 +263,47 @@ position: relative;
     }
 
 }
+
+
+
+
+.tab-pane {
+    display: none; /* Oculta el contenido por defecto */
+}
+
+.tab-pane.active {
+    display: block; /* Muestra solo el contenido de la pestaña activa */
+}
+
+
+/* Eliminar el fondo blanco de la pestaña activa */
+.nav-tabs .nav-link.active {
+    background-color: transparent !important;
+    border-color: transparent; /* Quita el borde inferior de la pestaña activa */
+}
+
+/* Eliminar el fondo blanco en el hover */
+.nav-tabs .nav-link:hover {
+    background-color: transparent;
+}
+
+/* Estilos generales para la barra de navegación */
+.nav-tabs {
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px; 
+}
+
+/* Estilo de los enlaces de las pestañas */
+.nav-link {
+    border: none; /* Elimina bordes alrededor de las pestañas */
+    color: white; 
+    font-weight: 500; 
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+
+/* Efecto hover (cuando el ratón pasa por encima) */
+.nav-link:hover {
+    color: rgb(244, 156, 55) !important;
+}

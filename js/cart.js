@@ -48,6 +48,22 @@ function displayCartItems() {
         `;
         cartItemsContainer.innerHTML += productHTML;
     });
+    
+    // Agrega las palabras Subtotal, Costo de envío y Total al contenedor, fuera del bucle
+    const summaryHTML = `
+    <div class="cart-summary">
+        <p>Subtotal</p>
+        <p>Costo de envío</p>
+        <p>Total</p>
+    </div>
+  `;
+  cartItemsContainer.innerHTML += summaryHTML;
+
+    // Muestra el contenedor de las pestañas (si está oculto)
+    const tabsContainer = document.getElementById("tabsContainer");
+    if (tabsContainer) {
+        tabsContainer.style.display = "block"; // Muestra las pestañas
+    }
 }
 
 // Función para eliminar un producto del carrito
@@ -107,6 +123,22 @@ function displayPurchaseItem() {
 
     // Oculta el carrito si se muestra el producto comprado
     document.getElementById("cart-items").style.display = "none"; 
+
+    // Agrega las palabras Subtotal, Costo de envío y Total al contenedor de la compra
+    const summaryHTML = `
+    <div class="cart-summary">
+        <p>Subtotal</p>
+        <p>Costo de envío</p>
+        <p>Total</p>
+    </div>
+    `;
+    purchaseItemContainer.innerHTML += summaryHTML;
+
+    // Muestra el contenedor de las pestañas (si está oculto)
+    const tabsContainer = document.getElementById("tabsContainer");
+    if (tabsContainer) {
+        tabsContainer.style.display = "block"; // Muestra las pestañas
+    }
 }
 
 // Función para eliminar el producto del localStorage
