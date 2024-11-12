@@ -9,11 +9,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="css/stylecart.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -77,70 +74,149 @@
     </div>
 
     
-    <!-- Contenedor de las pestañas, inicialmente oculto -->
-  <div id="tabsContainer" style="display: none;">
-    <!-- Barra de navegación de las pestañas -->
-    <ul class="nav nav-tabs mt-4" id="myTab">
-      <li class="nav-item">
-        <a class="nav-link" id="envio-tab" data-toggle="tab" href="#envio" aria-controls="envio"
-          aria-selected="true">Tipo de Envío</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="direccion-tab" data-toggle="tab" href="#direccion" aria-controls="direccion"
-          aria-selected="false">Dirección de Envío</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pago-tab" data-toggle="tab" href="#pago" aria-controls="pago"
-          aria-selected="false">Forma de Pago</a>
-      </li>
-    </ul>
+<!-- Contenedor de las pestañas, inicialmente oculto -->
+<div id="tabsContainer" style="display: none;">
+  <!-- Barra de navegación de las pestañas -->
+  <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="envio-tab" data-bs-toggle="tab" href="#envio" aria-controls="envio" aria-selected="true">Tipo de Envío</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="direccion-tab" data-bs-toggle="tab" href="#direccion" aria-controls="direccion" aria-selected="false">Dirección de Envío</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="pago-tab" data-bs-toggle="tab" href="#pago" aria-controls="pago" aria-selected="false">Forma de Pago</a>
+    </li>
+  </ul>
 
-    <!-- Contenido de las pestañas -->
-    <div class="tab-content mt-3" id="myTabContent">
-      <!-- Tipo de Envío -->
-      <div class="tab-pane fade show active" id="envio" aria-labelledby="envio-tab">
-        <div class="btn-group" role="group" aria-label="Tipos de Envío">
-          <button type="button" class="btn">Premium 2 a 5 días (15%)</button>
-          <button type="button" class="btn">Express 5 a 8 días (7%)</button>
-          <button type="button" class="btn">Standard 12 a 15 días (5%)</button>
+  <!-- Contenido de las pestañas -->
+  <div class="tab-content mt-3" id="myTabContent">
+    <!-- Tipo de Envío -->
+    <div class="tab-pane fade show active" id="envio" aria-labelledby="envio-tab">
+      <div class="btn-group" role="group" aria-label="Tipos de Envío">
+        <button type="button" class="btn">Premium 2 a 5 días (15%)</button>
+        <button type="button" class="btn">Express 5 a 8 días (7%)</button>
+        <button type="button" class="btn">Standard 12 a 15 días (5%)</button>
+      </div>
+    </div>
+
+    <!-- Dirección de Envío -->
+    <div class="tab-pane fade" id="direccion" aria-labelledby="direccion-tab">
+      <form>
+        <div class="mb-3">
+          <label for="departamento" class="form-label">Departamento</label>
+          <input type="text" class="form-control" id="departamento" placeholder="Ingresa el departamento">
+        </div>
+        <div class="mb-3">
+          <label for="localidad" class="form-label">Localidad</label>
+          <input type="text" class="form-control" id="localidad" placeholder="Ingresa la localidad">
+        </div>
+        <div class="mb-3">
+          <label for="calle" class="form-label">Calle</label>
+          <input type="text" class="form-control" id="calle" placeholder="Ingresa la calle">
+        </div>
+        <div class="mb-3">
+          <label for="numero" class="form-label">Número</label>
+          <input type="text" class="form-control" id="numero" placeholder="Ingresa el número">
+        </div>
+        <div class="mb-3">
+          <label for="esquina" class="form-label">Esquina</label>
+          <input type="text" class="form-control" id="esquina" placeholder="Ingresa la esquina">
+        </div>
+      </form>
+    </div>
+
+    <!-- Forma de Pago -->
+    <div class="tab-pane fade" id="pago" role="tabpanel" aria-labelledby="pago-tab">
+      <div class="btn-group" role="group" aria-label="Formas de Pago">
+        <!-- Botones para abrir los modales -->
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#tarjetaDebitoModal">
+          Tarjeta de Débito
+        </button>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#tarjetaCreditoModal">
+          Tarjeta de Crédito
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal para Tarjeta de Débito -->
+    <div class="modal fade" id="tarjetaDebitoModal" tabindex="-1" aria-labelledby="tarjetaDebitoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tarjetaDebitoModalLabel">Pago con Tarjeta de Débito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="numeroTarjetaDebito" class="form-label">Número de Tarjeta</label>
+                <input type="text" class="form-control" id="numeroTarjetaDebito" placeholder="1234 5678 9876 5432">
+              </div>
+              <div class="mb-3">
+                <label for="nombreTitular" class="form-label">Nombre del titular</label>
+                <input type="text" class="form-control" id="nombreTitular" placeholder="Ej: María Lopez">
+              </div>
+              <div class="mb-3">
+                <label for="fechaExpiracionDebito" class="form-label">Vencimiento</label>
+                <input type="text" class="form-control" id="fechaExpiracionDebito" placeholder="MM/AA">
+              </div>
+              <div class="mb-3">
+                <label for="cvvDebito" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvvDebito" placeholder="123">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Pagar</button>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Dirección de Envío -->
-      <div class="tab-pane fade" id="direccion" aria-labelledby="direccion-tab">
-        <form>
-          <div class="form-group">
-            <label for="departamento">Departamento</label>
-            <input type="text" class="form-control" id="departamento" placeholder="Ingresa el departamento">
+    <!-- Modal para Tarjeta de Crédito -->
+    <div class="modal fade" id="tarjetaCreditoModal" tabindex="-1" aria-labelledby="tarjetaCreditoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tarjetaCreditoModalLabel">Pago con Tarjeta de Crédito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="form-group">
-            <label for="localidad">Localidad</label>
-            <input type="text" class="form-control" id="localidad" placeholder="Ingresa la localidad">
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="numeroTarjetaCredito" class="form-label">Número de Tarjeta</label>
+                <input type="text" class="form-control" id="numeroTarjetaCredito" placeholder="1234 5678 9876 5432">
+              </div>
+              <div class="mb-3">
+                <label for="nombreTitular" class="form-label">Nombre del titular</label>
+                <input type="text" class="form-control" id="nombreTitular" placeholder="Ej: María Lopez">
+              </div>
+              <div class="mb-3">
+                <label for="fechaExpiracionCredito" class="form-label">Fecha de Expiración</label>
+                <input type="text" class="form-control" id="fechaExpiracionCredito" placeholder="MM/AA">
+              </div>
+              <div class="mb-3">
+                <label for="cvvCredito" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvvCredito" placeholder="123">
+              </div>
+            </form>
           </div>
-          <div class="form-group">
-            <label for="calle">Calle</label>
-            <input type="text" class="form-control" id="calle" placeholder="Ingresa la calle">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Pagar</button>
           </div>
-          <div class="form-group">
-            <label for="numero">Número</label>
-            <input type="text" class="form-control" id="numero" placeholder="Ingresa el número">
-          </div>
-          <div class="form-group">
-            <label for="esquina">Esquina</label>
-            <input type="text" class="form-control" id="esquina" placeholder="Ingresa la esquina">
-          </div>
-        </form>
-      </div>
-
-      <!-- Forma de Pago -->
-      <div class="tab-pane fade" id="pago" role="tabpanel" aria-labelledby="pago-tab">
-        <div class="btn-group" role="group" aria-label="Formas de Pago">
-          <button type="button" class="btn">Tarjeta de Débito</button>
-          <button type="button" class="btn">Tarjeta de Crédito</button>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+
+
+
+
   </main>
 
   <footer class="text-muted">
