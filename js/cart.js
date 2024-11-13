@@ -141,7 +141,7 @@ function displayPurchaseItem() {
     }
 }
 
-// Boton siguiente 
+// Boton siguiente para direccion de envío
 document.getElementById("continuar").addEventListener("click", function() {
     var direccionTab = new bootstrap.Tab(document.getElementById('direccion-tab'));
     direccionTab.show(); // Activa la pestaña "Dirección de Envío"
