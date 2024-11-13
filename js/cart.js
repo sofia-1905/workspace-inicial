@@ -231,8 +231,8 @@ function actualizarCantidad() {
             const subtotalElement = event.target.closest('.cart-item').querySelector('.product-subtotal');
             subtotalElement.textContent = `Subtotal: ${producto.currency} ${subtotal}`;
             
-            mostrarNumeroCarrito(); // Actualizar el número en el badge del carrito
-            mostrarBadge();
+            mostrarNumeroCarrito(); // Actualizar el número en el badge del carrito de la barra de navegacion
+            mostrarBadge(); // Actualizar el numero en el badge del carrito en el body de la pagina
         });
     });
 }
