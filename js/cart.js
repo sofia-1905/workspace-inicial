@@ -52,9 +52,9 @@ function displayCartItems() {
     // Agrega las palabras Subtotal, Costo de envío y Total al contenedor, fuera del bucle
     const summaryHTML = `
     <div class="cart-summary">
-        <p>Subtotal</p>
-        <p>Costo de envío</p>
-        <p>Total</p>
+        <p class="subtotal-compra">Subtotal</p>
+        <p class="costoEnvio-compra">Costo de envío</p>
+        <p class="total-compra">Total</p>
     </div>
   `;
   cartItemsContainer.innerHTML += summaryHTML;
@@ -140,6 +140,12 @@ function displayPurchaseItem() {
         tabsContainer.style.display = "block"; // Muestra las pestañas
     }
 }
+
+// Boton siguiente 
+document.getElementById("continuar").addEventListener("click", function() {
+    var direccionTab = new bootstrap.Tab(document.getElementById('direccion-tab'));
+    direccionTab.show(); // Activa la pestaña "Dirección de Envío"
+});
 
 // Función para eliminar el producto del localStorage
 function removePurchaseItem() {
