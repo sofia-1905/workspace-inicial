@@ -147,15 +147,111 @@ body {
     fill: #333; 
 }
 
+.subtotal-compra {
+    color: white;
+    font-size: larger;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.costoEnvio-compra {
+    color: white;
+    font-size: larger;
+    margin-left: 40px;
+}
+
+.total-compra {
+    color: white;
+    font-size: larger;
+    margin-left: 40px;
+}
+
+/* TABS */
+.tab-pane {
+    display: none; /* Oculta el contenido por defecto */
+}
+
+.tab-pane.active {
+    display: block; /* Muestra solo el contenido de la pestaña activa */
+}
+
+
+/* Eliminar el fondo blanco de la pestaña activa */
+.nav-tabs .nav-link.active {
+    background-color: transparent !important;
+    border-color: transparent; /* Quita el borde inferior de la pestaña activa */
+}
+
+/* Eliminar el fondo blanco en el hover */
+.nav-tabs .nav-link:hover {
+    background-color: transparent;
+}
+
+/* Estilos generales para la barra de navegación */
+.nav-tabs {
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px; 
+}
+
+/* Estilo de los enlaces de las pestañas */
+.nav-link {
+    border: none; /* Elimina bordes alrededor de las pestañas */
+    color: white; 
+    font-weight: 500; 
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+/* Efecto hover (cuando el ratón pasa por encima) */
+.nav-link:hover {
+    color: rgb(191, 114, 5) !important;
+}
+
+/* Contenedor de los botones */
+.d-flex {
+    display: flex;
+    justify-content: center; 
+    gap: 40px;              
+}
+
+/* Botones costo de envio */
+.btn-envio {
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 300px;
+} 
+
+/* Botón "Siguiente" */
+.btn-siguiente {
+    color: white;
+    background-color: #F88F34;
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 100px;
+    margin-top: 15px;
+}
+
+/* Hover efectos opcionales */
+.btn-envio:hover,
+.btn-siguiente:hover {
+    background-color: #f3a633; /* Color al pasar el ratón */
+}
+
+.btn-siguiente:hover {
+    background-color: #f7c63f; /* Color específico para "Siguiente" al pasar el ratón */
+}
+
 #icon-cart{
-font-size: large;
-color: #F58509;
-position: relative;
+    font-size: large;
+    color: #F58509;
+    position: relative;
 }
 
 .btn-group {
     position: relative; /* Para el badge */
 }
+
 .dropdown-item {
     position: relative; /* Necesario para que el badge se posicione correctamente */
 }
@@ -265,45 +361,3 @@ position: relative;
 }
 
 
-
-
-.tab-pane {
-    display: none; /* Oculta el contenido por defecto */
-}
-
-.tab-pane.active {
-    display: block; /* Muestra solo el contenido de la pestaña activa */
-}
-
-
-/* Eliminar el fondo blanco de la pestaña activa */
-.nav-tabs .nav-link.active {
-    background-color: transparent !important;
-    border-color: transparent; /* Quita el borde inferior de la pestaña activa */
-}
-
-/* Eliminar el fondo blanco en el hover */
-.nav-tabs .nav-link:hover {
-    background-color: transparent;
-}
-
-/* Estilos generales para la barra de navegación */
-.nav-tabs {
-    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    margin-bottom: 40px; 
-}
-
-/* Estilo de los enlaces de las pestañas */
-.nav-link {
-    border: none; /* Elimina bordes alrededor de las pestañas */
-    color: white; 
-    font-weight: 500; 
-    font-size: 20px; /* Tamaño de fuente */
-}
-
-
-/* Efecto hover (cuando el ratón pasa por encima) */
-.nav-link:hover {
-    color: rgb(244, 156, 55) !important;
-}
