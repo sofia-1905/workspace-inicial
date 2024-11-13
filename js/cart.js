@@ -277,3 +277,17 @@ EVENT.TARGET te permite acceder al elemento que fue interactuado.*/
 document.addEventListener("DOMContentLoaded", () => {
     actualizarCantidadBuyNow();
 });
+
+function validarCamposDireccion(){
+ // Obtener valores de los campos de la dirección
+ const departamento = document.getElementById("departamento").value.trim();
+ const localidad = document.getElementById("localidad").value.trim();
+ const calle = document.getElementById("calle").value.trim();
+ const numero = document.getElementById("numero").value.trim();
+
+ // Validar si los campos de la dirección están vacíos
+ if (!departamento || !localidad || !calle || !numero) {
+   event.preventDefault(); // Detener el proceso si falta algún campo
+ }
+}
+
