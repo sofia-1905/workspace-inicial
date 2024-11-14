@@ -180,6 +180,49 @@ function removeFromCart(index) {
     actualizarCantidad(); // Llamar a actualizar cantidad de inputs
 }
 
+// Selecciona los elementos de las pestañas
+const tabs = document.querySelectorAll('.nav-link');
+const tabContent = document.querySelectorAll('.tab-pane');
+let currentTab = 0; // Índice de la pestaña actual
+
+// Función para actualizar la pestaña activa
+function updateTab(index) {
+    // Remover la clase 'active' de todas las pestañas y contenido
+    tabs.forEach(tab => tab.classList.remove('active'));
+    tabContent.forEach(content => content.classList.remove('show', 'active'));
+
+    // Agregar la clase 'active' a la pestaña y contenido actual
+    tabs[index].classList.add('active');
+    tabContent[index].classList.add('show', 'active');
+}
+
+// Función para avanzar a la siguiente pestaña
+function nextTab() {
+    if (currentTab < tabs.length - 1) {
+        currentTab++;
+        updateTab(currentTab);
+    }
+}
+
+// Función para regresar a la pestaña anterior
+function prevTab() {
+    if (currentTab > 0) {
+        currentTab--;
+        updateTab(currentTab);
+    }
+}
+
+// Añade el evento de clic a cada botón individual
+document.getElementById('btn-next-tipo-envio').addEventListener('click', nextTab);
+document.getElementById('btn-back-direccion-envio').addEventListener('click', prevTab);
+document.getElementById('btn-next-direccion-envio').addEventListener('click', nextTab);
+document.getElementById('btn-back-forma-pago').addEventListener('click', prevTab);
+
+// Botón de finalizar compra
+document.querySelector('.btn-finalize').addEventListener('click', () => {
+    // Completar con las acciones del boton 
+});
+
 // Función para mostrar el número de productos en el badge del carrito (navegación)
 function mostrarNumeroCarrito() {
     const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
