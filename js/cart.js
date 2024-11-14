@@ -255,32 +255,3 @@ if (theme === 'dark-mode') {
 } else {
     document.body.classList.remove('dark-mode');
 }
-
-// Validar si los campos de la dirección están vacíos
-function validarCamposDireccion(){
-   
-    let departamento = document.getElementById("departamento").value.trim();
-    let localidad = document.getElementById("localidad").value.trim();
-    let calle = document.getElementById("calle").value.trim();
-    let numero = document.getElementById("numero").value.trim();
-    const departamentovalidityState = departamento.validity;
-
-   
-    if (departamentovalidityState.valueMissing){
-    departamento.setCustomValidity("Debe ingresar el departamento");
-    }
-   }
- 
-// Validar si se ha seleccionado un tipo de envío
-function validarSeleccionEnvio(){
-
-  let envioSeleccionado = document.querySelector('input[name="envio"]:checked');
-  if (!envioSeleccionado) {
-    event.preventDefault();
-  }
-}
-
- // Validar si se ha seleccionado una forma de pago
- function validarPago(){
-
- }

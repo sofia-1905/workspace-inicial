@@ -167,6 +167,9 @@ background-color: white;
     .navbar {
     background-color: #F57C00 !important;
     }
+    .navbar-custom .nav-link {
+    color: rgba(255, 255, 255, .55) !important;
+    }
     body{
     background-color: white;
     }
@@ -176,9 +179,14 @@ background-color: white;
     }
     .btn-light {
         color: white;
-        background-color: #F57C00;
+        background-color: #f8f9fa;
         border-color: #f8f9fa;
-        border-radius: 15px;
+    }
+    #btnguardarcambios{
+    background-color: #F57C00 !important;
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 5%;
     }
     .custom-input {
         background-color: #c4b4b4;
