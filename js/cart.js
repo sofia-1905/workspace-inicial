@@ -174,6 +174,7 @@ function removeFromCart(index) {
     }
 
     updateSummary(); // Actualizar el resumen con el carrito vacío
+    actualizarCantidad(); // Llamar a actualizar cantidad de inputs
 }
 
 // Función para mostrar el número de productos en el badge del carrito (navegación)
@@ -198,3 +199,42 @@ function mostrarBadge() {
     let numerocarrito = document.getElementById('badgebody'); // Elemento del badge en el body
     numerocarrito.textContent = badge || '0'; // Si no hay productos, mostrar 0
 }
+
+// Modo Oscuro
+const theme = localStorage.getItem('theme');
+
+// Aplicar el tema guardado al cargar la página
+if (theme === 'dark-mode') {
+    document.body.classList.add('dark-mode');
+} else {
+    document.body.classList.remove('dark-mode');
+}
+
+// Validar si los campos de la dirección están vacíos
+function validarCamposDireccion(){
+   
+    let departamento = document.getElementById("departamento").value.trim();
+    let localidad = document.getElementById("localidad").value.trim();
+    let calle = document.getElementById("calle").value.trim();
+    let numero = document.getElementById("numero").value.trim();
+    const departamentovalidityState = departamento.validity;
+
+   
+    if (departamentovalidityState.valueMissing){
+    departamento.setCustomValidity("Debe ingresar el departamento");
+    }
+   }
+ 
+// Validar si se ha seleccionado un tipo de envío
+function validarSeleccionEnvio(){
+
+  let envioSeleccionado = document.querySelector('input[name="envio"]:checked');
+  if (!envioSeleccionado) {
+    event.preventDefault();
+  }
+}
+
+ // Validar si se ha seleccionado una forma de pago
+ function validarPago(){
+
+ }
