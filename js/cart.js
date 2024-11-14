@@ -118,54 +118,6 @@ function updateSummary() {
 
     // Calcular el total (subtotal + costo de envío)
     const total = subtotal + shippingCost;
-    // Muestra el contenedor de las pestañas (si está oculto)
-    const tabsContainer = document.getElementById("tabsContainer");
-    if (tabsContainer) {
-        tabsContainer.style.display = "block"; // Muestra las pestañas
-    }
-}
-
-// Boton siguiente para direccion de envío
-document.getElementById("continuar").addEventListener("click", function() {
-    var direccionTab = new bootstrap.Tab(document.getElementById('direccion-tab'));
-    direccionTab.show(); // Activa la pestaña "Dirección de Envío"
-});
-
-// Función para eliminar el producto del localStorage
-function removePurchaseItem() {
-    localStorage.removeItem("purchase"); // Elimina el producto de la compra
-    displayPurchaseItem(); // Actualiza la visualización en la página
-   // Redirige a otra página 
-   window.location.href = "product-info.html"; 
-}
-
-// Llama a la función para mostrar los productos al cargar la página
-document.addEventListener("DOMContentLoaded", () => {
-    displayCartItems();
-    displayPurchaseItem();
-});
-
-// Modo Oscuro
-const theme = localStorage.getItem('theme');
-
-// Aplicar el tema guardado al cargar la página
-if (theme === 'dark-mode') {
-    document.body.classList.add('dark-mode');
-} else {
-    document.body.classList.remove('dark-mode');
-}
-
-
-// Funcion para mostrar el numero de productos en el badge del carrito barra de navegacion
-function mostrarNumeroCarrito() {
-    const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
-
-    let totalCantidad = 0;
-
-    carrito.forEach(producto => {
-        let cantidad = producto.quantity; // Cantidad de cada producto
-        totalCantidad += cantidad;
-    });
 
     // Actualizar el DOM con los valores calculados
     document.querySelector(".subtotal-compra").textContent = `Subtotal: ${cart[0]?.currency || "$"} ${subtotal.toFixed(2)}`;

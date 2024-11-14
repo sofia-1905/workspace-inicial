@@ -222,100 +222,24 @@ body {
     width: 300px;
 } 
 
-/* Botónes del Tabs */
-.btn-next,
-.btn-back,
-.btn-pay,
-.btn-finalize {
+/* Botón "Siguiente" */
+.btn-siguiente {
     color: white;
     background-color: #F88F34;
     border: 1px solid white;
     border-radius: 15px;
+    width: 100px;
     margin-top: 15px;
 }
 
-.d-flex {
-    gap: 10px;
-}
-  
-/* Direccion de envio */
-.form-label {
-    color: white;
-    margin-left: 40px;
-    font-size: larger;
+/* Hover efectos opcionales */
+.btn-envio:hover,
+.btn-siguiente:hover {
+    background-color: #f3a633; /* Color al pasar el ratón */
 }
 
-/* Campos de entrada*/
-.form-control {
-    background-color: #F58509;
-    padding: 10px; 
-    font-size: 16px;
-    color: rgb(243, 236, 236);
-    border: 1px solid white;
-}
-
-/* Texto del placeholder */
-.form-control::placeholder {
-    color: rgb(228, 220, 220);
-    opacity: 1; /* Asegura que el color se vea completamente */
-}
-  
-.form-control:focus {
-    background-color: rgb(230, 228, 228);
-    box-shadow: none; /* Eliminar el efecto de sombra de Bootstrap */
-}
-  
-/* Margen entre los campos */
-.mb-3 {
-    margin-bottom: 15px;
-}
-
-.btn-debit, .btn-credit {
-    border: 2px solid #f2eaea;   
-    border-radius: 5px;  
-    padding: 10px 20px;        
-}
-
-.btn-card {
-    display: flex;
-    gap: 100px;      
-}
-  
-.btn-debit, .btn-credit {
-    color: white;
-    border: 1px solid white;
-    padding: 10px 15px;    
-    border-radius: 10px;
-}
-  
-/* Títulos dentro del modal */
-.modal-header h5,
-.modal-body .formPay {
-  color: #F58509;
-  font-size: larger;
-}
-
-/* Estilo general para los campos de entrada en el modal */
-.input-field {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    transition: border 0.3s ease;
-}
-  
-/* Estilo cuando el campo tiene foco */
-.input-field:focus {
-    border: 1px solid #F58509; 
-    outline: none; /* Quitar el contorno predeterminado */
-}
-  
-/* Estilo para el formulario dentro del modal */
-.modal-body form {
-    padding: 15px;
+.btn-siguiente:hover {
+    background-color: #f7c63f; /* Color específico para "Siguiente" al pasar el ratón */
 }
 
 #icon-cart{
