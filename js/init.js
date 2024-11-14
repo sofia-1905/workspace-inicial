@@ -42,29 +42,32 @@ let getJSONData = function(url){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+  // Redirige al usuario a la página de inicio de sesión si no está autenticado
   const isLoggedIn = sessionStorage.getItem('loggedIn');
+  if (isLoggedIn !== 'true') {
+      window.location.href = 'login.html';
+      return; // Detiene el resto del código si no está autenticado
+  }
 
-    if (isLoggedIn != 'true') {
-      window.location.href = 'login.html'; 
-    }
-});
+  // Muestra el nombre de usuario en el botón de dropdown si está disponible
+  const username = localStorage.getItem('username');
+  const dropdownButton = document.querySelector('.dropdown-toggle');
+  const usernamePlaceholder = document.getElementById('username-placeholder');
 
-    document.addEventListener("DOMContentLoaded", function() {
-      const username = localStorage.getItem('username');
-      const dropdownButton = document.querySelector('.dropdown-toggle');
-            if (username) {
-          dropdownButton.innerText = username; 
-          document.getElementById('username-placeholder').innerText = username;
-      } 
-  });
-  
-        document.addEventListener("DOMContentLoaded", function() {
-          const logoutButton = document.getElementById('logout');
-               if (logoutButton) {
-              logoutButton.addEventListener('click', function() {
-                  sessionStorage.removeItem('loggedIn');
-                  localStorage.removeItem('username');
-                           window.location.href = 'login.html';
-              });
-          }
+  if (username && dropdownButton) {
+      dropdownButton.innerText = username;
+  }
+  if (username && usernamePlaceholder) {
+      usernamePlaceholder.innerText = username;
+  }
+
+  // Configura el evento de cierre de sesión
+  const logoutButton = document.getElementById('logout');
+  if (logoutButton) {
+      logoutButton.addEventListener('click', function() {
+          sessionStorage.removeItem('loggedIn');
+          localStorage.removeItem('username');
+          window.location.href = 'login.html';
+      });
+  }
 });
