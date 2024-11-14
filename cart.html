@@ -73,9 +73,8 @@
       <div id="purchase-item"></div> 
     </div>
 
-    
-<!-- Contenedor de las pestañas, inicialmente oculto -->
-<div id="tabsContainer" style="display: none;">
+  <!-- Contenedor de las pestañas, inicialmente oculto -->
+  <div id="tabsContainer" style="display: none;">
   <!-- Barra de navegación de las pestañas -->
   <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -94,51 +93,78 @@
     <!-- Tipo de Envío -->
     <div class="tab-pane fade show active" id="envio" aria-labelledby="envio-tab">
       <div class="d-flex justify-content-center" role="group" aria-label="Tipos de Envío">
-        <button type="button" class="btn btn-envio"id="btn-envioPremium">Premium 2 a 5 días (15%)</button>
-        <button type="button" class="btn btn-envio"id="btn-envioExpress">Express 5 a 8 días (7%)</button>
-        <button type="button" class="btn btn-envio"id="btn-envioStandard">Standard 12 a 15 días (5%)</button>
+        <button type="button" class="btn btn-envio" id="btn-envioPremium">Premium 2 a 5 días (15%)</button>
+        <button type="button" class="btn btn-envio" id="btn-envioExpress">Express 5 a 8 días (7%)</button>
+        <button type="button" class="btn btn-envio" id="btn-envioStandard">Standard 12 a 15 días (5%)</button>
       </div>
       <div class="d-flex justify-content-end">
-        <button type="button" id="continuar" class="btn btn-siguiente">Siguiente</button>
+        <button type="button" id="btn-next-tipo-envio" class="btn btn-next">Siguiente</button>
       </div>
     </div>
 
     <!-- Dirección de Envío -->
     <div class="tab-pane fade" id="direccion" aria-labelledby="direccion-tab">
       <form>
-        <div class="mb-3">
-          <label for="departamento" class="form-label">Departamento</label>
-          <input type="text" class="form-control" id="departamento" placeholder="Ingresa el departamento" required>
+        <div class="row mb-3 align-items-center">
+          <div class="col-md-3">
+            <label for="departamento" class="form-label">Departamento</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="departamento" placeholder="Ingresa el departamento" required>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="localidad" class="form-label">Localidad</label>
-          <input type="text" class="form-control" id="localidad" placeholder="Ingresa la localidad" required>
+        <div class="row mb-3 align-items-center">
+          <div class="col-md-3">
+            <label for="localidad" class="form-label">Localidad</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="localidad" placeholder="Ingresa la localidad" required>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="calle" class="form-label">Calle</label>
-          <input type="text" class="form-control" id="calle" placeholder="Ingresa la calle" required>
+        <div class="row mb-3 align-items-center">
+          <div class="col-md-3">
+            <label for="calle" class="form-label">Calle</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="calle" placeholder="Ingresa la calle" required>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="numero" class="form-label">Número</label>
-          <input type="text" class="form-control" id="numero" placeholder="Ingresa el número" required>
+        <div class="row mb-3 align-items-center">
+          <div class="col-md-3">
+            <label for="numero" class="form-label">Número</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="numero" placeholder="Ingresa el número" required>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="esquina" class="form-label">Esquina</label>
-          <input type="text" class="form-control" id="esquina" placeholder="Ingresa la esquina">
+        <div class="row mb-3 align-items-center">
+          <div class="col-md-3">
+            <label for="esquina" class="form-label">Esquina</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="esquina" placeholder="Ingresa la esquina">
+          </div>
         </div>
       </form>
+
+      <div class="d-flex justify-content-end">
+        <button type="button" id="btn-back-direccion-envio" class="btn btn-back">Atras</button>
+        <button type="button" id="btn-next-direccion-envio" class="btn btn-next">Siguiente</button>
+      </div>
     </div>
 
     <!-- Forma de Pago -->
     <div class="tab-pane fade" id="pago" role="tabpanel" aria-labelledby="pago-tab">
-      <div class="btn-group" role="group" aria-label="Formas de Pago">
-        <!-- Botones para abrir los modales -->
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#tarjetaDebitoModal">
-          Tarjeta de Débito
-        </button>
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#tarjetaCreditoModal">
-          Tarjeta de Crédito
-        </button>
+      <div class="d-flex justify-content-center">
+        <div class="btn-card" role="group" aria-label="Formas de Pago">
+          <!-- Botones para abrir los modales -->
+          <button type="button" class="btn btn-debit" data-bs-toggle="modal" data-bs-target="#tarjetaDebitoModal">Tarjeta de Débito</button>
+          <button type="button" class="btn btn-credit" data-bs-toggle="modal" data-bs-target="#tarjetaCreditoModal">Tarjeta de Crédito</button>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="button"  id="btn-back-forma-pago" class="btn btn-back">Atras</button>
+        <button type="button" class="btn btn-finalize">Finalizar compra</button>
       </div>
     </div>
 
@@ -153,20 +179,27 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="numeroTarjetaDebito" class="form-label">Número de Tarjeta</label>
-                <input type="text" class="form-control" id="numeroTarjetaDebito" placeholder="1234 5678 9876 5432">
+                <label for="numeroTarjetaDebito" class="formPay">Número de Tarjeta</label>
+                <input type="text" class="input-field" id="numeroTarjetaDebito" placeholder="1234 5678 9876 5432">
               </div>
               <div class="mb-3">
-                <label for="nombreTitular" class="form-label">Nombre del titular</label>
-                <input type="text" class="form-control" id="nombreTitular" placeholder="Ej: María Lopez">
+                <label for="nombreTitularDebito" class="formPay">Nombre del titular</label>
+                <input type="text" class="input-field" id="nombreTitularDebito" placeholder="Ej: María Lopez">
               </div>
-              <div class="mb-3">
-                <label for="fechaExpiracionDebito" class="form-label">Vencimiento</label>
-                <input type="text" class="form-control" id="fechaExpiracionDebito" placeholder="MM/AA">
-              </div>
-              <div class="mb-3">
-                <label for="cvvDebito" class="form-label">CVV</label>
-                <input type="text" class="form-control" id="cvvDebito" placeholder="123">
+              <!-- Fila con Vencimiento y CVV -->
+              <div class="row">
+                <div class="col-6">
+                  <div class="mb-3">
+                    <label for="fechaExpiracionDebito" class="formPay">Vencimiento</label>
+                    <input type="text" class="input-field" id="fechaExpiracionDebito" placeholder="MM/AA">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="mb-3">
+                    <label for="cvvDebito" class="formPay">CVV</label>
+                    <input type="text" class="input-field" id="cvvDebito" placeholder="123">
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -189,20 +222,27 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="numeroTarjetaCredito" class="form-label">Número de Tarjeta</label>
-                <input type="text" class="form-control" id="numeroTarjetaCredito" placeholder="1234 5678 9876 5432">
+                <label for="numeroTarjetaCredito" class="formPay">Número de Tarjeta</label>
+                <input type="text" class="input-field" id="numeroTarjetaCredito" placeholder="1234 5678 9876 5432">
               </div>
               <div class="mb-3">
-                <label for="nombreTitular" class="form-label">Nombre del titular</label>
-                <input type="text" class="form-control" id="nombreTitular" placeholder="Ej: María Lopez">
+                <label for="nombreTitularCredito" class="formPay">Nombre del titular</label>
+                <input type="text" class="input-field" id="nombreTitularCredito" placeholder="Ej: María Lopez">
               </div>
-              <div class="mb-3">
-                <label for="fechaExpiracionCredito" class="form-label">Fecha de Expiración</label>
-                <input type="text" class="form-control" id="fechaExpiracionCredito" placeholder="MM/AA">
-              </div>
-              <div class="mb-3">
-                <label for="cvvCredito" class="form-label">CVV</label>
-                <input type="text" class="form-control" id="cvvCredito" placeholder="123">
+              <!-- Fila con Vencimiento y CVV -->
+              <div class="row">
+                <div class="col-6">
+                  <div class="mb-3">
+                    <label for="fechaExpiracionCredito" class="formPay">Vencimiento</label>
+                    <input type="text" class="input-field" id="fechaExpiracionCredito" placeholder="MM/AA">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="mb-3">
+                    <label for="cvvCredito" class="formPay">CVV</label>
+                    <input type="text" class="input-field" id="cvvCredito" placeholder="123">
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -215,12 +255,7 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-  </main>
+</main>
 
   <footer class="text-muted">
     <div class="container">
