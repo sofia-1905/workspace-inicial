@@ -177,6 +177,7 @@ function removeFromCart(index) {
     }
 
     updateSummary(); // Actualizar el resumen con el carrito vacío
+    actualizarCantidad(); // Llamar a actualizar cantidad de inputs
 }
 
 // Función para mostrar el número de productos en el badge del carrito (navegación)
@@ -200,4 +201,14 @@ function mostrarBadge() {
     let badge = localStorage.getItem('badge');
     let numerocarrito = document.getElementById('badgebody'); // Elemento del badge en el body
     numerocarrito.textContent = badge || '0'; // Si no hay productos, mostrar 0
+}
+
+// Modo Oscuro
+const theme = localStorage.getItem('theme');
+
+// Aplicar el tema guardado al cargar la página
+if (theme === 'dark-mode') {
+    document.body.classList.add('dark-mode');
+} else {
+    document.body.classList.remove('dark-mode');
 }
