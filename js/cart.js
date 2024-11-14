@@ -14,7 +14,7 @@ function displayCartItems() {
 
     // Verifica si el carrito está vacío
     if (cart.length === 0) {
-        cartItemsContainer.innerHTML = "<p>No hay productos en el carrito.</p>";
+        cartItemsContainer.innerHTML = "<p>No hay productos en el carrito</p>"; 
         return;
     }
 
@@ -63,6 +63,9 @@ function displayCartItems() {
     }
 
     updateSummary(); // Para actualizar el resumen con el subtotal y costo de envío por defecto
+    
+    // AGREGADO: VOLVER A ASIGNAR EL EVENTO DE CAMBIO DE CANTIDAD A LOS INPUTS
+    actualizarCantidad(); // Esto es necesario para reasignar los eventos después de eliminar un producto
 }
 
 // Función para agregar interactividad a los botones de tipo de envío
