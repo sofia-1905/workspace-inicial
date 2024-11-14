@@ -347,7 +347,9 @@ function validarCamposPago() {
     // Identificar si se está utilizando la tarjeta de crédito o débito
     const tarjetaCredito = document.getElementById("numeroTarjetaCredito");
     const tarjetaDebito = document.getElementById("numeroTarjetaDebito");
-    let tipoTarjeta = localStorage.getItem('cardType')
+    let tipoTarjeta = localStorage.getItem('cardType');
+
+    let valid = true;
 
     // Variables de los campos comunes
     let numeroTarjeta, nombreTitular, fechaExpiracion, cvv;
@@ -370,8 +372,6 @@ function validarCamposPago() {
         console.log("Por favor, seleccione un tipo de tarjeta (crédito o débito).");
         return false;
     }
-
-    let valid = true;
 
     // Validación del número de tarjeta
     if (!numeroTarjeta.value.trim()) {
