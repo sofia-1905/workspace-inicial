@@ -7,12 +7,12 @@ body {
 }
 
 /* HEADER*/
-/* Estilo para la barra de navegación */
+/* Barra de navegación */
 .navbar-custom {
     background-color: white !important;
 }
 
-/* Estilo para los enlaces de navegación */
+/* Enlaces de navegación */
 .navbar-custom .nav-link {
     color: #6F6A6A !important;
 }
@@ -26,11 +26,9 @@ body {
     background-color: #F8A244;
     font-size: 20px;
     margin: 0;
-    /* Eliminamos el margen externo */
     margin-top: 3%;
     margin-bottom: 3%;
-    width: 100%;
-    /* Asegura que el breadcrumb ocupe el ancho completo del contenedor */
+    width: 100%; /* Asegura que el breadcrumb ocupe el ancho completo del contenedor */
 }
 
 /* Separadores */
@@ -43,16 +41,13 @@ ul.breadcrumb li+li:before {
 /* Estilos para los enlaces */
 .breadcrumb a {
     color: #ffffff;
-    text-decoration: none;
-    /* Elimina el subrayado */
+    text-decoration: none; /* Elimina el subrayado */
 }
 
 /* Cuando el mouse pasa por encima */
 .breadcrumb a:hover {
     color: #F58509;
-    /* Cambia el color al pasar el mouse */
-    text-decoration: underline;
-    /* Subraya el texto */
+    text-decoration: underline; /* Subraya el texto */
 }
 
 /* FIN CATEGORIAS */
@@ -66,7 +61,7 @@ ul.breadcrumb li+li:before {
     margin-bottom: 4%;
     padding: 40px 5px;
     border-radius: 30px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /*Sombra alrededor del contenedor */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); 
 }
 
 .product-details.row {
@@ -299,7 +294,6 @@ ul.breadcrumb li+li:before {
         background-color: white;
     }
 
-    /* Estilo para la barra de navegación */
     .navbar-custom {
         background-color: #F58509 !important;
     }
@@ -468,7 +462,7 @@ h5 {
 /* Contenedor del botón */
 .button-container {
     display: flex;
-    justify-content: flex-end; /* Mueve el botón a la derecha */
+    justify-content: flex-end;
 }
 
 /* Bototon enviar */
@@ -676,7 +670,7 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
     margin-left: 20px;
 }
 
-  .botones-container {
+.botones-container {
     display: flex;
     flex-direction: column; /* Apilar los botones uno encima del otro */
     gap: 8px; /* Espacio entre los botones */
@@ -685,38 +679,38 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
     width: 320px; /* Ancho del contenedor */
     margin-left: 50px;
-  }
+}
   
-  .boton {
+.boton {
     width: 100%; /* Los botones ocupan todo el ancho del contenedor */
     padding: 8px; /* Espaciado interno de los botones */
     font-size: 14px; /* Tamaño de fuente más pequeño para los botones */
-  }
+}
   
 
   
-  .boton {
+.boton {
     width: 100%; /* Botones ocupan todo el ancho del contenedor */
     padding: 8px; /* Reduce el tamaño del padding dentro de los botones */
     font-size: 14px; /* Tamaño de fuente más pequeño para los botones */
-  }
+}
 
-  .boton-carrito{
+.boton-carrito {
     border-color: #F58509;
     color: white;
     background-color: #F58509;
     border-radius: 10px;
-  }
+}
 
-  .boton-comprar{
+.boton-comprar{
     border-radius: 10px;
     border-color: #F3860F;
     color: #F3860F;
     background-color: rgba(243, 134, 15, 0.17)
-    
-  }
-  /* Responsive para tablets en vertical (768px - 1024px) */
-  @media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Responsive para tablets en vertical (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
     .botones-container {
         flex-direction: row; /* Coloca los botones en fila */
         gap: 16px; /* Aumenta el espacio entre botones */
@@ -740,28 +734,29 @@ box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.5);
     }
 }
 
-    
-  #icon-cart{
+#icon-cart{
     font-size: large;
     color: #F58509;
     position: relative;
-    }
+}
     
-    .btn-group {
-        position: relative; /* Para el badge */
-      }
-      .dropdown-item {
-        position: relative; /* Necesario para que el badge se posicione correctamente */
-      }
+.btn-group {
+    position: relative; /* Para el badge */
+}
+
+.dropdown-item {
+    position: relative; /* Necesario para que el badge se posicione correctamente */
+}
       
-      #badge {
-        position: absolute;
-        font-size: 0.50rem; /* Tamaño de fuente responsivo */
-      }
-      .cart-icon-container {
-        display: inline-flex;
-        align-items: center;
-        position: relative;
-        margin-left: 5px; /* Espacio entre el texto y el icono */
-      }
+#badge {
+    position: absolute;
+    font-size: 0.50rem; /* Tamaño de fuente responsivo */
+}
+
+.cart-icon-container {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-left: 5px; /* Espacio entre el texto y el icono */
+}
       

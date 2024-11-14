@@ -27,7 +27,7 @@ body {
     font-size: 45px; 
     color: rgb(206, 95, 5);
     text-shadow: -5px 5px 10px rgba(255, 253, 253, 0.4);
-    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+    cursor: pointer;
 }
 
 /* Contenedor principal */
@@ -353,11 +353,11 @@ body {
     border: none;
     padding: 10px 15px;
     border-radius: 10px; 
-    transition: background-color 0.3s ease; /* Efecto de transición */
+    transition: background-color 0.3s ease;
 }
 
 .modal-footer .btn-primary:hover {
-    background-color: #d37f10; /* Color de fondo al pasar el cursor */
+    background-color: #d37f10;
 }
 
 
@@ -478,5 +478,3 @@ body {
     }
 
 }
-
-
