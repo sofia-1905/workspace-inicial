@@ -104,7 +104,7 @@
 
     <!-- Dirección de Envío -->
     <div class="tab-pane fade" id="direccion" aria-labelledby="direccion-tab">
-      <form>
+      <form class="needs-validation" novalidate>
         <div class="row mb-3 align-items-center">
           <div class="col-md-3">
             <label for="departamento" class="form-label">Departamento</label>
@@ -158,13 +158,13 @@
       <div class="d-flex justify-content-center">
         <div class="btn-card" role="group" aria-label="Formas de Pago">
           <!-- Botones para abrir los modales -->
-          <button type="button" class="btn btn-debit" data-bs-toggle="modal" data-bs-target="#tarjetaDebitoModal">Tarjeta de Débito</button>
-          <button type="button" class="btn btn-credit" data-bs-toggle="modal" data-bs-target="#tarjetaCreditoModal">Tarjeta de Crédito</button>
+          <button type="button" id="btndebito" class="btn btn-debit" data-bs-toggle="modal" data-bs-target="#tarjetaDebitoModal">Tarjeta de Débito</button>
+          <button type="button" id="btncredito"  class="btn btn-credit" data-bs-toggle="modal" data-bs-target="#tarjetaCreditoModal">Tarjeta de Crédito</button>
         </div>
       </div>
       <div class="d-flex justify-content-end">
         <button type="button"  id="btn-back-forma-pago" class="btn btn-back">Atras</button>
-        <button type="button" class="btn btn-finalize">Finalizar compra</button>
+        <button type="submit" class="btn btn-finalize">Finalizar compra</button>
       </div>
     </div>
 
@@ -177,7 +177,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="numeroTarjetaDebito" class="formPay">Número de Tarjeta</label>
                 <input type="text" class="input-field" id="numeroTarjetaDebito" placeholder="1234 5678 9876 5432">
@@ -220,7 +220,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="numeroTarjetaCredito" class="formPay">Número de Tarjeta</label>
                 <input type="text" class="input-field" id="numeroTarjetaCredito" placeholder="1234 5678 9876 5432">

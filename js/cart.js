@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mostrarNumeroCarrito();
     actualizarCantidad(); // Asegurarse de que se actualicen las cantidades en tiempo real
     agregarInteractividadEnvio(); // Aseguramos que los botones de envío tengan interactividad
+    agregarInteractividadTarjeta(); // Seleccionar el tipo de tarjeta
     updateSummary(); // Actualizamos el resumen del carrito cuando se carga la página
 });
 
@@ -83,6 +84,18 @@ function agregarInteractividadEnvio() {
 function seleccionarEnvio(tipo) {
     localStorage.setItem("shippingType", tipo); // Guardamos el tipo de envío seleccionado en localStorage
     updateSummary(); // Actualizamos el resumen del carrito con el nuevo tipo de envío
+}
+
+function agregarInteractividadTarjeta() {
+    const btnCredito = document.getElementById("btncredito");
+    const btnDebito= document.getElementById("btndebito");
+
+    btnCredito.addEventListener("click", () => seleccionarTarjeta("credito"));
+    btnDebito.addEventListener("click", () => seleccionarTarjeta("debito"));
+}
+
+function seleccionarTarjeta(tipo){
+localStorage.setItem("cardType", tipo); // Guardamos el tipo de pago de tarjeta en localStorage
 }
 
 // Función para actualizar el resumen con el nuevo costo de envío y total
@@ -219,8 +232,21 @@ document.getElementById('btn-next-direccion-envio').addEventListener('click', ne
 document.getElementById('btn-back-forma-pago').addEventListener('click', prevTab);
 
 // Botón de finalizar compra
-document.querySelector('.btn-finalize').addEventListener('click', () => {
-    // Completar con las acciones del boton 
+document.querySelector('.btn-finalize').addEventListener('click', (event) => {
+    let esDireccionValida = validarCamposDireccion();
+    let esPagoValido = validarCamposPago();
+    let esEnvioValido = validarEnvio();
+    let esCantidadValida = validarProductos();
+
+    if (esDireccionValida && esPagoValido && esEnvioValido && esCantidadValida) {
+        alert("Compra exitosa");
+        window.location.href = 'index.html';
+    
+    } else {
+        event.preventDefault(); // Previene la acción predeterminada si alguno de los campos es inválido
+        event.stopPropagation();
+        alert("Formulario inválido. Por favor complete todos los campos requeridos.");
+    }
 });
 
 // Función para mostrar el número de productos en el badge del carrito (navegación)
@@ -254,4 +280,146 @@ if (theme === 'dark-mode') {
     document.body.classList.add('dark-mode');
 } else {
     document.body.classList.remove('dark-mode');
+}
+
+// Validar si los campos de la dirección están vacíos
+function validarCamposDireccion() {
+    let departamento = document.getElementById("departamento");
+    let localidad = document.getElementById("localidad");
+    let calle = document.getElementById("calle");
+    let numero = document.getElementById("numero");
+    let esquina = document.getElementById("esquina");
+
+    let valid = true; // bandera para verificar si todo está válido
+
+    if (!departamento.value.trim()) {
+        departamento.classList.add('is-invalid');
+        valid = false; // marca como inválido si hay un error
+    } else {
+        departamento.classList.remove('is-invalid');
+
+    }
+
+    if (!localidad.value.trim()) {
+        localidad.classList.add('is-invalid');
+        valid = false;
+    } else {
+        localidad.classList.remove('is-invalid');
+    }
+
+    if (!calle.value.trim()) {
+        calle.classList.add('is-invalid');
+        valid = false;
+    } else {
+        calle.classList.remove('is-invalid');
+    }
+
+    if (!numero.value.trim()) {
+        numero.classList.add('is-invalid');
+        valid = false;
+    } else {
+        numero.classList.remove('is-invalid');
+    }
+    if (!esquina.value.trim()) {
+        esquina.classList.add('is-invalid');
+        valid = false;
+    } else {
+        esquina.classList.remove('is-invalid');
+    }
+
+    return valid;
+}
+
+function validarEnvio() {
+    // Verificamos si el tipo de envío está guardado en localStorage
+    let tipoEnvioSeleccionado = localStorage.getItem("shippingType");
+
+    if (!tipoEnvioSeleccionado) {
+        console.log("Debe seleccionar un tipo de envío.");
+        return false;
+    }
+
+    // Si el tipo de envío está en localStorage, es válido
+    return true;
+}
+
+function validarCamposPago() {
+    // Identificar si se está utilizando la tarjeta de crédito o débito
+    const tarjetaCredito = document.getElementById("numeroTarjetaCredito");
+    const tarjetaDebito = document.getElementById("numeroTarjetaDebito");
+    let tipoTarjeta = localStorage.getItem('cardType')
+
+    // Variables de los campos comunes
+    let numeroTarjeta, nombreTitular, fechaExpiracion, cvv;
+
+    // Verifica el tipo de pago
+    if (tipoTarjeta === 'credito') {
+        // Si es tarjeta de crédito
+        numeroTarjeta = tarjetaCredito;
+        nombreTitular = document.getElementById("nombreTitularCredito");
+        fechaExpiracion = document.getElementById("fechaExpiracionCredito");
+        cvv = document.getElementById("cvvCredito");
+    } else if (tipoTarjeta === 'debito') {
+        // Si es tarjeta de débito
+        numeroTarjeta = tarjetaDebito;
+        nombreTitular = document.getElementById("nombreTitularDebito");
+        fechaExpiracion = document.getElementById("fechaExpiracionDebito");
+        cvv = document.getElementById("cvvDebito");
+    } else {
+        // Si no se seleccionó un tipo de tarjeta
+        console.log("Por favor, seleccione un tipo de tarjeta (crédito o débito).");
+        return false;
+    }
+
+    let valid = true;
+
+    // Validación del número de tarjeta
+    if (!numeroTarjeta.value.trim()) {
+        numeroTarjeta.classList.add('is-invalid');  // Mostrar error con Bootstrap
+        valid = false;
+    } else {
+        numeroTarjeta.classList.remove('is-invalid'); // Elimina la clase de error
+    }
+
+    // Validación del nombre del titular
+    if (!nombreTitular.value.trim()) {
+        nombreTitular.classList.add('is-invalid');
+        valid = false;
+    } else {
+        nombreTitular.classList.remove('is-invalid');
+    }
+
+    // Validación de la fecha de expiración
+    if (!fechaExpiracion.value.trim()) {
+        fechaExpiracion.classList.add('is-invalid');
+        valid = false;
+    } else {
+        fechaExpiracion.classList.remove('is-invalid');
+    }
+
+    // Validación del CVV
+    if (!cvv.value.trim()) {
+        cvv.classList.add('is-invalid');
+        valid = false;
+    } else {
+        cvv.classList.remove('is-invalid');
+    }
+
+    return valid;
+}
+
+function validarProductos() {
+    // Obtiene el carrito del localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    let valid = true;
+
+    // Verifica si la cantidad de cada producto es válida (mayor a 0)
+    cart.forEach(producto => {
+        if (producto.cantidad <= 0) {
+            valid = false;
+        }
+    });
+
+    return valid;
 }
