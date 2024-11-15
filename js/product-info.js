@@ -81,11 +81,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Agregar funcionalidad al botón "Agregar al carrito"
                 document.querySelector(".boton-carrito").addEventListener("click", () => {
                     addToCart(product);
+                    establecerNumeroCarrito()
+                    mostrarBadge();
+                    alert("Producto agregado al carrito");
                 });
 
                 // Agregar funcionalidad al botón "Comprar"
                 document.querySelector(".boton-comprar").addEventListener("click", () => {
-                    buyNow(product);
+                    addToCart(product);
+                    window.location.href = "cart.html"; // Navega a la página de carrito
                 });
 
             })
@@ -117,12 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Si no existe, lo agrega al carrito
         cart.push(productData);
     }
-
-    // Actualiza el carrito en localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
-    establecerNumeroCarrito()
-    mostrarBadge();
-    alert("Producto agregado al carrito");
+
 }
 
 
