@@ -409,11 +409,6 @@ body.dark-mode a.btn{
   border: none;
 }
 
-body.dark-mode button.btn:nth-child(14){
-  background-color: #FF6F00;
-  border-color: #8b8989;
-}
-
 .footer-link {
   color: #FF6F00; 
   size:bold; 
