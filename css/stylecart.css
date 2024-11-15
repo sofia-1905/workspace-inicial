@@ -45,9 +45,8 @@ body {
     align-items: center;
     padding: 10px;
     margin-bottom: 10px;
-    border: 2px solid white;
     border-radius: 65px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* Imagen */
@@ -60,7 +59,7 @@ body {
     border: 2px solid #F58509;
     margin-right: 15px;
     margin-left: 30px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 .is-invalid {
     border: 2px solid red !important; /* Aumenta el borde para hacer el efecto más visible */
@@ -319,6 +318,50 @@ body {
 .modal-body form {
     padding: 15px;
 }
+
+.btn:focus,
+.btn:active {
+    outline: none; /* Quita el borde de enfoque o el contorno */
+    box-shadow: none; /* Elimina cualquier sombra de Bootstrap */
+}
+
+/* Botones específicos en el modal */
+.modal-footer .btn-secondary:focus,
+.modal-footer .btn-primary:focus,
+.modal-footer .btn-secondary:active,
+.modal-footer .btn-primary:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Botón "Cerrar" */
+.modal-footer .btn-secondary {
+    background-color: #7d8e9d;
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 10px; 
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268; /* Color de fondo al pasar el cursor */
+}
+
+/* Botón "Pagar" */
+.modal-footer .btn-primary {
+    background-color: #F88F34;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px; 
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #d37f10; /* Color de fondo al pasar el cursor */
+}
+
 
 #icon-cart{
     font-size: large;
