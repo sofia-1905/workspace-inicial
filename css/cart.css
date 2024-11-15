@@ -41,6 +41,3 @@ p {
   .is-invalid {
     border: 2px solid red !important; /* Aumenta el borde para hacer el efecto más visible */
 }
-  body.dark-mode {
-background-color: rgb(34, 34, 34) !important;
-  }
