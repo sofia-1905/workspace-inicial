@@ -61,7 +61,9 @@ body {
     margin-left: 30px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
-
+.is-invalid {
+    border: 2px solid red !important; /* Aumenta el borde para hacer el efecto más visible */
+}
 /* Detalles del producto */
 .cart-item-details,
 .purchase-item-details {
@@ -360,7 +362,7 @@ body {
     background-color: #d37f10;
 }
 
-
+/* Icono del carrito */
 #icon-cart{
     font-size: large;
     color: #F58509;
@@ -546,3 +548,11 @@ body {
         display: flex;
     }
 }
+
+/* Modo oscuro */
+body.dark-mode #icon-cartbody{
+    color: white;
+    }
+    body.dark-mode {
+        background-color: rgb(34, 34, 34) !important;
+          }

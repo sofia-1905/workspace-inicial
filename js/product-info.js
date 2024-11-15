@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         localStorage.setItem("purchase", JSON.stringify([purchaseData])); // Guarda el producto actual
+
         window.location.href = "cart.html"; // Navega a la página de carrito
     }
 

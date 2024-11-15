@@ -343,6 +343,14 @@ background-color:rgb(34, 34, 34) !important;
 color: white;
 }
 
+body.dark-mode .jumbotron{
+  background: url('../img/cover_back\ -\ dark.png');
+  height: 50vh !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /*footer y div con las categorias en el inicio*/
 body.dark-mode footer,
 body.dark-mode .pb-5 {

@@ -1,0 +1,43 @@
+body {  
+    background-color:orange;     
+} 
+.container {  
+    margin-top: 180px;  
+    color: rgb(255, 255, 255);  
+    text-align: left; 
+}  
+p {  
+    color: rgb(255, 255, 255);  
+    font-size: 20px;  
+    margin-top: 30px;  
+}  
+#icon-cart {
+    font-size: 350px; 
+}
+
+.quantity-control {
+    text-align: center;
+    border-radius: 80%;
+}
+  .trash-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px; 
+      height: 120px;
+      border-radius: 10px;
+      transition: transform 0.2s;
+  }
+
+  .trash-button:hover {
+      transform: scale(1.1);
+  }
+
+  .trash-icon {
+      width: 64px;
+      height: 64px; 
+      margin-right: 10px; 
+  }
+  .is-invalid {
+    border: 2px solid red !important; /* Aumenta el borde para hacer el efecto más visible */
+}
