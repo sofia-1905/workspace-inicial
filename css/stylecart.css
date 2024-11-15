@@ -547,12 +547,28 @@ body {
     .btn-card .btn {
         display: flex;
     }
+
+    /* Modal*/
+    .modal-dialog {
+        max-width: 90%;
+        margin: auto; /* Centrar modal */
+    }
+
+    .modal {
+        margin-top: 20px;
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+
 }
 
 /* Modo oscuro */
 body.dark-mode #icon-cartbody{
     color: white;
-    }
-    body.dark-mode {
-        background-color: rgb(34, 34, 34) !important;
-          }
+}
+    
+body.dark-mode {
+    background-color: rgb(34, 34, 34) !important;
+}
