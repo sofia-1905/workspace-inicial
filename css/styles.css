@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap');
 
-
-
 .jumbotron,
 .card-body,
 .container,
@@ -41,9 +39,8 @@ nav a {
   color: #fff;
 }
 
-/* Opcional: Para manejar márgenes en ítems del menú */
 .navbar-nav .nav-item + .nav-item {
-  margin-left: 1rem; /* Ajusta el margen entre los ítems si es necesario */
+  margin-left: 1rem;
 }
 
 /* Asegúrate de que el contenido se alinee verticalmente */
@@ -55,19 +52,9 @@ nav a {
 
 /* Ajusta el padding para los ítems del menú si es necesario */
 .navbar-nav .nav-item {
-    margin: 0 10px; /* Ajusta el margen para espacio entre ítems */
-    color: white;
-  }
-
-
-footer {
-  background-color: white;
-  padding: 1rem 0;
+  margin: 0 10px; /* Ajusta el margen para espacio entre ítems */
+  color: white;
 }
-footer img {
-  max-width: 386px;
-}
-
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -132,8 +119,22 @@ footer img {
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  background-color: white;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+footer img {
+  width: 80%; /* La imagen ocupa el 80% del ancho del contenedor */
+  max-width: 300px; /* Limitar el tamaño máximo de la imagen */
+  height: auto; /* Mantener las proporciones */
 }
 
 footer p {
@@ -370,31 +371,47 @@ body.dark-mode .pb-5 {
  background-color: rgb(34, 34, 34) !important;
  color: white;
 }
+
 /*div de cada categoria en inicio*/
 body.dark-mode .bg-light{
 color: black;
 background-color: rgb(34, 34, 34) !important;
 }
+
 /*div de categories.html*/
 body.dark-mode .list-group-item{
 background-color: #525252;
 color: white;
 }
+
 .dropdown-toggle {
-  width: 200px; 
-  min-width: 100px;
+  width: auto; /* El ancho del botón se ajustará al contenido */
+  min-width: 100px; /* Asegura que el botón tenga al menos 100px de ancho */
   transition: all 0.3s ease;
-  padding: 10px; 
+  padding: 10px; /* Controla el relleno del botón */
+  display: inline-flex; /* Asegura que el contenido se alinee correctamente */
+  justify-content: center; /* Centra el contenido */
+  align-items: center; /* Centra el contenido verticalmente */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+
+/* Asegura que el texto dentro del span no se rompa */
+#user-email {
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Evita que el texto desborde el contenedor */
+  text-overflow: ellipsis; /* Si el texto es muy largo, muestra puntos suspensivos */
+}
+
 body.dark-mode a.btn{
-background-color: rgb(34, 34, 34);
-color: white;
-border: none;
+  background-color: rgb(34, 34, 34);
+  color: white;
+  border: none;
 }
 
 body.dark-mode button.btn:nth-child(14){
-background-color: #FF6F00;
-border-color: #8b8989;
+  background-color: #FF6F00;
+  border-color: #8b8989;
 }
 
 .footer-link {
@@ -412,15 +429,16 @@ border-color: #8b8989;
   font-size: large;
   color: #F58509;
   position: relative;
-  }
+}
   
-  .btn-group {
-      position: relative; /* Para el badge */
-    }
-    .dropdown-item {
-      position: relative; /* Necesario para que el badge se posicione correctamente */
-    }
+.btn-group {
+  position: relative; /* Para el badge */
+}
+.dropdown-item {
+  position: relative; /* Necesario para que el badge se posicione correctamente */
+}
     
+
     #badge {
       position: absolute;
       font-size: 0.50rem; /* Tamaño de fuente responsivo */
@@ -431,3 +449,15 @@ border-color: #8b8989;
       position: relative;
       margin-left: 5px; /* Espacio entre el texto y el icono */
     }
+
+#badge {
+  position: absolute;
+  font-size: 0.50rem; /* Tamaño de fuente responsivo */
+}
+
+.cart-icon-container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  margin-left: 5px; /* Espacio entre el texto y el icono */
+}

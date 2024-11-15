@@ -27,7 +27,7 @@ body {
     font-size: 45px; 
     color: rgb(206, 95, 5);
     text-shadow: -5px 5px 10px rgba(255, 253, 253, 0.4);
-    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+    cursor: pointer;
 }
 
 /* Contenedor principal */
@@ -355,11 +355,11 @@ body {
     border: none;
     padding: 10px 15px;
     border-radius: 10px; 
-    transition: background-color 0.3s ease; /* Efecto de transición */
+    transition: background-color 0.3s ease;
 }
 
 .modal-footer .btn-primary:hover {
-    background-color: #d37f10; /* Color de fondo al pasar el cursor */
+    background-color: #d37f10;
 }
 
 /* Icono del carrito */
@@ -412,12 +412,26 @@ body {
     .trash-button {
         margin-right: 5px;
     }
+
     /* Para que no quede en el menú */
     #icon-cartbody {
         margin-top: 120px;
     }
+
     .badge {
         margin-top: 120px;
+    }
+
+    /* Tabs */
+    #myTab {
+        display: flex;
+        justify-content: space-around; /* Ajusta la distribución */
+        gap: 10px; /* Ajusta la distancia entre pestañas */
+    }
+    
+    #myTab .nav-link {
+        font-size: 14px;
+        padding: 8px 12px; 
     }
 }
 
@@ -479,13 +493,82 @@ body {
         margin-top: 20px;
     }
 
+
+    /* Tabs */
+    .subtotal-compra {
+        margin-left: 0;
+        font-size: 15;
+    }
+
+    .costoEnvio-compra {
+        margin-left: 0;
+        font-size: 15;
+    }
+
+    .total-compra{
+        margin-left: 0;
+        font-size: 15;
+    }
+
+    /* Tabs */
+    #myTab {
+        display: flex;
+        justify-content: flex-start; /* Alinea las pestañas al inicio */
+        gap: 0; /
+    }
+    
+    #myTab .nav-link {
+        font-size: 18px; 
+    }
+
+    #envio .d-flex {
+        flex-direction: column; /* Apila los botones en columna */
+        gap: 10px; /* Espaciado entre botones, ajusta según prefieras */
+    }
+    
+    /* Opcional: Ajusta el ancho de los botones para que ocupen todo el ancho disponible */
+    #envio .btn-envio {
+        width: 100%;
+    }
+
+    .form-label {
+        margin-left: 0;
+        font-size: 15px;
+    }
+
+    .form-control {
+        padding: 5px;
+    } 
+
+    .btn-card {
+        gap: 10px; /* Espaciado entre los botones */
+    }
+
+    .btn-card .btn {
+        display: flex;
+    }
+
+    /* Modal*/
+    .modal-dialog {
+        max-width: 90%;
+        margin: auto; /* Centrar modal */
+    }
+
+    .modal {
+        margin-top: 20px;
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+
 }
 
 /* Modo oscuro */
 body.dark-mode #icon-cartbody{
-color: white;
+    color: white;
 }
+    
 body.dark-mode {
     background-color: rgb(34, 34, 34) !important;
-      }
-
+}

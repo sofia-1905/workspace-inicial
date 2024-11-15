@@ -32,25 +32,22 @@
           </li>
           
           <div class="btn-group">
-            <button type="button" class="btn btn-light btn-block dropdown-toggle" id="dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                <span id="user-email"> </span>
+            <button type="button" class="btn btn-light dropdown-toggle" id="dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="user-email">usuario@dominio.com</span> <!-- Aquí va el contenido que determina el tamaño -->
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
                 <li><a class="dropdown-item" href="cart.html">Mi carrito
-                  <div class="cart-icon-container">
-                    <span id="icon-cart" class="fas fa-shopping-cart"></span>
-                  <span id="badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
-                </div>
-                  </a>
-                 
-                </li>
+                    <div class="cart-icon-container">
+                        <span id="icon-cart" class="fas fa-shopping-cart"></span>
+                        <span id="badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    </div>
+                </a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" id="logout">Cerrar sesión</a></li>
             </ul>
-        </ul>
-      </div>
-    </div>
+        </div>
+        
   </nav>
   <div class="container">
     <div class="text-center p-4">
@@ -184,14 +181,6 @@
       </div>
     </div>
   </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
-    </div>
-  </footer>
 
   <div class="alert alert-primary-dismissible fade" id="alertResult" role="alert">
     <span id="resultSpan"></span>
@@ -238,21 +227,14 @@
       <div></div>
     </div>
   </div>
+          <footer class="footer-container text-center">
+              <img src="img/login.png" alt="Footer Logo" class="footer-image">
+            </footer>
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/sell.js"></script>
-  <script>
-    // Recuperar el nombre de usuario del localStorage al cargar la página
-    document.addEventListener("DOMContentLoaded", function() {
-        const username = localStorage.getItem('username');
-        if (username) {
-            document.getElementById('username-placeholder').innerText = username;
-        } else {
-            document.getElementById('username-placeholder').innerText = 'Invitado';
-        }
-    });
-  </script>
-</body>
 
+  </body> 
 </html>
