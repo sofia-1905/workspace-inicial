@@ -359,15 +359,13 @@ document.querySelector('.btn-finalize').addEventListener('click', (event) => {
         alert("Compra exitosa");
         if(localStorage.getItem("purchase")){
             localStorage.removeItem("purchase");
-            localStorage.removeItem("shippingType");
-            localStorage.removeItem("cardType");
         }else{
             localStorage.removeItem("cart");
-            localStorage.removeItem("shippingType");
-            localStorage.removeItem("cardType");
             mostrarBadge();
             mostrarNumeroCarrito();
         }
+        localStorage.removeItem("shippingType");
+        localStorage.removeItem("cardType");
         window.location.href = 'index.html';
     
     } else {
