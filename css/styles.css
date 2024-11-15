@@ -119,8 +119,22 @@ nav a {
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  background-color: white;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+footer img {
+  width: 80%; /* La imagen ocupa el 80% del ancho del contenedor */
+  max-width: 300px; /* Limitar el tamaño máximo de la imagen */
+  height: auto; /* Mantener las proporciones */
 }
 
 footer p {
