@@ -71,3 +71,8 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   }
 });
+document.addEventListener('DOMContentLoaded', function() {
+  // Establecer el contenido dinámico de user-email
+  document.getElementById('user-email').textContent = "usuario@dominio.com";  // O lo que sea el contenido dinámico
+  document.getElementById('dropdown-btn').style.visibility = "visible";  // Mostrar el botón una vez cargado
+});
