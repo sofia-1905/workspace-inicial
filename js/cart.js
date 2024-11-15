@@ -357,7 +357,13 @@ document.querySelector('.btn-finalize').addEventListener('click', (event) => {
 
     if (esDireccionValida && esPagoValido && esEnvioValido && esCantidadValida) {
         alert("Compra exitosa");
-        localStorage.removeItem("purchase");
+        if(localStorage.getItem("purchase")){
+            localStorage.removeItem("purchase");
+        }else{
+            localStorage.removeItem("cart");
+            mostrarBadge();
+            mostrarNumeroCarrito();
+        }
         window.location.href = 'index.html';
     
     } else {
