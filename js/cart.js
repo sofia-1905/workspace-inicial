@@ -246,6 +246,7 @@ function removeFromCart(index) {
     // Si el carrito está vacío, ocultamos la vista del carrito
     if (cart.length === 0) {
         document.getElementById("cart-items").style.display = "none";
+        displayPurchaseItem();
     }
 
     updateSummary(); // Actualizar el resumen con el carrito vacío
@@ -386,6 +387,20 @@ function mostrarBadge() {
     let numerocarrito = document.getElementById('badgebody'); // Elemento del badge en el body
     numerocarrito.textContent = badge || '0'; // Si no hay productos, mostrar 0
 }
+
+// Función para eliminar el producto del localStorage
+function removePurchaseItem() {
+    localStorage.removeItem("purchase"); // Elimina el producto de la compra
+    displayPurchaseItem(); // Actualiza la visualización en la página
+   // Redirige a otra página 
+   window.location.href = "product-info.html"; 
+}
+
+// Llama a la función para mostrar los productos al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    displayCartItems();
+    displayPurchaseItem();
+});
 
 // Modo Oscuro
 const theme = localStorage.getItem('theme');
