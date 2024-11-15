@@ -371,10 +371,22 @@ color: white;
 }
 
 .dropdown-toggle {
-  width: 200px; 
-  min-width: 100px;
+  width: auto; /* El ancho del botón se ajustará al contenido */
+  min-width: 100px; /* Asegura que el botón tenga al menos 100px de ancho */
   transition: all 0.3s ease;
-  padding: 10px; 
+  padding: 10px; /* Controla el relleno del botón */
+  display: inline-flex; /* Asegura que el contenido se alinee correctamente */
+  justify-content: center; /* Centra el contenido */
+  align-items: center; /* Centra el contenido verticalmente */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Asegura que el texto dentro del span no se rompa */
+#user-email {
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Evita que el texto desborde el contenedor */
+  text-overflow: ellipsis; /* Si el texto es muy largo, muestra puntos suspensivos */
 }
 
 body.dark-mode a.btn{
@@ -412,6 +424,18 @@ body.dark-mode button.btn:nth-child(14){
   position: relative; /* Necesario para que el badge se posicione correctamente */
 }
     
+
+    #badge {
+      position: absolute;
+      font-size: 0.50rem; /* Tamaño de fuente responsivo */
+    }
+    .cart-icon-container {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      margin-left: 5px; /* Espacio entre el texto y el icono */
+    }
+
 #badge {
   position: absolute;
   font-size: 0.50rem; /* Tamaño de fuente responsivo */
