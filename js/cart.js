@@ -65,6 +65,7 @@ function displayPurchaseItem() {
     if (tabsContainer) {
         tabsContainer.style.display = "block"; // Muestra las pestañas
     }
+    actualizarCantidadBuyNow();
 }
 
 
@@ -232,7 +233,6 @@ function actualizarCantidad() {
 function actualizarCantidadBuyNow() {
     let purchase = JSON.parse(localStorage.getItem('purchase')) || []; // Obtener el carrito del LocalStorage
     let quantityInputs = document.getElementsByClassName('quantity');
-    
     Array.from(quantityInputs).forEach(input => {
         input.addEventListener('change', (event) => {
             let productId = Number(event.target.id); // Obtener el ID del producto
@@ -243,9 +243,8 @@ function actualizarCantidadBuyNow() {
             if (producto) {
                 producto.quantity = parseInt(nuevaCantidad); // Actualizar la cantidad del producto encontrado
             }
-            console.log(purchase);
+
             localStorage.setItem("purchase", JSON.stringify(purchase)); // Guardar el carrito actualizado en localStorage
-            
             // Actualizar el subtotal en el DOM
             const subtotal = (producto.cost * nuevaCantidad).toFixed(2);
             const subtotalElement = event.target.closest('.purchase-item').querySelector('.product-subtotal');
