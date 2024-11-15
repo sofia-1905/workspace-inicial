@@ -3,76 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
     mostrarBadge();
     mostrarNumeroCarrito();
     actualizarCantidad(); // Asegurarse de que se actualicen las cantidades en tiempo real
-    actualizarCantidadBuyNow();
     agregarInteractividadEnvio(); // Aseguramos que los botones de envío tengan interactividad
     agregarInteractividadTarjeta(); // Seleccionar el tipo de tarjeta
     updateSummary(); // Actualizamos el resumen del carrito cuando se carga la página
 });
 
-function displayPurchaseItem() {
-    const purchaseData = JSON.parse(localStorage.getItem("purchase")); // Obtiene el producto del localStorage
-    const purchaseItemContainer = document.getElementById("purchase-item"); // Contenedor donde se mostrará el producto
-
-    // Verifica si hay un producto guardado
-    if (!purchaseData || purchaseData.length === 0) {
-        return;
-    }
-
-    // Limpia el contenido previo en el contenedor
-    purchaseItemContainer.innerHTML = "";
-
-    // Extrae la información del producto
-    const product = purchaseData[0]; // Asumiendo que solo hay un producto
-    const productHTML = `
-        <div class="purchase-item">
-            <img src="${product.image}" alt="${product.name}" class="purchase-item-image">
-            <div class="purchase-item-details">
-                <div class="product-row">
-                    <h4 class="product-name">${product.name}</h4>
-                    <p class="product-quantity">Cantidad: <input type="number" id="${product.id}" class="quantity" value="${product.quantity}" min="1" style="width: 50px; text-align: center;"></p>
-                </div>
-                <p class="product-price">${product.currency} ${product.cost}</p>
-                <p class="product-subtotal">Subtotal: ${product.currency} ${(product.cost * product.quantity).toFixed(2)}</p>
-            </div>
-            <!-- Botón de papelera para eliminar el producto -->
-            <button type="button" class="btn btn-outline-dark trash-button" onclick="removePurchaseItem()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="trash-icon" viewBox="0 0 16 16">
-                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
-                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
-                </svg>
-            </button>
-        </div>
-    `;
-    
-    // Agrega el HTML del producto al contenedor
-    purchaseItemContainer.innerHTML = productHTML;
-
-    // Oculta el carrito si se muestra el producto comprado
-    document.getElementById("cart-items").style.display = "none"; 
-
-    // Agrega las palabras Subtotal, Costo de envío y Total al contenedor de la compra
-    const summaryHTML = `
-    <div class="cart-summary">
-        <p>Subtotal</p>
-        <p>Costo de envío</p>
-        <p>Total</p>
-    </div>
-    `;
-    purchaseItemContainer.innerHTML += summaryHTML;
-
-    // Muestra el contenedor de las pestañas (si está oculto)
-    const tabsContainer = document.getElementById("tabsContainer");
-    if (tabsContainer) {
-        tabsContainer.style.display = "block"; // Muestra las pestañas
-    }
-    actualizarCantidadBuyNow();
-}
-
 
 // Función para mostrar los productos del carrito en el HTML
 function displayCartItems() {
     const cartItemsContainer = document.getElementById("cart-items"); // Contenedor donde se muestran los productos
-    const cart = JSON.parse(localStorage.getItem("cart")) || []; // Obtiene el carrito del localStorage
+    const cart = JSON.parse(localStorage.getItem("cart")) ||[]; // Obtiene el carrito del localStorage
 
     // Verifica si el carrito está vacío
     if (cart.length === 0) {
@@ -201,7 +141,7 @@ function updateSummary() {
 
 // Función para actualizar la cantidad de un producto en el carrito
 function actualizarCantidad() {
-    let carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del LocalStorage
+    let carrito = JSON.parse(localStorage.getItem('cart')) || [] ; // Obtener el carrito del LocalStorage
     let quantityInputs = document.getElementsByClassName('quantity');
     
     Array.from(quantityInputs).forEach(input => {
@@ -230,29 +170,6 @@ function actualizarCantidad() {
     });
 }
 
-function actualizarCantidadBuyNow() {
-    let purchase = JSON.parse(localStorage.getItem('purchase')) || []; // Obtener el carrito del LocalStorage
-    let quantityInputs = document.getElementsByClassName('quantity');
-    Array.from(quantityInputs).forEach(input => {
-        input.addEventListener('change', (event) => {
-            let productId = Number(event.target.id); // Obtener el ID del producto
-            let nuevaCantidad = parseInt(event.target.value); // Obtener el nuevo valor del input
-
-            // Buscar el producto en el carrito y actualizar su cantidad
-            let producto = purchase.find(item => item.id === productId);
-            if (producto) {
-                producto.quantity = parseInt(nuevaCantidad); // Actualizar la cantidad del producto encontrado
-            }
-
-            localStorage.setItem("purchase", JSON.stringify(purchase)); // Guardar el carrito actualizado en localStorage
-            // Actualizar el subtotal en el DOM
-            const subtotal = (producto.cost * nuevaCantidad).toFixed(2);
-            const subtotalElement = event.target.closest('.purchase-item').querySelector('.product-subtotal');
-            subtotalElement.textContent = `Subtotal: ${producto.currency} ${subtotal}`;
-        });
-    });
-}
-
 
 // Función para eliminar un producto del carrito
 function removeFromCart(index) {
@@ -272,7 +189,7 @@ function removeFromCart(index) {
     // Si el carrito está vacío, ocultamos la vista del carrito
     if (cart.length === 0) {
         document.getElementById("cart-items").style.display = "none";
-        displayPurchaseItem();
+        displayPurchaseItems();
     }
 
     updateSummary(); // Actualizar el resumen con el carrito vacío
@@ -357,15 +274,10 @@ document.querySelector('.btn-finalize').addEventListener('click', (event) => {
 
     if (esDireccionValida && esPagoValido && esEnvioValido && esCantidadValida) {
         alert("Compra exitosa");
-        if(localStorage.getItem("purchase")){
-            localStorage.removeItem("purchase");
-        }else{
             localStorage.removeItem("cart");
             mostrarBadge();
             mostrarNumeroCarrito();
-        }
-        localStorage.removeItem("shippingType");
-        localStorage.removeItem("cardType");
+
         window.location.href = 'index.html';
     
     } else {
@@ -397,20 +309,6 @@ function mostrarBadge() {
     let numerocarrito = document.getElementById('badgebody'); // Elemento del badge en el body
     numerocarrito.textContent = badge || '0'; // Si no hay productos, mostrar 0
 }
-
-// Función para eliminar el producto del localStorage
-function removePurchaseItem() {
-    localStorage.removeItem("purchase"); // Elimina el producto de la compra
-    displayPurchaseItem(); // Actualiza la visualización en la página
-   // Redirige a otra página 
-   window.location.href = "product-info.html"; 
-}
-
-// Llama a la función para mostrar los productos al cargar la página
-document.addEventListener("DOMContentLoaded", () => {
-    displayCartItems();
-    displayPurchaseItem();
-});
 
 // Modo Oscuro
 const theme = localStorage.getItem('theme');
@@ -549,13 +447,6 @@ function validarCamposPago() {
 function validarProductos() {
     // Obtiene el carrito del localStorage
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let purchase = JSON.parse(localStorage.getItem("purchase")) || [];
-    
-    let valid = true;
-    if (purchase[0] && purchase[0].quantity <= 0) {
-        valid = false;
-    }
-
     // Verifica si la cantidad de cada producto es válida (mayor a 0)
     cart.forEach(producto => {
         if (producto.quantity <= 0) {
