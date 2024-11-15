@@ -364,6 +364,8 @@ document.querySelector('.btn-finalize').addEventListener('click', (event) => {
             mostrarBadge();
             mostrarNumeroCarrito();
         }
+        localStorage.removeItem("shippingType");
+        localStorage.removeItem("cardType");
         window.location.href = 'index.html';
     
     } else {
