@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mostrarBadge();
     mostrarNumeroCarrito();
     actualizarCantidad(); // Asegurarse de que se actualicen las cantidades en tiempo real
+    actualizarCantidadBuyNow();
     agregarInteractividadEnvio(); // Aseguramos que los botones de envío tengan interactividad
     agregarInteractividadTarjeta(); // Seleccionar el tipo de tarjeta
     updateSummary(); // Actualizamos el resumen del carrito cuando se carga la página
@@ -228,6 +229,32 @@ function actualizarCantidad() {
     });
 }
 
+function actualizarCantidadBuyNow() {
+    let purchase = JSON.parse(localStorage.getItem('purchase')) || []; // Obtener el carrito del LocalStorage
+    let quantityInputs = document.getElementsByClassName('quantity');
+    
+    Array.from(quantityInputs).forEach(input => {
+        input.addEventListener('change', (event) => {
+            let productId = Number(event.target.id); // Obtener el ID del producto
+            let nuevaCantidad = parseInt(event.target.value); // Obtener el nuevo valor del input
+
+            // Buscar el producto en el carrito y actualizar su cantidad
+            let producto = purchase.find(item => item.id === productId);
+            if (producto) {
+                producto.quantity = parseInt(nuevaCantidad); // Actualizar la cantidad del producto encontrado
+            }
+            console.log(purchase);
+            localStorage.setItem("purchase", JSON.stringify(purchase)); // Guardar el carrito actualizado en localStorage
+            
+            // Actualizar el subtotal en el DOM
+            const subtotal = (producto.cost * nuevaCantidad).toFixed(2);
+            const subtotalElement = event.target.closest('.purchase-item').querySelector('.product-subtotal');
+            subtotalElement.textContent = `Subtotal: ${producto.currency} ${subtotal}`;
+        });
+    });
+}
+
+
 // Función para eliminar un producto del carrito
 function removeFromCart(index) {
     let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito desde el localStorage
@@ -306,31 +333,6 @@ document.querySelector('#tarjetaDebitoModal .btn-primary').addEventListener('cli
     }
 });
 
-/* // Modal de Tarjeta de Crédito - Botón "Pagar"
-document.querySelector('#tarjetaCreditoModal .btn-primary').addEventListener('click', (event) => {
-    // Verifica si el modal está abierto
-    if (document.getElementById('tarjetaCreditoModal').classList.contains('show')) {
-        
-        let esPagoValido = validarCamposPago('credito');
-
-        if (esPagoValido) {
-            alert("Pago validado correctamente.");
-            $('#tarjetaCreditoModal').modal('hide');  // Cierra el modal
-            
-        } else {
-            alert("Por favor, complete los campos requeridos para la tarjeta de crédito.");
-            // Vuelve a aplicar .is-invalid a los campos que no son válidos
-            $('#tarjetaDebitoModal form').find('input').each(function() {
-                if (!$(this).val()) {  // Si el campo está vacío o no válido
-                    $(this).addClass('is-invalid');
-                    $(this).val('todos putos');
-                    console.log("estoy acá");
-                }
-            });
-        }
-    }
-}); */
-
 document.querySelector('#tarjetaCreditoModal .btn-primary').addEventListener('click', (event) => {
     event.preventDefault();
     if (document.getElementById('tarjetaCreditoModal').classList.contains('show')) {
@@ -356,6 +358,7 @@ document.querySelector('.btn-finalize').addEventListener('click', (event) => {
 
     if (esDireccionValida && esPagoValido && esEnvioValido && esCantidadValida) {
         alert("Compra exitosa");
+        localStorage.removeItem("purchase");
         window.location.href = 'index.html';
     
     } else {
@@ -488,7 +491,6 @@ function validarCamposPago() {
         nombreTitular = document.getElementById("nombreTitularCredito");
         fechaExpiracion = document.getElementById("fechaExpiracionCredito");
         cvv = document.getElementById("cvvCredito");
-        console.log("estoy en credito");
     } else if (tipoTarjeta === 'debito') {
         // Si es tarjeta de débito
         numeroTarjeta = document.getElementById("numeroTarjetaDebito");
@@ -540,12 +542,16 @@ function validarCamposPago() {
 function validarProductos() {
     // Obtiene el carrito del localStorage
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let purchase = JSON.parse(localStorage.getItem("purchase")) || [];
     
     let valid = true;
+    if (purchase[0] && purchase[0].quantity <= 0) {
+        valid = false;
+    }
 
     // Verifica si la cantidad de cada producto es válida (mayor a 0)
     cart.forEach(producto => {
-        if (producto.cantidad <= 0) {
+        if (producto.quantity <= 0) {
             valid = false;
         }
     });
