@@ -362,7 +362,7 @@ body {
     background-color: #d37f10; /* Color de fondo al pasar el cursor */
 }
 
-
+/* Icono del carrito */
 #icon-cart{
     font-size: large;
     color: #F58509;
@@ -481,4 +481,11 @@ body {
 
 }
 
+/* Modo oscuro */
+body.dark-mode #icon-cartbody{
+color: white;
+}
+body.dark-mode {
+    background-color: rgb(34, 34, 34) !important;
+      }
 
