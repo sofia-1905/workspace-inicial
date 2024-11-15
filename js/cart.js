@@ -8,6 +8,65 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSummary(); // Actualizamos el resumen del carrito cuando se carga la página
 });
 
+function displayPurchaseItem() {
+    const purchaseData = JSON.parse(localStorage.getItem("purchase")); // Obtiene el producto del localStorage
+    const purchaseItemContainer = document.getElementById("purchase-item"); // Contenedor donde se mostrará el producto
+
+    // Verifica si hay un producto guardado
+    if (!purchaseData || purchaseData.length === 0) {
+        return;
+    }
+
+    // Limpia el contenido previo en el contenedor
+    purchaseItemContainer.innerHTML = "";
+
+    // Extrae la información del producto
+    const product = purchaseData[0]; // Asumiendo que solo hay un producto
+    const productHTML = `
+        <div class="purchase-item">
+            <img src="${product.image}" alt="${product.name}" class="purchase-item-image">
+            <div class="purchase-item-details">
+                <div class="product-row">
+                    <h4 class="product-name">${product.name}</h4>
+                    <p class="product-quantity">Cantidad: <input type="number" id="${product.id}" class="quantity" value="${product.quantity}" min="1" style="width: 50px; text-align: center;"></p>
+                </div>
+                <p class="product-price">${product.currency} ${product.cost}</p>
+                <p class="product-subtotal">Subtotal: ${product.currency} ${(product.cost * product.quantity).toFixed(2)}</p>
+            </div>
+            <!-- Botón de papelera para eliminar el producto -->
+            <button type="button" class="btn btn-outline-dark trash-button" onclick="removePurchaseItem()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="trash-icon" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                </svg>
+            </button>
+        </div>
+    `;
+    
+    // Agrega el HTML del producto al contenedor
+    purchaseItemContainer.innerHTML = productHTML;
+
+    // Oculta el carrito si se muestra el producto comprado
+    document.getElementById("cart-items").style.display = "none"; 
+
+    // Agrega las palabras Subtotal, Costo de envío y Total al contenedor de la compra
+    const summaryHTML = `
+    <div class="cart-summary">
+        <p>Subtotal</p>
+        <p>Costo de envío</p>
+        <p>Total</p>
+    </div>
+    `;
+    purchaseItemContainer.innerHTML += summaryHTML;
+
+    // Muestra el contenedor de las pestañas (si está oculto)
+    const tabsContainer = document.getElementById("tabsContainer");
+    if (tabsContainer) {
+        tabsContainer.style.display = "block"; // Muestra las pestañas
+    }
+}
+
+
 // Función para mostrar los productos del carrito en el HTML
 function displayCartItems() {
     const cartItemsContainer = document.getElementById("cart-items"); // Contenedor donde se muestran los productos
@@ -231,6 +290,62 @@ document.getElementById('btn-back-direccion-envio').addEventListener('click', pr
 document.getElementById('btn-next-direccion-envio').addEventListener('click', nextTab);
 document.getElementById('btn-back-forma-pago').addEventListener('click', prevTab);
 
+// Modal de Tarjeta de Débito - Botón "Pagar"
+document.querySelector('#tarjetaDebitoModal .btn-primary').addEventListener('click', (event) => {
+    // Verifica si el modal está abierto
+    if (document.getElementById('tarjetaDebitoModal').classList.contains('show')) {
+        let esPagoValido = validarCamposPago('debito');
+
+        if (esPagoValido) {
+            alert("Pago con validado correctamente.");
+            $('#tarjetaDebitoModal').modal('hide');  // Cierra el modal
+        } else {
+            alert("Por favor, complete los campos requeridos para la tarjeta de débito.");
+        }
+    }
+});
+
+/* // Modal de Tarjeta de Crédito - Botón "Pagar"
+document.querySelector('#tarjetaCreditoModal .btn-primary').addEventListener('click', (event) => {
+    // Verifica si el modal está abierto
+    if (document.getElementById('tarjetaCreditoModal').classList.contains('show')) {
+        
+        let esPagoValido = validarCamposPago('credito');
+
+        if (esPagoValido) {
+            alert("Pago validado correctamente.");
+            $('#tarjetaCreditoModal').modal('hide');  // Cierra el modal
+            
+        } else {
+            alert("Por favor, complete los campos requeridos para la tarjeta de crédito.");
+            // Vuelve a aplicar .is-invalid a los campos que no son válidos
+            $('#tarjetaDebitoModal form').find('input').each(function() {
+                if (!$(this).val()) {  // Si el campo está vacío o no válido
+                    $(this).addClass('is-invalid');
+                    $(this).val('todos putos');
+                    console.log("estoy acá");
+                }
+            });
+        }
+    }
+}); */
+
+document.querySelector('#tarjetaCreditoModal .btn-primary').addEventListener('click', (event) => {
+    event.preventDefault();
+    if (document.getElementById('tarjetaCreditoModal').classList.contains('show')) {
+        
+        let esPagoValido = validarCamposPago('credito');
+
+        if (esPagoValido) {
+            alert("Pago validado correctamente.");
+            $('#tarjetaCreditoModal').modal('hide');
+            
+        } else {
+            alert("Por favor, complete los campos requeridos para la tarjeta de crédito.");
+        }
+    }
+});
+
 // Botón de finalizar compra
 document.querySelector('.btn-finalize').addEventListener('click', (event) => {
     let esDireccionValida = validarCamposDireccion();
@@ -245,7 +360,7 @@ document.querySelector('.btn-finalize').addEventListener('click', (event) => {
     } else {
         event.preventDefault(); // Previene la acción predeterminada si alguno de los campos es inválido
         event.stopPropagation();
-        alert("Formulario inválido. Por favor complete todos los campos requeridos.");
+        alert("Por favor complete todos los campos requeridos.");
     }
 });
 
@@ -344,9 +459,6 @@ function validarEnvio() {
 }
 
 function validarCamposPago() {
-    // Identificar si se está utilizando la tarjeta de crédito o débito
-    const tarjetaCredito = document.getElementById("numeroTarjetaCredito");
-    const tarjetaDebito = document.getElementById("numeroTarjetaDebito");
     let tipoTarjeta = localStorage.getItem('cardType');
 
     let valid = true;
@@ -357,13 +469,14 @@ function validarCamposPago() {
     // Verifica el tipo de pago
     if (tipoTarjeta === 'credito') {
         // Si es tarjeta de crédito
-        numeroTarjeta = tarjetaCredito;
+        numeroTarjeta = document.getElementById("numeroTarjetaCredito");
         nombreTitular = document.getElementById("nombreTitularCredito");
         fechaExpiracion = document.getElementById("fechaExpiracionCredito");
         cvv = document.getElementById("cvvCredito");
+        console.log("estoy en credito");
     } else if (tipoTarjeta === 'debito') {
         // Si es tarjeta de débito
-        numeroTarjeta = tarjetaDebito;
+        numeroTarjeta = document.getElementById("numeroTarjetaDebito");
         nombreTitular = document.getElementById("nombreTitularDebito");
         fechaExpiracion = document.getElementById("fechaExpiracionDebito");
         cvv = document.getElementById("cvvDebito");
@@ -375,6 +488,7 @@ function validarCamposPago() {
 
     // Validación del número de tarjeta
     if (!numeroTarjeta.value.trim()) {
+        numeroTarjeta.classList.remove('is-invalid');
         numeroTarjeta.classList.add('is-invalid');  // Mostrar error con Bootstrap
         valid = false;
     } else {
