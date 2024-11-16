@@ -445,6 +445,7 @@ function validarCamposPago() {
 }
 
 function validarProductos() {
+    let valid = true;
     // Obtiene el carrito del localStorage
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     // Verifica si la cantidad de cada producto es válida (mayor a 0)
