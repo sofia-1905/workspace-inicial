@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Agregar funcionalidad al botón "Agregar al carrito"
                 document.querySelector(".boton-carrito").addEventListener("click", () => {
                     addToCart(product);
-                    establecerNumeroCarrito()
+                    establecerNumeroCarrito();
                     mostrarBadge();
                     alert("Producto agregado al carrito");
                 });
@@ -89,6 +89,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Agregar funcionalidad al botón "Comprar"
                 document.querySelector(".boton-comprar").addEventListener("click", () => {
                     addToCart(product);
+                    establecerNumeroCarrito();
+                    mostrarBadge();
                     window.location.href = "cart.html"; // Navega a la página de carrito
                 });
 
