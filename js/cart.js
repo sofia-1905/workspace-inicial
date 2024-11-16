@@ -268,13 +268,16 @@ document.querySelector('#tarjetaCreditoModal .btn-primary').addEventListener('cl
 // Botón de finalizar compra
 document.querySelector('.btn-finalize').addEventListener('click', (event) => {
     let esDireccionValida = validarCamposDireccion();
-    let esPagoValido = validarCamposPago();
+    let esTarjetaValida = validarCamposPago();
     let esEnvioValido = validarEnvio();
     let esCantidadValida = validarProductos();
+    let esPagoValido = validarPago();
 
-    if (esDireccionValida && esPagoValido && esEnvioValido && esCantidadValida) {
+    if (esDireccionValida && esPagoValido && esEnvioValido && esTarjetaValida && esCantidadValida) {
         alert("Compra exitosa");
             localStorage.removeItem("cart");
+            localStorage.removeItem("cardType");
+            localStorage.removeItem("shippingType");
             mostrarBadge();
             mostrarNumeroCarrito();
 
@@ -373,7 +376,7 @@ function validarEnvio() {
     let tipoEnvioSeleccionado = localStorage.getItem("shippingType");
 
     if (!tipoEnvioSeleccionado) {
-        console.log("Debe seleccionar un tipo de envío.");
+        alert("Debe seleccionar un tipo de envío.");
         return false;
     }
 
@@ -410,7 +413,6 @@ function validarCamposPago() {
 
     // Validación del número de tarjeta
     if (!numeroTarjeta.value.trim()) {
-        numeroTarjeta.classList.remove('is-invalid');
         numeroTarjeta.classList.add('is-invalid');  // Mostrar error con Bootstrap
         valid = false;
     } else {
@@ -442,6 +444,19 @@ function validarCamposPago() {
     }
 
     return valid;
+}
+
+function validarPago() {
+    // Verificamos si el tipo de tarjeta está guardado en localStorage
+    let tipoPagoSeleccionado = localStorage.getItem("cardType");
+
+    if (!tipoPagoSeleccionado) {
+        alert("Debe seleccionar un método de pago.");
+        return false;
+    }
+
+    // Si el tipo de tarjeta está en localStorage, es válido
+    return true;
 }
 
 function validarProductos() {
