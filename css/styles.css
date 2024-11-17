@@ -365,7 +365,7 @@ body.dark-mode .jumbotron{
   background-repeat: no-repeat;
 }
 body.dark-mode .footer-image{
-content: url('img/footer-dark.png');
+content: url('../img/footer-dark.png');
 }
 
 /*footer y div con las categorias en el inicio*/
