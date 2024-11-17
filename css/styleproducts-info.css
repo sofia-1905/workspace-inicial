@@ -141,8 +141,8 @@ ul.breadcrumb li+li:before {
 
 /* CAROUSEL */
 /* Personalización de los botones del carrusel */
-#relatedProductCarousel .carousel-control-prev-icon,
-#relatedProductCarousel .carousel-control-next-icon {
+ .carousel-control-prev-icon,
+ .carousel-control-next-icon {
     background-color: #F58509;
     border-radius: 50%;
     width: 40px;
