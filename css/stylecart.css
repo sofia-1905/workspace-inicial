@@ -61,9 +61,11 @@ body {
     margin-left: 30px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
+
 .is-invalid {
     border: 2px solid red !important; /* Aumenta el borde para hacer el efecto más visible */
 }
+
 /* Detalles del producto */
 .cart-item-details,
 .purchase-item-details {
@@ -200,7 +202,7 @@ body {
     border: none; /* Elimina bordes alrededor de las pestañas */
     color: white; 
     font-weight: 500; 
-    font-size: 20px; /* Tamaño de fuente */
+    font-size: 20px; 
 }
 
 /* Efecto hover (cuando el ratón pasa por encima) */

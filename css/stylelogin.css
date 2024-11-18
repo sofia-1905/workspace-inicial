@@ -1,171 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background-color: #ffffff;
-    font-family: 'Inter', sans-serif;
-}
-
-.header-container .logo-image {
-    display: none;
-}
-
-.header-container {
     background-color: white;
-}
-
-.logo-image {
-    width: 45%;
-    height: auto;
-    object-fit: contain;
+    font-family: 'Inter', sans-serif;
+    display: flex; /* Usa Flexbox en el nivel más alto */
+    flex-direction: column; /* Coloca los elementos en columna (header, main, footer) */
 }
 
 .card {
-    max-width: 400px;
-    width: 100%;
-    height: auto;
-    background-color: #F58509; 
-    color: white;
-    border-radius: 40px;
-    margin: 0 auto; /* Centra el contenedor en la pantalla */
-    padding: 30px; 
-    display: flex;
-    flex-direction: column; /* Organiza los elementos en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
+    margin: 0 auto;
+    background: -webkit-linear-gradient(90deg, #ff8800,#ffa200,#ff8800);                         
+    background: linear-gradient(90deg, #ff8800,#ffa200,#ff8800); 
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
 }
 
-.card .form-control {
+/* Asegurarse de que la imagen se ajuste bien */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ajustar el botón para que ocupe todo el ancho de la columna */
+#btn-login {
     width: 100%;
+}
+
+/* Ajuste de las columnas para que no sobrepasen el ancho de la fila */
+.row {
+    display: flex;
+    justify-content: center;
 }
 
 .login-container {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(105vh - 385px);
-    padding-top: 20px;
+    display: flex; /* Centra el contenido del main */
+    justify-content: center; 
+    align-items: center; 
 }
 
-.form-control {
-    border-radius: 20px; 
-    font-size: 20px;
-    height: 40px; 
-    padding: 10px; 
-    margin-bottom: 15px;
-    width: calc(100% - 20px); 
+/* Imagen */
+.card img {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
-.col-auto {
-    display: flex;
-    flex-direction: column; /* Coloca el label y el input uno debajo del otro */
-    align-items: flex-start; /* Alinea los elementos al inicio */
-    margin-right: 15px; /* Espacio entre columnas */
+/* Formulario */
+.form-label {
+    font-weight: bold;
+    color: rgb(244, 230, 230) !important;
 }
 
-.col-auto label {
-    margin-bottom: 5px; 
-    text-align: left; /* Alineación del texto del label */
-    width: 100%; 
-    margin-left: 0; 
-    margin-top: 3px; 
+input.form-control {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: box-shadow 0.2s ease-in-out;
 }
 
-/* Estilo del botón */
-.btn-primary {
-    background-color: #EF9633; 
-    color: white; 
-    border-color: #D9780E; 
-    border-radius: 20px; 
-    font-weight: 100; /* Fuente delgada */
-    padding: 10px 20px; 
-    cursor: pointer; 
-    font-size: 16px;
-    margin-top: 15px; 
-    width: calc(100% - 20px); /* Asegura que el botón ocupe el ancho del contenedor, dejando espacio para el padding */
-}
-
-.btn-primary:hover {
-    background-color: #d68d2e; /* Color al pasar el cursor */
-    border-color: #e57204; 
-}
-
-#btn-login {
-    background-color: #EF9633;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 10px;   
-    margin-left: 10;
-}
-
-#username,
-#password {
-    background-color: white; /* Color de fondo siempre visible */
-    border: 1px solid #e8be71;
-    border-radius: 20px; /* Bordes redondeados */
-    width: 100% !important; /* Asegura que el campo de entrada use el ancho completo del contenedor */
-}
-
-#username:focus,
-#password:focus {
-    border-color: #f8911c;
-    box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.5);
-}
-
-#btn-login {
-    background-color: #EF9633;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 10px;   
+input.form-control:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    border-color: rgb(197, 184, 184);
 }
 
 #btn-login:hover {
-    border: 7px #ffffff;
-    background-color: #ffffff;
+    background-color: #ffa200;
+}
+
+/* Texto */
+p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para los campos y el botón */
+.form-control-sm {
+    height: 35px; 
+    font-size: 14px;  
+}
+  
+.btn-sm {
+    height: 35px;  /* Igualar altura al de los campos */
+    font-size: 14px;  /* Igualar tamaño de fuente */
+    padding: 6px 12px;
+}
+
+/* Botón del mismo tamaño que los campos de entrada */
+#btn-login {
+    background-color: #ff8800;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    color: white;
     border-radius: 10px;
-    border: 2px solid #e8be71;
-    color: #EF9633;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    width: 100%;  /* Hace que el botón ocupe todo el ancho disponible */
+    transition: background-color 0.3s ease;
 }
 
 
 @media (max-width: 568px) {
-    body {
-        background-color: #F58509; 
-    }
-    
-    .navbar {
-        display: none; 
-    }
-
     .footer-container {
         display: none; 
-    }
-
-    .header-container .logo-image {
-        display: block; 
-    }
-
-    .logo-image {
-        width: 100% !important; /* Asegura que ocupe todo el ancho del contenedor */
-        height: 100%; /* Asegura que ocupe toda la altura del contenedor */
-        object-fit: cover; /* Asegura que la imagen cubra el contenedor sin cortarse */
-    }
-
-    .login-container {
-        margin-top: 40px; /* Distancia superior */
     }
     
     .card {
         max-width: 90% !important; /* Deja un poco de espacio en los márgenes */
-        width: 300px; /* Achicado */
-        padding: 30px; /* Ajusta el padding para móviles */
-        border-radius: 50px !important;
-        background-color: rgba(142, 79, 11, 0.4); /* 40% opacidad */
-        color: white;
-        border: 4px solid #8E4F0B; /* Color del borde */
-        margin: 0 auto; /* Centra el contenedor en la pantalla */
+        width: 300px; 
+        padding: 30px;
+        border-radius: 30px !important;
     }
 }
