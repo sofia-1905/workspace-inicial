@@ -1,0 +1,85 @@
+
+/* Estilo para los contenedores */
+.category-container {
+    margin-bottom: 15px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.2s ease-in-out; /* Animación suave */
+}
+
+/* Efecto para contenedores*/
+.category-container:hover {
+    transform: scale(1.02); /* Agrandar levemente */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Estilo para las imágenes */
+.category-img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    padding: 0;
+}
+
+.titlecategories {
+    background-color: #F58509;
+    color: white;
+    margin-top: 2%;
+    padding: 5px;
+    padding-left: 10%;
+    text-align: left; 
+}
+
+.extra-margin-right {
+    margin-right: 0; 
+}
+
+/* Contenedor de botones */
+.ordenamiento {
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+    border-radius: 5px;
+     padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Estilos para el label asociado con el input en estado activo */
+.btn-group-toggle .btn:focus, 
+.btn-group-toggle .btn:hover, 
+.btn-group-toggle .btn-light:focus {
+    border-color: orange; 
+    box-shadow: 0 0 5px 2px rgba(255, 165, 0, 0.5); 
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+}
+
+
+/* Aumenta el ancho de los campos de entrada */
+#rangeFilterCountMin, #rangeFilterCountMax {
+    width: 120%;
+}
+
+/* Botón de filtrado */
+.btn-filter {
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+    padding: 4%;
+}
+
+.btn-filter:focus {
+    border-color: orange; 
+    box-shadow: 0 0 5px 2px rgba(255, 165, 0, 0.5); 
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+}
+
+.filter-cant:hover, .clean-cant:hover {
+    border-color: orange; 
+    box-shadow: 0 0 5px 2px rgba(255, 165, 0, 0.5); 
+    outline: none;
+}
+
+/* Campos de entrada */
+.form-control:focus {
+    border-color: orange; 
+    box-shadow: 0 0 5px 2px rgba(255, 165, 0, 0.5); 
+    outline: none; 
+}
