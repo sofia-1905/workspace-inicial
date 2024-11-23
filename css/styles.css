@@ -474,3 +474,35 @@ body.dark-mode a.btn {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7) !important; 
   transform: translateY(-10px); /* Efecto de elevación */
 }
+
+/* Vender */
+.title-sell {
+  background-color: #F58509;
+  color: white;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 1px;
+  padding-left: 10%;
+}
+
+/* Estilo para los campos enfocados */
+.form-control:focus, 
+.form-select:focus {
+  border-color: #F58509; 
+  box-shadow: 0 0 5px #F58509; 
+  outline: none; /* Elimina el borde azul predeterminado */
+}
+
+/* Boton */
+.btn-sell {
+  background-color: #F58509; 
+  border-color: #F58509; 
+  color: white; 
+}
+
+/* Estilo al pasar el cursor por encima del botón */
+.btn-sell:hover {
+  background-color: #d47408;
+  border-color: #d47408;
+  color: white;
+}
