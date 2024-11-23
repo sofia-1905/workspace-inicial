@@ -135,35 +135,80 @@ input:checked+.slider:before {
 }
 
 
+/* Estilo específico para 1366x768 */
+@media (max-height: 768px) {
+    main {
+      display: flex;              
+      justify-content: center;    
+      align-items: center;       
+      height: 100vh;              
+    } 
+}
+  
+/* Tableta en Modo Vertical (768x1024) */
+@media (max-width: 1024px) {
+    /* Centrar la imagen en la parte superior */
+    .col-md-4 {
+      width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+      text-align: center; /* Centra la imagen horizontalmente */
+      margin-bottom: 20px; /* Da un poco de espacio debajo de la imagen */
+    }
+  
+    /* Asegura que la columna de formulario ocupe todo el ancho disponible */
+    .col-md-8 {
+      width: 100%;
+    }
+  
+    .row.g-3 {
+      display: flex;
+      flex-wrap: wrap; /* Hace que los campos puedan envolver en filas */
+      gap: 20px; /* Añade espacio entre los campos */
+    }
+  
+    /* Los campos se distribuyen en 2 columnas (3 a la izquierda y 3 a la derecha) */
+    .col-md-6 {
+      width: 48%;
+    }
+}
+  
+
 /* Para smartphones pequeños (320x568) */
 @media (max-width: 568px){
     .navbar {
-    background-color: #F57C00 !important;
+        background-color: #F57C00 !important;
     }
+
     .navbar-custom .nav-link {
-    color: rgba(255, 255, 255, .55) !important;
+        color: rgba(255, 255, 255, .55) !important;
     }
-    body{
-    background-color: white;
+
+    body {
+        background-color: white;
     }
+
     .form-label,
-    #editProfileText{
-    color: #F57C00 !important;
+    #editProfileText {
+        color: #F57C00 !important;
     }
-    .btn-light {
+
+    #btnguardarcambios {
+        background-color: #F8A244 !important;
+        border: #F8A244;
         color: white;
-        background-color: #f8f9fa;
-        border-color: #f8f9fa;
+        border-radius: 15px;
+        margin-bottom: 5%;
     }
-    #btnguardarcambios{
-    background-color: #F57C00 !important;
-    color: white;
-    border-radius: 15px;
-    margin-bottom: 5%;
+
+    .form-control {
+        width: 100% !important; 
+        padding: 10px;
+        font-size: 16px; 
     }
-    .custom-input {
-        background-color: #c4b4b4;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+
+    .col-md-6 {
+        width: 100% !important; /* Los campos de 2 columnas pasan a ocupar el 100% en smartphones */
+        padding-left: 0 !important; 
+        padding-right: 0 !important;
     }
 }
 
