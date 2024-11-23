@@ -463,3 +463,14 @@ body.dark-mode a.btn {
   position: relative;
   margin-left: 5px; /* Espacio entre el texto y el icono */
 }
+
+/* Contenemdores principales*/
+.three-category {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5) !important;
+  transition: transform 0.2s ease-in-out; /* Animación suave */
+}
+
+.three-category:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7) !important; 
+  transform: translateY(-10px); /* Efecto de elevación */
+}
