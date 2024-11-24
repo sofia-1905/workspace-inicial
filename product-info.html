@@ -59,56 +59,46 @@
         <h3 class="title-related-products">Productos Relacionados</h3>
         <div id="related-products-list" class="row"></div>
       </div>
-    </div>
-
-    <div class="row d-flex" id="calificacionYComentarios">
-      <div class="col-sm-12 col-md-12 col-lg-8" id="comments-list">
-        <div id="comments"></div>
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg-4" id="comentarios">
-        <h5>Califica el producto.</h5>
-        <ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">
-          <li data-value="1">
-            <i class="far fa-angry fa-lg"></i>
-          </li>
-          <li data-value="2">
-            <i class="far fa-frown fa-lg"></i>
-          </li>
-          <li data-value="3">
-            <i class="far fa-meh fa-lg"></i>
-          </li>
-          <li data-value="4">
-            <i class="far fa-smile fa-lg"></i>
-          </li>
-          <li data-value="5">
-            <i class="far fa-grin-stars fa-lg"></i>
-          </li>
-        </ul>
-        <div class="comment-section">
-          <form id="comment-form">
-            <textarea class="form-control" id="user-comment" rows="4" placeholder="Escribe tu comentario..."
-              required></textarea>
+  
+      <!-- Contenedor de Calificaciones y Comentarios -->
+      <div class="row d-flex" id="calificacionYComentarios">
+        <div class="col-sm-12 col-md-12 col-lg-8" id="comments-list" style="display: none;"> <!-- Ocultar inicialmente -->
+          <div id="comments"></div>
         </div>
-        <div class="button-container">
-          <button class="btn btn-light btn-block" id="rangeFilterCount">Enviar</button>
+  
+        <div class="col-sm-12 col-md-12 col-lg-4" id="comentarios">
+          <h5>Califica el producto.</h5>
+          <ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">
+            <li data-value="1"><i class="far fa-angry fa-lg"></i></li>
+            <li data-value="2"><i class="far fa-frown fa-lg"></i></li>
+            <li data-value="3"><i class="far fa-meh fa-lg"></i></li>
+            <li data-value="4"><i class="far fa-smile fa-lg"></i></li>
+            <li data-value="5"><i class="far fa-grin-stars fa-lg"></i></li>
+          </ul>
+          <div class="comment-section">
+            <form id="comment-form">
+              <textarea class="form-control" id="user-comment" rows="4" placeholder="Escribe tu comentario..." required></textarea>
+            </div>
+            <div class="button-container">
+              <button class="btn btn-light btn-block" id="rangeFilterCount">Enviar</button>
+            </div>
+          </form>
         </div>
-        </form>
       </div>
-    </div>
     </div>
     <input type="hidden" id="rating-value" value="0">
-  </main>
-
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+  
+    <!-- Spinner -->
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-  </div>
-
+  </main>
+  
   <footer class="footer-container text-center">
     <img src="img/login.png" alt="Footer Logo" class="footer-image">
   </footer>

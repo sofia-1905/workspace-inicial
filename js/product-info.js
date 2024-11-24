@@ -202,38 +202,54 @@ function selectRelatedProduct(productId) {
     location.reload();  // Recargar la página para mostrar el nuevo producto
 }
 
-//Funcion para mostrar las calificaciones
-  function showComments(array) {
-    let htmlContentToAppend = `<h5 id="calificacionestitle">Calificaciones</h5>`;
-
-    for (let i = 0; i < array.length; i++) {
+// Función para mostrar las calificaciones
+function showComments(array) {
+    let htmlContentToAppend = '';
+  
+    // Verificar si hay comentarios antes de mostrar el contenedor
+    if (array.length > 0) {
+      htmlContentToAppend += `<h5 id="calificacionestitle">Calificaciones</h5>`;
+  
+      // Agregar los comentarios al HTML
+      for (let i = 0; i < array.length; i++) {
         let product = array[i];
-
+  
         htmlContentToAppend += `
-        
-      <div id="commentdiv" class="row">
-            <div id="iconos" class="col-sm-6 col-md-5 col-lg-4 d-flex">
-                <span class="score-icon">${getIconForScore(product.score)}</span>
+          <div id="commentdiv" class="row">
+    <div id="iconos" class="col-sm-6 col-md-5 col-lg-4 d-flex">
+        <span class="score-icon">${getIconForScore(product.score)}</span>
+    </div>
+    <div id="userdatedesc" class="col-sm-6 col-md-7 col-lg-8">
+        <div class="row"> 
+            <div class="col-lg-6">
+                <p id="usuariocomment">${product.user}</p>
             </div>
-            <div id="userdatedesc" class="col-sm-6 col-md-7 col-lg-8">
-                <div class="row"> 
-                    <div class="col-lg-6">
-                        <p id="usuariocomment">${product.user}</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p id="fechacomment">${product.dateTime}</p>
-                    </div>
-                </div>
-                <div class="col-lg-12 mt-2"> 
-                    <p id="descripcioncomment">${product.description}</p>
-                </div>
+            <div class="col-lg-6">
+                <p id="fechacomment">${product.dateTime}</p>
             </div>
         </div>
-        `;
-    }
+        <div class="col-lg-12 mt-2"> 
+            <p id="descripcioncomment">${product.description}</p>
+        </div>
+    </div>
+</div>
 
-    document.getElementById("comments").innerHTML = htmlContentToAppend;
+        `;
+      }
+  
+      // Mostrar los comentarios
+      document.getElementById("comments").innerHTML = htmlContentToAppend;
+  
+      // Hacer visible el contenedor de comentarios
+      document.getElementById('comments-list').style.display = 'block'; 
+      document.getElementById('spinner-wrapper').style.display = 'none'; // Ocultar spinner
+    } else {
+      // Si no hay comentarios, ocultar el contenedor
+      document.getElementById('comments-list').style.display = 'none';
+      document.getElementById('spinner-wrapper').style.display = 'none'; // También ocultar el spinner si no hay comentarios
+    }
 }
+  
 document.addEventListener("DOMContentLoaded", function() {
     let productcommentId = localStorage.getItem("productID");
 
@@ -251,32 +267,24 @@ const score = localStorage.getItem('score');
 
 //Funcion para obtener iconos de acuerdo al puntaje
 function getIconForScore(score) {
-    let icons = '';
-    for (let i = 0; i < score; i++) {
-        if (i < 1) {
-            icons += `<li data-value="1">
-                        <i class="far fa-angry fa-lg"></i>
-                      </li>`;
-        } else if (i < 2) {
-            icons += `<li data-value="2">
-                        <i class="far fa-frown fa-lg"></i>
-                      </li>`;
-        } else if (i < 3) {
-            icons += `<li data-value="3">
-                        <i class="far fa-meh fa-lg"></i>
-                      </li>`;
-        } else if (i < 4) {
-            icons += `<li data-value="4">
-                        <i class="far fa-smile fa-lg"></i>
-                      </li>`;
-        } else if (i < 5) {
-            icons += `<li data-value="5">
-                        <i class="far fa-grin-stars fa-lg"></i>
-                      </li>`;
-        }
+    let icons = [
+        '<i class="far fa-angry fa-lg"></i>',    // 1
+        '<i class="far fa-frown fa-lg"></i>',    // 2
+        '<i class="far fa-meh fa-lg"></i>',      // 3
+        '<i class="far fa-smile fa-lg"></i>',    // 4
+        '<i class="far fa-grin-stars fa-lg"></i>' // 5
+    ];
+
+    // Verifica si el puntaje está dentro del rango válido
+    if (score >= 1 && score <= 5) {
+        return `<ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">
+                    <li data-value="${score}">
+                        ${icons[score - 1]}
+                    </li>
+                </ul>`;
     }
-    return `<ul class="rating" id="rating" data-mdb-toggle="rating" data-mdb-dynamic="true">${icons}</ul>`;
-} 
+    return ''; // Retorna vacío si el puntaje es fuera de rango
+}
 
 //Seleccionar iconos de calificacion
 document.querySelectorAll('#rating li').forEach(item => {
