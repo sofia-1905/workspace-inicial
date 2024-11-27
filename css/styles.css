@@ -361,7 +361,7 @@ color: white;
 }
 
 body.dark-mode .jumbotron {
-  background: url('../img/cover_back\ -\ dark.png');
+  background: url('../img/cover-dark.png');
   height: 50vh !important;
   background-size: cover;
   background-position: center;
