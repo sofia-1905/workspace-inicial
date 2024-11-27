@@ -5,6 +5,9 @@ const app = express();
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
+const jwt = require("jsonwebtoken");
+const SECRET_KEY = "CLAVE SECRETA";
+app.use(express.json());
 
 app.get('/', (req, res) =>{
     res.send("Backend Proyecto Final")
@@ -32,6 +35,18 @@ const writeData = (data) => {
         console.log(error);
     }
 }
+
+// Login
+app.post("/login", (req, res) => {
+    const { username, password } = req.body;
+    if ( username && password ) {
+      const token = jwt.sign({ username }, SECRET_KEY);
+      res.status(200).json({ token });
+
+    } else {
+      res.status(401).json({ message: "Usuario y/o contraseña incorrecto" });
+    }
+  });
 
 app.get("/categories", (req, res) => {
     const data = readData();
