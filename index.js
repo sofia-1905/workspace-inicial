@@ -6,8 +6,12 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 const SECRET_KEY = "CLAVE SECRETA";
+
+//Parsear JSON y habilitar Cors
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) =>{
     res.send("Backend Proyecto Final")
