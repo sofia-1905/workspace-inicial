@@ -231,10 +231,18 @@ body {
 .btn-pay,
 .btn-finalize {
     color: white;
-    background-color: #F88F34;
+    background-color: #F58509;
     border: 1px solid white;
     border-radius: 15px;
     margin-top: 15px;
+}
+
+.btn-next:hover,
+.btn-back:hover,
+.btn-pay:hover,
+.btn-finalize:hover {
+background-color: #ec6105;
+color: white;
 }
 
 .d-flex {
