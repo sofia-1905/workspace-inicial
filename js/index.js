@@ -13,15 +13,29 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-// Modo Oscuro
-const theme = localStorage.getItem('theme');
 
-// Aplicar el tema guardado al cargar la página
+// Cambiar a modo oscuro al hacer clic
+const switchbutton = document.getElementById('toggle');
+const body = document.body;
+let theme = localStorage.getItem('theme');
+
 if (theme === 'dark-mode') {
-    document.body.classList.add('dark-mode');
+    body.classList.add('dark-mode');
+    switchbutton.checked = true;
 } else {
-    document.body.classList.remove('dark-mode');
+    body.classList.remove('dark-mode');
+    switchbutton.checked = false;
 }
+
+switchbutton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark-mode');
+    } else {
+        localStorage.setItem('theme', 'light-mode');
+    }
+});
 
 function mostrarBadge() {
     // Obtener el valor del badge almacenado en localStorage
