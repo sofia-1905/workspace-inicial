@@ -506,3 +506,69 @@ body.dark-mode a.btn {
   border-color: #d47408;
   color: white;
 }
+
+/* Boton para modo oscuro de la barra de navegacion*/
+input {
+  display: none;
+}
+/*barra de fondo del switch*/
+#labelsw {
+  width: 80px;
+  height: 40px;
+  border-radius: 999px;
+  background: #F3F3F3;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05) inset;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 99px;
+  background: rgb(255, 185, 55);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05),
+  -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(10%, -50%);
+  transition: 0.5s; /*Tiempo de transicion entre uno y otro*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+/*Imagen luna y sol*/
+svg {
+  width: 16px;
+  position: absolute;
+}
+.sun {
+  color: #ffffff;
+  margin-top: 0%;
+  opacity: 1;
+}
+.moon {
+  margin-top: -150%;
+  color: white;
+  opacity: 0;
+}
+
+/*Circulo modo oscuro*/
+input[type=checkbox]:checked + .display label .circle {
+  background: #6b6b6b;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5),
+  -10px -10px 30px rgba(0, 0, 0, 0.5) inset;
+}
+/* Posicion del sol en modo oscuro*/
+input[type=checkbox]:checked + .display label .circle .sun {
+  margin-top: 150%;
+  opacity: 0;
+}
+/*Posicion de la luna en modo oscuro*/
+input[type=checkbox]:checked + .display label .circle .moon {
+  margin-top: 0%;
+  opacity: 1;
+}
