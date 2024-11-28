@@ -354,6 +354,12 @@ body.dark-mode .btn-group .dropdown-toggle {
   border: none;
 }
 
+/* titulo */
+body.dark-mode h2,
+body.dark-mode .title-sell{
+background-color: #6b6b6b;
+}
+
 /*color del body*/
 body.dark-mode {
 background-color:rgb(34, 34, 34) !important;
