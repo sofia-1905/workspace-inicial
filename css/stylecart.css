@@ -231,10 +231,22 @@ body {
 .btn-pay,
 .btn-finalize {
     color: white;
-    background-color: #F88F34;
+    background-color: #F58509;
     border: 1px solid white;
     border-radius: 15px;
     margin-top: 15px;
+}
+
+/* Hover de los botones*/
+.btn-next:hover,
+.btn-back:hover,
+.btn-pay:hover,
+.btn-envio:hover,
+.btn-debit:hover,
+.btn-credit:hover,
+.btn-finalize:hover {
+background-color: #e26f04;
+color: rgb(255, 227, 148);
 }
 
 .d-flex {
