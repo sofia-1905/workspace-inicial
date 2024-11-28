@@ -241,9 +241,12 @@ body {
 .btn-next:hover,
 .btn-back:hover,
 .btn-pay:hover,
+.btn-envio:hover,
+.btn-debit:hover,
+.btn-credit:hover,
 .btn-finalize:hover {
-background-color: #ec6105;
-color: white;
+background-color: #e26f04;
+color: rgb(255, 227, 148);
 }
 
 .d-flex {
