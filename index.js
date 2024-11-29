@@ -6,13 +6,20 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 const SECRET_KEY = "CLAVE SECRETA";
+
+// Habilitar CORS para permitir peticiones desde otros orígenes
+app.use(cors());
+
+// Parsear el cuerpo de las peticiones como JSON
 app.use(express.json());
+
 // Ruta al archivo cart.json
 const cartFilePath = path.join(__dirname, 'cart.json');
+
 // Ruta a la carpeta de productos
 const productsFolderPath = path.join(__dirname, 'products');
-
 
 app.get('/', (req, res) =>{
     res.send("Backend Proyecto Final")
