@@ -1,43 +1,58 @@
-body {  
-    background-color:orange;     
-} 
-.container {  
-    margin-top: 180px;  
-    color: rgb(255, 255, 255);  
-    text-align: left; 
-}  
-p {  
-    color: rgb(255, 255, 255);  
-    font-size: 20px;  
-    margin-top: 30px;  
-}  
-#icon-cart {
-    font-size: 350px; 
-}
-
-.quantity-control {
-    text-align: center;
-    border-radius: 80%;
-}
+body {
+    background-color: orange;
+  }
+  
+  .container {
+    margin-top: 180px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+  }
+  
+  p {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  
+  /* Alineación del ícono del carrito */
+  #icon-cart {
+    font-size: 350px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto; /* Empuja el ícono hacia la derecha */
+  }
+  
+  /* Ajustes para los botones de la papelera */
   .trash-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 120px; 
-      height: 120px;
-      border-radius: 10px;
-      transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    transition: transform 0.2s;
   }
-
+  
   .trash-button:hover {
-      transform: scale(1.1);
+    transform: scale(1.1);
   }
-
+  
   .trash-icon {
-      width: 64px;
-      height: 64px; 
-      margin-right: 10px; 
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
   }
+  
+  /* Estilo de los campos con validación */
   .is-invalid {
     border: 2px solid red !important; /* Aumenta el borde para hacer el efecto más visible */
-}
+  }
+  
+  /* Asegura que el contenedor padre se comporte de forma consistente */
+  .cart-icon-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea el ícono a la derecha */
+    align-items: center; /* Alinea verticalmente */
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+  
