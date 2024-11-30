@@ -600,9 +600,12 @@ body.dark-mode a.btn {
 }
 
 /* Boton para modo oscuro de la barra de navegacion*/
-input {
-  display: none;
+
+/* input del boton modo oscuro de todas las paginas*/
+#toggle {
+  display: none !important;
 }
+
 #labelsw {
   position: relative; 
   width: 80px;
