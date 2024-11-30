@@ -514,7 +514,7 @@ body.dark-mode a.btn {
 }
 
 /* Boton para modo oscuro de la barra de navegacion*/
-input {
+input[type="checkbox"] {
   display: none;
 }
 
