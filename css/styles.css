@@ -397,7 +397,8 @@ body.dark-mode .btn-group .dropdown-toggle {
 .dropdown-item {
   color: rgb(255, 255, 255); /* Color del texto de los elementos */
   padding: 10px 15px; /* Espaciado interno */
-  transition: background-color 0.3s; /* Transición suave */
+  transition: background-col
+  or 0.3s; /* Transición suave */
 }
 
 /* Efecto hover en los elementos del menú */
@@ -418,6 +419,31 @@ body.dark-mode {
 background-color:rgb(34, 34, 34) !important;
 color: white;
 }
+
+/* Estilo del botón del dropdown */
+.dropdown {
+  display: inline-block;
+  position: relative;
+  width: 200px; /* o cualquier tamaño que desees para el botón */
+}
+
+/* Estilo del botón de la lista desplegable */
+.dropdown-menu {
+  display: none; /* Se oculta por defecto */
+  position: absolute;
+  top: 100%; /* Coloca el menú justo debajo del botón */
+  left: 0;
+  width: 100%; /* Ajusta el ancho al del botón */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Opcional: sombra para el dropdown */
+  z-index: 1000;
+}
+
+/* Muestra el menú cuando se pasa el cursor o se activa */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  display: block;
+}
+
 
 body.dark-mode .jumbotron {
   background: url('../img/cover-dark.png');
