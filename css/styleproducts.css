@@ -62,7 +62,6 @@ body {
   width: 100%;
   height: 5px;
   accent-color: #F58509 !important;
-  pointer-events: none;
   cursor: pointer;
   visibility: visible !important;
 }
