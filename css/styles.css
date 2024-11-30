@@ -517,17 +517,6 @@ body.dark-mode a.btn {
 input {
   display: none;
 }
-/*barra de fondo del switch*/
-#labelsw {
-  width: 80px;
-  height: 40px;
-  border-radius: 999px;
-  background: #F3F3F3;
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05) inset;
-  cursor: pointer;
-  position: relative;
-  transition: 0.5s;
-}
 
 .circle {
   width: 30px;
