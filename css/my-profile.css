@@ -230,7 +230,7 @@ body.dark-mode .btn-save {
 
 #icon-cart{
     font-size: large;
-    color: #F58509;
+    color: white;
     position: relative;
 }
     
@@ -253,3 +253,19 @@ body.dark-mode .btn-save {
     position: relative;
     margin-left: 5px; /* Espacio entre el texto y el icono */
 }
+
+/* Archivo: css/navbar.css */
+.navbar-custom {
+    background-color: white; /* Fondo blanco */
+    color: gray; /* Texto gris */
+  }
+  
+  .navbar-custom .nav-link,
+  .navbar-custom .navbar-toggler-icon {
+    color: gray; /* Texto gris en los enlaces de la barra de navegación */
+  }
+  
+  .navbar-custom .nav-link:hover {
+    color: black; /* Color de texto al pasar el cursor */
+  }
+  

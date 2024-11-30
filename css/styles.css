@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap');
 
 .jumbotron,
@@ -146,9 +148,7 @@ footer p {
   transition: ease-in-out color .15s;
 }
 
-.site-header .dropdown-menu a {
-  color: black;
-}
+
 
 .dropzone {
   border: 2px dashed #0087F7;
@@ -318,22 +318,42 @@ div.col-12 {
   background-color: rgb(255, 255, 255)
 }
 
+/* Estilo del botón de dropdown */
 .btn-group .dropdown-toggle {
-  color: rgb(235, 153, 2);
+  border-radius: 10px; /* Bordes redondeados */
+  border-color: #ffffff; /* Color del borde */
+  color: white; /* Color de texto */
+  background-color: #F3860F; /* Fondo naranja clarito */
+  transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+  letter-spacing: 1px;
 }
 
+/* Efecto hover en el botón de dropdown */
 .btn-group .dropdown-toggle:hover {
-  background-color: rgba(255, 165, 0, 0.2);
-  color: rgb(235, 153, 2);
+  background-color: #FF8C00; /* Fondo naranja más fuerte */
+  color: white; /* Texto blanco */
 }
 
-.btn-group .dropdown-toggle {
-  color: rgb(235, 153, 2);
+/* Estilo del menú desplegable */
+.dropdown-menu {
+  background-color: #FF8C00; /* Fondo naranja fuerte */
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border-color: white 1em;
 }
 
-.btn-group .dropdown-toggle:hover {
-  background-color: rgb(235, 153, 2);
+/* Estilo de los elementos dentro del menú */
+.dropdown-item {
+  color: rgb(255, 255, 255); /* Color del texto de los elementos */
+  padding: 10px 15px; /* Espaciado interno */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover en los elementos del menú */
+.dropdown-item:hover {
+  background-color: rgba(255, 165, 0, 0.8); /* Fondo naranja más oscuro */
   color: white;
+  font-weight: bold;
 }
 
 
@@ -352,6 +372,39 @@ body.dark-mode a.nav-link {
 body.dark-mode .btn-group .dropdown-toggle {
   background-color:#d6d6d6;
   border: none;
+}
+
+
+/* Estilo del botón de dropdown */
+.btn-group .dropdown-toggle {
+  border-radius: 10px; /* Bordes redondeados */
+  border-color: #ffffff; /* Color del borde */
+  color: white; /* Color de texto */
+  background-color: #F3860F; /* Fondo naranja clarito */
+  transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+  letter-spacing: 1px;
+}
+.btn-group .dropdown-toggle:hover {
+  background-color: #F3860F;
+  color: white; /* Texto blanco */
+}
+.dropdown-menu {
+  background-color: #F3860F; /* Fondo naranja fuerte */
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border-color: white 1em;
+}
+.dropdown-item {
+  color: rgb(255, 255, 255); /* Color del texto de los elementos */
+  padding: 10px 15px; /* Espaciado interno */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover en los elementos del menú */
+.dropdown-item:hover {
+  background-color: #F3860F; /* Fondo naranja más oscuro */
+  color: white;
+  font-weight: bold;
 }
 
 /* titulo */
@@ -405,7 +458,44 @@ body.dark-mode .list-group-item {
   justify-content: center; /* Centra el contenido */
   align-items: center; /* Centra el contenido verticalmente */
   transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color:#525252;
 }
+
+/* Estilo del botón de dropdown en modo oscuro */
+body.dark-mode .btn-group .dropdown-toggle {
+  background-color: #6b6b6b !important; /* Cambia el fondo a gris oscuro */
+  border: none !important; /* Elimina el borde */
+  color: white !important; /* Mantiene el texto blanco */
+}
+
+/* Efecto hover en el botón de dropdown en modo oscuro */
+body.dark-mode .btn-group .dropdown-toggle:hover {
+  background-color: #8b8b8b !important; /* Gris más claro al hacer hover */
+  color: white !important; /* Texto blanco en el hover */
+}
+
+/* Asegúrate de que el fondo del menú desplegable también sea gris en modo oscuro */
+body.dark-mode .dropdown-menu {
+  background-color: #525252 !important; /* Fondo gris oscuro para el menú */
+  border-radius: 20px !important; /* Mantén bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Sombra suave */
+  border-color: white 1em !important;
+}
+
+/* Estilo de los elementos dentro del menú en modo oscuro */
+body.dark-mode .dropdown-item {
+  color: rgb(255, 255, 255) !important; /* Color de texto blanco */
+  padding: 10px 15px !important; /* Espaciado interno */
+  transition: background-color 0.3s !important; /* Transición suave */
+}
+
+/* Efecto hover en los elementos del menú en modo oscuro */
+body.dark-mode .dropdown-item:hover {
+  background-color: rgba(255, 165, 0, 0.8) !important; /* Fondo naranja más oscuro */
+  color: white !important;
+  font-weight: bold !important;
+}
+
 
 
 /* Asegura que el texto dentro del span no se rompa */
@@ -434,7 +524,7 @@ body.dark-mode a.btn {
 
 #icon-cart {
   font-size: large;
-  color: #F58509;
+  color: #ffffff;
   position: relative;
 }
   
@@ -499,14 +589,13 @@ body.dark-mode a.btn {
   outline: none; /* Elimina el borde azul predeterminado */
 }
 
-/* Boton */
+
 .btn-sell {
   background-color: #F58509; 
   border-color: #F58509; 
   color: white; 
 }
 
-/* Estilo al pasar el cursor por encima del botón */
 .btn-sell:hover {
   background-color: #d47408;
   border-color: #d47408;
@@ -514,27 +603,38 @@ body.dark-mode a.btn {
 }
 
 /* Boton para modo oscuro de la barra de navegacion*/
-input[type="checkbox"] {
+input {
   display: none;
+}
+#labelsw {
+  position: relative; 
+  width: 80px;
+  height: 40px;
+  border-radius: 999px;
+  background: #F3F3F3;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05) inset;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .circle {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 99px;
   background: rgb(255, 185, 55);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05),
   -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
   position: absolute;
   top: 50%;
-  left: 0%;
-  transform: translate(10%, -50%);
-  transition: 0.5s; /*Tiempo de transicion entre uno y otro*/
+  right: 0; 
+  transform: translate(-50%, -50%); 
+  transition: 0.5s;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
+
 /*Imagen luna y sol*/
 svg {
   width: 16px;
