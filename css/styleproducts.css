@@ -61,9 +61,19 @@ body {
   position: absolute;
   width: 100%;
   height: 5px;
-  accent-color: orange !important;
+  accent-color: #F58509 !important;
   pointer-events: none;
   cursor: pointer;
+  visibility: visible !important;
+  display: block !important;
+}
+
+body.dark-mode input[type="range"] {
+  background-color: #888;
+}
+
+body.dark-mode input[type="range"]::-webkit-slider-thumb {
+  background: #ccc;
 }
 
 /* Rango */
