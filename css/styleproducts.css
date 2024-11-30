@@ -65,7 +65,6 @@ body {
   pointer-events: none;
   cursor: pointer;
   visibility: visible !important;
-  display: block !important;
 }
 
 body.dark-mode input[type="range"] {
