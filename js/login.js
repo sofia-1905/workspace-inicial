@@ -39,3 +39,33 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         window.location.href = 'index.html'; 
     }
 });
+
+// Login Post usa los datos del body y guarda el token
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); 
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+
+    try {
+        const response = await fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password})
+        });
+
+        const data = await response.json();
+
+        if(response.ok) {
+            // Guardar el token en localstorage
+            localStorage.setItem('token', data.token);
+        } else {
+            alert('Error: ' + data.message);
+        }
+    } catch (error) {
+        alert('Error de conexión');
+    }
+});
