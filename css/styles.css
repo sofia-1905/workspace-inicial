@@ -599,24 +599,14 @@ body.dark-mode a.btn {
   color: white;
 }
 
-/* Boton para modo oscuro de la barra de navegacion*/
+/* Boton para modo oscuro de la barra de navegacion de las paginas*/
 
 /* input del boton modo oscuro de todas las paginas*/
 #toggle {
   display: none !important;
 }
 
-#labelsw {
-  position: relative; 
-  width: 80px;
-  height: 40px;
-  border-radius: 999px;
-  background: #F3F3F3;
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05) inset;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
+/*Estilo del circulo del boton*/
 .circle {
   width: 40px;
   height: 40px;
@@ -627,47 +617,46 @@ body.dark-mode a.btn {
   position: absolute;
   top: 50%;
   right: 0; 
-  transform: translate(-50%, -50%); 
-  transition: 0.5s;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;     /* Tiempo de transicion de estilo */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-/*Imagen luna y sol*/
+/*Icono del circulo*/
 svg {
   width: 16px;
   position: absolute;
 }
+/* Sol */
 .sun {
   color: #ffffff;
-  margin-top: 0%;
-  opacity: 1;
+  opacity: 1;   /* Sol visible en modo claro*/
 }
+/* Luna */
 .moon {
-  margin-top: -150%;
   color: white;
-  opacity: 0;
+  opacity: 0;   /* Luna oculta*/
 }
-
 /*Circulo modo oscuro*/
 input[type=checkbox]:checked + .display label .circle {
   background: #6b6b6b;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5),
   -10px -10px 30px rgba(0, 0, 0, 0.5) inset;
 }
-/* Posicion del sol en modo oscuro*/
+/* Opacidad del sol en modo oscuro*/
 input[type=checkbox]:checked + .display label .circle .sun {
-  margin-top: 150%;
-  opacity: 0;
+  opacity: 0;       /* El sol no es visible en modo oscuro */
 }
-/*Posicion de la luna en modo oscuro*/
+/*Opacidad de la luna en modo oscuro*/
 input[type=checkbox]:checked + .display label .circle .moon {
-  margin-top: 0%;
-  opacity: 1;
+  opacity: 1;       /* Luna visible en modo oscuro*/
 }
+/* Fin botón */
 
+/* Carrito en modo oscuro */
 #icon-cart, .dropdown-menu #icon-cart {
   color: white !important; 
 }
