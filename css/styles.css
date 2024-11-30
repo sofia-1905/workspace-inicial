@@ -633,12 +633,10 @@ svg {
 /* Sol */
 .sun {
   color: #ffffff;
-  margin-top: 0%;
   opacity: 1;   /* Sol visible en modo claro*/
 }
 /* Luna */
 .moon {
-  margin-top: -150%;
   color: white;
   opacity: 0;   /* Luna oculta*/
 }
@@ -648,14 +646,12 @@ input[type=checkbox]:checked + .display label .circle {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5),
   -10px -10px 30px rgba(0, 0, 0, 0.5) inset;
 }
-/* Posicion del sol en modo oscuro*/
+/* Opacidad del sol en modo oscuro*/
 input[type=checkbox]:checked + .display label .circle .sun {
-  margin-top: 150%;
   opacity: 0;       /* El sol no es visible en modo oscuro */
 }
-/*Posicion de la luna en modo oscuro*/
+/*Opacidad de la luna en modo oscuro*/
 input[type=checkbox]:checked + .display label .circle .moon {
-  margin-top: 0%;
   opacity: 1;       /* Luna visible en modo oscuro*/
 }
 /* Fin botón */
