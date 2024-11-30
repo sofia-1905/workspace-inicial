@@ -537,17 +537,6 @@ body.dark-mode a.btn {
   border: none;
 }
 
-.footer-link {
-  color: #FF6F00; 
-  size:bold; 
-  text-decoration: none; 
-  font-weight: bold;
-}
-
-.footer-link:hover {
-  color: rgb(235, 153, 2);
-}
-
 #icon-cart {
   font-size: large;
   color: #ffffff;
@@ -692,4 +681,8 @@ input[type=checkbox]:checked + .display label .circle .sun {
 input[type=checkbox]:checked + .display label .circle .moon {
   margin-top: 0%;
   opacity: 1;
+}
+
+#icon-cart, .dropdown-menu #icon-cart {
+  color: white !important; 
 }
