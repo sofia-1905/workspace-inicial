@@ -40,7 +40,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     }
 });
 
-// Login Post usa los datos del body y guarda del token
+// Login Post usa los datos del body y guarda el token
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault(); 
 
