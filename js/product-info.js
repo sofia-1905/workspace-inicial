@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <button class="boton boton-carrito">
                                     <i class="fas fa-shopping-cart"></i> Agregar al carrito
                                 </button>
-                                <button class="boton boton-comprar">Comprar</button>
                             </div>
                         </div>
                     </div>
