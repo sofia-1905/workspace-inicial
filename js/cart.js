@@ -96,7 +96,7 @@ function agregarInteractividadTarjeta() {
 }
 
 function seleccionarTarjeta(tipo){
-localStorage.setItem("cardType", tipo); // Guardamos el tipo de pago de tarjeta en localStorage
+    localStorage.setItem("cardType", tipo); // Guardamos el tipo de pago de tarjeta en localStorage
 }
 
 // Función para actualizar el resumen con el nuevo costo de envío y total

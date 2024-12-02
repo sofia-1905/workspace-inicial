@@ -85,14 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     alert("Producto agregado al carrito");
                 });
 
-                // Agregar funcionalidad al botón "Comprar"
-                document.querySelector(".boton-comprar").addEventListener("click", () => {
-                    addToCart(product);
-                    establecerNumeroCarrito();
-                    mostrarBadge();
-                    window.location.href = "cart.html"; // Navega a la página de carrito
-                });
-
             })
             .catch(error => {
                 // Manejo de errores en la carga de datos
@@ -125,24 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorage.setItem("cart", JSON.stringify(cart));
 
 }
-
-
-    // Función para comprar ahora
-    function buyNow(product) {
-        const purchaseData = {
-            id: product.id,
-            name: product.name,
-            cost: product.cost,
-            currency: product.currency,
-            quantity: 1,
-            image: product.images[0] // Primera imagen
-        };
-
-        localStorage.setItem("purchase", JSON.stringify([purchaseData])); // Guarda el producto actual
-
-        window.location.href = "cart.html"; // Navega a la página de carrito
-    }
-
 
     // Función para mostrar productos relacionados
     function showRelatedProducts(relatedProducts) {
@@ -300,7 +274,7 @@ document.querySelectorAll('#rating li').forEach(item => {
   });
 
 //Muestra los calificaciones del JSON y las nuevas guardadas en LocalStorage
-  function mostrarComentariosActualizado() {
+function mostrarComentariosActualizado() {
 
     let productcommentId = localStorage.getItem("productID");
 
@@ -371,19 +345,16 @@ switchbutton.addEventListener('click', () => {
 function mostrarBadge() {
     // Obtener el valor del badge almacenado en localStorage
     let badge = localStorage.getItem('badge');
-    
     // Seleccionar el elemento del badge en el DOM
     let numerocarrito = document.getElementById('badge');
-  
     // Asignar el valor obtenido al contenido del badge
     numerocarrito.textContent = badge || '0'; // Muestra '0' si no hay valor
-  }
-  // Llama a la función al cargar el DOM
-  document.addEventListener('DOMContentLoaded', mostrarBadge);
+}
+// Llama a la función al cargar el DOM
+document.addEventListener('DOMContentLoaded', mostrarBadge);
 
-  function establecerNumeroCarrito() {
+function establecerNumeroCarrito() {
     const carrito = JSON.parse(localStorage.getItem('cart')) || []; // Obtener carrito del LocalStorage
-
     let totalCantidad = 0;
 
     carrito.forEach(producto => {
